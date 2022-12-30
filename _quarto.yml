@@ -13,20 +13,31 @@ book:
     - summary.qmd
     - references.qmd
 
-bibliography: references.bib
-csl: csl/bszbt_6.csl
+bibliography: cite/references.bib
+csl: cite/bszbt.csl
+
+crossref:
+  fig-title: Abb. # (default is "Figure")
+  # tbl-title: (default is "Table")
+  # title-delim: (default is ":")
 
 toc: true
 toc-title: Contents
 number-sections: true
 
+mainfont: "Arial"
+monofont: "FiraCode Nerd Font"
+
 format:
   html:
+    theme:
+      light: flatly
+      dark: darkly
+    code-copy: true
     page-navigation: true
   pdf:
     pdf-engine: xelatex
     documentclass: scrreprt
-    mainfont: "Arial"
     papersize: a4
 
 geometry:
@@ -35,5 +46,3 @@ geometry:
   - bottom=20mm
   - left=25mm
   - right=20mm
-
-editor: visual

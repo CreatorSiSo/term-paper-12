@@ -3,8 +3,3 @@
 This is a Quarto book.
 
 To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-Here is a footnote reference,^[Here is the footnote.] and another.[^longnote]
-
-This paragraph won't be part of the note, because it
-isn't indented.

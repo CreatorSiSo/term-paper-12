@@ -2,5 +2,8 @@
 
 This is a book created from markdown and executable code.
 
-See [Vgl. @knuth84 S. 99-100] for additional discussion of literate programming.
-^[Ebd. S. 80]
+See [Vgl. @knuth84 S. 99-100] for additional discussion of literate programming.^[Ebd. S. 80.]
+
+```rust
+=>=
+```
