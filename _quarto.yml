@@ -1,0 +1,39 @@
+project:
+  type: book
+  output-dir: _out
+
+book:
+  title: "Facharbeit"
+  author: "Simon Sommer"
+  date: "02/10/2022"
+  date-format: DD.MM.YYYY
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+csl: csl/bszbt_6.csl
+
+toc: true
+toc-title: Contents
+number-sections: true
+
+format:
+  html:
+    page-navigation: true
+  pdf:
+    pdf-engine: xelatex
+    documentclass: scrreprt
+    mainfont: "Arial"
+    papersize: a4
+
+geometry:
+  # - showframe
+  - top=20mm
+  - bottom=20mm
+  - left=25mm
+  - right=20mm
+
+editor: visual

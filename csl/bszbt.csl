@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" default-locale="en-US">
+	<info>
+		<title>BSZ Bau und Technik Dresden - Fachoberschule</title>
+		<title-short>BSZBT Dresden - FOS</title-short>
+		<id>http://www.zotero.org/styles/bsz-bau-und-technik-dresden-fachoberschule</id>
+		<link href="http://www.zotero.org/styles/bsz-bau-und-technik-dresden-fachoberschule" rel="self" />
+		<link href="http://www.zotero.org/styles/die-bachelorarbeit-samac-et-al-in-text" rel="template" />
+		<link href="http://www.zotero.org/styles/apa" rel="template" />
+		<category citation-format="numeric" />
+		<author>
+			<name>Simon Sommer</name>
+		</author>
+		<category citation-format="author-date" />
+		<category field="generic-base" />
+
+		<issn>0099-2240</issn>
+		<eissn>1098-5336</eissn>
+		<updated>2014-04-30T03:45:36+00:00</updated>
+		<rights license="http://creativecommons.org/licenses/by-sa/3.0/">
+			This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License
+		</rights>
+	</info>
+
+	<macro name="author">
+		<group delimiter="; ">
+			<names variable="author">
+			</names>
+			<names variable="editor" form="long">
+				<name>
+					<name-part name-as-sort-order="first" sort-separator=", " />
+				</name>
+			</names>
+		</group>
+	</macro>
+
+	<macro name="issued-year">
+		<choose>
+			<if variable="issued">
+				<date variable="issued" prefix="(" suffix=")">
+					<date-part name="year" />
+				</date>
+			</if>
+		</choose>
+	</macro>
+
+	<citation et-al-min="3" et-al-use-first="1">
+		<sort>
+			<key macro="author" />
+			<key macro="issued-year" />
+			<key variable="title" />
+		</sort>
+
+		<layout>
+			<group delimiter=" ">
+				<text macro="author" />
+				<!-- <text macro="issued-year" suffix=":" />
+				<text variable="title" suffix="." /> -->
+			</group>
+		</layout>
+	</citation>
+
+	<bibliography>
+		<sort>
+			<key macro="author" />
+			<key macro="issued-year" />
+			<key variable="title" />
+		</sort>
+
+		<layout>
+		</layout>
+	</bibliography>
+</style>
