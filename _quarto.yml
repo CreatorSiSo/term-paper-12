@@ -11,6 +11,7 @@ book:
     - index.qmd
     - intro.qmd
     - summary.qmd
+    - data_types.qmd
     - references.qmd
 
 bibliography: cite/references.bib
@@ -25,20 +26,28 @@ toc: true
 toc-title: Contents
 number-sections: true
 
-mainfont: "Arial"
+# https://quarto.org/docs/reference/formats/pdf.html#fonts
+sansfont: "Arial Nerd Font"
+mainfont: "Arial Nerd Font"
 monofont: "FiraCode Nerd Font"
+linestretch: 1.5
+# code-line-numbers: true
+
+# filters:
+#   - "customize/test.lua"
 
 format:
   html:
     theme:
-      light: flatly
+      light: lightly
       dark: darkly
     code-copy: true
     page-navigation: true
   pdf:
     pdf-engine: xelatex
-    documentclass: scrreprt
+    documentclass: book
     papersize: a4
+    fontsize: "11"
 
 geometry:
   # - showframe
