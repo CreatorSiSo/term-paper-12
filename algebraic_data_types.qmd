@@ -1,0 +1,24 @@
+# Algebraic Data Types
+
+## Supported by
+
+* Product Types
+  * Js/Ts (Arrays, Objects, Maps, WeakMaps)
+  * Python (Lists, Records, ..)
+  * PHP
+  * Java
+  * C#
+  * C++ (Classes, Structs, ..)
+  * C (Structs, ..)
+  * Go
+  * Rust (Structs, ..)
+* Sum Types (https://en.wikipedia.org/wiki/Algebraic_data_type)
+  * C++, Java 15, Rust, TypeScript
+  * F#, Haskell, Idris, Kotlin, Nim, Swift
+* https://jrsinclair.com/articles/2019/algebraic-data-types-what-i-wish-someone-had-explained-about-functional-programming/
+
+## Optionals as a replacement for null pointers
+
+* https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/
+* https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/
+* https://en.wikipedia.org/wiki/Tony_Hoare

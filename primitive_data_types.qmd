@@ -1,0 +1,200 @@
+# Primitive Data Types
+
+## Numbers
+
+<!-- ### Floating Point
+
+All languages provide floating point data types that adhere to the _IEEE 754 - Floating-Point arithmetic standard_ [Vgl. @ieee754_2019] or its ISO adoption _ISO/IEC 60559_ [Vgl. @iso60559_2020] by default.
+
+Amet sit sunt quis dolor occaecat deserunt ad commodo quis adipisicing quis. Anim ad officia do et laboris ipsum eiusmod sit mollit adipisicing et. Ipsum exercitation Lorem irure aliqua in irure labore laboris cupidatat eiusmod sit ullamco cupidatat. Voluptate mollit veniam reprehenderit qui adipisicing in labore irure laborum excepteur eu cillum do. Nulla in ipsum nulla eiusmod ullamco nisi duis ut Lorem ipsum ut officia. Lorem excepteur sunt consectetur et anim nulla non ad magna. Nostrud commodo magna laboris anim mollit ullamco pariatur amet ut eu duis. -->
+
+<!--
+- IEEE 754
+  - https://en.wikipedia.org/wiki/IEEE_754
+  - active version is from 2019 [Vgl. @Ieee754:2019]
+  - https://ieeexplore.ieee.org/document/8766229
+  - same as ISO/IEC 60559
+-->
+
+<!-- TODO: is float always `binary32` or can ist be `decimal32` as well? -->
+
+<!-- | Language  | Formats                                                               |
+| --------: | --------------------------------------------------------------------- |
+| Js/Ts     | `Number`: `binary64`                                                  |
+| Python    |
+| PHP       | `float`: platform dependent, usually `binary64`                       |
+| Java      | `Float`: `binary32`, `Double`: `binary64`                             |
+| C#        | `float`: `binary32`, `double`: `binary64`                             |
+| C++       | `float`: `binary32`, `double`: `binary64`, `long double`: `binary128` |
+| C         | `float`: `binary32`, `double`: `binary64`, `long double`: `binary128` |
+| Go        | `float32`: `binary32`, `float64`: `binary64`                          |
+| Rust      | `f32`: `binary32`, `f64`: `binary64`                                  |
+
+* Accessed: 02.01.2023
+  * Js: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+  * Python: https://docs.python.org/3/library/stdtypes.html#typesnumeric
+  * PHP: https://www.php.net/manual/en/language.types.float.php
+  * Java: https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.2.3
+  * C#: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/types#837-floating-point-types
+  * C++: https://en.cppreference.com/w/cpp/language/types
+  * C: _ISO/IEC 9899:2018_, https://www.open-std.org/JTC1/SC22/WG14/www/docs/n2310.pdf
+  * Go: https://go.dev/ref/spec#Numeric_types
+  * Rust: https://doc.rust-lang.org/reference/types/numeric.html#floating-point-types -->
+
+## Enums
+
+```rust
+// Declare an enum.
+enum Type {
+  Ok,
+  NotOk,
+}
+
+// Declare a specific enum field.
+const c = Type.Ok
+```
+
+<!-- ```rust
+// TODO
+// If you want access to the ordinal value of an enum, you
+// can specify the tag type.
+const Value = enum(u2) {
+  Zero,
+  One,
+  Two,
+}
+// Now you can cast between u2 and Value.
+// The ordinal value starts from 0, counting up by 1 from the previous member.
+test "enum ordinal value" {
+  assert_eq(@enumToInt(Value.Zero), 0)
+  assert_eq(@enumToInt(Value.One), 1)
+  assert_eq(@enumToInt(Value.Two), 2)
+}
+``` -->
+
+You can override the ordinal value for an `enum`.
+
+```rust
+enum Value2 {
+  Hundred = 100,
+  Thousand = 1_000,
+  Million = 1_000_000,
+}
+test "set enum ordinal value" {
+  // TODO: How to convert enum to int/uint?
+  assert_eq(@enumToInt(Value2.Hundred), 100)
+  assert_eq(@enumToInt(Value2.Thousand), 1000)
+  assert_eq(@enumToInt(Value2.Million), 1000000)
+}
+```
+
+You can also override only some values.
+
+```rust
+enum Value3 {
+  A,
+  B = 8,
+  C,
+  D = 4,
+  E,
+}
+test "enum implicit ordinal values and overridden values" {
+  assert_eq(@enumToInt(Value3.A), 0)
+  assert_eq(@enumToInt(Value3.B), 8)
+  assert_eq(@enumToInt(Value3.C), 9)
+  assert_eq(@enumToInt(Value3.D), 4)
+  assert_eq(@enumToInt(Value3.E), 5)
+}
+```
+
+`Enum`s can have methods, the same as `struct`s.
+`Enum` methods are not special, they are only namespaced functions that you can call with dot syntax.
+
+```rust
+enum Suit {
+  Clubs,
+  Spades,
+  Diamonds,
+  Hearts,
+
+  pub fn isClubs(self: Suit) bool {
+    self == Suit.Clubs
+  }
+}
+test "enum method" {
+  const suit = Suit.Spades
+  assert_eq(suit.isClubs(), false)
+}
+```
+
+An `enum` can be `match`ed upon.
+
+```rust
+enum Foo {
+  String,
+  Number,
+  None,
+}
+test "enum match" {
+  const foo = Foo.Number
+  const what_is_it = match foo {
+    Foo.String => "this is a string",
+    Foo.Number => "this is a number",
+    Foo.None => "this is a none",
+  }
+  assert_eq(what_is_it, "this is a number")
+}
+```
+
+<!-- ```rust
+// TODO
+// `@typeInfo` can be used to access the integer tag type of an enum.
+enum Small {
+  One,
+  Two,
+  Three,
+  Four,
+}
+test "std.meta.Tag" {
+  assert_eq(@typeInfo(Small).Enum.tag_type, u2)
+}
+
+// `@typeInfo` tells us the field count and the fields names:
+test "@typeInfo" {
+  assert_eq(@typeInfo(Small).Enum.fields.len, 4)
+  assert_eq(@typeInfo(Small).Enum.fields[1].name, "Two")
+}
+
+// `@tagName` gives a `string` representation of an enum value:
+test "@tagName" {
+  assert_eq(@tagName(Small.Three), "Three")
+}
+``` -->
+
+### Non-exhaustive enum
+
+A Non-exhaustive enum can be created by adding a trailing `_` field. It must specify a tag type and cannot consume every enumeration value.
+
+```rust
+enum Number {
+  One,
+  Two,
+  Three,
+  _,
+}
+
+test "match on non-exhaustive enum" {
+  const number = Number.One
+  const result = match number {
+    .One => true,
+    .Two | .Three => false,
+    _ => false,
+  }
+  assert(result)
+  const is_one = match number {
+      .One => true,
+      else => false,
+  }
+  assert(is_one)
+}
+```

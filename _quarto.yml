@@ -9,17 +9,17 @@ book:
   date-format: DD.MM.YYYY
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - data_types.qmd
+    - primitive_data_types.qmd
+    - algebraic_data_types.qmd
     - references.qmd
 
+lang: "en-GB"
 bibliography: cite/references.bib
 csl: cite/bszbt.csl
 
 crossref:
   fig-title: Abb. # (default is "Figure")
-  # tbl-title: (default is "Table")
+  tbl-title: Tabelle # (default is "Table")
   # title-delim: (default is ":")
 
 toc: true
@@ -31,10 +31,8 @@ sansfont: "Arial Nerd Font"
 mainfont: "Arial Nerd Font"
 monofont: "FiraCode Nerd Font"
 linestretch: 1.5
-# code-line-numbers: true
-
-# filters:
-#   - "customize/test.lua"
+highlight-style: github # dracula, github
+code-block-border-left: true
 
 format:
   html:
@@ -43,15 +41,20 @@ format:
       dark: darkly
     code-copy: true
     page-navigation: true
-  pdf:
-    pdf-engine: xelatex
-    documentclass: book
-    papersize: a4
-    fontsize: "11"
-
-geometry:
-  # - showframe
-  - top=20mm
-  - bottom=20mm
-  - left=25mm
-  - right=20mm
+    code-fold: true
+  docx:
+    highlight-style: tango # github, kate, printing, tango
+    reference-doc: custom/reference-doc.docx
+  # pdf:
+  #   pdf-engine: xelatex
+  #   documentclass: nostarch
+  #   papersize: a4
+  #   # format-resources:
+  #   # - customize/custom.cls
+  #   fontsize: "11"
+# geometry:
+#   - showframe
+#   - top=20mm
+#   - bottom=20mm
+#   - left=25mm
+#   - right=20mm

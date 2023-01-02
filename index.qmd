@@ -1,5 +1,11 @@
-# Preface {.unnumbered}
+# Introduction
 
-This is a Quarto book.
+This is a book created from markdown and executable code.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+See [Vgl. @knuth_1984 S. 99-100] for additional discussion of literate programming.^[Ebd. S. 80.]
+
+```rust
+=>=
+```
+
+{{< pagebreak >}}
