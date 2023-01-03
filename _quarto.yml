@@ -11,6 +11,7 @@ book:
     - index.qmd
     - primitive_data_types.qmd
     - algebraic_data_types.qmd
+    - tooling_ecosystem.qmd
     - references.qmd
 
 lang: "en-GB"

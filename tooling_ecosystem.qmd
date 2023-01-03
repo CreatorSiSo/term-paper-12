@@ -1,0 +1,26 @@
+# Tooling and Ecosystem
+
+## Package Manager
+
+* examples:
+  * Python: pip
+  * Js/Ts: npm, yarn, deno
+  * C: ?
+  * C++: ?
+  * Rust: cargo
+
+=> rympkg?
+
+## Formatting and Styleguide
+
+* examples:
+  * Python: pep8, ?
+  * Js/Ts: not official?, eslint, prettier, ..
+  * PHP: ?
+  * ..: ?
+  * Go: ?, gofmt
+  * Rust: builtin, clippy, rustfmt
+
+Precommit scripts can ensure that only correctly formatted code gets comitted.
+
+=> rymfmt, rym fmt

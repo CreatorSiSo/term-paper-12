@@ -1,8 +1,11 @@
 # Algebraic Data Types
 
-## Supported by
+## Product Types
 
-* Product Types
+* explain product types
+  * https://jrsinclair.com/articles/2019/algebraic-data-types-what-i-wish-someone-had-explained-about-functional-programming
+
+* exist in:
   * Js/Ts (Arrays, Objects, Maps, WeakMaps)
   * Python (Lists, Records, ..)
   * PHP
@@ -12,13 +15,30 @@
   * C (Structs, ..)
   * Go
   * Rust (Structs, ..)
-* Sum Types (https://en.wikipedia.org/wiki/Algebraic_data_type)
+
+## Sum Types
+
+* explain sum types
+  * https://jrsinclair.com/articles/2019/algebraic-data-types-what-i-wish-someone-had-explained-about-functional-programming/
+
+* exist in: (https://en.wikipedia.org/wiki/Algebraic_data_type)
   * C++, Java 15, Rust, TypeScript
   * F#, Haskell, Idris, Kotlin, Nim, Swift
-* https://jrsinclair.com/articles/2019/algebraic-data-types-what-i-wish-someone-had-explained-about-functional-programming/
 
-## Optionals as a replacement for null pointers
+## Optional Values
 
-* https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/
-* https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/
-* https://en.wikipedia.org/wiki/Tony_Hoare
+* null references, the billion dollar mistake
+  * https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/
+  * https://www.infoq.com/presentations/Null-References-The-Billion-Dollar-Mistake-Tony-Hoare/
+  * https://en.wikipedia.org/wiki/Tony_Hoare
+
+* Ts
+  * `null`, `undefined`
+  * can be detected by Ts compiler
+* Java, C, C++, ..
+* Rust
+  * `Option` enum
+  * must be unwrapped to use the value
+
+* `Option`s replace null references
+  * is a sum type / enum
