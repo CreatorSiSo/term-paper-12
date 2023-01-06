@@ -1,0 +1,37 @@
+# General trends
+
+- jit compilation?
+
+## Type Systems
+
+- getting more powerful
+- type inference
+- Type Classes have been adapted
+  - easily extend functionality of uncontrollable 3rd parties
+  - Swift protocols
+  - C++23 concepts
+  - Rust traits
+  - Java, C# Interfaces?
+- where?
+  - JavaScript
+    - TypeScript, other one from Facebook
+    - Proposal to add type annotations
+  - Python
+    - added type annotations
+  - Rust, Go, Swift
+  - auto in C++
+  - state of C, C++, C#, Java, php types?
+
+## Null Safety
+
+- solutions based on powerful type systems
+  - Rust, Swift, Dart?
+  - TypeScript checks for null/undefined
+- what are the others up to?
+
+## Functional programming
+
+- C++
+  - addition and work on the _functional_ module
+  - algorithms to work with lists and iterators
+- Python

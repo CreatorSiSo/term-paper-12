@@ -9,6 +9,7 @@ book:
   date-format: DD.MM.YYYY
   chapters:
     - index.qmd
+    - general_trends.qmd
     - primitive_data_types.qmd
     - algebraic_data_types.qmd
     - tooling_ecosystem.qmd

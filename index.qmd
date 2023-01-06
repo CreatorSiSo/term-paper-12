@@ -1,11 +1,11 @@
 # Introduction
 
-This is a book created from markdown and executable code.
+- The goal of this paper is the conception and implementation of a new programming language called Rym
+- What exactly is a programming language
+  - artificial language
+  - turing complete
+  - general
 
-See [Vgl. @knuth_1984 S. 99-100] for additional discussion of literate programming.^[Ebd. S. 80.]
-
-```rust
-=>=
-```
+See [Vgl. @knuth_1984 S. 99-100] for additional discussion of literate programming.^[Vgl. Ebd. S. 80.]
 
 {{< pagebreak >}}

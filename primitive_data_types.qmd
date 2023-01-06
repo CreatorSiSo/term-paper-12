@@ -1,18 +1,41 @@
 # Primitive Data Types
 
-## Numbers
+## Boolean
 
-### Floating Point
+- work the same in almost all programming languages
+- almost always called `true` and `false`
+  - Python: `True` and `False`
+
+## Integer
+
+| Language | Formats                                                              |
+| -------: | -------------------------------------------------------------------- |
+|    Js/Ts | not supported                                                        |
+|   Python | not supported?                                                       |
+|      PHP | not supported?                                                       |
+|     Java | ?                                                                    |
+|       C# | ?                                                                    |
+|      C++ | ?                                                                    |
+|        C | ?                                                                    |
+|       Go | ?                                                                    |
+|      Zig | `u1..u128`, `i1..i128`                                               |
+|     Rust | `u8`, `u16`, `u32`, `u64`, `u128`; `i8`, `i16`, `i32`, `i64`, `i128` |
+
+: Supported interger formats {#tbl-int-formats tbl-colwidths="[15,85]"}
+
+## Float
+
+<!-- TODO Should I call this "Floating Point Numbers" insted? -->
 
 All languages provide floating point data types that adhere to the IEEE 754 - Floating-Point arithmetic standard [Vgl. @ieee754_2019] or its ISO adoption _ISO/IEC 60559_ [Vgl. @iso60559_2020] by default. As seen in @tbl-float-formats.
 
-* IEEE 754
-  * https://en.wikipedia.org/wiki/IEEE_754
-  * active version is from 2019 [Vgl. @ieee754_2019]
-  * https://ieeexplore.ieee.org/document/8766229
-  * same as ISO/IEC 60559
+- IEEE 754
+  - https://en.wikipedia.org/wiki/IEEE_754
+  - active version is from 2019 [Vgl. @ieee754_2019]
+  - https://ieeexplore.ieee.org/document/8766229
+  - same as ISO/IEC 60559
 
-<!-- TODO: is float always `binary32` or can ist be `decimal32` as well? -->
+<!-- TODO: is float always `binary32` or can it be `decimal32` as well? -->
 
 | Language | Formats                                                               |
 | -------: | --------------------------------------------------------------------- |
@@ -28,171 +51,43 @@ All languages provide floating point data types that adhere to the IEEE 754 - Fl
 
 : Supported floating point formats {#tbl-float-formats tbl-colwidths="[15,85]"}
 
-* Accessed: 02.01.2023
-  * Js: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-  * Python: https://docs.python.org/3/library/stdtypes.html#typesnumeric
-  * PHP: https://www.php.net/manual/en/language.types.float.php
-  * Java: https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.2.3
-  * C#: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/types#837-floating-point-types
-  * C++: https://en.cppreference.com/w/cpp/language/types
-  * C: _ISO/IEC 9899:2018_, https://www.open-std.org/JTC1/SC22/WG14/www/docs/n2310.pdf
-  * Go: https://go.dev/ref/spec#Numeric_types
-  * Rust: https://doc.rust-lang.org/reference/types/numeric.html#floating-point-types
+<br/>
 
-## Enums
+- Accessed: 02.01.2023
+  - Js: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+  - Python: https://docs.python.org/3/library/stdtypes.html#typesnumeric
+  - PHP: https://www.php.net/manual/en/language.types.float.php
+  - Java: https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.2.3
+  - C#: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/types#837-floating-point-types
+  - C++: https://en.cppreference.com/w/cpp/language/types
+  - C: _ISO/IEC 9899:2018_, https://www.open-std.org/JTC1/SC22/WG14/www/docs/n2310.pdf
+  - Go: https://go.dev/ref/spec#Numeric_types
+  - Rust: https://doc.rust-lang.org/reference/types/numeric.html#floating-point-types
 
-```rust
-// Declare an enum.
-enum Type {
-  Ok,
-  NotOk,
-}
+## Character
 
-// Declare a specific enum field.
-const c = Type.Ok
-```
+- Rym:
 
-<!-- ```rust
-// TODO
-// If you want access to the ordinal value of an enum, you
-// can specify the tag type.
-const Value = enum(u2) {
-  Zero,
-  One,
-  Two,
-}
-// Now you can cast between u2 and Value.
-// The ordinal value starts from 0, counting up by 1 from the previous member.
-test "enum ordinal value" {
-  assert_eq(@enumToInt(Value.Zero), 0)
-  assert_eq(@enumToInt(Value.One), 1)
-  assert_eq(@enumToInt(Value.Two), 2)
-}
-``` -->
+  - Name: char
+  - valid utf-8 character
+  - space: 1 byte?
 
-You can override the ordinal value for an `enum`.
+| Language | Formats        |
+| -------: | -------------- |
+|    Js/Ts | not supported  |
+|   Python | not supported? |
+|      PHP | not supported? |
+|     Java | ?              |
+|       C# | ?              |
+|      C++ | ?              |
+|        C | ?              |
+|       Go | ?              |
+|     Rust | `char`         |
 
-```rust
-enum Value2 {
-  Hundred = 100,
-  Thousand = 1_000,
-  Million = 1_000_000,
-}
-test "set enum ordinal value" {
-  // TODO: How to convert enum to int/uint?
-  assert_eq(@enumToInt(Value2.Hundred), 100)
-  assert_eq(@enumToInt(Value2.Thousand), 1000)
-  assert_eq(@enumToInt(Value2.Million), 1000000)
-}
-```
+: Character data types {#tbl-chars tbl-colwidths="[15,85]"}
 
-You can also override only some values.
+## String
 
-```rust
-enum Value3 {
-  A,
-  B = 8,
-  C,
-  D = 4,
-  E,
-}
-test "enum implicit ordinal values and overridden values" {
-  assert_eq(@enumToInt(Value3.A), 0)
-  assert_eq(@enumToInt(Value3.B), 8)
-  assert_eq(@enumToInt(Value3.C), 9)
-  assert_eq(@enumToInt(Value3.D), 4)
-  assert_eq(@enumToInt(Value3.E), 5)
-}
-```
-
-`Enum`s can have methods, the same as `struct`s.
-`Enum` methods are not special, they are only namespaced functions that you can call with dot syntax.
-
-```rust
-enum Suit {
-  Clubs,
-  Spades,
-  Diamonds,
-  Hearts,
-
-  pub fn isClubs(self: Suit) bool {
-    self == Suit.Clubs
-  }
-}
-test "enum method" {
-  const suit = Suit.Spades
-  assert_eq(suit.isClubs(), false)
-}
-```
-
-An `enum` can be `match`ed upon.
-
-```rust
-enum Foo {
-  String,
-  Number,
-  None,
-}
-test "enum match" {
-  const foo = Foo.Number
-  const what_is_it = match foo {
-    Foo.String => "this is a string",
-    Foo.Number => "this is a number",
-    Foo.None => "this is a none",
-  }
-  assert_eq(what_is_it, "this is a number")
-}
-```
-
-<!-- ```rust
-// TODO
-// `@typeInfo` can be used to access the integer tag type of an enum.
-enum Small {
-  One,
-  Two,
-  Three,
-  Four,
-}
-test "std.meta.Tag" {
-  assert_eq(@typeInfo(Small).Enum.tag_type, u2)
-}
-
-// `@typeInfo` tells us the field count and the fields names:
-test "@typeInfo" {
-  assert_eq(@typeInfo(Small).Enum.fields.len, 4)
-  assert_eq(@typeInfo(Small).Enum.fields[1].name, "Two")
-}
-
-// `@tagName` gives a `string` representation of an enum value:
-test "@tagName" {
-  assert_eq(@tagName(Small.Three), "Three")
-}
-``` -->
-
-### Non-exhaustive enum
-
-A Non-exhaustive enum can be created by adding a trailing `_` field. It must specify a tag type and cannot consume every enumeration value.
-
-```rust
-enum Number {
-  One,
-  Two,
-  Three,
-  _,
-}
-
-test "match on non-exhaustive enum" {
-  const number = Number.One
-  const result = match number {
-    .One => true,
-    .Two | .Three => false,
-    _ => false,
-  }
-  assert(result)
-  const is_one = match number {
-      .One => true,
-      else => false,
-  }
-  assert(is_one)
-}
-```
+- Rym:
+  - Name: String, ConstString
+  - array of characters
