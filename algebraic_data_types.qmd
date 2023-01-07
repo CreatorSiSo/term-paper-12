@@ -1,5 +1,7 @@
 # Algebraic Data Types
 
+Definintion
+
 ## Product Types
 
 * explain product types

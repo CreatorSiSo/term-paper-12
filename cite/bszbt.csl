@@ -17,7 +17,7 @@
 		<category citation-format="numeric" />
 		<summary>Zitierkonvention (Deutsche Zitierweise) der Fachoberschule Technik am
 			Berufsschulzentrum Bau und Technik Dresden</summary>
-		<updated>2022-12-30T15:45:39+00:00</updated>
+		<updated>2023-01-07T12:07:39+00:00</updated>
 		<rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a
 			Creative Commons Attribution-ShareAlike 3.0 License</rights>
 	</info>
@@ -116,9 +116,9 @@
 						<text variable="title" suffix="." />
 						<text term="in" text-case="capitalize-first" suffix=":" />
 						<text macro="editor" font-style="normal" suffix=":" />
-						<text variable="container-title" font-style="italic" suffix="." />
+						<text variable="container-title" font-style="normal" suffix="." />
 						<text variable="publisher-place" suffix=": " />
-						<text macro="publisher" suffix=", " />
+						<text macro="publisher" suffix=". " />
 						<text macro="pages" />
 					</group>
 				</if>
@@ -126,19 +126,19 @@
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="italic" />
+						<text variable="title" font-style="normal" />
 						<text variable="collection-title" />
 						<text variable="volume" font-style="normal" prefix=", Band " />
 						<text variable="publisher-place" prefix=". " suffix=": " />
 						<text variable="publisher" />
-						<text macro="pages" />
+						<text macro="pages" prefix=". " />
 					</group>
 				</else-if>
 				<else-if type="webpage" match="any">
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="italic" suffix=". " />
+						<text variable="title" font-style="normal" suffix=", " />
 						<text macro="access" />
 					</group>
 				</else-if>
@@ -149,7 +149,7 @@
 							<text macro="year-date" prefix="(" suffix="): " />
 							<text variable="title" suffix=", " />
 							<text term="in" text-case="lowercase" suffix=": " />
-							<text variable="container-title" font-style="italic" suffix=", " />
+							<text variable="container-title" font-style="normal" suffix=", " />
 							<text macro="access" />
 						</group>
 					</group>
@@ -158,9 +158,11 @@
 					<group>
 						<text macro="author" suffix=" " />
 						<text macro="year-date" prefix="(" suffix="): " />
-						<text variable="title" suffix=", In: " />
-						<text variable="container-title" font-style="italic" />
-						<text variable="volume" prefix=", Band " suffix=". " />
+						<text variable="title" suffix=". " />
+						<group prefix="In: " suffix=". ">
+							<text variable="container-title" font-style="normal" />
+							<text variable="volume" prefix=", Band " />
+						</group>
 						<text macro="pages" />
 					</group>
 				</else-if>
@@ -168,7 +170,7 @@
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="italic" suffix=". " />
+						<text variable="title" font-style="normal" suffix=". " />
 						<text variable="publisher-place" />
 						<text variable="publisher" prefix=": " />
 					</group>
@@ -178,26 +180,25 @@
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="normal" suffix=", " />
-						<text variable="container-title" font-style="italic" prefix="In: " />
-						<text macro="date" prefix=" vom " />
-						<text macro="pages" prefix=", " />
+						<text variable="title" font-style="normal" suffix=". " />
+						<text variable="container-title" font-style="normal" prefix="In: " />
+						<text macro="pages" prefix=". " />
 					</group>
 				</else-if>
 				<else-if type="motion_picture" match="any">
 					<group>
-						<text variable="title" font-style="italic" />
-						<text variable="original-title" prefix=" (" suffix=", " />
+						<text variable="title" font-style="normal" />
+						<text variable="original-title" prefix=" (" suffix=". " />
 						<text value="LAND" suffix=" " />
-						<date date-parts="year" form="text" variable="issued" suffix=", " />
+						<date date-parts="year" form="text" variable="issued" suffix=". " />
 						<names variable="director" prefix="R: " suffix=")" />
 					</group>
 				</else-if>
 				<else-if type="broadcast" match="any">
 					<group>
-						<text variable="title" font-style="italic" />
-						<text value="ORIGINAL-TITEL" prefix=" (" suffix=", " />
-						<text variable="publisher" suffix=", " />
+						<text variable="title" font-style="normal" />
+						<text value="ORIGINAL-TITEL" prefix=" (" suffix=". " />
+						<text variable="publisher" suffix=". " />
 						<text variable="publisher-place" suffix=" " />
 						<date form="text" variable="issued" suffix=" KORRIGIEREN!)" />
 					</group>
@@ -221,9 +222,9 @@
 						<text variable="title" suffix="." />
 						<text term="in" text-case="capitalize-first" suffix=":" />
 						<text macro="editor" font-style="normal" suffix=":" />
-						<text variable="container-title" font-style="italic" suffix="." />
+						<text variable="container-title" font-style="normal" suffix="." />
 						<text variable="publisher-place" suffix=": " />
-						<text macro="publisher" suffix=", " />
+						<text macro="publisher" suffix=". " />
 						<text macro="pages" />
 					</group>
 				</if>
@@ -231,19 +232,19 @@
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="italic" />
+						<text variable="title" font-style="normal" />
 						<text variable="collection-title" />
 						<text variable="volume" font-style="normal" prefix=", Band " />
 						<text variable="publisher-place" prefix=". " suffix=": " />
 						<text variable="publisher" />
-						<text macro="pages" />
+						<text macro="pages" prefix=". " />
 					</group>
 				</else-if>
 				<else-if type="webpage" match="any">
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="italic" suffix=". " />
+						<text variable="title" font-style="normal" suffix=", " />
 						<text macro="access" />
 					</group>
 				</else-if>
@@ -252,9 +253,9 @@
 						<group prefix=" ">
 							<text macro="author" suffix=" " />
 							<text macro="year-date" prefix="(" suffix="): " />
-							<text variable="title" suffix=", " />
-							<text term="in" text-case="lowercase" suffix=": " />
-							<text variable="container-title" font-style="italic" suffix=", " />
+							<text variable="title" suffix=". " />
+							<text term="In" text-case="capitalize-first" suffix=": " />
+							<text variable="container-title" font-style="normal" suffix=", " />
 							<text macro="access" />
 						</group>
 					</group>
@@ -264,16 +265,16 @@
 						<text macro="author" suffix=" " />
 						<text macro="year-date" prefix="(" suffix="): " />
 						<text variable="title" suffix=", In: " />
-						<text variable="container-title" font-style="italic" />
+						<text variable="container-title" font-style="normal" />
 						<text variable="volume" prefix=", Band " suffix=". " />
-						<text macro="pages" />
+						<text macro="pages" prefix=". " />
 					</group>
 				</else-if>
 				<else-if type="thesis" match="any">
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="italic" suffix=". " />
+						<text variable="title" font-style="normal" suffix=". " />
 						<text variable="publisher-place" />
 						<text variable="publisher" prefix=": " />
 					</group>
@@ -283,25 +284,24 @@
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="normal" suffix=", " />
-						<text variable="container-title" font-style="italic" prefix="In: " />
-						<text macro="date" prefix=" vom " />
-						<text macro="pages" prefix=", " />
+						<text variable="title" font-style="normal" suffix=". " />
+						<text variable="container-title" font-style="normal" prefix="In: " />
+						<text macro="pages" prefix=". " />
 					</group>
 				</else-if>
 				<else-if type="motion_picture" match="any">
 					<group>
-						<text variable="title" font-style="italic" />
-						<text variable="original-title" prefix=" (" suffix=", " />
+						<text variable="title" font-style="normal" />
+						<text variable="original-title" prefix=" (" suffix=". " />
 						<text value="LAND" suffix=" " />
-						<date date-parts="year" form="text" variable="issued" suffix=", " />
+						<date date-parts="year" form="text" variable="issued" suffix=". " />
 						<names variable="director" prefix="R: " suffix=")" />
 					</group>
 				</else-if>
 				<else-if type="broadcast" match="any">
 					<group>
-						<text variable="title" font-style="italic" />
-						<text value="ORIGINAL-TITEL" prefix=" (" suffix=", " />
+						<text variable="title" font-style="normal" />
+						<text value="ORIGINAL-TITEL" prefix=" (" suffix=". " />
 						<text variable="publisher" suffix=", " />
 						<text variable="publisher-place" suffix=" " />
 						<date form="text" variable="issued" suffix=" KORRIGIEREN!)" />
