@@ -9,10 +9,12 @@ book:
   date-format: DD.MM.YYYY
   chapters:
     - index.qmd
+    - function.qmd
     - general_trends.qmd
     - primitive_data_types.qmd
     - algebraic_data_types.qmd
     - tooling_ecosystem.qmd
+    - appendix.qmd
     - references.qmd
 
 lang: "en-GB"
@@ -33,8 +35,12 @@ sansfont: "Arial Nerd Font"
 mainfont: "Arial Nerd Font"
 monofont: "FiraCode Nerd Font"
 linestretch: 1.5
-highlight-style: github # dracula, github
+
 code-block-border-left: true
+syntax-definitions: [custom/rym.xml]
+highlight-style:
+  light: custom/light.theme # github, kate, printing, tango
+  dark: custom/dark.theme # dracula, github
 
 format:
   html:
@@ -45,7 +51,6 @@ format:
     page-navigation: true
     code-fold: true
   docx:
-    highlight-style: tango # github, kate, printing, tango
     reference-doc: custom/reference-doc.docx
   # pdf:
   #   pdf-engine: xelatex

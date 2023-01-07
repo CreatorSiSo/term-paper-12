@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="language.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<!DOCTYPE language [
+	<!ENTITY ident "(?:[a-zA-Z_]|[^[:ascii:]])(?:\w|[^[:ascii:]])*">
+	<!ENTITY rymIntType "(?:[iu](?:\d+|size))">
+	<!ENTITY commonEscape "(?:[trn0&apos;&quot;\\]|x[0-9a-fA-F]{2})">
+	<!ENTITY unicodeEscape "u\{(?:[0-9a-fA-F]_*){1,6}\}">
+
+	<!ENTITY hexadecimal_octal_binary "\b0(?:x[0-9a-fA-F_]+|o[0-7_]+|b[01_]+)&rymIntType;\b">
+	<!ENTITY float_decimal "\b[0-9][0-9_]*(?:(?:\.[0-9][0-9_]*)?(?:[eE][\+\-]?[0-9_]+)?(?:f32|f64)?|&rymIntType;)\b">
+
+	<!ENTITY scope1 "&ident;::">
+	<!ENTITY scope2 "::(?=[^\s\:])"> <!-- Points after keyword or group { } -->
+]>
+<language name="Rym" version="14" kateversion="5.0" section="Sources" extensions="*.rym"
+	mimetype="text/rym" indenter="cstyle" priority="15" license="MIT"
+	author="Simon Sommer">
+	<highlighting>
+		<list name="func">
+			<item>func</item>
+			<item>proc</item>
+		</list>
+		<list name="type">
+			<item>type</item>
+		</list>
+		<list name="keywords">
+			<item>as</item>
+			<item>async</item>
+			<item>await</item>
+			<item>const</item>
+			<item>mut</item>
+			<item>default</item>
+			<item>do</item>
+			<item>enum</item>
+			<item>extern</item>
+			<item>final</item>
+			<item>impl</item>
+			<item>let</item>
+			<item>macro</item>
+			<item>mod</item>
+			<item>move</item>
+			<item>pub</item>
+			<item>ref</item>
+			<item>struct</item>
+			<item>super</item>
+			<item>self</item>
+			<item>trait</item>
+			<item>try</item>
+			<item>union</item>
+			<item>unsafe</item>
+			<item>use</item>
+			<item>virtual</item>
+			<item>where</item>
+			<item>yield</item>
+		</list>
+		<list name="controlflow">
+			<item>if</item>
+			<item>else</item>
+			<item>match</item>
+			<item>loop</item>
+			<item>for</item>
+			<item>in</item>
+			<item>while</item>
+			<item>return</item>
+			<item>break</item>
+			<item>continue</item>
+		</list>
+		<list name="types">
+			<item>bool</item>
+			<item>isize</item>
+			<item>usize</item>
+			<!-- TODO Intergers -->
+			<item>f32</item>
+			<item>f64</item>
+			<item>char</item>
+			<item>Option</item>
+			<item>Result</item>
+			<item>Self</item>
+			<item>Vec</item>
+			<item>String</item>
+		</list>
+		<list name="constants">
+			<item>true</item>
+			<item>false</item>
+			<item>Some</item>
+			<item>None</item>
+			<item>Ok</item>
+			<item>Err</item>
+			<item>Success</item>
+			<item>Failure</item>
+			<!-- Core Constants -->
+			<!-- char/f32 -->
+			<item>MAX</item>
+			<!-- char -->
+			<item>REPLACEMENT_CHARACTER</item>
+			<item>UNICODE_VERSION</item>
+			<!-- f32 -->
+			<item>DIGITS</item>
+			<item>EPSILON</item>
+			<item>INFINITY</item>
+			<item>MANTISSA_DIGITS</item>
+			<item>MAX_10_EXP</item>
+			<item>MAX_EXP</item>
+			<item>MIN</item>
+			<item>MIN_10_EXP</item>
+			<item>MIN_EXP</item>
+			<item>MIN_POSITIVE</item>
+			<item>NAN</item>
+			<item>NEG_INFINITY</item>
+			<item>RADIX</item>
+			<!-- path -->
+			<item>MAIN_SEPARATOR</item>
+			<!-- sync -->
+			<item>ONCE_INIT</item>
+			<!-- time -->
+			<item>UNIX_EPOCH</item>
+		</list>
+		<contexts>
+			<context attribute="Normal Text" lineEndContext="#stay" name="Normal">
+				<DetectSpaces />
+				<keyword String="func" attribute="Keyword" context="Function" />
+				<keyword String="type" attribute="Keyword" context="Type" />
+				<keyword String="keywords" attribute="Keyword" context="#stay" />
+				<keyword String="controlflow" attribute="Control Flow" context="#stay" />
+				<keyword String="types" attribute="Type" context="#stay" />
+				<RegExpr String="&rymIntType;" attribute="Type" context="#stay" />
+				<keyword String="constants" attribute="Constant" context="#stay" />
+				<RegExpr String="(?:[A-Z_]|[^[:ascii:]])(?:\w|[^[:ascii:]])*" attribute="Entity"
+					context="#stay" />
+				<IncludeRules context="FindComments" />
+				<RegExpr String="&hexadecimal_octal_binary;|&float_decimal;" attribute="Number"
+					context="#stay" />
+
+				<!-- Punctuation -->
+				<RegExpr String="[.,:;@]" attribute="Punct" context="#stay" />
+
+				<!-- Invalid number -->
+				<RegExpr
+					String="\b0(?:b[01_]*[^01_]|o[0-7_]*[^0-7_]|x[0-9a-fA-F_]*[^0-9a-fA-F_])\w*&rymIntType;\b"
+					attribute="Error" context="#stay" />
+
+				<RegExpr String="&scope1;|&scope2;" attribute="Scope" />
+				<DetectChar char="{" attribute="Symbol" context="#stay" beginRegion="Brace" />
+				<DetectChar char="}" attribute="Symbol" context="#stay" endRegion="Brace" />
+				<!-- Raw Strings -->
+				<RegExpr String="b?r(#*)&quot;" attribute="String" context="RawString" />
+				<!-- Byte Strings -->
+				<Detect2Chars char="b" char1="&quot;" attribute="String" context="ByteString" />
+				<!-- Strings -->
+				<DetectChar char="&quot;" attribute="String" context="String" />
+				<!-- Byte -->
+				<RegExpr String="b&apos;(?=(?:[^&apos;\\]|\\&commonEscape;)&apos;)" attribute="Character"
+					context="Character" />
+				<!-- Character -->
+				<DetectChar char="&apos;" attribute="Character" context="Character" />
+				<DetectChar char="[" attribute="Normal Text" context="#stay" beginRegion="Bracket" />
+				<DetectChar char="]" attribute="Normal Text" context="#stay" endRegion="Bracket" />
+				<!-- Raw identifier prefix -->
+				<RegExpr String="r#(?=&ident;)" attribute="Raw Identifier" context="#stay" />
+				<AnyChar String=";,.@~:$?=&gt;&lt;&amp;-+|*!/^%" attribute="Symbol" context="#stay" />
+				<DetectIdentifier />
+			</context>
+			<context attribute="Definition" lineEndContext="#stay" name="Function">
+				<DetectSpaces />
+				<AnyChar String="(&lt;" context="#pop" lookAhead="true" />
+				<IncludeRules context="FindComments" />
+			</context>
+			<context attribute="Definition" lineEndContext="#stay" name="Type">
+				<DetectSpaces />
+				<AnyChar String="=&lt;;" attribute="Normal Text" context="#pop" lookAhead="true" />
+				<IncludeRules context="FindComments" />
+			</context>
+			<!-- Rustc allows strings to extend over multiple lines, and the
+		     only thing a backshash
+			at end-of-line does is remove the whitespace. -->
+			<context attribute="String" lineEndContext="#stay" name="String">
+				<DetectChar char="\" attribute="CharEscape" context="CharEscapeWithUnicode" />
+				<DetectChar attribute="String" context="#pop" char="&quot;" />
+			</context>
+			<context attribute="String" lineEndContext="#stay" name="ByteString">
+				<DetectChar char="\" attribute="CharEscape" context="CharEscape" />
+				<DetectChar attribute="String" context="#pop" char="&quot;" />
+			</context>
+			<context attribute="String" lineEndContext="#stay" name="RawString">
+				<StringDetect String="&quot;%1" attribute="String" context="#pop" dynamic="true" />
+			</context>
+			<context attribute="Character" lineEndContext="#pop" name="Character" fallthrough="true"
+				fallthroughContext="#pop">
+				<RegExpr String="[^&apos;\\](?=&apos;)" attribute="Character" context="#stay" />
+				<RegExpr String="\\(?:&unicodeEscape;|&commonEscape;)(?=&apos;)" attribute="CharEscape"
+					context="#stay" />
+				<DetectChar attribute="Character" context="#pop" char="&apos;" />
+				<RegExpr
+					String="(?:\\.|[^&apos;\\])[^&apos;]*(?=&apos;(?:[\d\s!&quot;#&#036;&#037;&amp;&#039;\(\)\*\+,\-\./:;&lt;\=&gt;\?@\[\\\]\^&#096;\{\|\}~[:cntrl:]]|$))"
+					attribute="Error" context="#stay" />
+			</context>
+			<context attribute="CharEscape" lineEndContext="#pop" name="CharEscape">
+				<RegExpr String="&commonEscape;" attribute="CharEscape" context="#pop" />
+				<RegExpr String="." attribute="Error" context="#pop" />
+			</context>
+			<context attribute="CharEscape" lineEndContext="#pop" name="CharEscapeWithUnicode">
+				<RegExpr String="&unicodeEscape;" attribute="CharEscape" context="#pop" />
+				<IncludeRules context="CharEscape" />
+			</context>
+			<context attribute="Normal Text" lineEndContext="#stay" name="FindComments">
+				<Detect2Chars char="/" char1="/" attribute="Comment" context="Commentar 1" />
+				<Detect2Chars char="/" char1="*" attribute="Comment" context="Commentar 2"
+					beginRegion="Comment" />
+			</context>
+			<context attribute="Comment" lineEndContext="#pop" name="Commentar 1">
+				<DetectSpaces />
+				<IncludeRules context="##Comments" />
+			</context>
+			<context attribute="Comment" lineEndContext="#stay" name="Commentar 2">
+				<DetectSpaces />
+				<Detect2Chars char="/" char1="*" attribute="Comment" context="Commentar 2"
+					beginRegion="Comment" />
+				<Detect2Chars char="*" char1="/" attribute="Comment" context="#pop" endRegion="Comment" />
+				<IncludeRules context="##Comments" />
+			</context>
+		</contexts>
+		<itemDatas>
+			<itemData name="Normal Text" defStyleNum="dsNormal" spellChecking="0" />
+			<itemData name="Keyword" defStyleNum="dsKeyword" spellChecking="0" />
+			<itemData name="Control Flow" defStyleNum="dsControlFlow" spellChecking="0" />
+			<itemData name="Type" defStyleNum="dsDataType" spellChecking="0" />
+			<itemData name="Entity" defStyleNum="dsBuiltIn" spellChecking="0" />
+			<itemData name="Constant" defStyleNum="dsConstant" spellChecking="0" />
+			<itemData name="Definition" defStyleNum="dsNormal" spellChecking="0" />
+			<itemData name="Comment" defStyleNum="dsComment" />
+			<itemData name="Scope" defStyleNum="dsPreprocessor" spellChecking="0" />
+			<itemData name="Number" defStyleNum="dsDecVal" spellChecking="0" />
+			<itemData name="String" defStyleNum="dsString" />
+			<itemData name="CharEscape" defStyleNum="dsSpecialChar" spellChecking="0" />
+			<itemData name="Character" defStyleNum="dsChar" spellChecking="0" />
+			<itemData name="Symbol" defStyleNum="dsOperator" spellChecking="0" />
+			<itemData name="Raw Identifier" defStyleNum="dsAnnotation" spellChecking="0" />
+			<itemData name="Punct" defStyleNum="dsRegionMarker" spellChecking="0" />
+			<itemData name="Error" defStyleNum="dsError" spellChecking="0" />
+		</itemDatas>
+	</highlighting>
+	<general>
+		<comments>
+			<comment name="singleLine" start="//" position="afterwhitespace" />
+			<comment name="multiLine" start="/*" end="*/" region="Comment" />
+		</comments>
+		<keywords casesensitive="1" />
+	</general>
+</language>
+<!-- kate: replace-tabs off; -->

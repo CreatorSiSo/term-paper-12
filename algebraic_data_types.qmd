@@ -29,7 +29,7 @@ Definintion
 
 ### Enums
 
-```rust
+```rym
 // Declare an enum.
 enum Type {
   Ok,
@@ -40,7 +40,7 @@ enum Type {
 const c = Type.Ok
 ```
 
-<!-- ```rust
+<!-- ```rym
 // TODO
 // If you want access to the ordinal value of an enum, you
 // can specify the tag type.
@@ -60,7 +60,7 @@ test "enum ordinal value" {
 
 You can override the ordinal value for an `enum`.
 
-```rust
+```rym
 enum Value2 {
   Hundred = 100,
   Thousand = 1_000,
@@ -76,7 +76,7 @@ test "set enum ordinal value" {
 
 You can also override only some values.
 
-```rust
+```rym
 enum Value3 {
   A,
   B = 8,
@@ -96,7 +96,7 @@ test "enum implicit ordinal values and overridden values" {
 `Enum`s can have methods, the same as `struct`s.
 `Enum` methods are not special, they are only namespaced functions that you can call with dot syntax.
 
-```rust
+```rym
 enum Suit {
   Clubs,
   Spades,
@@ -115,7 +115,7 @@ test "enum method" {
 
 An `enum` can be `match`ed upon.
 
-```rust
+```rym
 enum Foo {
   String,
   Number,
@@ -132,7 +132,7 @@ test "enum match" {
 }
 ```
 
-<!-- ```rust
+<!-- ```rym
 // TODO
 // `@typeInfo` can be used to access the integer tag type of an enum.
 enum Small {
@@ -161,7 +161,7 @@ test "@tagName" {
 
 A Non-exhaustive enum can be created by adding a trailing `_` field. It must specify a tag type and cannot consume every enumeration value.
 
-```rust
+```rym
 enum Number {
   One,
   Two,
@@ -187,6 +187,19 @@ test "match on non-exhaustive enum" {
 
 
 ## Optional Values
+
+The _Option_ type represents an optional value: every _Option_ is either _Some_ and contains a value, or _None_, and does not. _Option_ types are very common in Rym code, as they have a number of uses:
+
+- Initial values
+- Return values for functions that are not defined over their entire input range (partial functions)
+- Return value for otherwise reporting simple errors, where None is returned on error
+- Optional struct fields
+- Struct fields that can be loaned or “taken”
+- Optional function arguments
+- Nullable pointers
+- Swapping things out of difficult situations
+
+_Options_ are commonly paired with pattern matching to query the presence of a value and take action, always accounting for the _None_ case.
 
 * null references, the billion dollar mistake
   * https://www.lucidchart.com/techblog/2015/08/31/the-worst-mistake-of-computer-science/

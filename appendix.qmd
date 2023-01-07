@@ -1,0 +1,41 @@
+# Appendix
+
+## Code Examples
+
+```rym
+func main() -> @Io {
+  const numbers = [-14, 1, 3, 6, 7, 7, 12]
+
+  const sum = -13
+  if const Some([left, right]) = summands(numbers, -13) {
+    print(f"Sum of {left} and {right} = {sum}")
+  }
+  print("Pointers have crossed, no sum found")
+}
+
+/// array must be sorted
+func summands(array: [i32], sum: i32) -> Option<[usize; 2]> {
+  mut low = 0
+  mut high = array.len() - 1
+
+  while low < high {
+    const current_sum = array[low] + array[high]
+
+    if current_sum == sum {
+      return Some([array[low], array[high]])
+    } else if current_sum < sum {
+      low += 1
+    } else {
+      high -= 1
+    }
+  }
+
+  None
+}
+```
+
+## Rym Parser Grammar
+
+```
+TODO
+```

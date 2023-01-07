@@ -1,0 +1,26 @@
+# Functions
+
+In Rym it will be possible to define a function by using the _func_ keyword followed by a name for the function,
+a comma separated list of parameters and their respective types as well as the return type of the function.
+
+This means that a function will generally look like this:
+
+```rym
+func function_name(parameter_name: ParameterType) -> ReturnType {
+  // function body
+}
+```
+
+And a function with multiple parameters would look like this:
+
+```rym
+func function_name(p0: Type0, p1: Type1, pN: TypeN) -> ReturnType {
+  // function body
+}
+```
+
+<!-- func print(args: ..[impl Display]) -> @Io {
+  for arg in args {
+    stdout.write(Debug.fmt(arg))
+  }
+} -->
