@@ -126,7 +126,7 @@
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="normal" />
+						<text variable="title" font-style="normal" text-case="capitalize-all" />
 						<text variable="collection-title" />
 						<text variable="volume" font-style="normal" prefix=", Band " />
 						<text variable="publisher-place" prefix=". " suffix=": " />
@@ -138,18 +138,18 @@
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="normal" suffix=", " />
+						<text variable="title" font-style="normal" suffix=". " />
 						<text macro="access" />
 					</group>
 				</else-if>
 				<else-if type="post-weblog" match="any">
-					<group delimiter=",">
+					<group delimiter=".">
 						<group prefix=" ">
 							<text macro="author" suffix=" " />
 							<text macro="year-date" prefix="(" suffix="): " />
-							<text variable="title" suffix=", " />
-							<text term="in" text-case="lowercase" suffix=": " />
-							<text variable="container-title" font-style="normal" suffix=", " />
+							<text variable="title" suffix=". " />
+							<text term="In" text-case="capitalize-first" suffix=": " />
+							<text variable="container-title" font-style="normal" suffix=". " />
 							<text macro="access" />
 						</group>
 					</group>
@@ -232,7 +232,7 @@
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="normal" />
+						<text variable="title" font-style="normal" text-case="capitalize-all" />
 						<text variable="collection-title" />
 						<text variable="volume" font-style="normal" prefix=", Band " />
 						<text variable="publisher-place" prefix=". " suffix=": " />
@@ -244,18 +244,18 @@
 					<group>
 						<text macro="author" />
 						<text macro="year-date" prefix=" (" suffix="): " />
-						<text variable="title" font-style="normal" suffix=", " />
+						<text variable="title" font-style="normal" suffix=". " />
 						<text macro="access" />
 					</group>
 				</else-if>
 				<else-if type="post-weblog" match="any">
-					<group delimiter=",">
+					<group delimiter=".">
 						<group prefix=" ">
 							<text macro="author" suffix=" " />
 							<text macro="year-date" prefix="(" suffix="): " />
 							<text variable="title" suffix=". " />
 							<text term="In" text-case="capitalize-first" suffix=": " />
-							<text variable="container-title" font-style="normal" suffix=", " />
+							<text variable="container-title" font-style="normal" suffix=". " />
 							<text macro="access" />
 						</group>
 					</group>
@@ -264,7 +264,7 @@
 					<group>
 						<text macro="author" suffix=" " />
 						<text macro="year-date" prefix="(" suffix="): " />
-						<text variable="title" suffix=", In: " />
+						<text variable="title" suffix=". In: " />
 						<text variable="container-title" font-style="normal" />
 						<text variable="volume" prefix=", Band " suffix=". " />
 						<text macro="pages" prefix=". " />
@@ -302,8 +302,8 @@
 					<group>
 						<text variable="title" font-style="normal" />
 						<text value="ORIGINAL-TITEL" prefix=" (" suffix=". " />
-						<text variable="publisher" suffix=", " />
-						<text variable="publisher-place" suffix=" " />
+						<text variable="publisher-place" suffix=": " />
+						<text variable="publisher" />
 						<date form="text" variable="issued" suffix=" KORRIGIEREN!)" />
 					</group>
 				</else-if>

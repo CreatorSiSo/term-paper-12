@@ -1,4 +1,4 @@
-# Appendix
+# Appendix {.unnumbered}
 
 ## Code Examples
 
@@ -39,3 +39,5 @@ func summands(array: [i32], sum: i32) -> Option<[usize; 2]> {
 ```
 TODO
 ```
+
+{{< pagebreak >}}

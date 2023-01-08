@@ -9,25 +9,28 @@ book:
   date-format: DD.MM.YYYY
   chapters:
     - index.qmd
-    - function.qmd
     - general_trends.qmd
+    - function.qmd
+    - polymorphism.qmd
     - primitive_data_types.qmd
     - algebraic_data_types.qmd
     - tooling_ecosystem.qmd
     - appendix.qmd
     - references.qmd
 
-lang: "en-GB"
+lang: "de-DE"
+filters:
+  - quarto
+  - custom/quote.lua
+
 bibliography: cite/references.bib
 csl: cite/bszbt.csl
-
 crossref:
   fig-title: Abb. # (default is "Figure")
   tbl-title: Tabelle # (default is "Table")
   # title-delim: (default is ":")
 
 toc: true
-toc-title: Contents
 number-sections: true
 
 # https://quarto.org/docs/reference/formats/pdf.html#fonts
@@ -52,16 +55,3 @@ format:
     code-fold: true
   docx:
     reference-doc: custom/reference-doc.docx
-  # pdf:
-  #   pdf-engine: xelatex
-  #   documentclass: nostarch
-  #   papersize: a4
-  #   # format-resources:
-  #   # - customize/custom.cls
-  #   fontsize: "11"
-# geometry:
-#   - showframe
-#   - top=20mm
-#   - bottom=20mm
-#   - left=25mm
-#   - right=20mm

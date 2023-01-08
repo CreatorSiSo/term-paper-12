@@ -159,9 +159,13 @@ test "@tagName" {
 
 ### Non-exhaustive enum
 
-A Non-exhaustive enum can be created by adding a trailing `_` field. It must specify a tag type and cannot consume every enumeration value.
+A non-exhaustive enum can be created by adding an underscore as the last field.
+Non-exhaustive means the enum might gain additional variants in the future,
+so <!-- it must specify a tag type and --> when unpacking the enum it is required to add a fall through case.
 
 ```rym
+// TODO: Use #NonExhaustive Attribute insted?
+#NonExhaustive
 enum Number {
   One,
   Two,
@@ -218,3 +222,5 @@ _Options_ are commonly paired with pattern matching to query the presence of a v
   * is a sum type / enum
 
 @adhocp_1989
+
+{{< pagebreak >}}

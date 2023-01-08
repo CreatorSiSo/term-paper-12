@@ -6,6 +6,10 @@
   - turing complete
   - general
 
-See [Vgl. @knuth_1984 S. 99-100] for additional discussion of literate programming.^[Vgl. Ebd. S. 80.]
+1. general pros of programming languages
+2. flaws of currently used programming languages
+3. specific features of Rym based on 2. and adhearing to 1.
+
+See [Vgl. @knuth_1984. S. 99-100] for additional discussion of literate programming.^[Vgl. Ebd. S. 80.]
 
 {{< pagebreak >}}

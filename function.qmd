@@ -1,26 +1,82 @@
 # Functions
 
+Functions <!-- could be considered --> are one of the most important building blocks of many programming languages, especially functional ones, TODO.
+
+## Basic functionality
+
 In Rym it will be possible to define a function by using the _func_ keyword followed by a name for the function,
 a comma separated list of parameters and their respective types as well as the return type of the function.
 
-This means that a function will generally look like this:
+This means that a function with multiple parameters will generally look like this:
 
 ```rym
-func function_name(parameter_name: ParameterType) -> ReturnType {
-  // function body
+func name(parameter0: Type0, parameter1: Type1) -> ReturnType {
+  // ..
 }
 ```
 
-And a function with multiple parameters would look like this:
+Just like in any _C-style_ language this function may be called by specifying the name of the function followed by a list of arguments within parentheses separated by commas.
+The arguments must match the types of the parameters defined in the function definition.
+The previous example function would be called like this:
 
 ```rym
-func function_name(p0: Type0, p1: Type1, pN: TypeN) -> ReturnType {
-  // function body
-}
+const result = name(argument0, argument1)
 ```
+
+This would assign the return value to the variable result.
+
+## Scope
+
+<!-- TODO -->
+
+When a function is called, the variables and values in the current scope are temporarily suspended and a new scope is created for the function. This new scope contains the parameters of the function as variables, initialized with the values of the arguments passed to the function. The function body is then executed within this new scope, and any variables or values defined within the function are only accessible within this scope. When the function execution is complete, the function scope is destroyed and the original scope is restored.
+
+For example, consider the following code:
+
+```rym
+const x = 5
+
+func changeX(x: Int) -> Int {
+  const y = 10
+  return x + y
+}
+
+const result = changeX(3) // result = 13
+```
+
+When the function changeX is called, a new scope is created containing the parameter newX initialized with the value 3. The variable y is also defined within this scope and initialized with the value 10. The function body is executed, and the value of newX + y (13) is returned. The function scope is then destroyed and the original scope is restored, resulting in the value 13 being assigned to the variable result. The variable y is not accessible outside of the function scope and therefore does not affect the value of x.
 
 <!-- func print(args: ..[impl Display]) -> @Io {
   for arg in args {
     stdout.write(Debug.fmt(arg))
   }
 } -->
+
+## Returning
+
+In the Rym programming language, a function may be defined with a return type, which specifies the type of value that will be returned by the function. The return type is specified after the arrow symbol (->) in the function definition, followed by the function body in curly braces ({}). The function body may contain any number of statements and expressions, and the value of the final expression in the function body will be returned as the result of the function.
+
+For example, consider the following function definition:
+
+```rym
+func multiply(x: Int, y: Int) -> Int {
+  let result = x * y
+  return result
+}
+```
+
+In this example, the function multiply takes two integer arguments, x and y, and returns the result of their multiplication as an integer. The function body contains a single statement that defines a local variable result and initializes it with the value of x * y. The return statement then specifies that the value of result should be returned as the result of the function.
+
+However, it is not necessary to specify a return statement in every function. If the return type of the function is specified, the value of the final expression in the function body will be returned automatically. For example, the following function is equivalent to the one above:
+
+```rym
+func multiply(x: Int, y: Int) -> Int {
+  x * y
+}
+```
+
+In this case, the value of the expression x * y is returned as the result of the function, without the need for a separate return statement. This allows for more concise and readable code, as the return statement is often unnecessary when the function body contains only a single expression.
+
+## Default Parameter Values
+
+{{< pagebreak >}}

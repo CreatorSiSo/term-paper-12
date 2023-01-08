@@ -1,0 +1,23 @@
+# Polymorphism
+
+Some much older languages are based on the idea that functions, procedures and their respective parameters have unique types.
+These languages are said to be _monomorphic_ (from Greek 'one shape'),
+in the sense that every value and variable can be interpreted to be of one and only one type.
+Monomorphic programming languages may be contrasted with _polymorphic_ (from Greek ‘many shapes’) [Vgl. @stroustrup_2013. S. 760]
+languages in which some values may have more than one type. [Vgl. @cardelli_1985]
+
+Polymorphic functions are functions whose parameters can have more than one type.
+Polymorphic types are types whose operations are applicable to values of multiple types.
+
+Polymorphism is supported by
+
+Most often, it is a good idea to give different functions different names,
+but when different functions conceptually perform the same task on objects of different types,
+it can be more convenient to give them the same name ^[Vgl. Ebd. Stroustrup. S. 326]
+
+- _polymorphic_
+- compile-time vs run-time polymorphism
+  - Rym will only support compile-time as it is simpler to design and implement
+  - run-time polymorphism could be added later on
+
+{{< pagebreak >}}
