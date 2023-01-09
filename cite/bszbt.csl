@@ -158,12 +158,10 @@
 					<group>
 						<text macro="author" suffix=" " />
 						<text macro="year-date" prefix="(" suffix="): " />
-						<text variable="title" suffix=". " />
-						<group prefix="In: " suffix=". ">
-							<text variable="container-title" font-style="normal" />
-							<text variable="volume" prefix=", Band " />
-						</group>
-						<text macro="pages" />
+						<text variable="title" suffix=". In: " />
+						<text variable="container-title" font-style="normal" />
+						<text variable="volume" prefix=", Band " suffix=". " />
+						<text macro="pages" prefix=". " />
 					</group>
 				</else-if>
 				<else-if type="thesis" match="any">
@@ -198,8 +196,8 @@
 					<group>
 						<text variable="title" font-style="normal" />
 						<text value="ORIGINAL-TITEL" prefix=" (" suffix=". " />
-						<text variable="publisher" suffix=". " />
-						<text variable="publisher-place" suffix=" " />
+						<text variable="publisher-place" suffix=": " />
+						<text variable="publisher" />
 						<date form="text" variable="issued" suffix=" KORRIGIEREN!)" />
 					</group>
 				</else-if>
