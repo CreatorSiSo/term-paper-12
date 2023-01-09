@@ -6,24 +6,72 @@
 - almost always called `true` and `false`
   - Python: `True` and `False`
 
-## Integer
+[Vgl. @sebesta_2016. S. 265]
 
-| Language | Formats                                                              |
-| -------: | -------------------------------------------------------------------- |
-|    Js/Ts | not supported                                                        |
-|   Python | not supported?                                                       |
-|      PHP | not supported?                                                       |
-|     Java | ?                                                                    |
-|       C# | ?                                                                    |
-|      C++ | ?                                                                    |
-|        C | ?                                                                    |
-|       Go | ?                                                                    |
-|      Zig | `u1..u128`, `i1..i128`                                               |
-|     Rust | `u8`, `u16`, `u32`, `u64`, `u128`; `i8`, `i16`, `i32`, `i64`, `i128` |
+## Numeric Types
 
-: Supported interger formats {#tbl-int-formats tbl-colwidths="[15,85]"}
+### Integer
 
-## Float
+| Size [Bits] | Signed                                                    | Unsigned                                            |
+| :---------: | --------------------------------------------------------- | --------------------------------------------------- |
+|      8      | Java: byte; C#: sbyte; C, C++: int8_t; Go: int8; Rust: i8 | C#: byte; C, C++: uint8_t; Go: uint8; Rust: u8      |
+|     16      | Java, C#: short; c, C++: int16_t; Go: int16; Rust: i16    | C#: ushort; C, C++: uint16_t; Go: uint16; Rust: u16 |
+|     32      | Java, C#: int; c, C++: int32_t; Go: int32; Rust: i32      | C#: uint; C, C++: uint32_t; Go: uint32; Rust: u32   |
+|     64      | Java, C#: long; c, C++: int64_t; Go: int64; Rust: i64     | C#: ulong; C, C++: uint64_t; Go: uint64; Rust: u64  |
+|     128     | Rust: i128                                                | Rust: u128                                          |
+|  1--65535   | Zig: i{Size} eg. i333                                     | Zig: u{Size} eg. u8                                 |
+|   32\|64    | PHP: int; Go: int; C#: nint                               | Go: uint; C#: nuint                                 |
+|   pointer   | C, C++: intptr_t; Rust: isize                             | Go: uintptr; C, C++: uintptr_t; Rust: usize         |
+|  as needed  | Python: int                                               |
+
+: Supported interger sizes {#tbl-int-sizes tbl-colwidths="[14,43,43]"}
+
+<!-- 32|64 (platform dependent) -->
+<!-- TODO C, C++ -->
+
+---
+
+- Python: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+- PHP: https://www.php.net/manual/en/language.types.integer.php
+- Java: https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.2
+- C, C++:
+  - char, short, int, long are not always the same size
+  - cstdint header: c++ standard S. 493f.
+- Go: https://go.dev/ref/spec#Numeric_types
+- Zig: https://ziglang.org/documentation/master/#Integers
+- Rust: https://doc.rust-lang.org/reference/types/numeric.html#integer-types
+
+[Vgl. @sebesta_2016. S. 262f]
+
+<!-- +----------+-----------------------------------------------------+
+| Language | Name and Size [Bits]                                |
++==========+=====================================================+
+|    Js/Ts | --                                                  |
++----------+-----------------------------------------------------+
+|   Python | int  as large as needed                             |
++----------+-----------------------------------------------------+
+|      PHP | int  32, 64 (platform dependent)                    |
++----------+-----------------------------------------------------+
+|     Java | byte, short, int, long  8, 16, 32, 64               |
++----------+-----------------------------------------------------+
+|       C# | - (sbyte\|byte)  8, 16, 32, 64, (32\|64)            |
+|          | - (short\|ushort)                                   |
+|          | - (int\|uint)                                       |
+|          | - (long\|ulong)                                     |
+|          | - (nint\|nuint)                                     |
++----------+-----------------------------------------------------+
+|      C++ |                                                     |
++----------+-----------------------------------------------------+
+|        C |                                                     |
++----------+-----------------------------------------------------+
+|       Go |                                                     |
++----------+-----------------------------------------------------+
+|      Zig | u{N}, i{N} eg. u8, i333  1--65535                   |
++----------+-----------------------------------------------------+
+|     Rust | u{N}, i{N} eg. u16, i32  8, 16, 32, 64, 128         |
++----------+-----------------------------------------------------+ -->
+
+### Float
 
 <!-- TODO Should I call this "Floating Point Numbers" insted? -->
 
@@ -40,8 +88,8 @@ All languages provide floating point data types that adhere to the IEEE 754 - Fl
 | Language | Formats                                                               |
 | -------: | --------------------------------------------------------------------- |
 |    Js/Ts | `Number`: `binary64`                                                  |
-|   Python |
-|      PHP | `float`: platform dependent, usually `binary64`                       |
+|   Python | `float`: depends on platform and value                                |
+|      PHP | `float`: depends on platform, usually `binary64`                      |
 |     Java | `Float`: `binary32`, `Double`: `binary64`                             |
 |       C# | `float`: `binary32`, `double`: `binary64`                             |
 |      C++ | `float`: `binary32`, `double`: `binary64`, `long double`: `binary128` |
@@ -64,6 +112,15 @@ All languages provide floating point data types that adhere to the IEEE 754 - Fl
   - Go: https://go.dev/ref/spec#Numeric_types
   - Rust: https://doc.rust-lang.org/reference/types/numeric.html#floating-point-types
 
+### Decimal
+
+Python:
+
+- decimal.Decimal
+- The decimal module provides support for fast correctly rounded decimal floating point arithmetic.
+- Once constructed, Decimal objects are immutable.
+- https://docs.python.org/3/library/decimal.html
+
 ## Character
 
 - Rym:
@@ -72,22 +129,40 @@ All languages provide floating point data types that adhere to the IEEE 754 - Fl
   - valid utf-8 character
   - space: 1 byte?
 
-| Language | Formats        |
-| -------: | -------------- |
-|    Js/Ts | not supported  |
-|   Python | not supported? |
-|      PHP | not supported? |
-|     Java | ?              |
-|       C# | ?              |
-|      C++ | ?              |
-|        C | ?              |
-|       Go | ?              |
-|     Rust | `char`         |
+| Language | Formats                  |
+| -------: | ------------------------ |
+|    Js/Ts | not supported            |
+|   Python | not supported?           |
+|      PHP | not supported?           |
+|     Java | char: 16bit unsinged int |
+|       C# | ?                        |
+|      C++ | ?                        |
+|        C | ?                        |
+|       Go | ?                        |
+|     Rust | `char`                   |
 
 : Character data types {#tbl-chars tbl-colwidths="[15,85]"}
+
+- Java: https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.2
 
 ## String
 
 - Rym:
-  - Name: String, ConstString
-  - array of characters
+  - characters array: [char]
+  - dynamic characters vector: String
+
+```rym
+const const_string: [char; 12] = "Hello World!"
+
+impl Add for [char] {
+  fn add(move self, move rhs: Self) -> Self {
+    [..self, ..rhs]
+    // or
+    mut new_array = ['\0'; self.length + rhs.length]
+    new_array[0..self.length] = self
+    new_array[self.length..] = rhs
+  }
+}
+```
+
+{{< pagebreak >}}
