@@ -10,10 +10,10 @@ book:
   chapters:
     - index.qmd
     - general_trends.qmd
-    - function.qmd
-    - polymorphism.qmd
     - primitive_data_types.qmd
     - algebraic_data_types.qmd
+    - function.qmd
+    - polymorphism.qmd
     - tooling_ecosystem.qmd
     - appendix.qmd
     - references.qmd

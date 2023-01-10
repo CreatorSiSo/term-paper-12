@@ -17,24 +17,24 @@ Although other types, such as integers, can be used for these purposes,
 the use of Boolean types is more readable.
 C and C++ still allow numeric expressions to be used as if they were Boolean.
 This is not the case in the subsequent languages, Java and C# which is why Rym will not allow it either.
-<!-- [https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.2.5]
-[https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/types#839-the-bool-type] -->
+[Vgl. @java_spec_types]
+[Vgl. @csharp_spec_types]
+<!-- TODO: C, C++ cite for numerics usable as booleans -->
 
 A Boolean value could be represented by a single bit,
 but because a single bit of memory cannot be accessed efficiently on many machines,
 they are often stored in the smallest efficiently addressable cell of memory, typically a byte.
 As this detail is trivial Rym does not specify how to store boolean values.
-^[Vgl. Ebd. S. 404f.]
+[Vgl. @sebesta_2019 S. 404f.]
 
-The Boolean type in Rym is called _bool_ like in Python, PHP, C#, Rust, Swift and many others.
+The Boolean type in Rym is called _bool_ like in Python, PHP, C#, Go, Rust, Swift and many others.
 It is named after _George Boole_ who pioneered the field of mathematical logic.
-<!--
-[https://docs.python.org/3/library/functions.html#bool]
-[https://www.php.net/manual/en/language.types.boolean.php]
-[https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/types#839-the-bool-type]
-[https://doc.rust-lang.org/stable/reference/types/boolean.html#boolean-type]
-[https://developer.apple.com/documentation/swift/bool]
--->
+<!-- [https://docs.python.org/3/library/functions.html#bool] -->
+[Vgl. @php_ref_types]
+[Vgl. @csharp_spec_types]
+[Vgl. @go_spec_types]
+[Vgl. @rust_ref_types]
+[Vgl. @swift_docs]
 
 A Boolean value may be created using the _true_ or _false_ literals.
 ```rym
@@ -47,6 +47,8 @@ const var_2 = false
 type bool = true | false
 ```
 -->
+
+## Boolean Operations
 
 ## Numeric Types
 
