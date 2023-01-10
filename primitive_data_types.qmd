@@ -1,20 +1,69 @@
 # Primitive Data Types
 
-- C: _ISO/IEC 9899_, https://www.open-std.org/JTC1/SC22/WG14/www/docs/n2310.pdf [Vgl. @iso_9899_2018]
-- C++: _ISO/IEC 14882_, https://www.open-std.org/JTC1/SC22/WG21/docs/papers/2022/n4910.pdf [Vgl. @iso_14882_2020]
+Data types that are not defined in terms of other types are called primitive data types.
+Nearly all programming languages provide a set of primitive data types.
+Some of the primitive types are merely reflections of the hardware for example, most integer types.
+Others require only a little nonhardware support for their implementation.
+[Vgl. @sebesta_2019. S. 400]
+
+More complex types can be created by combining primitive types as we will see in [ref next capter].
 
 ## Boolean
 
-- Definition [Vgl. @sebesta_2016. S. 265]
-- work the same in almost all programming languages
-- almost always called `true` and `false`
-  - Python: `True` and `False`
+Boolean types are perhaps the simplest of all types and have been included in most general-purpose languages designed since 1960.
+Their range of values has only two elements: one for true and one for false.
+Boolean types are often used to represent switches or flags in programs.
+Although other types, such as integers, can be used for these purposes,
+the use of Boolean types is more readable.
+C and C++ still allow numeric expressions to be used as if they were Boolean.
+This is not the case in the subsequent languages, Java and C# which is why Rym will not allow it either.
+<!-- [https://docs.oracle.com/javase/specs/jls/se19/html/jls-4.html#jls-4.2.5]
+[https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/types#839-the-bool-type] -->
+
+A Boolean value could be represented by a single bit,
+but because a single bit of memory cannot be accessed efficiently on many machines,
+they are often stored in the smallest efficiently addressable cell of memory, typically a byte.
+As this detail is trivial Rym does not specify how to store boolean values.
+^[Vgl. Ebd. S. 404f.]
+
+The Boolean type in Rym is called _bool_ like in Python, PHP, C#, Rust, Swift and many others.
+It is named after _George Boole_ who pioneered the field of mathematical logic.
+<!--
+[https://docs.python.org/3/library/functions.html#bool]
+[https://www.php.net/manual/en/language.types.boolean.php]
+[https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/types#839-the-bool-type]
+[https://doc.rust-lang.org/stable/reference/types/boolean.html#boolean-type]
+[https://developer.apple.com/documentation/swift/bool]
+-->
+
+A Boolean value may be created using the _true_ or _false_ literals.
+```rym
+const var_1 = true
+const var_2 = false
+```
+
+<!-- Should bool be a union type of true and false?
+```rym
+type bool = true | false
+```
+-->
 
 ## Numeric Types
 
 ### Integer
 
-- Definition [Vgl. @sebesta_2016. S. 262f]
+The most common primitive numeric data type is integer.
+The hardware of many computers supports several sizes of integers.
+These sizes of integers, and often a few others, are supported by some programming languages.
+As seen in @tbl-int-formats, Java includes four signed integer sizes: byte, short, int, and long.
+Some languages, for example C, C++ and C# include unsigned integer types, which are types for integer values without signs.
+Unsigned types are often used for binary data. 8 bit large unsigned integers can for example represent exactly one byte.
+^[Vgl. Ebd. S. 400.]
+
+The types for C and C++ that are represented in @tbl-int-formats are using the "cstdint" header
+as the language standards do not specify the sizes for default integer types and leave them up to the implementation.
+Types from this standard header file are however required to that exact size. [Vgl. @iso_9899_2018. S. __TODO__][Vgl. @iso_14882_2020. S. __TODO__]
+
 - Python ^[https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex]
   - size as large as needed
 - PHP ^[https://www.php.net/manual/en/language.types.integer.php]
@@ -34,7 +83,7 @@
 
 | Size [Bits] | Java  | C#            | C, C++              | Go              | Rust         |
 | :---------: | ----- | ------------- | ------------------- | --------------- | ------------ |
-|      8      | byte  | sbyte, byte   | int8_t, uint8_t     | int8, unit8     | i8, u8       |
+|      8      | byte  | sbyte, byte   | int8_t, uint8_t     | int8, uint8     | i8, u8       |
 |     16      | short | short, ushort | int16_t, uint16_t   | int16, uint16   | i16, u16     |
 |     32      | int   | int, uint     | int32_t, uint32_t   | int32, uint32   | i32, u32     |
 |     64      | long  | long, ulong   | int64_t, uint64_t   | int64, uint64   | i64, u64     |
