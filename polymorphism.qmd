@@ -1,4 +1,4 @@
-# Polymorphism
+# Polymorphism {#sec-polymorphism}
 
 Some much older languages are based on the idea that functions, procedures and their respective parameters have unique types.
 These languages are said to be _monomorphic_ (from Greek 'one shape'),

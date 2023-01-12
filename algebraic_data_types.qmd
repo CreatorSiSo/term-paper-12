@@ -1,4 +1,4 @@
-# Algebraic Data Types
+# Algebraic Data Types {#sec-algebraic-data-types}
 
 Definintion
 

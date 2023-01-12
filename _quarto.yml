@@ -26,7 +26,7 @@ filters:
 bibliography: cite/references.bib
 csl: cite/bszbt.csl
 crossref:
-  fig-title: Abb. # (default is "Figure")
+  fig-title: Abbildung # (default is "Figure")
   tbl-title: Tabelle # (default is "Table")
   # title-delim: (default is ":")
 
