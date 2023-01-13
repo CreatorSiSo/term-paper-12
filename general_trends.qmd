@@ -1,6 +1,7 @@
 # General trends
 
-- jit compilation?
+Before we start to create the concept for Rym we first have to look at what other language have changed in recent years and if we should add these features.
+This analysis will extend the general __TODO__ defined in __TODO: INSERT CHAPTER REF__.
 
 ## Type Systems
 
@@ -35,5 +36,9 @@
   - addition and work on the _functional_ module
   - algorithms to work with lists and iterators
 - Python
+
+## Other Stuff
+
+- jit compilation?
 
 {{< pagebreak >}}
