@@ -24,7 +24,7 @@ filters:
   - custom/quote.lua
 
 bibliography: cite/references.bib
-csl: cite/bszbt.csl
+csl: cite/ieee.csl
 crossref:
   fig-title: Abbildung # (default is "Figure")
   tbl-title: Tabelle # (default is "Table")
