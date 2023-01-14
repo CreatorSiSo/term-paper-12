@@ -1,0 +1,170 @@
+# Analyzing existing programming languages
+
+The first step in answering this question is to analyse currently used programming languages,
+especially those that were created more recently.
+
+To keep the number of languages within a workable range, only the more popular programming languages from 2022 will be analysed.
+The primary source for this data is the _StackOverflow Developer Survey 2022_,
+a worldwide survey conducted by the StackOverflow platform every year and aimed at all programmers.
+Below this paragraph, you can see a statistic in which programming languages are sorted according to how many votes they got.
+The participants gave their votes to all of the languages that they had used a lot in the last year and would continue using.
+Each person could choose as many languages as they wanted.
+
+<!-- ```{python}
+#| echo: false
+#| label: fig-so-survey
+#| fig-cap: "Popularity of programming languages in 2022"
+
+%config InlineBackend.figure_formats = ["png"]
+
+import json, re
+import numpy as np
+import matplotlib.pyplot as plt
+
+def read_jsonc(filepath: str):
+  with open(filepath, "r", encoding="utf-8") as f:
+      text = f.read()
+  re_text = re.sub(r"\/\/.*", "", text)
+  json_obj = json.loads(re_text)
+  return json_obj
+
+# print(plt.style.available)
+# fast, seaborn-v0_8, seaborn-v0_8-dark, seaborn-v0_8-darkgrid, seaborn-v0_8-deep, seaborn-v0_8-muted, seaborn-v0_8-notebook, seaborn-v0_8-paper
+plt.style.use("seaborn-v0_8-paper")
+
+data = read_jsonc("../data/stackoverflow-survey-2022.jsonc")
+group_data = list([float(x[1].replace(",", "")) for x in data.values()])
+group_names = list(data.keys())
+# group_mean = np.mean(group_data)
+
+fig, ax = plt.subplots(figsize=(8, 4), dpi=960)
+# ax.patch.set_alpha(0)
+# fig.patch.set_alpha(0)
+
+# ax.axhline(group_mean, ls="--", color="gray")
+
+ax.bar(group_names, group_data)
+plt.setp(ax.get_xticklabels(), rotation=60, ha="right", rotation_mode="anchor")
+plt.setp(ax.get_yticklabels(), rotation=90, ha="center", rotation_mode="anchor")
+ax.set(ylabel="Votes")
+plt.show()
+``` -->
+
+![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey}
+
+HTML, CSS, SQL, Bash/Shell and Powershell are excluded here because they are all highly specialised and in part not Turing complete.
+According to the StackOverflow Developer Survey 2022, JavaScript (1995), Python (1991), Typescript (2012), Java (1995), C# (2000),
+C++ (1985), PHP (1995), C (1978), Go (2009) and Rust (2010) are the ten most widely used programming languages.
+On average, these languages are therefore 25 years old.
+[@age_prog_langs]
+
+## Popular Languages
+
+The popular languages are popular for a variety of reasons, some of the most common reasons include:
+
+Widespread use:
+Many popular languages have been around for a long time and have been adopted by many companies and organizations. This means that there is a large community of developers who use the language, which makes it easier to find resources, tutorials, and support.
+
+Versatility:
+Popular languages are often versatile and can be used for a wide range of projects. For example, Python is popular among data scientists, engineers, and web developers, while JavaScript is popular for both front-end and back-end web development.
+
+Large ecosystem:
+Popular languages often have a large ecosystem of libraries and frameworks that make it easier to develop and deploy applications. This means that developers can use pre-built tools and libraries to speed up development and reduce the time it takes to get an application up and running.
+
+High demand:
+Popular languages are often in high demand in the job market. This means that developers who know these languages are more likely to be able to find a job and have a higher earning potential.
+
+Community support:
+Popular languages have a strong community support which helps in the development of the language, troubleshooting and learning new features.
+
+Ease of use:
+Some popular languages are designed to be easy to learn and use, which makes them a good choice for beginners.
+
+All these factors contribute to the popularity of a programming language. They make it easy for developers to start using the language, and they provide a large community of developers who can help with questions and issues. This makes it more likely that a language will continue to be popular over time.
+
+
+## Analyze
+
+- The goal of this paper is the conception and implementation of a new programming language called Rym
+- What exactly is a programming language
+  - artificial language
+  - turing complete
+  - general
+
+1. general pros of programming languages
+2. flaws of currently used programming languages
+3. specific features of Rym based on 2. and adhearing to 1.
+
+Many new programming languages that are continuations of older ones have gained popularity in the last years.
+These languages are for example Kotlin by JetBrains^[JetBrains is a company that develops integrated development environments.] as a sucessor to Java,
+which is trying to be more concise, safe and expressive while still running on the Java Virtual Machine and providing interoperability with Java.
+[@jetbrains_web; @kotlin_web; @kotlin_ref]
+
+Another programming language that has gained popularity in recent years is Rust,
+which was started by Graydon Hoare at Mozilla and is now an independent community project.
+Rust is designed to be a systems programming language that is both safe and fast.
+It aims to eliminate risks like null or dangling pointer references, which can lead to memory safety issues often encountered when using C/C++.
+[@infoq_rust_interview; @rust_web]
+
+Go and Dart are both programming languages developed by Google that have been gaining popularity in recent years.
+Both languages were created to address specific issues in the programming world and to provide a solution for developers.
+Go, often referred to as "Go", was developed to address the need for a language that is simple,
+efficient and easy to learn, while still providing a high level of performance and scalability.
+Go is particularly well-suited for building networked services and large-scale web applications,
+it aims to make it easy to write concurrent and parallel systems.
+On the other hand, Dart was created to address the issue of building fast and high-performance apps on multiple platforms.
+Dart is designed to be a client-optimized language for building fast apps on any platform,
+it allows for a single codebase to run on different platforms and provides features such as Just-In-Time (JIT) and Ahead-of-Time (AOT) compilation.
+Both Go and Dart have been used to build a wide range of applications,
+from web and mobile to desktop and backend, and have strong and growing communities.
+
+- Carbon?
+
+- Swift: Developed by Apple, Swift is a general-purpose, compiled programming language that is designed to be easy to learn and use. It is particularly well-suited for developing iOS and macOS applications, and has been gaining popularity among developers for its modern syntax, strong type system, and improved performance over Objective-C.
+
+- TypeScript: Developed by Microsoft, TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It was designed to make it easier to write and maintain large-scale JavaScript applications by adding features such as static typing, interfaces, and classes. It is widely used in Angular and React projects.
+
+- Julia: Developed to be used in scientific, engineering, and technical computing, Julia is a high-performance, high-level dynamic programming language. It is designed to be easy to use and has a syntax similar to that of MATLAB or Python. Julia is particularly well-suited for data science and numerical computing and it's been gaining popularity among researchers and data scientists.
+
+- Scala: Developed by Martin Odersky, Scala is a general-purpose programming language that runs on the Java Virtual Machine (JVM). It is designed to be an object-oriented and functional language, and it's been gaining popularity among developers for its ability to write concurrent and parallel systems. It's also widely used for big data processing using Apache Spark.
+
+## Problems of current and past programming languages
+
+- Parallelization
+- (Uncontrolled) Undefined Behaviour
+  - https://blog.sigplan.org/2021/11/18/undefined-behavior-deserves-a-better-reputation
+- Side Effect Safety, Non local reasoning, Sand Boxing
+  - https://www.reddit.com/r/ProgrammingLanguages/comments/9eqrfy/comment/e5s3vhb/?utm_source=share&utm_medium=web2x&context=3
+  - Code that we read is not understandable in isolation. For example, taking C++: `call(foo);`, is `foo` modified? Dunno.
+    - https://www.reddit.com/r/ProgrammingLanguages/comments/9eqrfy/comment/e5v3vj5/?utm_source=share&utm_medium=web2x&context=3
+  - Solved by: Koka
+- Cannot rewind time while debugging
+  - [Reversible Computation: Extending Horizons of Computing](https://link.springer.com/content/pdf/10.1007/978-3-030-47361-7.pdf)
+- Rust solves most of these, but a watered-down version which only loses a bit of efficiency could probably help a lot. [Source](https://www.reddit.com/r/ProgrammingLanguages/comments/9eqrfy/comment/e5v3vj5/?utm_source=share&utm_medium=web2x&context=3) => Basically what Rym tries to be :)
+
+## Problems of new programming languages
+
+- https://www.quora.com/What-are-the-biggest-problems-with-modern-programming-languages?share=1
+- There are too many of them
+- No innovation
+  - Too conservative, offer no real improvement to what came before
+  - No clear gain to switch to this language
+- Being specific to one problem
+  - do interesting thing X but do not advance in all other places
+
+## Qualities of a good programming language
+
+- (progressivly having to learn new parts / not having to learn everything at once) makes the language easier to learn
+  - see talk about type classes, concept is from Swift
+  - begin with a simple script like Python and be able to makke it complex over time
+- future proof
+  - reserved keywords: try, catch, throw, ..
+  - allow breaking changes (semantic versioning), Rust good, Python ok, Js/C++ bad, C does not really extend language anymore but rather core libs right?
+- Good Package Manager
+  - https://www.reddit.com/r/ProgrammingLanguages/comments/zqjf47/a_good_dependency_manager_for_a_new_programming/
+  - https://futhark-lang.org/blog/2018-07-20-the-future-futhark-package-manager.html
+
+
+## Other Stuff
+
+[Programming Language Explorations](https://rtoal.github.io/ple)

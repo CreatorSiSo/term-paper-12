@@ -1,14 +1,16 @@
 project:
   type: book
   output-dir: _out
+  resources: data
 
 book:
   title: "Facharbeit"
-  author: "Simon Sommer"
-  date: "02/10/2022"
+  # author: "Simon Sommer"
+  # date: "02/10/2023"
   date-format: DD.MM.YYYY
   chapters:
     - index.qmd
+    - chapters/analysis.qmd
     - chapters/general_trends.qmd
     - chapters/primitive_data_types.qmd
     - chapters/algebraic_data_types.qmd
@@ -23,12 +25,14 @@ filters:
   - quarto
   - custom/quote.lua
 
-bibliography: cite/references.bib
-csl: cite/ieee.csl
-crossref:
-  fig-title: Abbildung # (default is "Figure")
-  tbl-title: Tabelle # (default is "Table")
-  # title-delim: (default is ":")
+bibliography:
+  - cite/general.bib
+  - cite/standards.bib
+csl: custom/ieee.csl
+# crossref:
+#   fig-title: Abbildung # (default is "Figure")
+#   tbl-title: Tabelle # (default is "Table")
+#   # title-delim: (default is ":")
 
 toc: true
 number-sections: true
