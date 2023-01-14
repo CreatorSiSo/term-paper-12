@@ -1,5 +1,6 @@
 /.quarto/
 _out
+_preview
 _extensions
 
 /.luarc.json

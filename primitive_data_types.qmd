@@ -15,7 +15,7 @@ Boolean types are often used to represent switches or flags in programs.
 Although other types, such as integers, can be used for these purposes,
 the use of boolean types is more readable.
 C and C++ still allow numeric expressions to be used as if they were boolean.
-This is not the case in the subsequent languages, Java and C# which is why Rym will not allow it either.
+This is not the case in the subsequent languages, Java and C# which is why Rym will disallow this as well.
 [@java_spec_types; @csharp_spec_types]
 <!-- TODO: C, C++ citetation for numerics usable as booleans -->
 
@@ -26,7 +26,7 @@ they are often stored in the smallest efficiently addressable cell of memory, ty
 As this detail is trivial Rym does not specify how to store boolean values.
 [@sebesta_2019 S. 404f]
 
-The boolean type in Rym is called _bool_ like in Python, PHP, C#, Go, Rust, Swift and many others.
+The boolean type in Rym is called "bool" like in Python, PHP, C#, Go, Rust, Swift and many others.
 It is named after _George Boole_ who pioneered the field of mathematical logic.
 [@php_ref_types; @csharp_spec_types; @go_spec_types; @rust_ref_types; @swift_docs]
 

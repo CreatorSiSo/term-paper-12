@@ -1,7 +1,10 @@
 # https://pandoc.org/MANUAL.html#option--reference-doc
 
-quarto render &&
+mkdir _preview
+
+quarto render --to docx &&
 	cd _out &&
 	# soffice Facharbeit.docx &&
 	soffice --headless --convert-to pdf Facharbeit.docx &&
-	evince Facharbeit.pdf
+	cp ./Facharbeit.pdf ../_preview/Facharbeit.pdf -f #&&
+# evince Facharbeit.pdf
