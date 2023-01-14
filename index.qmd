@@ -1,5 +1,49 @@
 # Introduction {#sec-intro}
 
+## Popular Languages
+
+```{python}
+#| echo: false
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+%config InlineBackend.figure_formats = ["png"]
+
+import json, re
+import numpy as np
+import matplotlib.pyplot as plt
+
+def read_jsonc(filepath: str):
+  with open(filepath, "r", encoding="utf-8") as f:
+      text = f.read()
+  re_text = re.sub(r"\/\/.*", "", text)
+  json_obj = json.loads(re_text)
+  return json_obj
+
+# print(plt.style.available)
+# fast, seaborn-v0_8, seaborn-v0_8-dark, seaborn-v0_8-darkgrid, seaborn-v0_8-deep, seaborn-v0_8-muted, seaborn-v0_8-notebook, seaborn-v0_8-paper
+plt.style.use("seaborn-v0_8-paper")
+
+data = read_jsonc("./stackoverflow-survey-2022.jsonc")
+group_data = list([float(x[1].replace(",", "")) for x in data.values()])
+group_names = list(data.keys())
+group_mean = np.mean(group_data)
+
+fig, ax = plt.subplots(figsize=(8, 4), dpi=960)
+# ax.patch.set_alpha(0)
+# fig.patch.set_alpha(0)
+
+ax.axhline(group_mean, ls="--", color="gray")
+
+ax.bar(group_names, group_data)
+plt.setp(ax.get_xticklabels(), rotation=70, ha="right", rotation_mode="anchor")
+plt.setp(ax.get_yticklabels(), rotation=90, ha="center", rotation_mode="anchor")
+ax.set(ylabel="Votes")
+plt.show()
+```
+
+## Analyze
+
 - The goal of this paper is the conception and implementation of a new programming language called Rym
 - What exactly is a programming language
   - artificial language
@@ -9,6 +53,39 @@
 1. general pros of programming languages
 2. flaws of currently used programming languages
 3. specific features of Rym based on 2. and adhearing to 1.
+
+Many new programming languages that are continuations of older ones have gained popularity in the last years.
+These languages are for example Kotlin by JetBrains^[JetBrains is a company that mainly develops IDEs.] as a sucessor to Java,
+which is trying to be more concise, safe and expressive while still running on the Java Virtual Machine and providing interoperability with Java.
+[@jetbrains_web; @kotlin_web; @kotlin_ref]
+
+Another programming language that has gained popularity in recent years is Rust,
+which was started by Graydon Hoare at Mozilla and is now an independent community project.
+Rust is designed to be a systems programming language that is both safe and fast.
+It aims to eliminate risks like null or dangling pointer references, which can lead to memory safety issues often encountered when using C/C++.
+[@infoq_rust_interview; @rust_web]
+
+Go and Dart are both programming languages developed by Google that have been gaining popularity in recent years.
+Both languages were created to address specific issues in the programming world and to provide a solution for developers.
+Go, often referred to as "Go", was developed to address the need for a language that is simple,
+efficient and easy to learn, while still providing a high level of performance and scalability.
+Go is particularly well-suited for building networked services and large-scale web applications,
+it aims to make it easy to write concurrent and parallel systems.
+On the other hand, Dart was created to address the issue of building fast and high-performance apps on multiple platforms.
+Dart is designed to be a client-optimized language for building fast apps on any platform,
+it allows for a single codebase to run on different platforms and provides features such as Just-In-Time (JIT) and Ahead-of-Time (AOT) compilation.
+Both Go and Dart have been used to build a wide range of applications,
+from web and mobile to desktop and backend, and have strong and growing communities.
+
+- Carbon?
+
+- Swift: Developed by Apple, Swift is a general-purpose, compiled programming language that is designed to be easy to learn and use. It is particularly well-suited for developing iOS and macOS applications, and has been gaining popularity among developers for its modern syntax, strong type system, and improved performance over Objective-C.
+
+- TypeScript: Developed by Microsoft, TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It was designed to make it easier to write and maintain large-scale JavaScript applications by adding features such as static typing, interfaces, and classes. It is widely used in Angular and React projects.
+
+- Julia: Developed to be used in scientific, engineering, and technical computing, Julia is a high-performance, high-level dynamic programming language. It is designed to be easy to use and has a syntax similar to that of MATLAB or Python. Julia is particularly well-suited for data science and numerical computing and it's been gaining popularity among researchers and data scientists.
+
+- Scala: Developed by Martin Odersky, Scala is a general-purpose programming language that runs on the Java Virtual Machine (JVM). It is designed to be an object-oriented and functional language, and it's been gaining popularity among developers for its ability to write concurrent and parallel systems. It's also widely used for big data processing using Apache Spark.
 
 ## Problems of current and past programming languages
 

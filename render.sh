@@ -2,7 +2,7 @@
 
 mkdir _preview
 
-quarto render --to docx &&
+quarto render --to docx --cache &&
 	cd _out &&
 	# soffice Facharbeit.docx &&
 	soffice --headless --convert-to pdf Facharbeit.docx &&
