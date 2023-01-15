@@ -1,2 +1,105 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<w:footnotes xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" mc:Ignorable="w14 wp14 w15"><w:footnote w:id="0" w:type="separator"><w:p><w:pPr><w:rPr><w:sz w:val="12"/></w:rPr></w:pPr><w:r><w:separator/></w:r></w:p></w:footnote><w:footnote w:id="1" w:type="continuationSeparator"><w:p><w:pPr><w:rPr><w:sz w:val="12"/></w:rPr></w:pPr><w:r><w:continuationSeparator/></w:r></w:p></w:footnote><w:footnote w:id="2"><w:p><w:pPr><w:pStyle w:val="Footnote"/><w:spacing w:before="0" w:after="57"/><w:rPr></w:rPr></w:pPr><w:r><w:rPr><w:rStyle w:val="FootnoteCharacters"/></w:rPr><w:footnoteRef/></w:r><w:r><w:rPr></w:rPr><w:tab/><w:t>Footnote Text  Aliqua nisi enim nulla duis deserunt. Occaecat magna quis aliqua duis eiusmod quis reprehenderit. Officia et incididunt ut voluptate.</w:t></w:r></w:p></w:footnote><w:footnote w:id="3"><w:p><w:pPr><w:pStyle w:val="Footnote"/><w:spacing w:before="0" w:after="57"/><w:rPr></w:rPr></w:pPr><w:r><w:rPr><w:rStyle w:val="FootnoteCharacters"/></w:rPr><w:footnoteRef/></w:r><w:r><w:rPr></w:rPr><w:tab/><w:t>Laboris incididunt deserunt aliqua ut eiusmod. Culpa cillum qui aliquip sint dolor ipsum irure velit mollit duis consectetur proident.</w:t></w:r></w:p></w:footnote><w:footnote w:id="4"><w:p><w:pPr><w:pStyle w:val="Footnote"/><w:spacing w:before="0" w:after="85"/><w:rPr></w:rPr></w:pPr><w:r><w:rPr><w:rStyle w:val="FootnoteCharacters"/></w:rPr><w:footnoteRef/></w:r><w:r><w:rPr></w:rPr><w:tab/><w:t xml:space="preserve"> </w:t></w:r><w:r><w:rPr></w:rPr><w:t>Vgl. Vera a shbdbdsssss sssssssssssssss ssssssssssss ssssss ssssss sssssssssssss sssssss sssss ss sss ssb alsöhdashf asiofah I oufd hioiou asfoi uu</w:t></w:r></w:p></w:footnote></w:footnotes>
+<w:footnotes xmlns:o="urn:schemas-microsoft-com:office:office"
+	xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+	xmlns:v="urn:schemas-microsoft-com:vml"
+	xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+	xmlns:w10="urn:schemas-microsoft-com:office:word"
+	xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+	xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+	xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+	xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+	xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" mc:Ignorable="w14 wp14 w15">
+	<w:footnote w:id="0" w:type="separator">
+		<w:p>
+			<w:pPr>
+				<w:rPr>
+					<w:sz w:val="12" />
+				</w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:separator />
+			</w:r>
+		</w:p>
+	</w:footnote>
+	<w:footnote w:id="1" w:type="continuationSeparator">
+		<w:p>
+			<w:pPr>
+				<w:rPr>
+					<w:sz w:val="12" />
+				</w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:continuationSeparator />
+			</w:r>
+		</w:p>
+	</w:footnote>
+	<w:footnote w:id="2">
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Footnote" />
+				<w:spacing w:before="0" w:after="57" />
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr>
+					<w:rStyle w:val="FootnoteCharacters" />
+				</w:rPr>
+				<w:footnoteRef />
+			</w:r>
+			<w:r>
+				<w:rPr></w:rPr>
+				<w:tab />
+				<w:t>Footnote Text Aliqua nisi enim nulla duis deserunt. Occaecat magna quis aliqua duis
+					eiusmod quis reprehenderit. Officia et incididunt ut voluptate.</w:t>
+			</w:r>
+		</w:p>
+	</w:footnote>
+	<w:footnote w:id="3">
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Footnote" />
+				<w:spacing w:before="0" w:after="57" />
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr>
+					<w:rStyle w:val="FootnoteCharacters" />
+				</w:rPr>
+				<w:footnoteRef />
+			</w:r>
+			<w:r>
+				<w:rPr></w:rPr>
+				<w:tab />
+				<w:t>Laboris incididunt deserunt aliqua ut eiusmod. Culpa cillum qui aliquip sint dolor
+					ipsum irure velit mollit duis consectetur proident.</w:t>
+			</w:r>
+		</w:p>
+	</w:footnote>
+	<w:footnote w:id="4">
+		<w:p>
+			<w:pPr>
+				<w:pStyle w:val="Footnote" />
+				<w:spacing w:before="0" w:after="85" />
+				<w:rPr></w:rPr>
+			</w:pPr>
+			<w:r>
+				<w:rPr>
+					<w:rStyle w:val="FootnoteCharacters" />
+				</w:rPr>
+				<w:footnoteRef />
+			</w:r>
+			<w:r>
+				<w:rPr></w:rPr>
+				<w:tab />
+				<w:t xml:space="preserve"> </w:t>
+			</w:r>
+			<w:r>
+				<w:rPr></w:rPr>
+				<w:t>Vgl. Vera a shbdbdsssss sssssssssssssss ssssssssssss ssssss ssssss sssssssssssss
+					sssssss sssss ss sss ssb alsöhdashf asiofah I oufd hioiou asfoi uu</w:t>
+			</w:r>
+		</w:p>
+	</w:footnote>
+</w:footnotes>
