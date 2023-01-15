@@ -2,6 +2,6 @@ _out
 _preview
 _extensions
 
-/.jupyter_cache
+**/.jupyter_cache
 /.quarto/
 /.luarc.json

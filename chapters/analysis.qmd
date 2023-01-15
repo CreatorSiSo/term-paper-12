@@ -11,6 +11,7 @@ The participants gave their votes to all of the languages that they had used a l
 Each person could choose as many languages as they wanted.
 [@so_surveys; @so_survey_2022; @so_survey_2022_data]
 
+<!-- TODO: Color should show the prog lang age -->
 ![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey}
 
 The original diagram also shows HTML, CSS, SQL, Bash/Shell and Powershell.
