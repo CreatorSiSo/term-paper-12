@@ -27,6 +27,7 @@ filters:
 
 bibliography:
   - cite/general.bib
+  - cite/literature.bib
   - cite/standards.bib
 csl: custom/ieee.csl
 # crossref:

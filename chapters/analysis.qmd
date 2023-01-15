@@ -5,18 +5,19 @@ especially those that were created more recently.
 
 To keep the number of languages within a workable range, only the more popular programming languages of 2022 will be analysed.
 The primary source for this data is the _StackOverflow Developer Survey 2022_,
-a worldwide survey conducted by the StackOverflow platform anually and aimed at all programmers.
-Below this paragraph, you can see a statistic in which programming languages are sorted according to how many votes they got.
-The participants gave their votes to all of the languages that they had used a lot in the last year and would continue using.
-Each person could choose as many languages as they wanted.
+a worldwide survey that has been conducted anually since 2011 and is aimed at everyone who does programming.
+Below this paragraph, you can see a statistic from the survey in which programming languages are sorted according to popularity.
+The height of a bar corresponds to the amount of votes that language got.
+All participants were supposed to vote for all languages that they had used in the last year and would continue using.
 [@so_surveys; @so_survey_2022; @so_survey_2022_data]
 
 <!-- TODO: Color should show the prog lang age -->
 ![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey}
 
-The original diagram also shows HTML, CSS, SQL, Bash/Shell and Powershell.
-All of them are excluded here because they are highly specialised and in part not Turing complete.
+The original data also mentions HTML, CSS, SQL, Bash/Shell and Powershell,
+which are excluded here as they are highly specialised and in part not Turing complete.^[A Turing complete language can be used to implement arbitrary algorithms. @scott_2009, @scott_2016]
 
+__TODO: Reword once age is visible in diagram?__
 According to the StackOverflow Developer Survey 2022, JavaScript (1995), Python (1991), Typescript (2012), Java (1995), C# (2000),
 C++ (1985), PHP (1995), C (1978), Go (2009) and Rust (2010) are the ten most widely used programming languages.
 On average, these languages are therefore 25 years old.
