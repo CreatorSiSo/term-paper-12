@@ -1,21 +1,25 @@
 # Analyzing existing programming languages
 
-The first step in answering this question is to analyse currently used programming languages,
-especially those that were created more recently.
+The next step in finding an answer is to investigate currently used programming languages,
+especially those that were recently created, and to identify what they changed in comparison to older ones.
+
+## Data to analyze
 
 To keep the number of languages within a workable range, only the more popular programming languages of 2022 will be analysed.
 The primary source for this data is the _StackOverflow Developer Survey 2022_,
-a worldwide survey that has been conducted anually since 2011 and is aimed at everyone who does programming.
+a worldwide survey that has been conducted annually since 2011 and is aimed at everyone who does programming.
 Below this paragraph, you can see a statistic from the survey in which programming languages are sorted according to popularity.
-The height of a bar corresponds to the amount of votes that language got.
+The height of a bar corresponds to the number of votes that language got.
 All participants were supposed to vote for all languages that they had used in the last year and would continue using.
 [@so_surveys; @so_survey_2022; @so_survey_2022_data]
 
 <!-- TODO: Color should show the prog lang age -->
 ![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey}
 
-The original data also mentions HTML, CSS, SQL, Bash/Shell and Powershell,
-which are excluded here as they are highly specialised and in part not Turing complete.^[A Turing complete language can be used to implement arbitrary algorithms. @scott_2009, @scott_2016]
+The original data also mentions HTML, CSS, SQL, Bash/Shell, and PowerShell.
+They are excluded here as they are highly specialised and, in part, not Turing complete.[^tc-note]
+
+[^tc-note]: A Turing-complete language can be used to implement arbitrary algorithms. @scott_2009, @scott_2016
 
 __TODO: Reword once age is visible in diagram?__
 According to the StackOverflow Developer Survey 2022, JavaScript (1995), Python (1991), Typescript (2012), Java (1995), C# (2000),
@@ -48,17 +52,7 @@ Some popular languages are designed to be easy to learn and use, which makes the
 All these factors contribute to the popularity of a programming language. They make it easy for developers to start using the language, and they provide a large community of developers who can help with questions and issues. This makes it more likely that a language will continue to be popular over time.
 
 
-## Analyze
-
-- The goal of this paper is the conception and implementation of a new programming language called Rym
-- What exactly is a programming language
-  - artificial language
-  - turing complete
-  - general
-
-1. general pros of programming languages
-2. flaws of currently used programming languages
-3. specific features of Rym based on 2. and adhearing to 1.
+## "New" Languages
 
 Many new programming languages that are continuations of older ones have gained popularity in the last years.
 These languages include Kotlin by JetBrains^[JetBrains is a company that develops integrated development environments.] as a sucessor to Java,

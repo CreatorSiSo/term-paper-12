@@ -23,3 +23,16 @@ It is precisely such a language that is to be designed and implemented in the co
 This thesis therefore deals with the analysis of past as well as current programming languages in order to find out in which direction they are currently developing.
 From the knowledge gained from this, a new language will then be designed,
 which is a possible answer to the question: _What would a next generation programming language look like?_
+
+<!--
+- The goal of this paper is the conception and implementation of a new programming language called Rym
+
+- What exactly is a programming language
+  - artificial language
+  - turing complete
+  - general
+
+1. general pros of programming languages
+2. flaws of currently used programming languages
+3. specific features of Rym based on 2. and adhearing to 1.
+-->

@@ -10,6 +10,7 @@ book:
   date-format: DD.MM.YYYY
   chapters:
     - index.qmd
+    - chapters/characteristics.qmd
     - chapters/analysis.qmd
     - chapters/general_trends.qmd
     - chapters/primitive_data_types.qmd

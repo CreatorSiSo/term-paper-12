@@ -1,0 +1,34 @@
+# Desirable Characteristics of Programming Languages
+
+<!-- # Positive/Advantageous/Desirable Characteristics/Properties of Programming Languages
+# Desirable Characteristics of Programming Languages
+# Influences on Language Design
+# Eveluation Criteria -->
+
+As the goal of this paper is to create a new programming language finding out which characteristics of a programming language are advantageous is curcial.
+
+<!-- - crucial to understand the key features that can improve the development process
+- effective and easy to use for programmers
+- impact on the coding experience. -->
+
+- broad
+  - readable
+  - writable
+  - reliable
+- general
+  - simple
+  - expressive
+  - flat learning curve
+  - save
+  - future proof
+- specific
+  - aliasing
+  - type checking
+  - as few things to think about at once as possible
+  - standardized
+
+readability
+  familiar syntax
+  `{}` is a block (vs. `end`/`end if`)
+  might not make as much sense for non programmers
+  comparable with the way that `+` and other math notation could be considered less readable then `plus`
