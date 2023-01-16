@@ -1,0 +1,13 @@
+# Variables {#sec-variables}
+
+For example, in Java, a user can increment a simple integer variable in four different ways:
+
+    count = count + 1
+    count += 1
+    count++
+    ++count
+
+Although the last two statements have slightly different meanings from each
+other and from the others in some contexts, all of them have the same
+meaning when used as stand-alone expressions. These variations are
+discussed in Chapter 7.

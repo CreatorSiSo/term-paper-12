@@ -5,14 +5,86 @@
 # Influences on Language Design
 # Eveluation Criteria -->
 
-As the goal of this paper is to create a new programming language finding out which characteristics of a programming language are advantageous is curcial.
+<!-- TODO Explain high level vs low level -->
 
-<!-- - crucial to understand the key features that can improve the development process
+As the goal of this paper is to create a new programming language finding out which characteristics of a programming language are advantageous is curcial.
+We will evaluate them, focusing on their impact on the software development process, including maintenance.
+To do this, we need a set of evaluation criteria. Such a list of criteria is necessarily controversial,
+as it is difficult to get everyone to agree on the value of some given language characteristic relative to others.
+In spite of these differences, most would probably agree that the criteria discussed in the following subsections are important.
+[@stansifer_1995 S. 60; @sebesta_2019 S. 41]
+
+## Readability
+
+One key criteria for judging a programming language is the ease with which programs can be read and understood.
+Code is often read more often then written
+and maintenance is as a major part of the developement cycle, particularly in terms of cost.
+Because ease of maintenance is determined in large part by the
+readability of programs, readability is an important measure to improve the
+quality of programs and programming languages.
+<!-- Readability should be considered in the context of the problem domain.
+__TODO CONTEXT OF RYM__ -->
+The following subsections describe characteristics that contribute to the
+readability of a programming language.
+[@sebesta_2019 S. 42f]
+
+### Simplicity
+
+The overall simplicity of a programming language strongly affects its readability.
+A language with many basic constructs is more difficult to digest than a simpler one.
+Programmers who must use a large language often learn a subset of the language and ignore its other features.
+This learning pattern is sometimes used to excuse the large number of language constructs, but that argument is not valid.
+Readability problems occur whenever the program’s author has learned a different subset from that subset with which the reader is familiar.
+[@stansifer_1995 S. 61; @sebesta_2019 S. 43]
+
+A second complicating characteristic of a programming language is, having more than one way to accomplish the same operation.
+@sec-variables will discuss one example of this in more detail.
+That example will require operator overloading in Rym,
+in which a single operator can have more than one meaning.
+Although this is often useful, it can lead to reduced readability if users are allowed to create their own overloading and do not do it sensibly.
+For example, it is clearly acceptable to overload + to use it for both integer and floating-point addition.
+In fact, this overloading simplifies a language by reducing the number of operators. How the overloading in Rym works is explained in @sec-polymorphism.
+[@sebesta_2019 S. 43f]
+
+On the other hand simplicity can be carried too far as well.
+For example, the form and meaning of most assembly language statements are very simple but because they lack more complex control statements,
+the program structure is less obvious and more of them are required than in equivalent programs in a high-level language.
+These same arguments apply to the less extreme case of high-level languages with inadequate control and data-structuring constructs.
+[@sebesta_2019 S. 44]
+
+### Orthogonality
+
+Orthogonality in a programming language means that a relatively small set of primitive constructs can be combined in a relatively small number of ways to build the control and data structures of the language.
+Furthermore, every possible combination of primitives should be legal and meaningful.
+Therefore, a lack of orthogonality leads to exceptions to the rules of the language.
+The more orthogonal the design of a language, the fewer exceptions the language rules require.
+Fewer exceptions mean a higher degree of regularity in the design, which makes the language easier to learn, read, and understand.
+[@sebesta_2019 S.44ff]
+
+The meaning of an orthogonal^[The word orthogonal comes from the mathematical concept of orthogonal vectors, which are independent of eachother.] language feature is independent of the context of its appearance in a program which can lead to unnecessary complexity when used in an extreme form.
+Because languages require a large number of primitives, a high degree of orthogonality results in an explosion of combinations.
+So, even if the combinations are simple, their sheer numbers lead to complexity.
+Simplicity in a language, therefore, is at least in part the result of a combination of a relatively small number of primitive constructs and a limited use of the concept of orthogonality.
+[@stansifer_1995 S.60f; @sebesta_2019 S.46f]
+
+### Data Types
+
+[@sebesta_2019 S. 47]
+
+### Syntax
+
+[@sebesta_2019 S. 48f]
+
+## Writability
+
+<!--
+- crucial to understand the key features that can improve the development process
 - effective and easy to use for programmers
-- impact on the coding experience. -->
+- impact on the coding experience.
+-->
 
 - broad
-  - readable
+  -
   - writable
   - reliable
 - general
@@ -32,3 +104,15 @@ readability
   `{}` is a block (vs. `end`/`end if`)
   might not make as much sense for non programmers
   comparable with the way that `+` and other math notation could be considered less readable then `plus`
+
+<!--
+Certain languages (e.g., Smalltalk and Python) are sometimes referred to as
+“interpreted languages” because most of their semantic error checking must
+be performed at run time. Certain other languages (e.g., Fortran and C)
+are sometimes referred to as “compiled languages” because almost all of their
+semantic error checking can be performed statically. This terminology isn’t
+strictly correct: interpreters for C and Fortran can be built easily, and a com-
+piler can generate code to perform even the most extensive dynamic semantic
+checks. That said, language design has a profound effect on “compilability.”
+@scott_2016
+ -->

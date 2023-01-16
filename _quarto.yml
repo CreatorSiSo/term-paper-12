@@ -13,6 +13,7 @@ book:
     - chapters/characteristics.qmd
     - chapters/analysis.qmd
     - chapters/general_trends.qmd
+    - chapters/variables.qmd
     - chapters/primitive_data_types.qmd
     - chapters/algebraic_data_types.qmd
     - chapters/function.qmd
