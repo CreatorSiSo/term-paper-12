@@ -75,18 +75,16 @@ Simplicity in a language, therefore, is at least in part the result of a combina
 
 [@sebesta_2019 S. 48f]
 
+readability
+  familiar syntax
+  `{}` is a block (vs. `end`/`end if`)
+  might not make as much sense for non programmers
+  comparable with the way that `+` and other math notation could be considered less readable then `plus`
+
 ## Writability
 
-<!--
-- crucial to understand the key features that can improve the development process
-- effective and easy to use for programmers
-- impact on the coding experience.
--->
+## Reliability
 
-- broad
-  -
-  - writable
-  - reliable
 - general
   - simple
   - expressive
@@ -98,12 +96,6 @@ Simplicity in a language, therefore, is at least in part the result of a combina
   - type checking
   - as few things to think about at once as possible
   - standardized
-
-readability
-  familiar syntax
-  `{}` is a block (vs. `end`/`end if`)
-  might not make as much sense for non programmers
-  comparable with the way that `+` and other math notation could be considered less readable then `plus`
 
 <!--
 Certain languages (e.g., Smalltalk and Python) are sometimes referred to as

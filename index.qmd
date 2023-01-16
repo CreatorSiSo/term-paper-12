@@ -1,28 +1,28 @@
 # Introduction {#sec-intro}
 
-Many new programming languages are published every year.
-Many of them are initially developed as part of a scientific thesis.
-Often, private individuals as well as students work on their own languages in their free time in order to learn about topics in the field of implementing them.
-Sometimes it also happens that companies or organisations want to solve a certain problem, but the appropriate language does not yet exist.
-Most of them the average developer never has anything to do with, and yet they generally bring all programming languages forward together.
+Every year, numerous new programming languages are released.
+A lot of them start out as parts of a scientific thesis and in their spare time, both private individuals and students frequently work on their own languages to learn about various aspects of implementing them.
+In some cases, businesses or organisations wish to address a specific issue, but the right technology is still missing.
+Even though the majority of them are never used by the average developer, by trying out new ideas they can generally bring all programming languages forward.
 
-A new language has the advantage of not being hindered by special circumstances that have evolved over time, as is the case with many older predecessors.
-Since one can start from scratch in the implementation, but conceptually all knowledge from previous attempts is used,
+A new language has the advantage of not being hindered by its own special circumstances that have evolved over time,
+as is the case with many predecessors.
+Since one can start from scratch on the implementation, but conceptually all knowledge from previous attempts is used,
 completely new ideas can be tried out much easier and faster.
-This process is more difficult with a language that is used by thousands of people and should remain as stable as possible.
+That process can be more difficult with a language that is used by thousands of people and should remain as stable as possible.
 
 Another advantage of small new projects is that there is less bureaucracy and coordination,
 which makes it possible to iteratively try out many concepts quickly.
-These processes are quite important in larger projects,
+The coordination is quite important in larger projects,
 as there are often many people working on them at the same time and otherwise there would be little progress.
 
 If the resulting approaches of the "newcomers" seem to make sense and are adapted on a large scale,
-this often results in an integration into older, larger languages.
-It is precisely such a language that is to be designed and implemented in the context of this work by analysing proven technologies and combining them with new ideas.
+this often results in an integration into older, more established languages.
+Precisely such a language will be designed and implemented in the context of this paper by analysing generally advantegous characteristics, proven technologies and combining them with new ideas.
 
 This thesis therefore deals with the analysis of past as well as current programming languages in order to find out in which direction they are currently developing.
 From the knowledge gained from this, a new language will then be designed,
-which is a possible answer to the question: _What would a next generation programming language look like?_
+which should make a possible answer to the question: _What would a next generation programming language look like?_
 
 <!--
 - The goal of this paper is the conception and implementation of a new programming language called Rym
