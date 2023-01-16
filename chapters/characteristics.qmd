@@ -7,18 +7,18 @@
 
 <!-- TODO Explain high level vs low level -->
 
-As the goal of this paper is to create a new programming language finding out which characteristics of a programming language are advantageous is curcial.
+Curcial to achieving this goal is to find out which characteristics of a programming language are advantageous and which ones are not.
 We will evaluate them, focusing on their impact on the software development process, including maintenance.
-To do this, we need a set of evaluation criteria. Such a list of criteria is necessarily controversial,
-as it is difficult to get everyone to agree on the value of some given language characteristic relative to others.
-In spite of these differences, most would probably agree that the criteria discussed in the following subsections are important.
+Such a list of positive characteristics is necessarily controversial,
+as it is difficult to get everyone to agree on the value of some given language property relative to others.
+In spite of these differences, most would probably agree that the criteria discussed in the following subsections are at least important.
 [@stansifer_1995 S. 60; @sebesta_2019 S. 41]
 
 ## Readability
 
 One key criteria for judging a programming language is the ease with which programs can be read and understood.
-Code is often read more often then written
-and maintenance is as a major part of the developement cycle, particularly in terms of cost.
+Source code written in our new language will possibly be read more often then written
+and maintenance, where a lot of reading happens, is as a major part of the developement cycle.
 Because ease of maintenance is determined in large part by the
 readability of programs, readability is an important measure to improve the
 quality of programs and programming languages.
@@ -75,11 +75,10 @@ Simplicity in a language, therefore, is at least in part the result of a combina
 
 [@sebesta_2019 S. 48f]
 
-readability
-  familiar syntax
-  `{}` is a block (vs. `end`/`end if`)
-  might not make as much sense for non programmers
-  comparable with the way that `+` and other math notation could be considered less readable then `plus`
+- familiar syntax
+- `{}` is a block (vs. `end`/`end if`)
+- might not make as much sense for non programmers
+- comparable with the way that `+` and other math notation could be considered less readable then `plus`
 
 ## Writability
 
