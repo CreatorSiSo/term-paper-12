@@ -1,4 +1,5 @@
-# Desirable Characteristics of Programming Languages
+<!-- # Advantageous Characteristics of Programming Languages -->
+# Vorteilhafte Eigenschaften von Programmiersprachen
 
 <!-- # Positive/Advantageous/Desirable Characteristics/Properties of Programming Languages
 # Desirable Characteristics of Programming Languages
@@ -7,36 +8,60 @@
 
 <!-- TODO Explain high level vs low level -->
 
-Curcial to achieving this goal is to find out which characteristics of a programming language are advantageous and which ones are not.
-We will evaluate them, focusing on their impact on the software development process, including maintenance.
-Such a list of positive characteristics is necessarily controversial,
+<!--
+Crucial to achieving this goal is to find out which characteristics of a programming language are advantageous and which ones are not.
+They will then be evaluated, by focusing on how they impact the software development process, including maintenance.
+Such a list of characteristics is necessarily controversial,
 as it is difficult to get everyone to agree on the value of some given language property relative to others.
-In spite of these differences, most would probably agree that the criteria discussed in the following subsections are at least important.
+In spite of these differences, most would probably agree that the following criteria are at least important.
+-->
+Entscheidend für das Erreichen dieses Ziels ist es, herauszufinden, welche Eigenschaften einer Programmiersprache vorteilhaft sind und welche nicht.
+Diese werden dann bewertet, indem man sich darauf konzentriert, wie sie den Softwareentwicklungsprozess, einschließlich der Wartung, beeinflussen.
+Eine solche Liste von Merkmalen ist zwangsläufig umstritten,
+da es schwierig ist, alle Beteiligten dazu zu bringen, sich über den Wert einer bestimmten Spracheigenschaft im Vergleich mit anderen einig zu sein.
+Trotz dieser Unterschiede würden die meisten wahrscheinlich zustimmen, dass die folgenden Kriterien zumindest wichtig sind.
 [@stansifer_1995 S. 60; @sebesta_2019 S. 41]
 
-## Readability
+<!-- ## Readability -->
+## Lesbarkeit
 
+<!--
 One key criteria for judging a programming language is the ease with which programs can be read and understood.
 Source code written in our new language will possibly be read more often then written
 and maintenance, where a lot of reading happens, is as a major part of the developement cycle.
 Because ease of maintenance is determined in large part by the
 readability of programs, readability is an important measure to improve the
 quality of programs and programming languages.
-<!-- Readability should be considered in the context of the problem domain.
-__TODO CONTEXT OF RYM__ -->
+-- Readability should be considered in the context of the problem domain. --
+__TODO CONTEXT OF RYM__
 The following subsections describe characteristics that contribute to the
 readability of a programming language.
+-->
+Ein wichtiges Kriterium für die Beurteilung einer Programmiersprache ist die Leichtigkeit, mit der Programme gelesen und verstanden werden können.
+Der in unserer neuen Sprache geschriebene Quellcode wird möglicherweise öfter gelesen als geschrieben
+und die Wartung, bei der viel gelesen wird, ist ein wichtiger Teil des Entwicklungszyklus.
+Da die Wartungsfreundlichkeit zu einem großen Teil durch die Lesbarkeit von Programmen bestimmt wird, ist sie eine wichtige Maßnahme zur Verbesserung der Qualität von Programmen und Programmiersprachen.
+In den folgenden Unterabschnitten werden Merkmale beschrieben, die zur Lesbarkeit einer Programmiersprache beitragen.
 [@sebesta_2019 S. 42f]
 
-### Simplicity
+<!-- ### Simplicity -->
+### Einfachheit
 
+<!--
 The overall simplicity of a programming language strongly affects its readability.
-A language with many basic constructs is more difficult to digest than a simpler one.
-Programmers who must use a large language often learn a subset of the language and ignore its other features.
+A language with a large number of basic constructs is more difficult to understand than a simpler one.
+Programmers who must use a complex language often learn just a subset of the language and ignore its other features.
 This learning pattern is sometimes used to excuse the large number of language constructs, but that argument is not valid.
 Readability problems occur whenever the program’s author has learned a different subset from that subset with which the reader is familiar.
+-->
+Die allgemeine Einfachheit einer Programmiersprache wirkt sich stark auf ihre Lesbarkeit aus.
+Eine Sprache mit einer großen Anzahl von Grundkonstrukten ist schwieriger zu verstehen als eine einfachere Sprache.
+Programmierer, die eine komplexe Sprache verwenden müssen, lernen oft nur eine Teilmenge der Sprache und ignorieren die anderen Merkmale.
+Dieses Lernmuster wird manchmal als Entschuldigung für die große Anzahl von Strukturen herangezogen, aber dieses Argument ist nicht stichhaltig.
+Probleme mit der Lesbarkeit treten immer dann auf, wenn der Programmverfasser eine andere Teilmenge gelernt hat als die, mit der der Leser vertraut ist.
 [@stansifer_1995 S. 61; @sebesta_2019 S. 43]
 
+<!--
 A second complicating characteristic of a programming language is, having more than one way to accomplish the same operation.
 @sec-variables will discuss one example of this in more detail.
 That example will require operator overloading in Rym,
@@ -44,30 +69,66 @@ in which a single operator can have more than one meaning.
 Although this is often useful, it can lead to reduced readability if users are allowed to create their own overloading and do not do it sensibly.
 For example, it is clearly acceptable to overload + to use it for both integer and floating-point addition.
 In fact, this overloading simplifies a language by reducing the number of operators. How the overloading in Rym works is explained in @sec-polymorphism.
+-->
+Ein zweites Merkmal, das die Lesbarkeit einer Programmiersprache beeinträchtigt, ist die Existenz von mehr als einem Weg, um dieselbe Operation auszuführen.
+In @sec-variables wird ein Beispiel dafür näher erläutert.
+Dieses Beispiel erfordert die Überladung von Operatoren in Rym,
+bei dem ein einzelner Operator mehr als eine Implementierung haben kann.
+Obwohl dies oft nützlich ist, kann es zu einer geringeren Lesbarkeit führen, wenn es den Benutzern erlaubt ist, ihre eigenen Überladungen zu erstellen und sie dies nicht vernünftig tun.
+So ist es beispielsweise durchaus akzeptabel, + zu überladen, um es sowohl für die Ganzzahl- als auch für die Gleitkommaaddition zu verwenden.
+In der Tat vereinfacht diese Überladung eine Sprache, indem sie die Anzahl der verschiedenen Operatoren reduziert. Wie das Überladen in Rym funktioniert, wird in @sec-polymorphism erklärt.
 [@sebesta_2019 S. 43f]
 
+<!--
 On the other hand simplicity can be carried too far as well.
 For example, the form and meaning of most assembly language statements are very simple but because they lack more complex control statements,
 the program structure is less obvious and more of them are required than in equivalent programs in a high-level language.
 These same arguments apply to the less extreme case of high-level languages with inadequate control and data-structuring constructs.
+-->
+Andererseits kann man es mit der Einfachheit auch übertreiben.
+Zum Beispiel sind Form und Bedeutung der meisten Assembler-Anweisungen sehr einfach, aber da komplexere Steueranweisungen fehlen, ist die Programmstruktur weniger offensichtlich und es sind mehr Anweisungen erforderlich als in entsprechenden Programmen in einer höheren Sprache __TODO What should high-level language be translated to?__,
+ist die Programmstruktur weniger offensichtlich und es werden mehr Anweisungen benötigt als in entsprechenden Programmen in einer höheren Sprache.
+Dieselben Argumente gelten auch für den weniger extremen Fall von Hochsprachen mit unzureichenden Kontroll- und Datenstrukturen.
 [@sebesta_2019 S. 44]
 
-### Orthogonality
+- __TODO__
+  - as few things to think about at once as possible
 
+<!-- ### Orthogonality -->
+### Orthogonalität
+
+<!--
 Orthogonality in a programming language means that a relatively small set of primitive constructs can be combined in a relatively small number of ways to build the control and data structures of the language.
 Furthermore, every possible combination of primitives should be legal and meaningful.
 Therefore, a lack of orthogonality leads to exceptions to the rules of the language.
 The more orthogonal the design of a language, the fewer exceptions the language rules require.
 Fewer exceptions mean a higher degree of regularity in the design, which makes the language easier to learn, read, and understand.
+-->
+Orthogonalität in einer Programmiersprache bedeutet, dass eine relativ kleine Menge von primitiven Konstrukten auf relativ wenige Arten kombiniert werden können, um die Kontroll- und Datenstrukturen der Sprache aufzubauen.
+Außerdem sollte jede mögliche Kombination von Primitiven legal und sinnvoll sein.
+Ein Mangel an Orthogonalität führt daher zu Ausnahmen von den Regeln der Sprache.
+Je orthogonaler der Entwurf einer Sprache ist, desto weniger Ausnahmen erfordern die Sprachregeln.
+Weniger Ausnahmen bedeuten einen höheren Grad an Regelmäßigkeit im Design, wodurch die Sprache leichter zu lernen, zu lesen und zu verstehen ist.
 [@sebesta_2019 S.44ff]
 
-The meaning of an orthogonal^[The word orthogonal comes from the mathematical concept of orthogonal vectors, which are independent of eachother.] language feature is independent of the context of its appearance in a program which can lead to unnecessary complexity when used in an extreme form.
+<!--
+The meaning of an orthogonal^[The word orthogonal comes from the mathematical concept of orthogonal vectors, which are independent of eachother.]
+language feature is independent of the context of its appearance in a program.
+But making everything context independent can lead to unnecessary complexity as well.
 Because languages require a large number of primitives, a high degree of orthogonality results in an explosion of combinations.
 So, even if the combinations are simple, their sheer numbers lead to complexity.
 Simplicity in a language, therefore, is at least in part the result of a combination of a relatively small number of primitive constructs and a limited use of the concept of orthogonality.
+-->
+Die Bedeutung eines orthogonalen^[Das Wort orthogonal stammt aus dem mathematischen Konzept der orthogonalen Vektoren, die voneinander unabhängig sind.]
+Sprachelements ist unabhängig von dem Kontext, in dem es in einem Programm auftritt.
+Aber alles kontextunabhängig zu machen, kann auch zu unnötiger Komplexität führen.
+Da Sprachen eine große Anzahl von Primitiven benötigen, führt ein hoher Grad an Orthogonalität zu einer Explosion an Kombinationen.
+Selbst wenn die Kombinationen einfach sind, führt ihre schiere Anzahl zu Komplexität.
+Die Einfachheit einer Sprache ist daher zumindest teilweise das Ergebnis einer Kombination aus einer relativ kleinen Anzahl von primitiven Konstrukten und einer begrenzten Verwendung des Konzepts der Orthogonalität.
 [@stansifer_1995 S.60f; @sebesta_2019 S.46f]
 
-### Data Types
+<!-- ### Data Types -->
+### Datentypen
 
 [@sebesta_2019 S. 47]
 
@@ -75,26 +136,31 @@ Simplicity in a language, therefore, is at least in part the result of a combina
 
 [@sebesta_2019 S. 48f]
 
-- familiar syntax
-- `{}` is a block (vs. `end`/`end if`)
-- might not make as much sense for non programmers
-- comparable with the way that `+` and other math notation could be considered less readable then `plus`
-
-## Writability
-
-## Reliability
-
-- general
+- __TODO__
   - simple
   - expressive
   - flat learning curve
-  - save
-  - future proof
-- specific
-  - aliasing
-  - type checking
-  - as few things to think about at once as possible
+  - familiar syntax
+  - `{}` is a block (vs. `end`/`end if`)
+  - might not make as much sense for non programmers
+  - comparable with the way that `+` and other math notation could be considered less readable then `plus`
+
+<!-- ## Writability -->
+## Schreibbarkeit
+
+- __TODO__
+
+<!-- ## Reliability -->
+## Verlässlichkeit
+
+- __TODO__
   - standardized
+  - save
+    - aliasing
+    - type checking
+  - future proof
+    - allow breaking changes
+    - reserved keywords
 
 <!--
 Certain languages (e.g., Smalltalk and Python) are sometimes referred to as
@@ -107,3 +173,5 @@ piler can generate code to perform even the most extensive dynamic semantic
 checks. That said, language design has a profound effect on “compilability.”
 @scott_2016
  -->
+
+{{< page_break >}}

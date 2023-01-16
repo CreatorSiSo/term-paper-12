@@ -37,3 +37,5 @@
 Precommit scripts can ensure that only correctly formatted code gets comitted.
 
 => rymfmt, rym fmt
+
+{{< pagebreak >}}

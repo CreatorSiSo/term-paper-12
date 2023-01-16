@@ -1,4 +1,24 @@
-# Variables {#sec-variables}
+# Bindings, Variables and Scopes {#sec-variables}
+
+Immutable
+
+```rym
+const example_1 = 99
+example_1 = 100     // error: Cannot assing to immutable variable example_1
+print(example_1)
+```
+
+Mutable
+
+```rym
+mut example_1 = 99
+example_1 = 100
+print(example_1) // prints "100"
+```
+
+__TODO__
+
+## Operators
 
 For example, in Java, a user can increment a simple integer variable in four different ways:
 
@@ -11,3 +31,5 @@ Although the last two statements have slightly different meanings from each
 other and from the others in some contexts, all of them have the same
 meaning when used as stand-alone expressions. These variations are
 discussed in Chapter 7.
+
+{{< pagebreak >}}

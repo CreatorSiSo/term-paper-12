@@ -1,6 +1,9 @@
 # Functions
 
-Functions <!-- could be considered --> are one of the most important building blocks of many programming languages, especially functional ones, TODO.
+__TODO refer to characteristics and analysis__;
+__TODO compare function keywords: https://twitter.com/code_report/status/1325472952750665728/photo/1__
+
+Functions are one of the most important building blocks of many programming languages.
 
 ## Basic functionality
 
@@ -78,5 +81,21 @@ func multiply(x: Int, y: Int) -> Int {
 In this case, the value of the expression x * y is returned as the result of the function, without the need for a separate return statement. This allows for more concise and readable code, as the return statement is often unnecessary when the function body contains only a single expression.
 
 ## Default Parameter Values
+
+__TODO Add explaination__
+
+```rym
+func example(required: String, optional: String = "default") {
+  print(required, optional)
+}
+
+// Type of `optional` can be inferred
+func example(required: String, optional = "default") {
+  print(required, optional)
+}
+
+example("A")                    // prints "A default"
+example("A", "specific value")  // prints "A specific value"
+```
 
 {{< pagebreak >}}

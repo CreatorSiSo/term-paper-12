@@ -1,35 +1,56 @@
-# Analyzing existing programming languages
+<!-- # Analyzing existing programming languages -->
+# Analyse bestehender Programmiersprachen
 
+<!--
 The next step in finding an answer is to investigate currently used programming languages,
 especially those that were recently created, and to identify what they changed in comparison to older ones.
+-->
+Der nächste Schritt auf der Suche nach einer Antwort besteht darin, die derzeit verwendeten Programmiersprachen zu untersuchen,
+insbesondere solche, die erst vor kurzem erschienen sind, und herauszufinden, was sie im Vergleich zu älteren Sprachen geändert haben.
 
-## Data to analyze
+<!-- ## Data to analyze -->
+## Zu analysierende Daten
 
+<!--
 To keep the number of languages within a workable range, only the more popular programming languages of 2022 will be analysed.
 The primary source for this data is the _StackOverflow Developer Survey 2022_,
 a worldwide survey that has been conducted annually since 2011 and is aimed at everyone who does programming.
 Below this paragraph, you can see a statistic from the survey in which programming languages are sorted according to popularity.
 The height of a bar corresponds to the number of votes that language got.
 All participants were supposed to vote for all languages that they had used in the last year and would continue using.
+-->
+Um die Anzahl der Sprachen in einem praktikablen Rahmen zu halten, werden nur die populäreren Programmiersprachen des Jahres 2022 analysiert.
+Die Hauptquelle für diese Daten ist die _StackOverflow Developer Survey 2022_,
+eine weltweite Umfrage, die seit 2011 jährlich durchgeführt wird und sich an alle richtet, die programmieren.
+Unterhalb dieses Absatzes sehen Sie eine Statistik aus der Umfrage, in der die Programmiersprachen nach ihrer Beliebtheit sortiert sind.
+Die Höhe eines Balkens entspricht der Anzahl der Stimmen, die diese Sprache erhalten hat.
+Alle Teilnehmer sollten für alle Sprachen stimmen, die sie im letzten Jahr verwendet haben und weiterhin verwenden werden.
 [@so_surveys; @so_survey_2022; @so_survey_2022_data]
 
-<!-- TODO: Color should show the prog lang age -->
-![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey}
+<!-- ![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey} -->
+![Die beliebtesten Programmiersprachen im Jahr 2022 __TODO: Color should show the prog lang age__](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey}
 
+<!--
 The original data also mentions HTML, CSS, SQL, Bash/Shell, and PowerShell.
 They are excluded here as they are highly specialised and, in part, not Turing complete.[^tc-note]
 
 [^tc-note]: A Turing-complete language can be used to implement arbitrary algorithms. @scott_2009, @scott_2016
+-->
+In den Originaldaten werden auch HTML, CSS, SQL, Bash/Shell und PowerShell erwähnt.
+Sie werden hier nicht berücksichtigt, da sie hochspezialisiert und zum Teil nicht Turing-vollständig _(engl. Turing-complete)_ sind.[^tc-note]
 
-__TODO: Reword once age is visible in diagram?__
+[^tc-note]: Eine Turing-vollständige Sprache kann benutzt verwendet werden, um beliebige Algorithmen zu implementieren @scott_2009, @scott_2016
+
+__TODO: Reword once age is visible in diagram__
 According to the StackOverflow Developer Survey 2022, JavaScript (1995), Python (1991), Typescript (2012), Java (1995), C# (2000),
 C++ (1985), PHP (1995), C (1978), Go (2009) and Rust (2010) are the ten most widely used programming languages.
 On average, these languages are therefore 25 years old.
 [@age_prog_langs]
 
-## Popular Languages
+<!-- ## Popular Languages -->
+## Populäre Sprachen
 
-The popular languages are popular for a variety of reasons, some of the most common reasons include:
+<!-- The popular languages are popular for a variety of reasons, some of the most common reasons include:
 
 Widespread use:
 Many popular languages have been around for a long time and have been adopted by many companies and organizations. This means that there is a large community of developers who use the language, which makes it easier to find resources, tutorials, and support.
@@ -49,27 +70,42 @@ Popular languages have a strong community support which helps in the development
 Ease of use:
 Some popular languages are designed to be easy to learn and use, which makes them a good choice for beginners.
 
-All these factors contribute to the popularity of a programming language. They make it easy for developers to start using the language, and they provide a large community of developers who can help with questions and issues. This makes it more likely that a language will continue to be popular over time.
+All these factors contribute to the popularity of a programming language. They make it easy for developers to start using the language, and they provide a large community of developers who can help with questions and issues. This makes it more likely that a language will continue to be popular over time. -->
 
 
-## "New" Languages
+<!-- ## "New" Languages -->
+## "Neue" Sprachen
 
-Many new programming languages that are continuations of older ones have gained popularity in the last years.
+<!--
+Many newer programming languages that are continuations of older ones have gained popularity in the last years.
 These languages include Kotlin by JetBrains^[JetBrains is a company that develops integrated development environments.] as a sucessor to Java,
 which is trying to be more concise, safe and expressive while still running on the Java Virtual Machine and providing interoperability with Java.
 Groovy by Apache, Closure and Scala are other JVM-based languages that can be used with Java and have been around for a while,
 but they have not gained as much popularity as Kotlin.
-<!-- However, Kotlin has been able to differentiate itself from these languages by providing a more modern and expressive syntax, better type inference, and improved performance. -->
+-- However, Kotlin has been able to differentiate itself from these languages by providing a more modern and expressive syntax, better type inference, and improved performance. --
 Google's official support for Android development with Kotlin has possibly been the major factor in its success.
-[@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec]
-[@jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
+-->
+Viele neuere Programmiersprachen, die als Nachfolger älterer Sprachen angesehen werden können, haben in den letzten Jahren an Popularität gewonnen.
+Zu diesen Sprachen gehört Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt.] als Nachfolger von Java.
+Kotlin versucht, kurz und bündig, sicherer und ausdrucksstärker __TODO Wrong translation? exprssive comes from expression based languages or the expression language construct__ zu sein, während es weiterhin auf der Java Virtual Machine läuft und Interoperabilität mit Java bietet.
+Groovy von Apache, Closure und Scala sind andere JVM-basierte Sprachen, die mit Java verwendet werden können und schon seit einiger Zeit auf dem Markt sind,
+aber sie haben nicht so viel Popularität wie Kotlin gewonnen.
+Die offizielle Unterstützung von Google für die Android-Entwicklung mit Kotlin war möglicherweise der Hauptfaktor für den Erfolg von Kotlin.
+[@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec; @jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
 
+<!--
 Another programming language that has gained popularity in recent years is Rust,
 which was started by Graydon Hoare at Mozilla and is now an independent community project.
 Rust is designed to be a systems programming language that is both safe and fast.
 It aims to eliminate risks like null or dangling pointer references, which can lead to memory safety issues often encountered when using C/C++.
+-->
+Eine weitere Programmiersprache, die in den letzten Jahren an Popularität gewonnen hat, ist Rust,
+die von Graydon Hoare bei Mozilla ins Leben gerufen wurde und heute ein unabhängiges Community-Projekt ist.
+Rust ist eine Systemprogrammiersprache, die sowohl sicher als auch schnell ist.
+Sie zielt darauf ab, Risiken wie Null- oder Dangling-Pointer-Referenzen zu eliminieren, die zu Speichersicherheitsproblemen führen können, die häufig bei der Verwendung von C/C++ auftreten.
 [@infoq_rust_interview; @rust_web]
 
+__TODO Google: Go, Dart__
 Go and Dart are both programming languages developed by Google that have been gaining popularity in recent years.
 Both languages were created to address specific issues in the programming world and to provide a solution for developers.
 Go, often referred to as "Go", was developed to address the need for a language that is simple,
@@ -79,20 +115,17 @@ it aims to make it easy to write concurrent and parallel systems.
 On the other hand, Dart was created to address the issue of building fast and high-performance apps on multiple platforms.
 Dart is designed to be a client-optimized language for building fast apps on any platform,
 it allows for a single codebase to run on different platforms and provides features such as Just-In-Time (JIT) and Ahead-of-Time (AOT) compilation.
-Both Go and Dart have been used to build a wide range of applications,
-from web and mobile to desktop and backend, and have strong and growing communities.
 
-- Carbon?
+- __TODO__
+  - Carbon?
+  - Swift: Developed by Apple, Swift is a general-purpose, compiled programming language that is designed to be easy to learn and use. It is particularly well-suited for developing iOS and macOS applications, and has been gaining popularity among developers for its modern syntax, strong type system, and improved performance over Objective-C.
+  - TypeScript: Developed by Microsoft, TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It was designed to make it easier to write and maintain large-scale JavaScript applications by adding features such as static typing, interfaces, and classes. It is widely used in Angular and React projects.
+  - Julia: Developed to be used in scientific, engineering, and technical computing, Julia is a high-performance, high-level dynamic programming language. It is designed to be easy to use and has a syntax similar to that of MATLAB or Python. Julia is particularly well-suited for data science and numerical computing and it's been gaining popularity among researchers and data scientists.
+  - Scala: Developed by Martin Odersky, Scala is a general-purpose programming language that runs on the Java Virtual Machine (JVM). It is designed to be an object-oriented and functional language, and it's been gaining popularity among developers for its ability to write concurrent and parallel systems. It's also widely used for big data processing using Apache Spark.
 
-- Swift: Developed by Apple, Swift is a general-purpose, compiled programming language that is designed to be easy to learn and use. It is particularly well-suited for developing iOS and macOS applications, and has been gaining popularity among developers for its modern syntax, strong type system, and improved performance over Objective-C.
+## Results
 
-- TypeScript: Developed by Microsoft, TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It was designed to make it easier to write and maintain large-scale JavaScript applications by adding features such as static typing, interfaces, and classes. It is widely used in Angular and React projects.
-
-- Julia: Developed to be used in scientific, engineering, and technical computing, Julia is a high-performance, high-level dynamic programming language. It is designed to be easy to use and has a syntax similar to that of MATLAB or Python. Julia is particularly well-suited for data science and numerical computing and it's been gaining popularity among researchers and data scientists.
-
-- Scala: Developed by Martin Odersky, Scala is a general-purpose programming language that runs on the Java Virtual Machine (JVM). It is designed to be an object-oriented and functional language, and it's been gaining popularity among developers for its ability to write concurrent and parallel systems. It's also widely used for big data processing using Apache Spark.
-
-## Problems of current and past programming languages
+### Problems of current and past programming languages
 
 - Parallelization
 - (Uncontrolled) Undefined Behaviour
@@ -106,7 +139,7 @@ from web and mobile to desktop and backend, and have strong and growing communit
   - [Reversible Computation: Extending Horizons of Computing](https://link.springer.com/content/pdf/10.1007/978-3-030-47361-7.pdf)
 - Rust solves most of these, but a watered-down version which only loses a bit of efficiency could probably help a lot. [Source](https://www.reddit.com/r/ProgrammingLanguages/comments/9eqrfy/comment/e5v3vj5/?utm_source=share&utm_medium=web2x&context=3) => Basically what Rym tries to be :)
 
-## Problems of new programming languages
+### Problems of new programming languages
 
 - https://www.quora.com/What-are-the-biggest-problems-with-modern-programming-languages?share=1
 - There are too many of them
@@ -116,7 +149,7 @@ from web and mobile to desktop and backend, and have strong and growing communit
 - Being specific to one problem
   - do interesting thing X but do not advance in all other places
 
-## Qualities of a good programming language
+### Qualities of a good programming language
 
 - (progressivly having to learn new parts / not having to learn everything at once) makes the language easier to learn
   - see talk about type classes, concept is from Swift
@@ -128,7 +161,40 @@ from web and mobile to desktop and backend, and have strong and growing communit
   - https://www.reddit.com/r/ProgrammingLanguages/comments/zqjf47/a_good_dependency_manager_for_a_new_programming/
   - https://futhark-lang.org/blog/2018-07-20-the-future-futhark-package-manager.html
 
+### Type Systems
 
-## Other Stuff
+- getting more powerful
+- type inference
+- Type Classes have been adapted
+  - easily extend functionality of uncontrollable 3rd parties
+  - Swift protocols
+  - C++23 concepts
+  - Rust traits
+  - Java, C# Interfaces?
+- where?
+  - JavaScript
+    - TypeScript, other one from Facebook
+    - Proposal to add type annotations
+  - Python
+    - added type annotations
+  - Rust, Go, Swift
+  - auto in C++
+  - state of C, C++, C#, Java, php types?
 
-[Programming Language Explorations](https://rtoal.github.io/ple)
+### Null Safety
+
+- solutions based on powerful type systems
+  - Rust, Swift, Dart?
+  - TypeScript checks for null/undefined
+- what are the others up to?
+
+### Functional programming
+
+- C++
+  - addition and work on the _functional_ module
+  - algorithms to work with lists and iterators
+- Python
+
+<!-- [Programming Language Explorations](https://rtoal.github.io/ple) -->
+
+{{< pagebreak >}}
