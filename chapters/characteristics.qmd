@@ -1,5 +1,5 @@
-<!-- # Advantageous Characteristics of Programming Languages -->
-# Vorteilhafte Eigenschaften von Programmiersprachen
+# Advantageous Characteristics of Programming Languages
+<!-- # Vorteilhafte Eigenschaften von Programmiersprachen -->
 
 <!-- # Positive/Advantageous/Desirable Characteristics/Properties of Programming Languages
 # Desirable Characteristics of Programming Languages
@@ -22,8 +22,8 @@ da es schwierig ist, alle Beteiligten dazu zu bringen, sich über den Wert einer
 Trotz dieser Unterschiede würden die meisten wahrscheinlich zustimmen, dass die folgenden Kriterien zumindest wichtig sind.
 [@stansifer_1995 S. 60; @sebesta_2019 S. 41]
 
-<!-- ## Readability -->
-## Lesbarkeit
+## Readability
+<!-- ## Lesbarkeit -->
 
 <!--
 One key criteria for judging a programming language is the ease with which programs can be read and understood.
@@ -127,9 +127,23 @@ Selbst wenn die Kombinationen einfach sind, führt ihre schiere Anzahl zu Komple
 Die Einfachheit einer Sprache ist daher zumindest teilweise das Ergebnis einer Kombination aus einer relativ kleinen Anzahl von primitiven Konstrukten und einer begrenzten Verwendung des Konzepts der Orthogonalität.
 [@stansifer_1995 S.60f; @sebesta_2019 S.46f]
 
-<!-- ### Data Types -->
-### Datentypen
+### Data Types
+<!-- ### Datentypen -->
 
+Readability can be increased even more by allowing users to define adequate data types and data structures for specific use cases.
+This especially applies to Booleans and Enumerations covered in @sec-bool and @sec-enum respectively.
+For example, in some languages that do not provide a Boolean type the following code could be used:
+
+```rym
+const timeout = 1
+```
+
+The meaning of this statement is unclear, whereas in a language that includes Boolean types, the following would be used:
+
+```rym
+const timeout = true
+```
+Which is is a clearer then the first one.
 [@sebesta_2019 S. 47]
 
 ### Syntax
@@ -145,16 +159,33 @@ Die Einfachheit einer Sprache ist daher zumindest teilweise das Ergebnis einer K
   - might not make as much sense for non programmers
   - comparable with the way that `+` and other math notation could be considered less readable then `plus`
 
-<!-- ## Writability -->
-## Schreibbarkeit
+## Writability
+<!-- ## Schreibbarkeit -->
 
-- __TODO__
+<!-- TODO -->
+Writability is a measure of how easily a language can be used to create programs for a chosen problem domain.
+Most of the language characteristics that affect readability also affect writability.
+This follows directly from the fact that the process of writing a program requires the programmer frequently to reread the part of the program that is already written.
+As is the case with readability, writability must be considered in the context of the target problem domain of a language.
 
-<!-- ## Reliability -->
-## Verlässlichkeit
+## Reliability
+<!-- ## Verlässlichkeit -->
+
+A program is said to be reliable if it performs to its specifications under all
+conditions and will continue to in the future.
+[@sebesta_2019 S. 51]
+
+### Specification
+
+A programming language that lacks specification can hardly be considered reliable.
+Specification refers to the set of rules and guidelines that a programming language must follow to ensure that the programs created behaves as intended.
+One crucial element of specification is standardization,
+which guarantees that the program will work consistently across different platforms and environments.
+
 
 - __TODO__
   - standardized
+  - open source
   - save
     - aliasing
     - type checking
@@ -162,6 +193,24 @@ Die Einfachheit einer Sprache ist daher zumindest teilweise das Ergebnis einer K
     - allow breaking changes
     - reserved keywords
 
+<!-- Open Source
+
+Open source programming languages are those whose source code is freely available for anyone to use, modify, and distribute. This can be a significant advantage for software development, as it allows for a wider range of people to contribute to the language, which can lead to more innovation and faster development. Additionally, open source languages allow for more transparency, which can improve trust in the language and the programs created with it.
+Future Proof
+
+A future-proof programming language is one that is designed to be able to evolve and adapt over time. This can be an important characteristic for a language to have, as it allows for the language to remain relevant and useful even as technology and programming practices change.
+
+One way that a language can be future-proof is by allowing for breaking changes. Breaking changes refer to changes that alter the way the language works in such a way that existing programs may no longer work as intended. While these changes can be disruptive in the short term, they can also be necessary for the language to evolve and adapt to new technology and programming practices.
+
+Another way that a language can be future-proof is by reserving keywords. Reserved keywords are words that are reserved for specific use in the language, and cannot be used as variable or function names. This can allow for the language to introduce new features and functionality without causing conflicts with existing programs.
+
+Overall, having a language that is future-proof allows for the language to stay relevant and useful for a longer period of time, thus making it more reliable for the development process. -->
+
+<!-- Portability
+
+Portability is another important characteristic of a programming language. A program that is portable can be easily adapted to different platforms and environments. This is especially important for programs that are intended to be used in multiple locations or by -->
+
+<!-- Safety is also an important aspect of specification, as it helps to avoid undefined behavior and aliasing, which can lead to unexpected and unpredictable results. Type checking is another important aspect of specification, as it helps to ensure that the program is using the correct data types in the correct way, which can help to prevent errors and improve the overall reliability of the program. -->
 <!--
 Certain languages (e.g., Smalltalk and Python) are sometimes referred to as
 “interpreted languages” because most of their semantic error checking must

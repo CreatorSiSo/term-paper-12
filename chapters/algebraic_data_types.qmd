@@ -27,7 +27,7 @@ Definintion
   * C++, Java 15, Rust, TypeScript
   * F#, Haskell, Idris, Kotlin, Nim, Swift
 
-### Enums
+### Enums {#sec-enum}
 
 ```rym
 // Declare an enum.

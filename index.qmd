@@ -6,7 +6,6 @@ A lot of them start out as parts of a scientific thesis, and in their spare time
 In some cases, businesses or organisations wish to address a specific issue, but the right technology is still missing.
 Even though the majority of them are never used by the average developer, by trying out new ideas, they can generally bring all programming languages forward.
 -->
-
 Jedes Jahr werden zahlreiche neue Programmiersprachen veröffentlicht.
 Viele von ihnen sind ursprünglich Teil einer wissenschaftlichen Arbeit, und sowohl Privatpersonen als auch Studierende arbeiten in ihrer Freizeit häufig an ihren eigenen Sprachen, um verschiedene Aspekte der Implementierung kennenzulernen.
 In manchen Fällen möchten Unternehmen oder Organisationen ein bestimmtes Problem angehen, aber es fehlt noch die richtige Technologie.
@@ -19,7 +18,6 @@ Since one can start from scratch on the implementation, but conceptually all kno
 completely new ideas can be tried out much easier and faster.
 That process can be more difficult with a language that is used by thousands of people and should remain as stable as possible.
 -->
-
 Eine neue Sprache hat den Vorteil, dass sie nicht durch ihre eigenen, im Laufe der Zeit entstandenen Umstände behindert wird,
 wie es bei vielen Vorgängern der Fall war.
 Da man bei der Implementierung von Null anfangen kann, aber konzeptionell alles Wissen aus früheren Versuchen genutzt wird,
@@ -32,7 +30,6 @@ which makes it possible to iteratively try out many concepts quickly.
 The coordination is quite important in larger projects,
 as there are often many people working on them at the same time, and otherwise there would be little progress.
 -->
-
 Ein weiterer Vorteil kleiner neuer Projekte ist, dass es weniger Bürokratie und Koordination gibt,
 was es ermöglicht, viele Konzepte schnell und iterativ auszuprobieren.
 Die Koordination ist bei größeren Projekten sehr wichtig,
@@ -43,7 +40,6 @@ If the resulting approaches of the "newcomers" seem to make sense and are adapte
 this often results in an integration into older, more established languages.
 Precisely such a language will be designed and implemented in the context of this paper by analysing generally advantageous characteristics, proven technologies, and combining them with new ideas.
 -->
-
 Wenn die daraus resultierenden Ansätze der "Neulinge" sinnvoll erscheinen und an anderen Stellen übernommen werden,
 führt dies oft zu einer Integration in ältere, etabliertere Sprachen.
 Genau eine solche Sprache wird im Rahmen dieser Arbeit entworfen und umgesetzt, indem allgemein vorteilhafte Eigenschaften und bewährte Technologien analysiert und mit neuen Ideen kombiniert werden.
@@ -53,7 +49,6 @@ This thesis therefore deals with the analysis of past as well as current program
 From the knowledge gained from this, a new language will be designed,
 which should make a possible answer to the question: _What would a next generation programming language look like?_
  -->
-
 Diese Arbeit beschäftigt sich daher mit der Analyse vergangener, sowie aktueller Programmiersprachen, um herauszufinden, in welche Richtung diese sich derzeit entwickeln.
 Aus den daraus gewonnenen Erkenntnissen soll eine neue Sprache entworfen werden,
 die eine mögliche Antwort auf die Frage geben soll: _Wie könnte eine Programmiersprache der nächsten Generation aussehen?_

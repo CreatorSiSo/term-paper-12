@@ -7,7 +7,7 @@ More complex types can be created by combining primitive types as we will see in
 [@sebesta_2019 S. 400]
 
 
-## Boolean
+## Boolean {#sec-bool}
 
 Boolean types are perhaps the simplest of all types and have been included in most general-purpose languages designed since 1960.
 They only have two possible values one for true and one for false.

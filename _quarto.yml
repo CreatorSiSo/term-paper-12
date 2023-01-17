@@ -11,7 +11,8 @@ book:
   chapters:
     - index.qmd
     - chapters/characteristics.qmd
-    - chapters/analysis.qmd
+    # - chapters/analysis.qmd
+    - chapters/analysis_de.qmd
     - chapters/syntax.qmd
     - chapters/variables.qmd
     - chapters/primitive_data_types.qmd
@@ -21,7 +22,6 @@ book:
     - chapters/tooling_ecosystem.qmd
     - chapters/appendix.qmd
     - chapters/references.qmd
-
 lang: "de-DE"
 filters:
   - quarto
@@ -38,6 +38,7 @@ csl: custom/ieee.csl
 #   # title-delim: (default is ":")
 
 toc: true
+toc-depth: 2
 number-sections: true
 
 # https://quarto.org/docs/reference/formats/pdf.html#fonts
