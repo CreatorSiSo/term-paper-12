@@ -146,3 +146,18 @@ test "match on non-exhaustive enum" {
   assert(is_one)
 }
 ```
+
+```rym
+type bool = true | false
+type Testing = One | Other
+
+enum Option<T> = {
+  Some(T),
+  None,
+}
+
+struct Something {
+  x: uint,
+  y: uint,
+}
+```

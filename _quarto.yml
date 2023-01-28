@@ -11,7 +11,7 @@ book:
   chapters:
     - index.qmd
     - chapters/characteristics.qmd
-    # - chapters/analysis.qmd
+    - chapters/analysis.qmd
     - chapters/analysis_de.qmd
     - chapters/syntax.qmd
     - chapters/variables.qmd
@@ -20,6 +20,7 @@ book:
     - chapters/function.qmd
     - chapters/polymorphism.qmd
     - chapters/tooling_ecosystem.qmd
+    - chapters/conclusion.qmd
     - chapters/appendix.qmd
     - chapters/references.qmd
 lang: "de-DE"

@@ -98,4 +98,66 @@ example("A")                    // prints "A default"
 example("A", "specific value")  // prints "A specific value"
 ```
 
+## Closures
+
+Rym is trying to combine imperative and declarative approaches of programming and already allows functions to used like data.
+But function declarartions are statements and cannot be used as expressions.
+This can become very cumbersome if functions should be passed into a function call as they first have to be defined and then referenced via their name.
+Closure solve this problem, as they are expressions and allow functions to be created inline.
+Their syntax is based on the function declarations of Rym and can be generalized like this:
+
+```rym
+(param_1, param_2, param_n) -> ReturnType { /*  closure body */ }
+```
+
+This form is still very long, which is why several parts of it can be omitted if they are not needed.
+The return type can be omitted if it is inferreable from context.
+
+```rym
+(param_1, param_2) -> { /* closure body */ }
+```
+
+A body with only one expression does not require a block surrounding it.
+
+```rym
+(param_1, param_2) -> /* single expression */
+```
+
+If there is only one parameter the parentheses can be omitted and a closure without parameters just starts with the thin arrow _->_.
+
+```rym
+param -> /* single expression */
+-> /* single expression */
+```
+
+__TODO Explsin why a closure without parameters makes sense__
+
+```rym
+const outer = 9
+
+const closure_1 = -> 9
+const closure_2 = -> outer
+const closure_3 = other -> outer + other
+
+func add(lhs: uint, rhs: uint) -> uint { lhs + rhs }
+const add = (lhs, rhs) -> lhs + rhs
+const add = (lhs, rhs) -> uint { lhs + rhs }
+const add = (lhs: uint, rhs: uint) -> uint { lhs + rhs }
+
+const fraction = n: uint -> (1..=n).fold(1, (accum, n) -> accum * n)
+
+{
+  mut counter = 0
+  const increment = -> counter += 1
+  increment()
+  assert_eq(counter, 1)
+}
+{
+  mut counter = 0
+  const increment = n -> counter += n
+  increment(20)
+  assert_eq(counter, 20)
+}
+```
+
 {{< pagebreak >}}

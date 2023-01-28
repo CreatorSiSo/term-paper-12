@@ -177,11 +177,40 @@ conditions and will continue to in the future.
 
 ### Specification
 
-A programming language that lacks specification can hardly be considered reliable.
-Specification refers to the set of rules and guidelines that a programming language must follow to ensure that the programs created behaves as intended.
-One crucial element of specification is standardization,
-which guarantees that the program will work consistently across different platforms and environments.
+A programming language that lacks a standardized specification can hardly be considered reliable.
+This specification is the set of rules and guidelines that an implementation of the language must adhere to in order to ensure that programs behave as intended.
+The specification should encompass all possible combinations of programming language features.
 
+In certain instances, the behavior of certain features may be inadequately defined.
+This can result in different implementations, producing different outcomes.
+Some of the possible results<!-- outcomes --> may be harmful.
+Additionally, many imperative languages such as C, C++ and Java, list a set of behaviors that are considered "undefined" or "erroneous."
+Implementations are not obligated to document their behavior or to remain consistent across executions, implementation versions, or optimization levels.
+This presents a significant challenge for users of the language, as they cannot be sure how and if their programm will run.
+These gaps in a specification are called _unspecified behaviour_ and _undefined behaviour_ respectively.
+[@iso_24772_1_2019 S. 21, @michell_2009 S. 190]
+
+<!-- A programming language that lacks a standardized specification can hardly be considered reliable.
+Specification refers to the set of rules and guidelines that a programming language must follow to ensure that the program created behaves as intended.
+It is important that the specification covers all possible combinations of programming language features.
+
+Unspecified behaviour
+
+The behaviour of some features may be incompletely defined. The language implementer would
+have to choose from a finite set of choices, but the choice may not be apparent to the programmer.
+In such cases, different compilers or the same compiler with different options processing the code
+selected may lead to different results. Some of the possible results may be harmful.
+[@iso_24772_1_2019 S. 21]
+
+Undefined Behaviour
+
+Many common imperative languages, such as C, C++ and Java, list a set of behaviours that is said to be “undefined” or “erroneous.”
+These problems are particularly annoying, since they typically fall into the category of “things we’d like to get rid of but are too hard for a compiler to solve.”
+Compilers can do pretty much anything they like with such things,
+and are under no obligation to document their behaviour or even to be consistent across compilations,
+compiler versions, optimization levels and so on.
+For code-analysis tools, these are a serious headache.
+[@michell_2009 S. 190] -->
 
 - __TODO__
   - standardized

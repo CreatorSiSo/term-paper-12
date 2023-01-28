@@ -3,7 +3,8 @@ nocite: |
   @*
 ---
 
-# References {.unnumbered}
+<!-- # References {.unnumbered} -->
+# Bibliografie {.unnumbered}
 
 ::: {#refs}
 :::
