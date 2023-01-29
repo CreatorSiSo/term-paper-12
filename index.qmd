@@ -1,4 +1,5 @@
-# Introduction {#sec-intro}
+<!-- # Introduction {#sec-intro} -->
+# Einleitung {#sec-intro}
 
 <!--
 Every year, numerous new programming languages are released.

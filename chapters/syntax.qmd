@@ -1,6 +1,0 @@
-# Syntax {#sec-syntax}
-
-It is advantageous if not everything is completely new in a new language,
-as it can then be learned more quickly if you already know how to programme.
-
-{{< pagebreak >}}

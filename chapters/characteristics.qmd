@@ -1,5 +1,5 @@
-# Advantageous Characteristics of Programming Languages
-<!-- # Vorteilhafte Eigenschaften von Programmiersprachen -->
+<!-- # Advantageous Characteristics of Programming Languages -->
+# Vorteilhafte Eigenschaften von Programmiersprachen
 
 <!-- # Positive/Advantageous/Desirable Characteristics/Properties of Programming Languages
 # Desirable Characteristics of Programming Languages
@@ -20,8 +20,8 @@ da es schwierig ist, alle Beteiligten dazu zu bringen, sich über den Wert einer
 Trotz dieser Unterschiede würden die meisten wahrscheinlich zustimmen, dass die folgenden Kriterien zumindest wichtig sind.
 [@stansifer_1995 S. 60; @sebesta_2019 S. 41]
 
-## Readability
-<!-- ## Lesbarkeit -->
+<!-- ## Readability -->
+## Lesbarkeit
 
 <!--
 One key criteria for judging a programming language is the ease with which programs can be read and understood.
@@ -125,8 +125,8 @@ Selbst wenn die Kombinationen einfach sind, führt ihre schiere Anzahl zu Komple
 Die Einfachheit einer Sprache ist daher zumindest teilweise das Ergebnis einer Kombination aus einer relativ kleinen Anzahl von primitiven Konstrukten und einer begrenzten Verwendung des Konzepts der Orthogonalität.
 [@stansifer_1995 S.60f; @sebesta_2019 S.46f]
 
-### Data Types
-<!-- ### Datentypen -->
+<!-- ### Data Types -->
+### Datentypen
 
 Readability can be increased even more by allowing users to define adequate data types and data structures for specific use cases.
 This especially applies to Booleans and Enumerations covered in @sec-bool and @sec-enum respectively.
@@ -157,8 +157,8 @@ Which is is a clearer then the first one.
   - might not make as much sense for non programmers
   - comparable with the way that `+` and other math notation could be considered less readable then `plus`
 
-## Writability
-<!-- ## Schreibbarkeit -->
+<!-- ## Writability -->
+## Schreibbarkeit
 
 <!-- TODO -->
 Writability is a measure of how easily a language can be used to create programs for a chosen problem domain.
@@ -166,14 +166,15 @@ Most of the language characteristics that affect readability also affect writabi
 This follows directly from the fact that the process of writing a program requires the programmer frequently to reread the part of the program that is already written.
 As is the case with readability, writability must be considered in the context of the target problem domain of a language.
 
-## Reliability
-<!-- ## Verlässlichkeit -->
+<!-- ## Reliability -->
+## Verlässlichkeit
 
 A program is said to be reliable if it performs to its specifications under all
 conditions and will continue to in the future.
 [@sebesta_2019 S. 51]
 
-### Specification
+<!-- ### Specification -->
+### Spezifikation
 
 A programming language without a standardised specification can hardly be considered reliable.
 This specification is a set of rules that an implementation of the language must obey to ensure that programs behave as intended.
@@ -207,8 +208,8 @@ Another way that a language can be future-proof is by reserving keywords. Reserv
 Overall, having a language that is future-proof allows for the language to stay relevant and useful for a longer period of time, thus making it more reliable for the development process.
 -->
 
-### Safety
-<!-- ### Sicherheit -->
+<!-- ### Safety -->
+### Sicherheit
 
 <!-- Safety is also an important aspect of specification, as it helps to avoid undefined behavior and aliasing, which can lead to unexpected and unpredictable results. Type checking is another important aspect of specification, as it helps to ensure that the program is using the correct data types in the correct way, which can help to prevent errors and improve the overall reliability of the program. -->
 
@@ -216,7 +217,8 @@ Overall, having a language that is future-proof allows for the language to stay 
   - aliasing
   - type checking
 
-### Future Proof
+<!-- ### Future Proof -->
+### Zukunftssicherheit
 
 - __TODO__
   - allow breaking changes
