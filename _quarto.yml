@@ -12,7 +12,7 @@ book:
     - index.qmd
     - chapters/characteristics.qmd
     - chapters/analysis.qmd
-    - chapters/analysis_de.qmd
+    # - chapters/analysis_de.qmd
     - chapters/syntax.qmd
     - chapters/variables.qmd
     - chapters/primitive_data_types.qmd
@@ -38,7 +38,7 @@ csl: custom/ieee.csl
 #   tbl-title: Tabelle # (default is "Table")
 #   # title-delim: (default is ":")
 
-toc: false
+toc: true
 toc-depth: 2
 number-sections: true
 

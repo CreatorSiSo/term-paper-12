@@ -86,7 +86,7 @@ the program structure is less obvious and more of them are required than in equi
 These same arguments apply to the less extreme case of high-level languages with inadequate control and data-structuring constructs.
 -->
 Andererseits kann man es mit der Einfachheit auch übertreiben.
-Zum Beispiel sind Form und Bedeutung der meisten Assembler-Anweisungen sehr einfach, aber da komplexere Steueranweisungen fehlen, ist die Programmstruktur weniger offensichtlich und es sind mehr Anweisungen erforderlich als in entsprechenden Programmen in einer höheren Sprache __TODO What should high-level language be translated to?__,
+Zum Beispiel sind Form und Bedeutung der meisten Assembler-Anweisungen sehr einfach, aber da komplexere Steueranweisungen fehlen, ist die Programmstruktur weniger offensichtlich und es sind mehr Anweisungen erforderlich als in entsprechenden Programmen in einer höheren Sprache,
 ist die Programmstruktur weniger offensichtlich und es werden mehr Anweisungen benötigt als in entsprechenden Programmen in einer höheren Sprache.
 Dieselben Argumente gelten auch für den weniger extremen Fall von Hochsprachen mit unzureichenden Kontroll- und Datenstrukturen.
 [@sebesta_2019 S. 44]
@@ -98,13 +98,13 @@ Dieselben Argumente gelten auch für den weniger extremen Fall von Hochsprachen 
 ### Orthogonalität
 
 <!--
-Orthogonality in a programming language means that a relatively small set of primitive constructs can be combined in a relatively small number of ways to build the control and data structures of the language.
+Orthogonality in a programming language means that a small set of primitive constructs can be combined in a small number of ways to build the control and data structures of the language.
 Furthermore, every possible combination of primitives should be legal and meaningful.
 Therefore, a lack of orthogonality leads to exceptions to the rules of the language.
 The more orthogonal the design of a language, the fewer exceptions the language rules require.
 Fewer exceptions mean a higher degree of regularity in the design, which makes the language easier to learn, read, and understand.
 -->
-Orthogonalität in einer Programmiersprache bedeutet, dass eine relativ kleine Menge von primitiven Konstrukten auf relativ wenige Arten kombiniert werden können, um die Kontroll- und Datenstrukturen der Sprache aufzubauen.
+Orthogonalität in einer Programmiersprache bedeutet, dass eine kleine Menge von primitiven Konstrukten auf wenige Arten kombiniert werden können, um die Kontroll- und Datenstrukturen der Sprache aufzubauen.
 Außerdem sollte jede mögliche Kombination von Primitiven legal und sinnvoll sein.
 Ein Mangel an Orthogonalität führt daher zu Ausnahmen von den Regeln der Sprache.
 Je orthogonaler der Entwurf einer Sprache ist, desto weniger Ausnahmen erfordern die Sprachregeln.
@@ -177,53 +177,26 @@ conditions and will continue to in the future.
 
 ### Specification
 
-A programming language that lacks a standardized specification can hardly be considered reliable.
-This specification is the set of rules and guidelines that an implementation of the language must adhere to in order to ensure that programs behave as intended.
-The specification should encompass all possible combinations of programming language features.
+A programming language without a standardised specification can hardly be considered reliable.
+This specification is a set of rules that an implementation of the language must obey to ensure that programs behave as intended.
+It should cover all possible combinations of programming language features.
 
-In certain instances, the behavior of certain features may be inadequately defined.
-This can result in different implementations, producing different outcomes.
-Some of the possible results<!-- outcomes --> may be harmful.
-Additionally, many imperative languages such as C, C++ and Java, list a set of behaviors that are considered "undefined" or "erroneous."
-Implementations are not obligated to document their behavior or to remain consistent across executions, implementation versions, or optimization levels.
-This presents a significant challenge for users of the language, as they cannot be sure how and if their programm will run.
-These gaps in a specification are called _unspecified behaviour_ and _undefined behaviour_ respectively.
-[@iso_24772_1_2019 S. 21, @michell_2009 S. 190]
+In some cases, the behaviour of certain features may be poorly defined,
+either to make programs run optimally on certain platforms, or because no one has thought of the exact combination.
+This can lead to different implementations that produce different results.
+Some of the possible outcomes can be harmful and implementations are not required to remain consistent across executions,
+implementation versions, or levels of optimisation.
+[@iso_24772_1_2019 S. 21; @michell_2009 S. 190]
 
-<!-- A programming language that lacks a standardized specification can hardly be considered reliable.
-Specification refers to the set of rules and guidelines that a programming language must follow to ensure that the program created behaves as intended.
-It is important that the specification covers all possible combinations of programming language features.
-
-Unspecified behaviour
-
-The behaviour of some features may be incompletely defined. The language implementer would
-have to choose from a finite set of choices, but the choice may not be apparent to the programmer.
-In such cases, different compilers or the same compiler with different options processing the code
-selected may lead to different results. Some of the possible results may be harmful.
+Behaviours that are not mentioned in the specification are called _unspecified behaviour_,
+and _undefined behaviour_ if they are mentioned, but it is not defined how they behave.
+They pose a significant challenge to users of the language, as they cannot be sure how and whether their program will run.
+For this reason, a language should have as few of them as possible.
 [@iso_24772_1_2019 S. 21]
 
-Undefined Behaviour
+<!-- ### Open Source -->
 
-Many common imperative languages, such as C, C++ and Java, list a set of behaviours that is said to be “undefined” or “erroneous.”
-These problems are particularly annoying, since they typically fall into the category of “things we’d like to get rid of but are too hard for a compiler to solve.”
-Compilers can do pretty much anything they like with such things,
-and are under no obligation to document their behaviour or even to be consistent across compilations,
-compiler versions, optimization levels and so on.
-For code-analysis tools, these are a serious headache.
-[@michell_2009 S. 190] -->
-
-- __TODO__
-  - standardized
-  - open source
-  - save
-    - aliasing
-    - type checking
-  - future proof
-    - allow breaking changes
-    - reserved keywords
-
-<!-- Open Source
-
+<!--
 Open source programming languages are those whose source code is freely available for anyone to use, modify, and distribute. This can be a significant advantage for software development, as it allows for a wider range of people to contribute to the language, which can lead to more innovation and faster development. Additionally, open source languages allow for more transparency, which can improve trust in the language and the programs created with it.
 Future Proof
 
@@ -233,13 +206,28 @@ One way that a language can be future-proof is by allowing for breaking changes.
 
 Another way that a language can be future-proof is by reserving keywords. Reserved keywords are words that are reserved for specific use in the language, and cannot be used as variable or function names. This can allow for the language to introduce new features and functionality without causing conflicts with existing programs.
 
-Overall, having a language that is future-proof allows for the language to stay relevant and useful for a longer period of time, thus making it more reliable for the development process. -->
+Overall, having a language that is future-proof allows for the language to stay relevant and useful for a longer period of time, thus making it more reliable for the development process.
+-->
+
+### Safety
+<!-- ### Sicherheit -->
+
+<!-- Safety is also an important aspect of specification, as it helps to avoid undefined behavior and aliasing, which can lead to unexpected and unpredictable results. Type checking is another important aspect of specification, as it helps to ensure that the program is using the correct data types in the correct way, which can help to prevent errors and improve the overall reliability of the program. -->
+
+- __TODO__
+  - aliasing
+  - type checking
+
+### Future Proof
+
+- __TODO__
+  - allow breaking changes
+  - reserved keywords
 
 <!-- Portability
 
 Portability is another important characteristic of a programming language. A program that is portable can be easily adapted to different platforms and environments. This is especially important for programs that are intended to be used in multiple locations or by -->
 
-<!-- Safety is also an important aspect of specification, as it helps to avoid undefined behavior and aliasing, which can lead to unexpected and unpredictable results. Type checking is another important aspect of specification, as it helps to ensure that the program is using the correct data types in the correct way, which can help to prevent errors and improve the overall reliability of the program. -->
 <!--
 Certain languages (e.g., Smalltalk and Python) are sometimes referred to as
 “interpreted languages” because most of their semantic error checking must
@@ -252,4 +240,4 @@ checks. That said, language design has a profound effect on “compilability.”
 @scott_2016
  -->
 
-{{< page_break >}}
+{{< pagebreak >}}
