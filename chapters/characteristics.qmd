@@ -6,8 +6,6 @@
 # Influences on Language Design
 # Eveluation Criteria -->
 
-<!-- TODO Explain high level vs low level -->
-
 <!--
 Crucial to achieving this goal is to find out which characteristics of a programming language are advantageous and which ones are not.
 They will then be evaluated, by focusing on how they impact the software development process, including maintenance.

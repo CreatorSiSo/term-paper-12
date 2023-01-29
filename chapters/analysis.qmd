@@ -12,19 +12,19 @@ insbesondere solche, die erst vor kurzem erschienen sind, und herauszufinden, wa
 ## Zu analysierende Daten
 
 <!--
-To keep the number of languages within a workable range, only the more popular programming languages of 2022 will be analysed.
+To keep the number of languages within a reasonable range, only the most popular programming languages of 2022 were analysed.
 The primary source for this data is the _StackOverflow Developer Survey 2022_,
-a worldwide survey that has been conducted annually since 2011 and is aimed at everyone who does programming.
-Below this paragraph, you can see a statistic from the survey in which programming languages are sorted according to popularity.
-The height of a bar corresponds to the number of votes that language got.
-All participants were supposed to vote for all languages that they had used in the last year and would continue using.
+a global survey conducted annually since 2011, aimed at anyone who programs.
+Below this paragraph you can see a statistic from the survey, where programming languages are ranked according to their popularity.
+The height of a bar corresponds to the number of votes that language received.
+Participants were asked to vote for all languages they used last year and would use again.
 -->
-Um die Anzahl der Sprachen in einem praktikablen Rahmen zu halten, werden nur die populäreren Programmiersprachen des Jahres 2022 analysiert.
-Die Hauptquelle für diese Daten ist die _StackOverflow Developer Survey 2022_,
+Um die Zahl der Sprachen in einem vernünftigen Rahmen zu halten, wurden nur die beliebtesten Programmiersprachen des Jahres 2022 analysiert.
+Die Hauptquelle für diese Daten ist der _StackOverflow Developer Survey 2022_,
 eine weltweite Umfrage, die seit 2011 jährlich durchgeführt wird und sich an alle richtet, die programmieren.
-Unterhalb dieses Absatzes sehen Sie eine Statistik aus der Umfrage, in der die Programmiersprachen nach ihrer Beliebtheit sortiert sind.
+Unterhalb dieses Absatzes sehen Sie eine Statistik aus der Umfrage, in der die Programmiersprachen nach ihrer Beliebtheit geordnet sind.
 Die Höhe eines Balkens entspricht der Anzahl der Stimmen, die diese Sprache erhalten hat.
-Alle Teilnehmer sollten für alle Sprachen stimmen, die sie im letzten Jahr verwendet haben und weiterhin verwenden werden.
+Die Teilnehmer wurden gebeten, für alle Sprachen zu stimmen, die sie im letzten Jahr verwendet haben und wieder verwenden würden.
 [@so_surveys; @so_survey_2022; @so_survey_2022_data]
 
 <!-- ![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey} -->
@@ -32,14 +32,14 @@ Alle Teilnehmer sollten für alle Sprachen stimmen, die sie im letzten Jahr verw
 
 <!--
 The original data also mentions HTML, CSS, SQL, Bash/Shell, and PowerShell.
-They are excluded here as they are highly specialised and, in part, not Turing complete.[^tc-note]
+These are not considered here because they are highly specialised and in part not Turing-complete.[^tc-note]
 
-[^tc-note]: A Turing-complete language can be used to implement arbitrary algorithms. @scott_2009, @scott_2016
+[^tc-note]: A Turing-complete language can be used to implement any algorithm. @scott_2009, @scott_2016
 -->
-In den Originaldaten werden auch HTML, CSS, SQL, Bash/Shell und PowerShell erwähnt.
-Sie werden hier nicht berücksichtigt, da sie hochspezialisiert und zum Teil nicht Turing-vollständig _(engl. Turing-complete)_ sind.[^tc-note]
+In den ursprünglichen Daten werden auch HTML, CSS, SQL, Bash/Shell und PowerShell erwähnt.
+Diese werden hier nicht berücksichtigt, da sie hochspezialisiert und teilweise nicht Turing-vollständig _(engl. Turing-complete)_ sind.[^tc-note]
 
-[^tc-note]: Eine Turing-vollständige Sprache kann benutzt verwendet werden, um beliebige Algorithmen zu implementieren @scott_2009, @scott_2016
+[^tc-note]: Eine Turing-vollständige Sprache kann zur Umsetzung jedes beliebigen Algorithmus benutzt werden. @scott_2009, @scott_2016
 
 __TODO: Reword once age is visible in diagram__
 According to the StackOverflow Developer Survey 2022, JavaScript (1995), Python (1991), Typescript (2012), Java (1995), C# (2000),
@@ -48,7 +48,7 @@ On average, these languages are therefore 25 years old.
 [@age_prog_langs]
 
 <!-- ## Popular Languages -->
-## Populäre Sprachen
+<!-- ## Populäre Sprachen -->
 
 <!-- The popular languages are popular for a variety of reasons, some of the most common reasons include:
 
@@ -73,37 +73,40 @@ Some popular languages are designed to be easy to learn and use, which makes the
 All these factors contribute to the popularity of a programming language. They make it easy for developers to start using the language, and they provide a large community of developers who can help with questions and issues. This makes it more likely that a language will continue to be popular over time. -->
 
 
-<!-- ## "New" Languages -->
-## "Neue" Sprachen
+<!-- ## Newer Programming Languages -->
+## Neuere Programmiersprachen
 
 <!--
-Many newer programming languages that are continuations of older ones have gained popularity in the last years.
-These languages include Kotlin by JetBrains^[JetBrains is a company that develops integrated development environments.] as a sucessor to Java,
-which is trying to be more concise, safe and expressive while still running on the Java Virtual Machine and providing interoperability with Java.
-Groovy by Apache, Closure and Scala are other JVM-based languages that can be used with Java and have been around for a while,
-but they have not gained as much popularity as Kotlin.
--- However, Kotlin has been able to differentiate itself from these languages by providing a more modern and expressive syntax, better type inference, and improved performance. --
-Google's official support for Android development with Kotlin has possibly been the major factor in its success.
+Many newer programming languages, which can be seen as successors to older languages, have gained popularity in recent years.
+These languages include Kotlin from JetBrains^[JetBrains is a company that develops integrated development environments] as a successor to Java.
+Kotlin is supposed to be more concise, expressive and secure, while continuing to run on the Java Virtual Machine and offering interoperability with Java.
+Apache's Groovy, Closure and Scala are other JVM-based languages that can be used with Java,
+but have not gained as much popularity as Kotlin.
+Perhaps the biggest factor in its success has been Google's official support for Android development using Kotlin.
 -->
-Viele neuere Programmiersprachen, die als Nachfolger älterer Sprachen angesehen werden können, haben in den letzten Jahren an Popularität gewonnen.
-Zu diesen Sprachen gehört Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt.] als Nachfolger von Java.
-Kotlin versucht, kurz und bündig, sicherer und ausdrucksstärker __TODO Wrong translation? exprssive comes from expression based languages or the expression language construct__ zu sein, während es weiterhin auf der Java Virtual Machine läuft und Interoperabilität mit Java bietet.
-Groovy von Apache, Closure und Scala sind andere JVM-basierte Sprachen, die mit Java verwendet werden können und schon seit einiger Zeit auf dem Markt sind,
-aber sie haben nicht so viel Popularität wie Kotlin gewonnen.
-Die offizielle Unterstützung von Google für die Android-Entwicklung mit Kotlin war möglicherweise der Hauptfaktor für den Erfolg von Kotlin.
+Viele neuere Programmiersprachen, die als Nachfolger älterer Sprachen betrachtet werden können, haben in den letzten Jahren an Popularität gewonnen.
+Zu diesen Sprachen gehört Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt] als Nachfolger von Java.
+Kotlin soll kompakter, ausdrucksstärker und sicherer sein, aber weiterhin auf der Java Virtual Machine laufen und Interoperabilität mit Java bieten.
+Groovy, Closure und Scala von Apache sind weitere JVM-basierte Sprachen, die mit Java verwendet werden können,
+aber nicht so populär geworden sind wie Kotlin.
+Der vielleicht größte Faktor für den Erfolg war die offizielle Unterstützung von Google für Android-Entwicklung mit Kotlin.
 [@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec; @jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
 
 <!--
 Another programming language that has gained popularity in recent years is Rust,
 which was started by Graydon Hoare at Mozilla and is now an independent community project.
 Rust is designed to be a systems programming language that is both safe and fast.
-It aims to eliminate risks like null or dangling pointer references, which can lead to memory safety issues often encountered when using C/C++.
+The language aims to eliminate memory safety vulnerabilities such as use after free, null pointer dereference, double free.
+According to Google, these are responsible for more than 50% of the bugs in Android.
 -->
 Eine weitere Programmiersprache, die in den letzten Jahren an Popularität gewonnen hat, ist Rust,
 die von Graydon Hoare bei Mozilla ins Leben gerufen wurde und heute ein unabhängiges Community-Projekt ist.
-Rust ist eine Systemprogrammiersprache, die sowohl sicher als auch schnell ist.
-Sie zielt darauf ab, Risiken wie Null- oder Dangling-Pointer-Referenzen zu eliminieren, die zu Speichersicherheitsproblemen führen können, die häufig bei der Verwendung von C/C++ auftreten.
-[@infoq_rust_interview; @rust_web]
+Rust ist als Systemprogrammiersprache entwickelt worden, die sowohl sicher als auch schnell ist.
+Die Sprache zielt darauf ab, Schwachstellen der Speichersicherheit zu beseitigen, wie z.B. use after free, null pointer dereference, double free.
+Nach Angaben von Google sind diese für mehr als 50% der Fehler in Android verantwortlich.
+[@infoq_rust_interview; @rust_web; @google_rust]
+
+Google has also created some programming languages of their own
 
 __TODO Google: Go, Dart__
 Go and Dart are both programming languages developed by Google that have been gaining popularity in recent years.
