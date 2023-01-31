@@ -28,7 +28,7 @@ As this detail is trivial Rym does not specify how to store boolean values.
 
 The boolean type in Rym is called "bool" like in Python, PHP, C#, Go, Rust, Swift and many others.
 It is named after _George Boole_ who pioneered the field of mathematical logic.
-[@php_ref_types; @csharp_spec_types; @go_spec_types; @rust_ref_types; @swift_docs]
+[@php_ref_types; @csharp_spec_types; @go_spec; @rust_ref_types; @swift_docs]
 
 <!-- TODO Should bool be a union type of true and false?
 ```rym

@@ -61,7 +61,7 @@ Probleme mit der Lesbarkeit treten immer dann auf, wenn der Programmverfasser ei
 
 <!--
 A second complicating characteristic of a programming language is, having more than one way to accomplish the same operation.
-@sec-variables will discuss one example of this in more detail.
+@sec-bindings-and-scope will discuss one example of this in more detail.
 That example will require operator overloading in Rym,
 in which a single operator can have more than one meaning.
 Although this is often useful, it can lead to reduced readability if users are allowed to create their own overloading and do not do it sensibly.
@@ -69,7 +69,7 @@ For example, it is clearly acceptable to overload + to use it for both integer a
 In fact, this overloading simplifies a language by reducing the number of operators. How the overloading in Rym works is explained in @sec-polymorphism.
 -->
 Ein zweites Merkmal, das die Lesbarkeit einer Programmiersprache beeinträchtigt, ist die Existenz von mehr als einem Weg, um dieselbe Operation auszuführen.
-In @sec-variables wird ein Beispiel dafür näher erläutert.
+In @sec-bindings-and-scope wird ein Beispiel dafür näher erläutert.
 Dieses Beispiel erfordert die Überladung von Operatoren in Rym,
 bei dem ein einzelner Operator mehr als eine Implementierung haben kann.
 Obwohl dies oft nützlich ist, kann es zu einer geringeren Lesbarkeit führen, wenn es den Benutzern erlaubt ist, ihre eigenen Überladungen zu erstellen und sie dies nicht vernünftig tun.

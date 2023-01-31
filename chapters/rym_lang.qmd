@@ -49,3 +49,106 @@ func main() -> () {
   print("Hello World!")
 }
 ```
+
+## Modules {#sec-modules}
+
+In Rym, modules are the building blocks of a package and provide a way to organize code into logical units.
+Each module can contain its own functions, constants, and other definitions.
+Modules can be imported into other modules, allowing for the reuse of code.
+
+## Data Types {#sec-data-types}
+
+Rym provides a rich set of data types, including primitive types (such as integers, floats, and strings)
+and composite types (such as arrays and tuples). Rym also provides support for algebraic data types,
+which allow for the creation of custom, named data types.
+
+### Primitive Data Types {#sec-primitive-data-types}
+
+Rym provides a set of basic data types such as integers, floating-point numbers, strings, and booleans.
+These types can be used to build more complex data structures.
+
+### Algebraic Data Types {#sec-algebraic-data-types}
+
+Algebraic data types (ADTs) in Rym provide a way to create custom, named data types that can be used in the same way as other built-in types.
+ADTs can be constructed from primitive types or other ADTs, and can be used to model complex data structures in a type-safe manner.
+
+## Functions {#sec-functions}
+
+Functions in Rym are first-class citizens, just like values and data types.
+They are blocks of code that can be passed as parameters, assigned to variables, and used in expressions.
+Functions can return values and accept parameters, which makes them powerful tools for creating modular, reusable code.
+
+## Higher Order Functions
+
+Functions in Rym can be used as values, just like booleans, numbers and strings.
+They are also higher order functions, meaning that they can be used as arguments to another function, or they can be a function's result.
+@higher_order_func
+
+Because functions are a data type
+
+To allow for easier declaration of functions inline
+
+```rym
+func twice(f: func(int) -> int) -> func(int) -> int {
+  x -> f(f(x))
+}
+
+func plus_three(i: int) -> int {
+  i + 3
+}
+
+func main() {
+  const specific_twice = twice(plus_three)
+
+  print(f"{specific_twice(7)}") // 13
+}
+```
+
+
+## Bindings and Scope {#sec-bindings-and-scope}
+
+Bindings in Rym are the association of a name with a value, and scope determines the accessibility of these bindings.
+Rym has both global and local scopes, and bindings declared in a local scope are only accessible within that scope.
+
+Immutable
+
+```rym
+const example_1 = 99
+example_1 = 100     // error: Cannot assing to immutable variable example_1
+print(example_1)
+```
+
+Mutable
+
+```rym
+mut example_1 = 99
+example_1 = 100
+print(example_1) // prints "100"
+```
+
+__TODO__
+
+## Operators
+
+For example, in Java, a user can increment a simple integer variable in four different ways:
+
+    count = count + 1
+    count += 1
+    count++
+    ++count
+
+Although the last two statements have slightly different meanings from each
+other and from the others in some contexts, all of them have the same
+meaning when used as stand-alone expressions. These variations are
+discussed in Chapter 7.
+
+## Control Flow {#sec-control-flow}
+
+Control flow in Rym is achieved through the use of conditional statements (if/else) and loops (for/while).
+Rym also provides a mechanism for early exits from loops or functions through the use of return statements.
+
+## Tooling and Ecosystem {#sec-tooling-and-ecosystem}
+
+Rym has a growing ecosystem of tools and libraries that make it easier to develop, test, and deploy applications.
+These tools include IDEs, text editors with Rym plugins, build tools, package managers, and libraries for various domains.
+Rym's tooling and ecosystem are designed to be flexible and allow for easy integration with other systems and technologies.

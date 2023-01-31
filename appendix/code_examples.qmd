@@ -1,9 +1,7 @@
-<!-- # A. Appendix {.unnumbered} -->
-# A. Anhang {.unnumbered}
+<!-- # Source Code Examples -->
+# Quellcode Beispiele
 
-## Code Examples
-
-### Factorial
+## Factorial
 
 Two possible implementations for calculating factorials.
 Pseudo code from Wikipedia:
@@ -33,7 +31,9 @@ func factorial(n: uint) -> uint {
 }
 ```
 
-### Summands __TODO Use better name_
+{{< pagebreak >}}
+
+## Summands __TODO Use better name_
 
 ```rym
 func main() -> @Io {
@@ -65,12 +65,6 @@ func summands(array: [i32], sum: i32) -> Option<[usize; 2]> {
 
   None
 }
-```
-
-## Rym Parser Grammar
-
-```
-TODO
 ```
 
 {{< pagebreak >}}

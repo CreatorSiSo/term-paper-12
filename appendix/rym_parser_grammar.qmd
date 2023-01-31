@@ -1,0 +1,110 @@
+## Rym Parser Grammar
+
+```{mermaid}
+%%{
+  init: {
+    "theme": "base",
+    "flowchart": {
+      "nodeSpacing": 30,
+      "rankSpacing": 60,
+      "padding": 15,
+      "diagramPadding": 0
+    }
+  }
+}%%
+flowchart TD
+	f(File) --> f1(Item*)
+
+  item(Item)
+  item --> itemtype
+  item --> itemend
+
+  itemtype(ItemType)
+  itemtype --> mod
+  itemtype ----> use
+  itemtype ----> func
+  itemtype ----> enum
+  itemtype ----> struct
+  itemtype ----> Trait
+  itemtype ----> Implementation
+
+  itemend(ItemEnd)
+  itemend --> iend1["';' | NEWLINE | EOF"]
+
+  mod(Module)
+  mod --> mod1["'mod'"]
+  mod --> mod3["'{'"]
+  mod --> mod2(Item*)
+  mod --> mod4["'}'"]
+
+  use(Use)
+  use --> use1["'use'"]
+  use --> use2(Path)
+
+  func(Function)
+  func --> func1["'func'"]
+  func --> block
+
+  enum(Enum)
+  enum --> enum1["'enum'"]
+
+  struct(Struct)
+  struct --> struct1["'struct'"]
+  struct --> struct2["'{'"]
+  struct --> struct3
+  struct --> struct4["'}'"]
+
+  block(Block)
+  block --> block1["'{'"]
+  block --> block2
+  block --> block3["'}'"]
+
+  path(Path)
+  path --> path1(Ident)
+
+  ident(Ident)
+  ident --> ident1["'_' | UnicodeIdentStart"]
+  ident --> UnicodeIdentContinue
+```
+
+File: Item\*
+Item: Module | Use | Function | Enum | Struct | Trait | Implementation
+
+```
+Stmt => Item | VarStmt | ExprStmt
+VarStmt => ("const" | "mut") Ident "=" Expr ItemEnd
+ExprStmt => Expr ItemEnd
+Expr => ExprWithoutBlock | ExprWithBlock
+ExprWithoutBlock => LiteralExpr | PathExpr | OperatorExpr | GroupedExpr | ArrayExpr
+                   | IndexExpr | Tuple | MethodCallExpr | CallExpr | RangeExpr
+                   | ClosureExpr | ContinueExpr | BreakExpr | ReturnExpr
+LiteralExpr => FloatLit | IntLit | StringLit | CharLit
+PathExpr => Path
+OperatorExpr => UnaryExpr | BinaryExpr
+UnaryExpr => ("!" | "-") Expr
+BinaryExpr => Expr ("+" | "-" | "*" | "/" | "%") Expr
+GroupedExpr => "(" Expr ")"
+ArrayExpr => "[" (Expr ("," Expr)* ","? | Expr ";" Expr) "]"
+IndexExpr => Expr "[" Expr "]"
+Tuple => "(" ((Expr ",")+ Expr)? ")"
+MethodCallExpr => Expr "." Ident "(" CallArgs? ")"
+CallExpr => Expr "(" CallArgs? ")"
+CallArgs => Expr ("," Expr)* ","
+RangeExpr => Expr? ".." "="? Expr?
+ClosureExpr => "|" ClosureParams "|" (Expr | "->" Type BlockExpr)
+ClosureParams => __TODO__
+ContinueExpr => "continue"
+BreakExpr => "break" Expr?
+ReturnExpr => "return" Expr
+ExprWithBlock => BlockExpr | LoopExpr | IfExpr | IfVarExpr | MatchExpr
+BlockExpr => "{" Stmt* "}"
+LoopExpr => "loop" BlockExpr
+IfExpr => "if" Expr BlockExpr ("else" (BlockExpr | IfExpr | IfVarExpr))?
+IfVarExpr => "if" ("const" | "mut") __TODO__ "=" Expr BlockExpr ("else" (BlockExpr | IfExpr | IfVarExpr))?
+MatchExpr => __TODO__
+Type => Path
+Ident => ('_' | UnicodeIdentStart) UnicodeIdentContinue
+ItemEnd => ";" | "\n" | EOF
+```
+
+{{< pagebreak >}}

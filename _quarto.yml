@@ -14,15 +14,16 @@ book:
     - chapters/analysis.qmd
     # - chapters/analysis_de.qmd
     - chapters/rym_lang.qmd
-    - chapters/variables.qmd
     - chapters/primitive_data_types.qmd
     - chapters/algebraic_data_types.qmd
     - chapters/function.qmd
     - chapters/polymorphism.qmd
     - chapters/tooling_ecosystem.qmd
     - chapters/conclusion.qmd
-    - chapters/appendix.qmd
     - chapters/references.qmd
+  appendices:
+    - appendix/code_examples.qmd
+    - appendix/rym_parser_grammar.qmd
 lang: "de-DE"
 filters:
   - quarto
@@ -33,7 +34,9 @@ bibliography:
   - cite/literature.bib
   - cite/standards.bib
 csl: custom/ieee.csl
-# crossref:
+
+crossref:
+  appendix-title: "Anhang"
 #   fig-title: Abbildung # (default is "Figure")
 #   tbl-title: Tabelle # (default is "Table")
 #   # title-delim: (default is ":")

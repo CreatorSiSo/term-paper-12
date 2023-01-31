@@ -16,15 +16,15 @@ To keep the number of languages within a reasonable range, only the most popular
 The primary source for this data is the _StackOverflow Developer Survey 2022_,
 a global survey conducted annually since 2011, aimed at anyone who programs.
 Below this paragraph you can see a statistic from the survey, where programming languages are ranked according to their popularity.
-The height of a bar corresponds to the number of votes that language received.
 Participants were asked to vote for all languages they used last year and would use again.
+The height of a bar corresponds to the number of votes that language received.
 -->
 Um die Zahl der Sprachen in einem vernünftigen Rahmen zu halten, wurden nur die beliebtesten Programmiersprachen des Jahres 2022 analysiert.
 Die Hauptquelle für diese Daten ist der _StackOverflow Developer Survey 2022_,
 eine weltweite Umfrage, die seit 2011 jährlich durchgeführt wird und sich an alle richtet, die programmieren.
 Unterhalb dieses Absatzes sehen Sie eine Statistik aus der Umfrage, in der die Programmiersprachen nach ihrer Beliebtheit geordnet sind.
-Die Höhe eines Balkens entspricht der Anzahl der Stimmen, die diese Sprache erhalten hat.
 Die Teilnehmer wurden gebeten, für alle Sprachen zu stimmen, die sie im letzten Jahr verwendet haben und wieder verwenden würden.
+Die Höhe eines Balkens entspricht der Anzahl der Stimmen, die diese Sprache erhalten hat.
 [@so_surveys; @so_survey_2022; @so_survey_2022_data]
 
 <!-- ![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey} -->
@@ -77,36 +77,45 @@ All these factors contribute to the popularity of a programming language. They m
 ## Neuere Programmiersprachen
 
 <!--
-Many newer programming languages, which can be seen as successors to older languages, have gained popularity in recent years.
-These languages include Kotlin from JetBrains^[JetBrains is a company that develops integrated development environments] as a successor to Java.
-Kotlin is supposed to be more concise, expressive and secure, while continuing to run on the Java Virtual Machine and offering interoperability with Java.
-Apache's Groovy, Closure and Scala are other JVM-based languages that can be used with Java,
-but have not gained as much popularity as Kotlin.
+All of the newer programming languages that appear in the statistics are inspired by, or even the successors of, other languages.
+These languages include, for exmample, Kotlin from JetBrains^[JetBrains is a company that develops integrated development environments] as a successor to Java.
+Kotlin is said to be more concise, expressive and secure, while continuing to run on the Java Virtual Machine and offering interoperability with Java.
+Apache's^[The Apache Software Foundation is a nonprofit organisation supporting open source software projects. @apache] Groovy, Closure and Scala are further languages based on the JVM
+that have not gained as much popularity as Kotlin.
 Perhaps the biggest factor in its success has been Google's official support for Android development using Kotlin.
 -->
-Viele neuere Programmiersprachen, die als Nachfolger älterer Sprachen betrachtet werden können, haben in den letzten Jahren an Popularität gewonnen.
-Zu diesen Sprachen gehört Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt] als Nachfolger von Java.
+Alle neueren Programmiersprachen, die in den Statistiken aufgeführt werden, sind von anderen Sprachen inspiriert oder sogar deren Nachfolger.
+Zu diesen Sprachen gehört z.B. Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt] als Nachfolger von Java.
 Kotlin soll kompakter, ausdrucksstärker und sicherer sein, aber weiterhin auf der Java Virtual Machine laufen und Interoperabilität mit Java bieten.
-Groovy, Closure und Scala von Apache sind weitere JVM-basierte Sprachen, die mit Java verwendet werden können,
+Groovy von Apache^[Die Apache Software Foundation ist eine gemeinnützige Organisation, die Open-Source-Softwareprojekte unterstützt. @apache], Closure und Scala sind weitere Sprachen, die auf der JVM basieren,
 aber nicht so populär geworden sind wie Kotlin.
 Der vielleicht größte Faktor für den Erfolg war die offizielle Unterstützung von Google für Android-Entwicklung mit Kotlin.
-[@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec; @jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
+[@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec; @scott_2016 S.867f; @jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
 
 <!--
-Another programming language that has gained popularity in recent years is Rust,
-which was started by Graydon Hoare at Mozilla and is now an independent community project.
-Rust is designed to be a systems programming language that is both safe and fast.
-The language aims to eliminate memory safety vulnerabilities such as use after free, null pointer dereference, double free.
-According to Google, these are responsible for more than 50% of the bugs in Android.
+In recent years, Rust has become a very popular programming language.
+Originally developed by Graydon Hoare at Mozilla, Rust is now an independent community project.
+The language is designed with systems programming in mind, combining both safety and speed.
+With a strong focus on type safety, memory safety (without relying on automatic garbage collection) and concurrency.
+Rust prohibits both null and dangling pointers.
+These are known to cause hard-to-debug bugs which, according to Google,
+are responsible for over 50% of all bugs in Android.
 -->
-Eine weitere Programmiersprache, die in den letzten Jahren an Popularität gewonnen hat, ist Rust,
-die von Graydon Hoare bei Mozilla ins Leben gerufen wurde und heute ein unabhängiges Community-Projekt ist.
-Rust ist als Systemprogrammiersprache entwickelt worden, die sowohl sicher als auch schnell ist.
-Die Sprache zielt darauf ab, Schwachstellen der Speichersicherheit zu beseitigen, wie z.B. use after free, null pointer dereference, double free.
-Nach Angaben von Google sind diese für mehr als 50% der Fehler in Android verantwortlich.
-[@infoq_rust_interview; @rust_web; @google_rust]
+In den letzten Jahren hat sich Rust zu einer sehr beliebten Programmiersprache entwickelt.
+Ursprünglich von Graydon Hoare bei Mozilla entwickelt, ist Rust heute ein unabhängiges Gemeinschaftsprojekt.
+Die Sprache ist für die Systemprogrammierung gedacht und kombiniert Sicherheit und Geschwindigkeit.
+Der Schwerpunkt liegt auf Typsicherheit, Speichersicherheit (ohne automatische Garbage Collection) und Parallelität.
+Rust verbietet sowohl Null- als auch Dangling-Pointer.
+Diese sind bekannt dafür, schwer zu behebende Fehler zu verursachen, die laut Google,
+für über 50% aller Bugs in Android verantwortlich sind.
+[@infoq_rust_interview; @scott_2016 S.867f; @rust_web; @google_rust]
 
-Google has also created some programming languages of their own
+Google has also created some programming languages of their own, including Go, Dart and Carbon.
+Go was created to combine the efficiency of compiled languages with the simplicity of scripting languages.
+It is used for building networked services, large-scale web applications and other concurrent software.
+On the other hand, Dart was developed to provide fast user interface development across multiple platforms.
+Using the flutter framework one can create cross-platform apps for Android, IOS, Web, Windows, macOS and Linux.
+[@go_web; @go_spec; @flutter_multi]
 
 __TODO Google: Go, Dart__
 Go and Dart are both programming languages developed by Google that have been gaining popularity in recent years.
