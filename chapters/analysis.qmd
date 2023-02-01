@@ -28,7 +28,8 @@ Die Höhe eines Balkens entspricht der Anzahl der Stimmen, die diese Sprache erh
 [@so_surveys; @so_survey_2022; @so_survey_2022_data]
 
 <!-- ![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey} -->
-![Die beliebtesten Programmiersprachen im Jahr 2022 __TODO: Color should show the prog lang age__](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey}
+<!-- TODO: Color should show the prog lang age -->
+![Die beliebtesten Programmiersprachen im Jahr 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey height="330"}
 
 <!--
 The original data also mentions HTML, CSS, SQL, Bash/Shell, and PowerShell.
@@ -41,11 +42,11 @@ Diese werden hier nicht berücksichtigt, da sie hochspezialisiert und teilweise 
 
 [^tc-note]: Eine Turing-vollständige Sprache kann zur Umsetzung jedes beliebigen Algorithmus benutzt werden. @scott_2009, @scott_2016
 
-__TODO: Reword once age is visible in diagram__
+<!-- TODO: Reword once age is visible in diagram
 According to the StackOverflow Developer Survey 2022, JavaScript (1995), Python (1991), Typescript (2012), Java (1995), C# (2000),
 C++ (1985), PHP (1995), C (1978), Go (2009) and Rust (2010) are the ten most widely used programming languages.
 On average, these languages are therefore 25 years old.
-[@age_prog_langs]
+[@age_prog_langs] -->
 
 <!-- ## Popular Languages -->
 <!-- ## Populäre Sprachen -->
@@ -93,6 +94,18 @@ Der vielleicht größte Faktor für den Erfolg war die offizielle Unterstützung
 [@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec; @scott_2016 S.867f; @jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
 
 <!--
+TypeScript is a statically typed, open-source programming language that builds on JavaScript by adding optional type annotations and other features.
+It was developed and is maintained by Microsoft, and it has gained significant popularity in recent years, especially among large-scale web development projects.
+TypeScript's static typing enables better tooling and increased developer productivity, making it easier to catch bugs early in the development process.
+As it is just a super-set of JavaScript, developers are able to gradually adopt TypeScript into existing JavaScript projects.-->
+<!-- TODO Mention that ts is second most popular language -->
+TypeScript ist eine statisch typisierte Programmiersprache, die auf JavaScript aufbaut, indem sie optionale Typ-Annotationen und andere Funktionen hinzufügt.
+Sie wird von Microsoft entwickelt und hat in den letzten Jahren vor allem bei großen Webentwicklungsprojekten erheblich an Popularität gewonnen.
+Die statische Typisierung von TypeScript ermöglicht ein besseres Tooling und eine höhere Produktivität der Entwickler, so dass es einfacher ist, Fehler frühzeitig im Entwicklungsprozess zu erkennen.
+Da es sich nur um ein Super-Set von JavaScript handelt, können Entwickler TypeScript schrittweise in bestehende JavaScript-Projekte integrieren.
+[@ts_web]
+
+<!--
 In recent years, Rust has become a very popular programming language.
 Originally developed by Graydon Hoare at Mozilla, Rust is now an independent community project.
 The language is designed with systems programming in mind, combining both safety and speed.
@@ -110,30 +123,44 @@ Diese sind bekannt dafür, schwer zu behebende Fehler zu verursachen, die laut G
 für über 50% aller Bugs in Android verantwortlich sind.
 [@infoq_rust_interview; @scott_2016 S.867f; @rust_web; @google_rust]
 
+<!--
 Google has also created some programming languages of their own, including Go, Dart and Carbon.
 Go was created to combine the efficiency of compiled languages with the simplicity of scripting languages.
 It is used for building networked services, large-scale web applications and other concurrent software.
-On the other hand, Dart was developed to provide fast user interface development across multiple platforms.
+Dart was developed to provide fast user interface development across multiple platforms.
 Using the flutter framework one can create cross-platform apps for Android, IOS, Web, Windows, macOS and Linux.
-[@go_web; @go_spec; @flutter_multi]
+Carbon, an experimental successor to C++, is the most recent project.
+It was released at the end of 2022 and is still far from mature. -->
+Google hat auch einige eigene Programmiersprachen entwickelt, darunter Go, Dart und Carbon.
+Go wurde entwickelt, um die Effizienz von kompilierten Sprachen mit der Einfachheit von Skriptsprachen zu kombinieren.
+Es wird für die Entwicklung von vernetzten Diensten, groß angelegten Webanwendungen und anderer parallel laufender Software verwendet.
+Dart wurde entwickelt, um eine schnelle Entwicklung von Benutzeroberflächen für viele Plattformen zu ermöglichen.
+Mit dem Flutter-Framework lassen sich plattformübergreifende Anwendungen für Android, IOS, Web, Windows, macOS und Linux erstellen.
+Carbon, ein experimenteller Nachfolger von C++, ist das jüngste Projekt.
+Es wurde Ende 2022 veröffentlicht und ist noch lange nicht ausgereift.
+[@go_web; @go_spec; @flutter_multi; @carbon]
 
-__TODO Google: Go, Dart__
-Go and Dart are both programming languages developed by Google that have been gaining popularity in recent years.
-Both languages were created to address specific issues in the programming world and to provide a solution for developers.
-Go, often referred to as "Go", was developed to address the need for a language that is simple,
-efficient and easy to learn, while still providing a high level of performance and scalability.
-Go is particularly well-suited for building networked services and large-scale web applications,
-it aims to make it easy to write concurrent and parallel systems.
-On the other hand, Dart was created to address the issue of building fast and high-performance apps on multiple platforms.
-Dart is designed to be a client-optimized language for building fast apps on any platform,
-it allows for a single codebase to run on different platforms and provides features such as Just-In-Time (JIT) and Ahead-of-Time (AOT) compilation.
+<!--
+Swift, on the other hand, was introduced by Apple in 2014 as a replacement for Objective-C.
+It was designed to be more readable, safer and faster than Objective-C and has quickly gained popularity in the iOS and macOS development community.
+Swift offers modern language features like functional programming, generics and type inference, making it easier to write complex software systems.
+Swift has also gained popularity in server-side development with the introduction of Swift on the server, a project that enables the use of Swift for backend systems. -->
+<!-- TODO Refine sources -->
+Swift hingegen wurde 2014 von Apple als Ersatz für Objective-C eingeführt.
+Es wurde entwickelt, um lesbarer, sicherer und schneller als Objective-C zu sein
+und hat schnell an Popularität in der iOS- und macOS-Entwicklergemeinschaft gewonnen.
+Swift bietet moderne Sprachfunktionen wie funktionale Programmierung, Generics und Typinferenz,
+die das Schreiben komplexer Softwaresysteme erleichtern.
+Swift hat mit der Einführung von Swift on the Server, einem Projekt,
+das die Verwendung von Swift für Backend-Systeme ermöglicht,
+auch in der serverseitigen Entwicklung an Popularität gewonnen.
+[@swift_docs; @swift_org]
 
-- __TODO__
-  - Carbon?
-  - Swift: Developed by Apple, Swift is a general-purpose, compiled programming language that is designed to be easy to learn and use. It is particularly well-suited for developing iOS and macOS applications, and has been gaining popularity among developers for its modern syntax, strong type system, and improved performance over Objective-C.
-  - TypeScript: Developed by Microsoft, TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. It was designed to make it easier to write and maintain large-scale JavaScript applications by adding features such as static typing, interfaces, and classes. It is widely used in Angular and React projects.
-  - Julia: Developed to be used in scientific, engineering, and technical computing, Julia is a high-performance, high-level dynamic programming language. It is designed to be easy to use and has a syntax similar to that of MATLAB or Python. Julia is particularly well-suited for data science and numerical computing and it's been gaining popularity among researchers and data scientists.
-  - Scala: Developed by Martin Odersky, Scala is a general-purpose programming language that runs on the Java Virtual Machine (JVM). It is designed to be an object-oriented and functional language, and it's been gaining popularity among developers for its ability to write concurrent and parallel systems. It's also widely used for big data processing using Apache Spark.
+<!-- TODO mention that most languages are open source
+Swift is also open-source, meaning that developers from all around the world can contribute to its development and evolution. -->
+
+<!-- - __TODO__
+  - Julia: Developed to be used in scientific, engineering, and technical computing, Julia is a high-performance, high-level dynamic programming language. It is designed to be easy to use and has a syntax similar to that of MATLAB or Python. Julia is particularly well-suited for data science and numerical computing and it's been gaining popularity among researchers and data scientists. -->
 
 ## Results
 
