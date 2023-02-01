@@ -81,12 +81,12 @@ In der Tat vereinfacht diese Überladung eine Sprache, indem sie die Anzahl der 
 On the other hand simplicity can be carried too far as well.
 For example, the form and meaning of most assembly language statements are very simple but because they lack more complex control statements,
 the program structure is less obvious and more of them are required than in equivalent programs in a high-level language.
-These same arguments apply to the less extreme case of high-level languages with inadequate control and data-structuring constructs.
+These same arguments apply to the less extreme case of languages with inadequate control and data-structuring constructs.
 -->
 Andererseits kann man es mit der Einfachheit auch übertreiben.
 Zum Beispiel sind Form und Bedeutung der meisten Assembler-Anweisungen sehr einfach, aber da komplexere Steueranweisungen fehlen, ist die Programmstruktur weniger offensichtlich und es sind mehr Anweisungen erforderlich als in entsprechenden Programmen in einer höheren Sprache,
 ist die Programmstruktur weniger offensichtlich und es werden mehr Anweisungen benötigt als in entsprechenden Programmen in einer höheren Sprache.
-Dieselben Argumente gelten auch für den weniger extremen Fall von Hochsprachen mit unzureichenden Kontroll- und Datenstrukturen.
+Dieselben Argumente gelten auch für den weniger extremen Fall von Sprachen mit unzureichenden Kontroll- und Datenstrukturen.
 [@sebesta_2019 S. 44]
 
 - __TODO__

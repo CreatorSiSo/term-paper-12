@@ -1,6 +1,7 @@
 # Algebraic Data Types {#sec-algebraic-data-types}
 
 Definintion
+@sinclair_adts
 
 ## Product Types
 
