@@ -32,19 +32,15 @@ These scripts work much like a JavaScript or Python file,
 where all statements are executed immediately without the need to define an entry function.
 Rym achieves this by simply wrapping the contents of the script in a main function.
 
-A look at the typical "Hello World!" shows what this transformation looks like in practice:
+A look at the typical "Hello World!" script shows what this transformation looks like in practice _(main.rys)_ :
 
 ```rym
-// hello_world.rys
-
 print("Hello World!")
 ```
 
-It is just as simple as a Python version that does the same thing, but actually corresponds to:
+It is just as simple as a Python version that does the same thing, but actually corresponds to this module file _(main.rym)_ :
 
 ```rym
-// hello_world.rym
-
 func main() -> () {
   print("Hello World!")
 }
