@@ -7,14 +7,14 @@
 # Eveluation Criteria -->
 
 <!--
-Crucial to achieving this goal is to find out which characteristics of a programming language are advantageous and which ones are not.
-They will then be evaluated, by focusing on how they impact the software development process, including maintenance.
+Crucial to achieving this goal is to find out which features of a programming language are beneficial.
+These are then evaluated in terms of how they affect the software development process, including maintenance.
 Such a list of characteristics is necessarily controversial,
 as it is difficult to get everyone to agree on the value of some given language property relative to others.
 In spite of these differences, most would probably agree that the following criteria are at least important.
 -->
-Entscheidend für das Erreichen dieses Ziels ist es, herauszufinden, welche Eigenschaften einer Programmiersprache vorteilhaft sind und welche nicht.
-Diese werden dann bewertet, indem man sich darauf konzentriert, wie sie den Softwareentwicklungsprozess, einschließlich der Wartung, beeinflussen.
+Entscheidend für das Erreichen dieses Ziels ist es, herauszufinden, welche Eigenschaften einer Programmiersprache vorteilhaft sind.
+Diese werden dann bewertet, wie sie den Softwareentwicklungsprozess, einschließlich der Wartung, beeinflussen.
 Eine solche Liste von Merkmalen ist zwangsläufig umstritten,
 da es schwierig ist, alle Beteiligten dazu zu bringen, sich über den Wert einer bestimmten Spracheigenschaft im Vergleich mit anderen einig zu sein.
 Trotz dieser Unterschiede würden die meisten wahrscheinlich zustimmen, dass die folgenden Kriterien zumindest wichtig sind.
@@ -38,7 +38,8 @@ readability of a programming language.
 Ein wichtiges Kriterium für die Beurteilung einer Programmiersprache ist die Leichtigkeit, mit der Programme gelesen und verstanden werden können.
 Der in unserer neuen Sprache geschriebene Quellcode wird möglicherweise öfter gelesen als geschrieben
 und die Wartung, bei der viel gelesen wird, ist ein wichtiger Teil des Entwicklungszyklus.
-Da die Wartungsfreundlichkeit zu einem großen Teil durch die Lesbarkeit von Programmen bestimmt wird, ist sie eine wichtige Maßnahme zur Verbesserung der Qualität von Programmen und Programmiersprachen.
+Da die Wartungsfreundlichkeit zu einem großen Teil durch die Lesbarkeit von Programmen bestimmt wird,
+ist sie eine wichtige Maßnahme zur Verbesserung der Qualität von Programmen und Programmiersprachen.
 In den folgenden Unterabschnitten werden Merkmale beschrieben, die zur Lesbarkeit einer Programmiersprache beitragen.
 [@sebesta_2019 S. 42f]
 
@@ -98,13 +99,13 @@ Die gleichen Argumente gelten auch für den weniger extremen Fall von Sprachen m
 ### Orthogonalität
 
 <!--
-Orthogonality in a programming language means that a small set of primitive constructs can be combined in a small number of ways to build the control and data structures of the language.
+Orthogonality^[The word orthogonal comes from the mathematical concept of orthogonal vectors, which are independent of eachother.] in a programming language means that a small set of primitive constructs can be combined in a small number of ways to build the control and data structures of the language.
 Furthermore, every possible combination of primitives should be legal and meaningful.
 Therefore, a lack of orthogonality leads to exceptions to the rules of the language.
 The more orthogonal the design of a language, the fewer exceptions the language rules require.
 Fewer exceptions mean a higher degree of regularity in the design, which makes the language easier to learn, read, and understand.
 -->
-Orthogonalität in einer Programmiersprache bedeutet, dass eine kleine Menge von primitiven Konstrukten auf wenige Arten kombiniert werden können, um die Kontroll- und Datenstrukturen der Sprache aufzubauen.
+Orthogonalität^[Das Wort orthogonal stammt aus dem mathematischen Konzept der orthogonalen Vektoren, die voneinander unabhängig sind.] in einer Programmiersprache bedeutet, dass eine kleine Menge von primitiven Konstrukten auf wenige Arten kombiniert werden können, um die Kontroll- und Datenstrukturen der Sprache aufzubauen.
 Außerdem sollte jede mögliche Kombination von Primitiven legal und sinnvoll sein.
 Ein Mangel an Orthogonalität führt daher zu Ausnahmen von den Regeln der Sprache.
 Je orthogonaler der Entwurf einer Sprache ist, desto weniger Ausnahmen erfordern die Sprachregeln.
@@ -112,15 +113,13 @@ Weniger Ausnahmen bedeuten einen höheren Grad an Regelmäßigkeit im Design, wo
 [@sebesta_2019 S.44ff]
 
 <!--
-The meaning of an orthogonal^[The word orthogonal comes from the mathematical concept of orthogonal vectors, which are independent of eachother.]
-language feature is independent of the context of its appearance in a program.
+The meaning of an orthogonal language feature is independent of the context of its appearance in a program.
 But making everything context independent can lead to unnecessary complexity as well.
 Because languages require a large number of primitives, a high degree of orthogonality results in an explosion of combinations.
 So, even if the combinations are simple, their sheer numbers leads to complexity.
 Simplicity in a language, therefore, is at least in part the result of a combination of a relatively small number of primitive constructs and a limited use of the concept of orthogonality.
 -->
-Die Bedeutung eines orthogonalen^[Das Wort orthogonal stammt aus dem mathematischen Konzept der orthogonalen Vektoren, die voneinander unabhängig sind.]
-Sprachelements ist unabhängig von dem Kontext, in dem es in einem Programm auftritt.
+Die Bedeutung eines orthogonalen Sprachelements ist unabhängig von dem Kontext, in dem es in einem Programm auftritt.
 Aber alles kontextunabhängig zu machen, kann auch zu unnötiger Komplexität führen.
 Da Sprachen eine große Anzahl von Primitiven benötigen, führt ein hoher Grad an Orthogonalität zu einer Explosion an Kombinationen.
 Auch wenn Kombinationen einfach sind, erzeugt ihre Anzahl Komplexität.

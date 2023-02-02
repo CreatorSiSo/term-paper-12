@@ -8,7 +8,7 @@ The goal is to find out what they have changed compared to the older languages.
 -->
 Der nächste Schritt auf der Suche nach einer Antwort besteht darin, die derzeit verwendeten Programmiersprachen zu untersuchen,
 insbesondere diejenigen, die erst vor kurzem erschienen sind.
-Ziel ist es, herauszufinden, was sie im Vergleich zu den älteren Sprachen verändert haben.
+Ziel ist es, herauszufinden, was diese im Vergleich zu den älteren Sprachen verändert haben.
 
 <!-- ## Data to analyze -->
 ## Zu analysierende Daten
@@ -118,12 +118,13 @@ Kotlin from JetBrains^[JetBrains is a company that develops integrated developme
 It is more concise, expressive and secure, interoperates with Java and continues to run on the Java Virtual Machine (JVM).
 Apache's^[The Apache Software Foundation is a nonprofit organisation supporting open source software projects. @apache] Groovy, Closure and Scala are further languages based on the JVM
 that have not gained as much popularity as Kotlin.
-Perhaps the biggest factor in its success has been Google's official support for Android development using Kotlin. -->
+One of the biggest factors in its success has been Google's official support for Android development using Kotlin.
+-->
 Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt] kann als Nachfolger von Java betrachtet werden.
-Sie ist übersichtlicher, aussagekräftiger und sicherer, sie ist interoperabel mit Java und läuft nach wie vor auf der Java Virtual Machine (JVM).
+Sie ist übersichtlicher, eindeutiger und sicherer, sie ist interoperabel mit Java und läuft nach wie vor auf der Java Virtual Machine (JVM).
 Groovy von Apache^[Die Apache Software Foundation ist eine gemeinnützige Organisation, die Open-Source-Softwareprojekte unterstützt. @apache], Closure und Scala sind weitere Sprachen, die auf der JVM basieren,
 aber nicht so populär geworden sind wie Kotlin.
-Der vielleicht größte Faktor für den Erfolg war die offizielle Unterstützung von Google für Android-Entwicklung mit Kotlin.
+Einer der größten Faktoren für den Erfolg war die offizielle Unterstützung von Google für Android-Entwicklung mit Kotlin.
 [@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec; @scott_2016 S.867f; @jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
 
 <!--
