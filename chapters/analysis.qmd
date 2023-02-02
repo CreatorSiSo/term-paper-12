@@ -77,29 +77,17 @@ All these factors contribute to the popularity of a programming language. They m
 <!-- ## Newer Programming Languages -->
 ## Neuere Programmiersprachen
 
+<!-- TODO Mention that ts is second most popular language -->
 <!--
 All of the newer programming languages that appear in the statistics are inspired by, or even the successors of, other languages.
-These languages include, for exmample, Kotlin from JetBrains^[JetBrains is a company that develops integrated development environments] as a successor to Java.
-Kotlin is said to be more concise, expressive and secure, while continuing to run on the Java Virtual Machine and offering interoperability with Java.
-Apache's^[The Apache Software Foundation is a nonprofit organisation supporting open source software projects. @apache] Groovy, Closure and Scala are further languages based on the JVM
-that have not gained as much popularity as Kotlin.
-Perhaps the biggest factor in its success has been Google's official support for Android development using Kotlin.
+These languages include, for example, TypeScript a statically typed language that builds on JavaScript by adding optional type annotations and other features.
+Developed and maintained by Microsoft, it has gained considerable popularity in recent years, particularly in large-scale web development projects.
+TypeScript's static typing allows for better tooling and increased developer productivity, making it easier to catch bugs early in the development process.
+Because it is just a super-set of JavaScript, developers are able to adopt TypeScript incrementally into existing JavaScript projects.
 -->
-Alle neueren Programmiersprachen, die in den Statistiken aufgeführt werden, sind von anderen Sprachen inspiriert oder sogar deren Nachfolger.
-Zu diesen Sprachen gehört z.B. Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt] als Nachfolger von Java.
-Kotlin soll kompakter, ausdrucksstärker und sicherer sein, aber weiterhin auf der Java Virtual Machine laufen und Interoperabilität mit Java bieten.
-Groovy von Apache^[Die Apache Software Foundation ist eine gemeinnützige Organisation, die Open-Source-Softwareprojekte unterstützt. @apache], Closure und Scala sind weitere Sprachen, die auf der JVM basieren,
-aber nicht so populär geworden sind wie Kotlin.
-Der vielleicht größte Faktor für den Erfolg war die offizielle Unterstützung von Google für Android-Entwicklung mit Kotlin.
-[@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec; @scott_2016 S.867f; @jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
-
-<!--
-TypeScript is a statically typed, open-source programming language that builds on JavaScript by adding optional type annotations and other features.
-It was developed and is maintained by Microsoft, and it has gained significant popularity in recent years, especially among large-scale web development projects.
-TypeScript's static typing enables better tooling and increased developer productivity, making it easier to catch bugs early in the development process.
-As it is just a super-set of JavaScript, developers are able to gradually adopt TypeScript into existing JavaScript projects.-->
-<!-- TODO Mention that ts is second most popular language -->
-TypeScript ist eine statisch typisierte Programmiersprache, die auf JavaScript aufbaut, indem sie optionale Typ-Annotationen und andere Funktionen hinzufügt.
+Alle neueren Programmiersprachen, die in der Statistik aufgeführt sind, wurden von anderen Sprachen inspiriert oder sind sogar die Nachfolger dieser Sprachen.
+Zu diesen Sprachen gehört z.B. TypeScript, eine statisch typisierte Sprache, die auf JavaScript aufbaut,
+indem sie optionale Typ-Annotationen und andere Funktionen hinzufügt.
 Sie wird von Microsoft entwickelt und hat in den letzten Jahren vor allem bei großen Webentwicklungsprojekten erheblich an Popularität gewonnen.
 Die statische Typisierung von TypeScript ermöglicht ein besseres Tooling und eine höhere Produktivität der Entwickler, so dass es einfacher ist, Fehler frühzeitig im Entwicklungsprozess zu erkennen.
 Da es sich nur um ein Super-Set von JavaScript handelt, können Entwickler TypeScript schrittweise in bestehende JavaScript-Projekte integrieren.
@@ -122,6 +110,19 @@ Rust verbietet sowohl Null- als auch Dangling-Pointer.
 Diese sind bekannt dafür, schwer zu behebende Fehler zu verursachen, die laut Google,
 für über 50% aller Bugs in Android verantwortlich sind.
 [@infoq_rust_interview; @scott_2016 S.867f; @rust_web; @google_rust]
+
+<!--
+Kotlin from JetBrains^[JetBrains is a company that develops integrated development environments] can be seen as the successor to Java.
+It is more concise, expressive and secure, interoperates with Java and continues to run on the Java Virtual Machine (JVM).
+Apache's^[The Apache Software Foundation is a nonprofit organisation supporting open source software projects. @apache] Groovy, Closure and Scala are further languages based on the JVM
+that have not gained as much popularity as Kotlin.
+Perhaps the biggest factor in its success has been Google's official support for Android development using Kotlin. -->
+Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt] kann als Nachfolger von Java betrachtet werden.
+Sie ist übersichtlicher, aussagekräftiger und sicherer, sie ist interoperabel mit Java und läuft nach wie vor auf der Java Virtual Machine (JVM).
+Groovy von Apache^[Die Apache Software Foundation ist eine gemeinnützige Organisation, die Open-Source-Softwareprojekte unterstützt. @apache], Closure und Scala sind weitere Sprachen, die auf der JVM basieren,
+aber nicht so populär geworden sind wie Kotlin.
+Der vielleicht größte Faktor für den Erfolg war die offizielle Unterstützung von Google für Android-Entwicklung mit Kotlin.
+[@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec; @scott_2016 S.867f; @jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
 
 <!--
 Google has also created some programming languages of their own, including Go, Dart and Carbon.
