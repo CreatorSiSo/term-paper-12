@@ -65,7 +65,7 @@ A second complicating characteristic of a programming language is, having more t
 That example will require operator overloading in Rym,
 in which a single operator can have more than one meaning.
 Although this is often useful, it can lead to reduced readability if users are allowed to create their own overloading and do not do it sensibly.
-For example, it is clearly acceptable to overload + to use it for both integer and floating-point addition.
+For example, it is clearly acceptable to overload "+"" to use it for both integer and floating-point addition.
 In fact, this overloading simplifies a language by reducing the number of operators. How the overloading in Rym works is explained in @sec-polymorphism.
 -->
 Ein zweites Merkmal, das die Lesbarkeit einer Programmiersprache beeinträchtigt, ist die Existenz von mehr als einem Weg, um dieselbe Operation auszuführen.
@@ -73,20 +73,22 @@ In @sec-bindings-and-scope wird ein Beispiel dafür näher erläutert.
 Dieses Beispiel erfordert die Überladung von Operatoren in Rym,
 bei dem ein einzelner Operator mehr als eine Implementierung haben kann.
 Obwohl dies oft nützlich ist, kann es zu einer geringeren Lesbarkeit führen, wenn es den Benutzern erlaubt ist, ihre eigenen Überladungen zu erstellen und sie dies nicht vernünftig tun.
-So ist es beispielsweise durchaus akzeptabel, + zu überladen, um es sowohl für die Ganzzahl- als auch für die Gleitkommaaddition zu verwenden.
+So ist es beispielsweise durchaus akzeptabel, "+" zu überladen, um es sowohl für die Ganzzahl- als auch für die Gleitkommaaddition zu verwenden.
 In der Tat vereinfacht diese Überladung eine Sprache, indem sie die Anzahl der verschiedenen Operatoren reduziert. Wie das Überladen in Rym funktioniert, wird in @sec-polymorphism erklärt.
 [@sebesta_2019 S. 43f]
 
 <!--
 On the other hand simplicity can be carried too far as well.
-For example, the form and meaning of most assembly language statements are very simple but because they lack more complex control statements,
-the program structure is less obvious and more of them are required than in equivalent programs in a high-level language.
-These same arguments apply to the less extreme case of languages with inadequate control and data-structuring constructs.
+For example, the form and meaning of most assembler instructions are very simple.
+Since more complex control statements are missing, the programme structure is less obvious.
+More of them are needed than in equivalent programs in a higher programming language.
+The same arguments apply to the less extreme case of languages with insufficient control and data structures.
 -->
 Andererseits kann man es mit der Einfachheit auch übertreiben.
-Zum Beispiel sind Form und Bedeutung der meisten Assembler-Anweisungen sehr einfach, aber da komplexere Steueranweisungen fehlen, ist die Programmstruktur weniger offensichtlich und es sind mehr Anweisungen erforderlich als in entsprechenden Programmen in einer höheren Sprache,
-ist die Programmstruktur weniger offensichtlich und es werden mehr Anweisungen benötigt als in entsprechenden Programmen in einer höheren Sprache.
-Dieselben Argumente gelten auch für den weniger extremen Fall von Sprachen mit unzureichenden Kontroll- und Datenstrukturen.
+Beispielsweise sind Form und Bedeutung der meisten Assembler-Anweisungen sehr einfach.
+Da komplexere Steueranweisungen fehlen, ist die Programmstruktur weniger offensichtlich.
+Es werden mehr Anweisungen benötigt als in entsprechenden Programmen einer höheren Programmiersprache.
+Die gleichen Argumente gelten auch für den weniger extremen Fall von Sprachen mit unzureichenden Kontroll- und Datenstrukturen.
 [@sebesta_2019 S. 44]
 
 - __TODO__
@@ -114,14 +116,14 @@ The meaning of an orthogonal^[The word orthogonal comes from the mathematical co
 language feature is independent of the context of its appearance in a program.
 But making everything context independent can lead to unnecessary complexity as well.
 Because languages require a large number of primitives, a high degree of orthogonality results in an explosion of combinations.
-So, even if the combinations are simple, their sheer numbers lead to complexity.
+So, even if the combinations are simple, their sheer numbers leads to complexity.
 Simplicity in a language, therefore, is at least in part the result of a combination of a relatively small number of primitive constructs and a limited use of the concept of orthogonality.
 -->
 Die Bedeutung eines orthogonalen^[Das Wort orthogonal stammt aus dem mathematischen Konzept der orthogonalen Vektoren, die voneinander unabhängig sind.]
 Sprachelements ist unabhängig von dem Kontext, in dem es in einem Programm auftritt.
 Aber alles kontextunabhängig zu machen, kann auch zu unnötiger Komplexität führen.
 Da Sprachen eine große Anzahl von Primitiven benötigen, führt ein hoher Grad an Orthogonalität zu einer Explosion an Kombinationen.
-Selbst wenn die Kombinationen einfach sind, führt ihre schiere Anzahl zu Komplexität.
+Auch wenn Kombinationen einfach sind, erzeugt ihre Anzahl Komplexität.
 Die Einfachheit einer Sprache ist daher zumindest teilweise das Ergebnis einer Kombination aus einer relativ kleinen Anzahl von primitiven Konstrukten und einer begrenzten Verwendung des Konzepts der Orthogonalität.
 [@stansifer_1995 S.60f; @sebesta_2019 S.46f]
 

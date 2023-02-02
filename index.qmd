@@ -16,14 +16,14 @@ können Sie durch das Realisieren neuer Ideen alle Programmiersprachen voranbrin
 <!--
 A new language has the advantage that its development is not hampered by internal disagreements,
 as is the case with many older programming languages.
-Since one can start from scratch on the implementation, but conceptually all knowledge from previous attempts is used,
-completely new ideas can be tried out much easier and faster.
+When it comes to implementation, one can start from scratch and conceptually use all the findings from previous experiments.
+Completely new ideas can be tried out much easier and faster this way.
 That process is more difficult with a language that is used by thousands of people and should remain as stable as possible.
 -->
 Eine neue Sprache hat den Vorteil, dass ihre Entwicklung nicht durch interne Uneinigkeiten behindert wird,
 wie dies bei vielen älteren Programmiersprachen der Fall ist.
-Da man bei der Implementierung von Null anfangen kann, aber konzeptionell alles Wissen aus früheren Versuchen genutzt wird,
-können völlig neue Ideen viel einfacher und schneller ausprobiert werden.
+Bei der Umsetzung kann man von Null anfangen und konzeptionell alle Erkenntnisse aus früheren Versuchen nutzen.
+Völlig neue Ideen können so viel einfacher und schneller ausprobiert werden.
 Bei einer Sprache, die von Tausenden von Menschen benutzt wird und möglichst stabil bleiben soll, ist dieser Prozess schwieriger.
 
 <!--
