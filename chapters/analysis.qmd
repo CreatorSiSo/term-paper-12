@@ -3,10 +3,12 @@
 
 <!--
 The next step in finding an answer is to investigate currently used programming languages,
-especially those that were recently created, and to identify what they changed in comparison to older ones.
+especially those that have appeared more recently.
+The goal is to find out what they have changed compared to the older languages.
 -->
 Der nächste Schritt auf der Suche nach einer Antwort besteht darin, die derzeit verwendeten Programmiersprachen zu untersuchen,
-insbesondere solche, die erst vor kurzem erschienen sind, und herauszufinden, was sie im Vergleich zu älteren Sprachen geändert haben.
+insbesondere diejenigen, die erst vor kurzem erschienen sind.
+Ziel ist es, herauszufinden, was sie im Vergleich zu den älteren Sprachen verändert haben.
 
 <!-- ## Data to analyze -->
 ## Zu analysierende Daten
@@ -15,14 +17,14 @@ insbesondere solche, die erst vor kurzem erschienen sind, und herauszufinden, wa
 To keep the number of languages within a reasonable range, only the most popular programming languages of 2022 were analysed.
 The primary source for this data is the _StackOverflow Developer Survey 2022_,
 a global survey conducted annually since 2011, aimed at anyone who programs.
-Below this paragraph you can see a statistic from the survey, where programming languages are ranked according to their popularity.
+Below this paragraph one can see a statistic from the survey, where programming languages are ranked according to their popularity.
 Participants were asked to vote for all languages they used last year and would use again.
 The height of a bar corresponds to the number of votes that language received.
 -->
 Um die Zahl der Sprachen in einem vernünftigen Rahmen zu halten, wurden nur die beliebtesten Programmiersprachen des Jahres 2022 analysiert.
 Die Hauptquelle für diese Daten ist der _StackOverflow Developer Survey 2022_,
 eine weltweite Umfrage, die seit 2011 jährlich durchgeführt wird und sich an alle richtet, die programmieren.
-Unterhalb dieses Absatzes sehen Sie eine Statistik aus der Umfrage, in der die Programmiersprachen nach ihrer Beliebtheit geordnet sind.
+Unterhalb dieses Absatzes kann man eine Statistik aus der Umfrage sehen, in der die Programmiersprachen nach ihrer Beliebtheit geordnet sind.
 Die Teilnehmer wurden gebeten, für alle Sprachen zu stimmen, die sie im letzten Jahr verwendet haben und wieder verwenden würden.
 Die Höhe eines Balkens entspricht der Anzahl der Stimmen, die diese Sprache erhalten hat.
 [@so_surveys; @so_survey_2022; @so_survey_2022_data]
