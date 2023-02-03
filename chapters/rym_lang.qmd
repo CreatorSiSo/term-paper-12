@@ -1,7 +1,7 @@
 # Rym Programming Language
 <!-- # Rym Programmiersprache -->
 
-Rym is a general purpose language designed for working at a level above systems programming,
+Rym is a general-purpose language designed for working at a level above systems programming,
 while still allowing the use of lower level features when required.
 While both an interpreter and a compiler can be used to implement Rym, the current implementation is an interpreter.
 This description, however, does not assume anything about the implementaion and makes a future compiled version possible.

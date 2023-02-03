@@ -40,7 +40,7 @@ These are not considered here because they are highly specialised and in part no
 [^tc-note]: A Turing-complete language can be used to implement any algorithm. @scott_2009, @scott_2016
 -->
 In den ursprünglichen Daten werden auch HTML, CSS, SQL, Bash/Shell und PowerShell erwähnt.
-Diese werden hier nicht berücksichtigt, da sie hochspezialisiert und teilweise nicht Turing-vollständig _(engl. Turing-complete)_ sind.[^tc-note]
+Diese werden hier nicht berücksichtigt, da sie hochspezialisiert und teilweise nicht Turing-vollständig[^tc-note] _(engl. Turing-complete)_ sind.
 
 [^tc-note]: Eine Turing-vollständige Sprache kann zur Umsetzung jedes beliebigen Algorithmus benutzt werden. @scott_2009, @scott_2016
 
@@ -50,33 +50,6 @@ C++ (1985), PHP (1995), C (1978), Go (2009) and Rust (2010) are the ten most wid
 On average, these languages are therefore 25 years old.
 [@age_prog_langs] -->
 
-<!-- ## Popular Languages -->
-<!-- ## Populäre Sprachen -->
-
-<!-- The popular languages are popular for a variety of reasons, some of the most common reasons include:
-
-Widespread use:
-Many popular languages have been around for a long time and have been adopted by many companies and organizations. This means that there is a large community of developers who use the language, which makes it easier to find resources, tutorials, and support.
-
-Versatility:
-Popular languages are often versatile and can be used for a wide range of projects. For example, Python is popular among data scientists, engineers, and web developers, while JavaScript is popular for both front-end and back-end web development.
-
-Large ecosystem:
-Popular languages often have a large ecosystem of libraries and frameworks that make it easier to develop and deploy applications. This means that developers can use pre-built tools and libraries to speed up development and reduce the time it takes to get an application up and running.
-
-High demand:
-Popular languages are often in high demand in the job market. This means that developers who know these languages are more likely to be able to find a job and have a higher earning potential.
-
-Community support:
-Popular languages have a strong community support which helps in the development of the language, troubleshooting and learning new features.
-
-Ease of use:
-Some popular languages are designed to be easy to learn and use, which makes them a good choice for beginners.
-
-All these factors contribute to the popularity of a programming language. They make it easy for developers to start using the language, and they provide a large community of developers who can help with questions and issues. This makes it more likely that a language will continue to be popular over time. -->
-
-
-<!-- ## Newer Programming Languages -->
 ## Neuere Programmiersprachen
 
 <!-- TODO Mention that ts is second most popular language -->
@@ -166,6 +139,60 @@ Swift is also open-source, meaning that developers from all around the world can
 <!-- - __TODO__
   - Julia: Developed to be used in scientific, engineering, and technical computing, Julia is a high-performance, high-level dynamic programming language. It is designed to be easy to use and has a syntax similar to that of MATLAB or Python. Julia is particularly well-suited for data science and numerical computing and it's been gaining popularity among researchers and data scientists. -->
 
+## Common Recent Changes
+
+All of these languages have very similar features that solve long know problems and some of these features have been ported back to more established languages.
+
+In recent years, many programming languages have adopted new features to improve their safety and ease of use.
+One common change has been the introduction of static typing.
+This feature allows the compiler to check for type errors at compile time, making it easier to catch bugs early in the development process.
+For example, TypeScript builds upon JavaScript by adding optional type annotations, while Python has added type annotations,
+and JavaScript is even proposing the addition of type annotations.
+Other statically typed languages include Rust, Kotlin, Go, Dart, and Swift.
+
+- static typing
+  - Js -> Ts adds types
+  - Python added type annotations
+  - Js proposal to add type annotations
+  - PHP added type hints
+  - Rust, Kotlin, Go, Dart, Swift all have rich static type systems
+
+Null safety is an important feature in programming languages, especially in large and complex applications. It refers to the ability of a language to check for values that could be null at compile time and prevent null pointer exceptions. This can help avoid the "billion dollar mistake" of null pointer bugs, which can be hard to debug and can lead to significant costs in terms of development and maintenance time.
+
+Many recent programming languages have introduced features to ensure null safety, such as TypeScript's checks for "undefined" and "null" at compile time, Rust's null safe by design approach with its Option enum, Java's Optional class, and C#'s checks for values that could be null at compile time with its nullable type. These features not only make the code more secure and stable, but also improve developer productivity by catching bugs early in the development process.
+
+- null safety
+  - explain what it means
+  - mention "the billion dollar mistake"
+  - Ts
+    - checks for "undefined" and "null" at compile time
+  - Rust
+    - null safe by design
+    - Option enum
+  - Java
+    - Optional class
+  - C#
+    - checks for values that could be null at compile time
+    - nullable type: T?
+  - C++
+    - added std::optional
+  - PHP
+    - added nullable type hint
+  - Kotlin
+    - has nullable types
+    - checks for null safety at compile time
+  - Dart
+    - Version 2.0 added opt-in null safety checks
+    - Version 3.0 requires null safety checks
+  - Swift
+    - optional enum (works similar to Rust)
+  - optional/nullable type
+    - often indicated by putting a "?" after the types name: "Type?"
+  - Null coalescing operator
+    - Js, Ts, C#, Kotlin, Dart, Swift, PHP, Ruby
+  - Optional chaining / Null conditional operator
+    - Js, Ts, C#, PHP (Null-safe operator), Kotlin (Safe calls), Dart, Swift
+
 ## Results
 
 ### Problems of current and past programming languages
@@ -173,9 +200,9 @@ Swift is also open-source, meaning that developers from all around the world can
 - Parallelization
 - (Uncontrolled) Undefined Behaviour
   - https://blog.sigplan.org/2021/11/18/undefined-behavior-deserves-a-better-reputation
-- Side Effect Safety, Non local reasoning, Sand Boxing
+- Side Effect Safety, Non-local reasoning, Sand Boxing
   - https://www.reddit.com/r/ProgrammingLanguages/comments/9eqrfy/comment/e5s3vhb/?utm_source=share&utm_medium=web2x&context=3
-  - Code that we read is not understandable in isolation. For example, taking C++: `call(foo);`, is `foo` modified? Dunno.
+  - The code that we read is not understandable in isolation. For example, taking C++: `call(foo);`, is `foo` modified? Dunno.
     - https://www.reddit.com/r/ProgrammingLanguages/comments/9eqrfy/comment/e5v3vj5/?utm_source=share&utm_medium=web2x&context=3
   - Solved by: Koka
 - Cannot rewind time while debugging
@@ -188,18 +215,18 @@ Swift is also open-source, meaning that developers from all around the world can
 - There are too many of them
 - No innovation
   - Too conservative, offer no real improvement to what came before
-  - No clear gain to switch to this language
+  - No clear gain to switching to this language
 - Being specific to one problem
   - do interesting thing X but do not advance in all other places
 
 ### Qualities of a good programming language
 
-- (progressivly having to learn new parts / not having to learn everything at once) makes the language easier to learn
+- (progressively having to learn new parts / not having to learn everything at once) makes the language easier to learn
   - see talk about type classes, concept is from Swift
-  - begin with a simple script like Python and be able to makke it complex over time
+  - begin with a simple script like Python and be able to make it complex over time
 - future proof
   - reserved keywords: try, catch, throw, ..
-  - allow breaking changes (semantic versioning), Rust good, Python ok, Js/C++ bad, C does not really extend language anymore but rather core libs right?
+  - allow breaking changes (semantic versioning), Rust good, Python ok, Js/C++ bad, C does not extend language anymore but rather core-libs right?
 - Good Package Manager
   - https://www.reddit.com/r/ProgrammingLanguages/comments/zqjf47/a_good_dependency_manager_for_a_new_programming/
   - https://futhark-lang.org/blog/2018-07-20-the-future-futhark-package-manager.html
@@ -209,7 +236,7 @@ Swift is also open-source, meaning that developers from all around the world can
 - getting more powerful
 - type inference
 - Type Classes have been adapted
-  - easily extend functionality of uncontrollable 3rd parties
+  - easily extend the functionality of uncontrollable 3rd parties
   - Swift protocols
   - C++23 concepts
   - Rust traits

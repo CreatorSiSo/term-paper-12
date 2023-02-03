@@ -1,0 +1,98 @@
+## Data to analyze
+
+To keep the number of languages within a reasonable range, only the most popular programming languages of 2022 were analysed.
+The primary source for this data is the _StackOverflow Developer Survey 2022_,
+a global survey conducted annually since 2011, aimed at anyone who programs.
+Below this paragraph one can see a statistic from the survey, where programming languages are ranked according to their popularity.
+Participants were asked to vote for all languages they used last year and would use again.
+The height of a bar corresponds to the number of votes that language received.
+[@so_surveys; @so_survey_2022; @so_survey_2022_data]
+
+![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey}
+
+
+The original data also mentions HTML, CSS, SQL, Bash/Shell, and PowerShell.
+These are not considered here because they are highly specialised and in part not Turing-complete.[^tc-note]
+
+[^tc-note]: A Turing-complete language can be used to implement any algorithm. @scott_2009, @scott_2016
+
+## Newer Programming Langauges
+
+All of the newer programming languages that appear in the statistics are inspired by, or even the successors of, other languages.
+These languages include, for example, TypeScript a statically typed language that builds on JavaScript by adding optional type annotations and other features.
+Developed and maintained by Microsoft, it has gained considerable popularity in recent years, particularly in large-scale web development projects.
+TypeScript's static typing allows for better tooling and increased developer productivity, making it easier to catch bugs early in the development process.
+Because it is just a super-set of JavaScript, developers are able to adopt TypeScript incrementally into existing JavaScript projects.
+[@ts_web]
+
+In recent years, Rust has become a very popular programming language.
+Originally developed by Graydon Hoare at Mozilla, Rust is now an independent community project.
+The language is designed with systems programming in mind, combining both safety and speed.
+With a strong focus on type safety, memory safety (without relying on automatic garbage collection) and concurrency.
+Rust prohibits both null and dangling pointers.
+These are known to cause hard-to-debug bugs which, according to Google,
+are responsible for over 50% of all bugs in Android.
+[@infoq_rust_interview; @scott_2016 S.867f; @rust_web; @google_rust]
+
+Kotlin from JetBrains^[JetBrains is a company that develops integrated development environments] can be seen as the successor to Java.
+It is more concise, expressive and secure, interoperates with Java and continues to run on the Java Virtual Machine (JVM).
+Apache's^[The Apache Software Foundation is a nonprofit organisation supporting open source software projects. @apache] Groovy, Closure and Scala are further languages based on the JVM
+that have not gained as much popularity as Kotlin.
+One of the biggest factors in its success has been Google's official support for Android development using Kotlin.
+[@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec; @scott_2016 S.867f; @jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
+
+Google has also created some programming languages of their own, including Go, Dart and Carbon.
+Go was created to combine the efficiency of compiled languages with the simplicity of scripting languages.
+It is used for building networked services, large-scale web applications and other concurrent software.
+Dart was developed to provide fast user interface development across multiple platforms.
+Using the flutter framework one can create cross-platform apps for Android, IOS, Web, Windows, macOS and Linux.
+Carbon, an experimental successor to C++, is the most recent project.
+It was released at the end of 2022 and is still far from mature.
+[@go_web; @go_spec; @flutter_multi; @carbon]
+
+Swift, on the other hand, was introduced by Apple in 2014 as a replacement for Objective-C.
+It was designed to be more readable, safer and faster than Objective-C and has quickly gained popularity in the iOS and macOS development community.
+Swift offers modern language features like functional programming, generics and type inference, making it easier to write complex software systems.
+Swift has also gained popularity in server-side development with the introduction of Swift on the server, a project that enables the use of Swift for backend systems. -->
+[@swift_docs; @swift_org]
+
+## Common Recent Changes
+
+- static typing
+  - Js -> Ts adds types
+  - Python added type annotations
+  - Js proposal to add type annotations
+  - PHP added type hints
+  - Rust, Kotlin, Go, Dart, Swift all have rich static type systems
+
+- null safety
+  - explain what it means
+  - mention "the billion dollar mistake"
+  - Ts
+    - checks for "undefined" and "null" at compile time
+  - Rust
+    - null safe by design
+    - Option enum
+  - Java
+    - Optional class
+  - C#
+    - checks for values that could be null at compile time
+    - nullable type: T?
+  - C++
+    - added std::optional
+  - PHP
+    - added nullable type hint
+  - Kotlin
+    - has nullable types
+    - checks for null safety at compile time
+  - Dart
+    - Version 2.0 added opt-in null safety checks
+    - Version 3.0 requires null safety checks
+  - Swift
+    - optional enum (works similar to Rust)
+  - optional/nullable type
+    - often indicated by putting a "?" after the types name: "Type?"
+  - Null coalescing operator
+    - Js, Ts, C#, Kotlin, Dart, Swift, PHP, Ruby
+  - Optional chaining / Null conditional operator
+    - Js, Ts, C#, PHP (Null-safe operator), Kotlin (Safe calls), Dart, Swift

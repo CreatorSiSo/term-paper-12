@@ -79,16 +79,16 @@ In der Tat vereinfacht diese Überladung eine Sprache, indem sie die Anzahl der 
 [@sebesta_2019 S. 43f]
 
 <!--
-On the other hand simplicity can be carried too far as well.
+On the other hand, simplicity can be taken too far.
 For example, the form and meaning of most assembler instructions are very simple.
 Since more complex control statements are missing, the programme structure is less obvious.
 More of them are needed than in equivalent programs in a higher programming language.
-The same arguments apply to the less extreme case of languages with insufficient control and data structures.
+The same arguments apply to the less extreme case of languages with inadequate control and data structures.
 -->
 Andererseits kann man es mit der Einfachheit auch übertreiben.
 Beispielsweise sind Form und Bedeutung der meisten Assembler-Anweisungen sehr einfach.
 Da komplexere Steueranweisungen fehlen, ist die Programmstruktur weniger offensichtlich.
-Es werden mehr Anweisungen benötigt als in entsprechenden Programmen einer höheren Programmiersprache.
+Es werden mehr Anweisungen benötigt als in entsprechenden Programmen einer höheren Programmier-sprache.
 Die gleichen Argumente gelten auch für den weniger extremen Fall von Sprachen mit unzureichenden Kontroll- und Datenstrukturen.
 [@sebesta_2019 S. 44]
 
@@ -142,7 +142,7 @@ The meaning of this statement is unclear, whereas in a language that includes Bo
 ```rym
 const timeout = true
 ```
-Which is is a clearer then the first one.
+Which is clearer than the first one.
 [@sebesta_2019 S. 47]
 
 ### Syntax
@@ -155,7 +155,7 @@ Which is is a clearer then the first one.
   - flat learning curve
   - familiar syntax
   - `{}` is a block (vs. `end`/`end if`)
-  - might not make as much sense for non programmers
+  - might not make as much sense for non-programmers
   - comparable with the way that `+` and other math notation could be considered less readable then `plus`
 
 <!-- ## Writability -->
@@ -182,7 +182,7 @@ This specification is a set of rules that an implementation of the language must
 It should cover all possible combinations of programming language features.
 
 In some cases, the behaviour of certain features may be poorly defined,
-either to make programs run optimally on certain platforms, or because no one has thought of the exact combination.
+either to make programs run optimally on certain platforms or because no one has thought of the exact combination.
 This can lead to different implementations that produce different results.
 Some of the possible outcomes can be harmful and implementations are not required to remain consistent across executions,
 implementation versions, or levels of optimisation.

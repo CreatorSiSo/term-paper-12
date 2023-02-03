@@ -1,0 +1,61 @@
+trait Iterator {
+	type Item
+
+	func next(mut self) -> Option<Self.Item>
+}
+
+mod array {
+	impl<T> [T] {
+		func iter(self) -> Iter<T> {
+			Iter { data: self }
+		}
+	}
+
+	/// Immutable array iterator
+	///
+	/// This struct is created by the [`iter`] method on [arrays].
+	///
+	/// # Examples
+	///
+	/// Basic usage:
+	///
+	/// ```
+	/// // First, we declare a type which has `iter` method to get the `Iter` struct (`[usize]` here):
+	/// let array = [1, 2, 3];
+	///
+	/// // Then, we iterate over it:
+	/// for element in array.iter() {
+	///     print(f"{element}");
+	/// }
+	/// ```
+	///
+	/// [`iter`]: array::iter
+	/// [arrays]: array
+	struct Iter<T> {
+		data: [T]
+		next_index: usize
+	}
+
+	impl<T> Iter<T> {
+		func new(array: [T]) -> Self {
+			Self {
+				data: array,
+				next_index: 0
+			}
+		}
+	}
+
+	impl<T> Iterator for Iter<T> {
+		type Item = T
+
+		func next(mut self) -> Option<Self.Item> {
+			if self.next_index < self.data.len() then {
+				const value = self.data[self.next_index]
+				self.next_index += 1
+				return Some(value)
+			}
+
+			None
+		}
+	}
+}
