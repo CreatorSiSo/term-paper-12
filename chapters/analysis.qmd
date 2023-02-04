@@ -31,7 +31,7 @@ Die Höhe eines Balkens entspricht der Anzahl der Stimmen, die diese Sprache erh
 
 <!-- ![Popularity of programming languages in 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey} -->
 <!-- TODO: Color should show the prog lang age -->
-![Die beliebtesten Programmiersprachen im Jahr 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey height="330"}
+![Die beliebtesten Programmiersprachen im Jahr 2022](../data/stackoverflow-survey-2022.png){#fig-fig-so-survey height="320"}
 
 <!--
 The original data also mentions HTML, CSS, SQL, Bash/Shell, and PowerShell.
@@ -64,7 +64,6 @@ Alle neueren Programmiersprachen, die in der Statistik aufgeführt sind, wurden 
 Zu diesen Sprachen gehört z.B. TypeScript, eine statisch typisierte Sprache, die auf JavaScript aufbaut,
 indem sie optionale Typ-Annotationen und andere Funktionen hinzufügt.
 Sie wird von Microsoft entwickelt und hat in den letzten Jahren vor allem bei großen Webentwicklungsprojekten erheblich an Popularität gewonnen.
-Die statische Typisierung von TypeScript ermöglicht ein besseres Tooling und eine höhere Produktivität der Entwickler, so dass es einfacher ist, Fehler frühzeitig im Entwicklungsprozess zu erkennen.
 Da es sich nur um ein Super-Set von JavaScript handelt, können Entwickler TypeScript schrittweise in bestehende JavaScript-Projekte integrieren.
 [@ts_web]
 
@@ -113,7 +112,7 @@ Go wurde entwickelt, um die Effizienz von kompilierten Sprachen mit der Einfachh
 Es wird für die Entwicklung von vernetzten Diensten, groß angelegten Webanwendungen und anderer parallel laufender Software verwendet.
 Dart wurde entwickelt, um eine schnelle Entwicklung von Benutzeroberflächen für viele Plattformen zu ermöglichen.
 Mit dem Flutter-Framework lassen sich plattformübergreifende Anwendungen für Android, IOS, Web, Windows, macOS und Linux erstellen.
-Carbon, ein experimenteller Nachfolger von C++, ist das jüngste Projekt.
+Das jüngste Projekt ist Carbon, ein experimenteller Nachfolger für C++.
 Es wurde Ende 2022 veröffentlicht und ist noch lange nicht ausgereift.
 [@go_web; @go_spec; @flutter_multi; @carbon]
 
@@ -125,7 +124,7 @@ Swift has also gained popularity in server-side development with the introductio
 <!-- TODO Refine sources -->
 Swift hingegen wurde 2014 von Apple als Ersatz für Objective-C eingeführt.
 Es wurde entwickelt, um lesbarer, sicherer und schneller als Objective-C zu sein
-und hat schnell an Popularität in der iOS- und macOS-Entwicklergemeinschaft gewonnen.
+und hat bei iOS- und macOS-Entwicklern schnell an Popularität gewonnen.
 Swift bietet moderne Sprachfunktionen wie funktionale Programmierung, Generics und Typinferenz,
 die das Schreiben komplexer Softwaresysteme erleichtern.
 Swift hat mit der Einführung von Swift on the Server, einem Projekt,
@@ -141,27 +140,47 @@ Swift is also open-source, meaning that developers from all around the world can
 
 ## Common Recent Changes
 
-All of these languages have very similar features that solve long know problems and some of these features have been ported back to more established languages.
+These new languages improve on their predecessors by fixing problems and inconveniences that they encountered and could not remove.
+Sometimes the new features that improve safety and usability are ported back to the older languages.
 
-In recent years, many programming languages have adopted new features to improve their safety and ease of use.
-One common change has been the introduction of static typing.
-This feature allows the compiler to check for type errors at compile time, making it easier to catch bugs early in the development process.
-For example, TypeScript builds upon JavaScript by adding optional type annotations, while Python has added type annotations,
-and JavaScript is even proposing the addition of type annotations.
-Other statically typed languages include Rust, Kotlin, Go, Dart, and Swift.
+### Type Systems
 
-- static typing
-  - Js -> Ts adds types
-  - Python added type annotations
-  - Js proposal to add type annotations
-  - PHP added type hints
-  - Rust, Kotlin, Go, Dart, Swift all have rich static type systems
+A common change is the introduction of static typing, or at least type annotations.
+This feature allows the compiler or third party tools to check for type errors at compile time,
+making it easier to catch bugs early in the development process.
+TypeScript is a very good example of this, as it adds an entire type system on top of JavaScript,
+which can prevent about 15% of bugs.
+[@to_type_or_not_to_type]
+There is even a proposal to add type annotations to JavaScript,
+so that tools like TypeScript can skip large parts of the compilation step.
+[@stateofjs_missing; @tc39_type_annotations]
+Other dynamically typed languages, like Python and PHP already support type hints and Lua has tools that are similar to TypeScript.
+All the other languages just mentioned (Rust, Kotlin, Go, Dart, Swift) require static types.
 
-Null safety is an important feature in programming languages, especially in large and complex applications. It refers to the ability of a language to check for values that could be null at compile time and prevent null pointer exceptions. This can help avoid the "billion dollar mistake" of null pointer bugs, which can be hard to debug and can lead to significant costs in terms of development and maintenance time.
+- getting more powerful
+- type inference
+- Type Classes have been adapted
+  - easily extend the functionality of uncontrollable 3rd parties
+  - Swift protocols
+  - C++23 concepts
+  - Rust traits
+  - Java, C# Interfaces?
+- where?
+  - Rust, Go, Swift
+  - auto in C++
+  - state of C, C++, C#, Java, php types?
 
-Many recent programming languages have introduced features to ensure null safety, such as TypeScript's checks for "undefined" and "null" at compile time, Rust's null safe by design approach with its Option enum, Java's Optional class, and C#'s checks for values that could be null at compile time with its nullable type. These features not only make the code more secure and stable, but also improve developer productivity by catching bugs early in the development process.
 
-- null safety
+### Null Safety
+
+Tony Hoare considers calling null references, which he added to ALGOL W in 1965, his "billion dollar mistake" @infoq_null_ref.
+They can represent the absence of a value, but can also cause hard to find bugs if not properly handled.
+To address this, many programming languages have introduced null safety features that make it easier for developers to handle and prevent null pointers.
+These include optional classes, nullable type hints, and optional enums.
+The null coalescing operator and optional chaining operator are also commonly used to handle these issues and make code more readable.
+<!-- TODO Citation needed -->
+
+<!-- - null safety
   - explain what it means
   - mention "the billion dollar mistake"
   - Ts
@@ -191,9 +210,16 @@ Many recent programming languages have introduced features to ensure null safety
   - Null coalescing operator
     - Js, Ts, C#, Kotlin, Dart, Swift, PHP, Ruby
   - Optional chaining / Null conditional operator
-    - Js, Ts, C#, PHP (Null-safe operator), Kotlin (Safe calls), Dart, Swift
+    - Js, Ts, C#, PHP (Null-safe operator), Kotlin (Safe calls), Dart, Swift -->
 
-## Results
+### Functional/Declarative programming
+
+- C++
+  - addition and work on the _functional_ module
+  - algorithms to work with lists and iterators
+- Python
+
+<!-- ## Results
 
 ### Problems of current and past programming languages
 
@@ -229,41 +255,8 @@ Many recent programming languages have introduced features to ensure null safety
   - allow breaking changes (semantic versioning), Rust good, Python ok, Js/C++ bad, C does not extend language anymore but rather core-libs right?
 - Good Package Manager
   - https://www.reddit.com/r/ProgrammingLanguages/comments/zqjf47/a_good_dependency_manager_for_a_new_programming/
-  - https://futhark-lang.org/blog/2018-07-20-the-future-futhark-package-manager.html
+  - https://futhark-lang.org/blog/2018-07-20-the-future-futhark-package-manager.html -->
 
-### Type Systems
-
-- getting more powerful
-- type inference
-- Type Classes have been adapted
-  - easily extend the functionality of uncontrollable 3rd parties
-  - Swift protocols
-  - C++23 concepts
-  - Rust traits
-  - Java, C# Interfaces?
-- where?
-  - JavaScript
-    - TypeScript, other one from Facebook
-    - Proposal to add type annotations
-  - Python
-    - added type annotations
-  - Rust, Go, Swift
-  - auto in C++
-  - state of C, C++, C#, Java, php types?
-
-### Null Safety
-
-- solutions based on powerful type systems
-  - Rust, Swift, Dart?
-  - TypeScript checks for null/undefined
-- what are the others up to?
-
-### Functional programming
-
-- C++
-  - addition and work on the _functional_ module
-  - algorithms to work with lists and iterators
-- Python
 
 <!-- [Programming Language Explorations](https://rtoal.github.io/ple) -->
 
