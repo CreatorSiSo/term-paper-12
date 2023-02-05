@@ -162,19 +162,28 @@ const use_timeout = true
 
 ### Syntax
 
-Syntax, or the form of elements in a language, greatly impacts the readability of programs.
-There are various design choices that affect readability,
-such as special words, form, and meaning.
-Some languages use matching pairs of special words or symbols,
-while others use distinct closing syntax,
-which can result in greater readability.
-However, personal preferences play a role in determining which language is more readable.
-The meaning of reserved words can also vary depending on context.
-In some cases, the appearance of statements does not suggest their purpose,
-leading to difficulties for beginners.
-Ultimately, the readability of a programming language is subjective
-and depends on individual preferences and prior knowledge.
-Which is why adopting parts of the syntax of well known languages into a new one makes a lot of sense.
+<!-- Syntax greatly impacts the readability of programs.
+It refers to the rules and structure of a programming language.
+These rules define how a program must be written including the arrangement and formation of statements, expressions, keywords, punctuation. -->
+
+<!--
+The readability of a program is greatly influenced by its syntax.
+Syntax refers to the set of rules and structure that dictate how a program must be written in a particular programming language.
+These rules define the order, construction and use of statements, expressions, keywords and punctuation within the language.
+It makes sense to apply the principles of simplicity and orthogonality here too.
+Therefore, elements of similar meaning should be written similarly.
+Having too many alternatives for writing code with the same meaning also violates orthogonality.
+Ultimately, however, the readability of a language depends on individual preferences and prior knowledge.
+Adopting parts of the syntax of well-known languages into a new one therefore makes a lot of sense.
+-->
+Die Lesbarkeit eines Programms wird außerdem stark von seiner Syntax beeinflusst.
+Syntax bezieht sich auf die Regeln und die Struktur, die vorgeben, wie ein Programm in einer bestimmten Programmiersprache geschrieben werden muss.
+Diese Regeln definieren die Reihenfolge, den Aufbau und die Verwendung von Anweisungen, Ausdrücken, Schlüssel-wörtern und Zeichensetzung innerhalb der Sprache.
+Auch hier ist es sinnvoll, die Grundsätze der Einfachheit und Orthogonalität anzuwenden.
+Daher sollten Elemente mit ähnlicher Bedeutung ähnlich geschrieben werden.
+Zu viele Alternativen, um Code mit der gleichen Bedeutung zu schreiben, verstoßen ebenfalls gegen die Orthogonalität.
+Letztlich hängt die Lesbarkeit einer Sprache jedoch von individuellen Vorlieben und Vorkenntnissen ab.
+Die Übernahme von Teilen der Syntax bekannter Sprachen in eine neue Sprache ist daher sehr sinnvoll.
 [@sebesta_2019 S. 48f]
 
 <!-- ## Writability -->
@@ -183,8 +192,9 @@ Which is why adopting parts of the syntax of well known languages into a new one
 <!-- TODO -->
 Writability is a measure of how easily a language can be used to create programs for a chosen problem domain.
 Most of the language characteristics that affect readability also affect writability.
-This follows directly from the fact that the process of writing a program requires the programmer frequently to reread the part of the program that is already written.
-As is the case with readability, writability must be considered in the context of the target problem domain of a language.
+This follows directly from the fact that the process of writing a program requires the programmer to frequently reread the part of the program that they just wrote.
+
+
 
 - __TODO__
   - as few things to think about at once as possible
@@ -192,28 +202,46 @@ As is the case with readability, writability must be considered in the context o
 <!-- ## Reliability -->
 ## Verlässlichkeit
 
-A program is said to be reliable if it performs as expected under all conditions
-and will continue to in the future.
+<!-- A program is said to be reliable if it performs as expected under all conditions and will continue to in the future. -->
+Ein Programm gilt als zuverlässig, wenn es unter allen Bedingungen die erwartete Leistung erbringt und dies auch in Zukunft tun wird.
 [@sebesta_2019 S. 51]
 
 <!-- ### Specification -->
 ### Spezifikation
 
+<!--
 A programming language without a standardised specification can hardly be considered reliable.
 This specification is a set of rules that an implementation of the language must obey to ensure that programs behave as intended.
 It should cover all possible combinations of programming language features.
+-->
+Eine Programmiersprache ohne eine standardisierte Spezifikation kann kaum als zuverlässig angesehen werden.
+Bei dieser Spezifikation handelt es sich um eine Reihe von Regeln,
+die eine Implementierung der Sprache befolgen muss, um sicherzustellen,
+dass sich die Programme wie vorgesehen verhalten.
+Sie sollte alle möglichen Kombinationen an Merkmalen der Programmiersprache abdecken.
 
-In some cases, the behaviour of certain features may be poorly defined,
-either to make programs run optimally on certain platforms or because no one has thought of the exact combination.
+<!--
+In some cases, the behaviour of certain features may be poorly defined.
 This can lead to different implementations that produce different results.
-Some of the possible outcomes can be harmful and implementations are not required to remain consistent across executions,
-implementation versions, or levels of optimisation.
+Some of the possible outcomes can be harmful and the implementations are not required to remain consistent across executions,
+versions, or levels of optimisation.
+-->
+In einigen Fällen kann das Verhalten bestimmter Merkmale schlecht definiert sein.
+Dies kann zu verschiedenen Implementierungen führen, die unterschiedliche Ergebnisse liefern.
+Einige der möglichen Ergebnisse können schädlich sein, und die Implementierungen müssen nicht über alle Ausführungen hinweg konsistent bleiben,
+Versionen oder Optimierungsstufen konsistent bleiben.
 [@iso_24772_1_2019 S. 21; @michell_2009 S. 190]
 
+<!--
 Behaviours that are not mentioned in the specification are called _unspecified behaviour_,
 and _undefined behaviour_ if they are mentioned, but it is not defined how they behave.
 They pose a significant challenge to users of the language, as they cannot be sure how and whether their program will run.
 For this reason, a language should have as few of them as possible.
+-->
+Verhaltensweisen, die in der Spezifikation nicht erwähnt werden, nennt man _unspezifiziertes Verhalten_,
+und _undefiniertes Verhalten_, wenn sie zwar erwähnt werden, aber nicht definiert ist, wie sie sich verhalten.
+Sie stellen eine große Herausforderung für die Benutzer der Sprache dar, da sie nicht sicher sein können, wie und ob ihr Programm laufen wird.
+Aus diesem Grund sollte eine Sprache so wenige von ihnen wie möglich haben.
 [@iso_24772_1_2019 S. 21]
 
 <!-- ### Open Source -->
