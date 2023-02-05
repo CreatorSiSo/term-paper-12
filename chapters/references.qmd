@@ -4,7 +4,7 @@ nocite: |
 ---
 
 <!-- # References {.unnumbered} -->
-# Bibliografie {.unnumbered}
+# Quellenverzeichnis {.unnumbered}
 
 ::: {#refs}
 :::

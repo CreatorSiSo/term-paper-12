@@ -111,7 +111,7 @@ Google hat auch einige eigene Programmiersprachen entwickelt, darunter Go, Dart 
 Go wurde entwickelt, um die Effizienz von kompilierten Sprachen mit der Einfachheit von Skriptsprachen zu kombinieren.
 Es wird für die Entwicklung von vernetzten Diensten, groß angelegten Webanwendungen und anderer parallel laufender Software verwendet.
 Dart wurde entwickelt, um eine schnelle Entwicklung von Benutzeroberflächen für viele Plattformen zu ermöglichen.
-Mit dem Flutter-Framework lassen sich plattformübergreifende Anwendungen für Android, IOS, Web, Windows, macOS und Linux erstellen.
+Mit dem Flutter-Framework lassen sich plattform-übergreifende Anwendungen für Android, IOS, Web, Windows, macOS und Linux erstellen.
 Das jüngste Projekt ist Carbon, ein experimenteller Nachfolger für C++.
 Es wurde Ende 2022 veröffentlicht und ist noch lange nicht ausgereift.
 [@go_web; @go_spec; @flutter_multi; @carbon]
@@ -125,7 +125,7 @@ Swift has also gained popularity in server-side development with the introductio
 Swift hingegen wurde 2014 von Apple als Ersatz für Objective-C eingeführt.
 Es wurde entwickelt, um lesbarer, sicherer und schneller als Objective-C zu sein
 und hat bei iOS- und macOS-Entwicklern schnell an Popularität gewonnen.
-Swift bietet moderne Sprachfunktionen wie funktionale Programmierung, Generics und Typinferenz,
+Swift bietet moderne Features wie funktionale Programmierung, Generics und Typinferenz,
 die das Schreiben komplexer Softwaresysteme erleichtern.
 Swift hat mit der Einführung von Swift on the Server, einem Projekt,
 das die Verwendung von Swift für Backend-Systeme ermöglicht,

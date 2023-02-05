@@ -8,8 +8,8 @@ In some cases, businesses or organisations wish to address a specific issue, but
 Even though the majority of them are never used by the average developer, by realising out new ideas, they can bring all programming languages forward.
 -->
 Jedes Jahr werden zahlreiche neue Programmiersprachen veröffentlicht.
-Viele von ihnen sind ursprünglich Teil einer wissenschaftlichen Arbeit, und sowohl Privatpersonen als auch Studierende arbeiten in ihrer Freizeit häufig an ihren eigenen Sprachen, um verschiedene Aspekte der Implementierung kennenzulernen.
-In manchen Fällen möchten Unternehmen oder Organisationen ein bestimmtes Problem angehen, aber es fehlt noch die richtige Technologie.
+Viele von ihnen starten als Teil einer wissenschaftlichen Arbeit, und sowohl Privatpersonen als auch Studierende arbeiten in ihrer Freizeit häufig an eigenen Sprachen, um verschiedene Aspekte der Umsetzung kennenzulernen.
+In manchen Fällen möchten Unternehmen oder Organisationen ein bestimmtes Problem angehen, aber ihnen fehlt die richtige Technologie.
 Auch wenn die meisten von ihnen vom durchschnittlichen Entwickler nie benutzt werden,
 können Sie durch das Realisieren neuer Ideen alle Programmiersprachen voranbringen.
 
@@ -68,3 +68,5 @@ die eine mögliche Antwort auf die Frage geben soll: _Wie könnte eine Programmi
 2. flaws of currently used programming languages
 3. specific features of Rym based on 2. and adhearing to 1.
 -->
+
+{{< pagebreak >}}

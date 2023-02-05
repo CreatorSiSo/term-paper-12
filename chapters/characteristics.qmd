@@ -15,8 +15,7 @@ In spite of these differences, most would probably agree that the following crit
 -->
 Entscheidend für das Erreichen dieses Ziels ist es, herauszufinden, welche Eigenschaften einer Programmiersprache vorteilhaft sind.
 Diese werden dann bewertet, wie sie den Softwareentwicklungsprozess, einschließlich der Wartung, beeinflussen.
-Eine solche Liste von Merkmalen ist zwangsläufig umstritten,
-da es schwierig ist, alle Beteiligten dazu zu bringen, sich über den Wert einer bestimmten Spracheigenschaft im Vergleich mit anderen einig zu sein.
+Eine solche Liste von Merkmalen ist zwangsläufig umstritten, da sich nicht jeder über den Wert einer bestimmten Spracheigenschaft im Vergleich mit anderen einig ist.
 Trotz dieser Unterschiede würden die meisten wahrscheinlich zustimmen, dass die folgenden Kriterien zumindest wichtig sind.
 [@stansifer_1995 S. 60; @sebesta_2019 S. 41]
 
@@ -36,9 +35,9 @@ The following subsections describe characteristics that contribute to the
 readability of a programming language.
 -->
 Ein wichtiges Kriterium für die Beurteilung einer Programmiersprache ist die Leichtigkeit, mit der Programme gelesen und verstanden werden können.
-Der in unserer neuen Sprache geschriebene Quellcode wird möglicherweise öfter gelesen als geschrieben
-und die Wartung, bei der viel gelesen wird, ist ein wichtiger Teil des Entwicklungszyklus.
-Da die Wartungsfreundlichkeit zu einem großen Teil durch die Lesbarkeit von Programmen bestimmt wird,
+Der in unserer neuen Sprache geschriebene Quellcode wird öfter gelesen als geschrieben und Wartungen,
+bei welchen viel gelesen wird, sind ein wichtiger Teil des Entwicklungsprozesses.
+Da die Wartungs-freundlichkeit zu einem großen Teil durch die Lesbarkeit von Programmen bestimmt wird,
 ist sie eine wichtige Maßnahme zur Verbesserung der Qualität von Programmen und Programmiersprachen.
 In den folgenden Unterabschnitten werden Merkmale beschrieben, die zur Lesbarkeit einer Programmiersprache beitragen.
 [@sebesta_2019 S. 42f]
@@ -50,33 +49,39 @@ In den folgenden Unterabschnitten werden Merkmale beschrieben, die zur Lesbarkei
 The overall simplicity of a programming language strongly affects its readability.
 A language with a large number of basic constructs is more difficult to understand than a simpler one.
 Programmers who must use a complex language often learn just a subset of the language and ignore its other features.
-This learning pattern is sometimes used to excuse the large number of language constructs, but that argument is not valid.
 Readability problems occur whenever the program’s author has learned a different subset from that subset with which the reader is familiar.
 -->
 Die allgemeine Einfachheit einer Programmiersprache wirkt sich stark auf ihre Lesbarkeit aus.
-Eine Sprache mit einer großen Anzahl von Grundkonstrukten ist schwieriger zu verstehen als eine einfachere Sprache.
-Programmierer, die eine komplexe Sprache verwenden müssen, lernen oft nur eine Teilmenge der Sprache und ignorieren die anderen Merkmale.
-Dieses Lernmuster wird manchmal als Entschuldigung für die große Anzahl von Strukturen herangezogen, aber dieses Argument ist nicht stichhaltig.
+Eine Sprache mit vielen Grundstrukturen ist schwerer zu verstehen als eine mit wenigen.
+Programmierer, die eine komplexe Sprache verwenden müssen,
+lernen oft nur eine Teilmenge der Sprache und ignorieren andere.
 Probleme mit der Lesbarkeit treten immer dann auf, wenn der Programmverfasser eine andere Teilmenge gelernt hat als die, mit der der Leser vertraut ist.
 [@stansifer_1995 S. 61; @sebesta_2019 S. 43]
 
 <!--
-A second complicating characteristic of a programming language is, having more than one way to accomplish the same operation.
-@sec-bindings-and-scope will discuss one example of this in more detail.
-That example will require operator overloading in Rym,
 in which a single operator can have more than one meaning.
 Although this is often useful, it can lead to reduced readability if users are allowed to create their own overloading and do not do it sensibly.
 For example, it is clearly acceptable to overload "+"" to use it for both integer and floating-point addition.
 In fact, this overloading simplifies a language by reducing the number of operators. How the overloading in Rym works is explained in @sec-polymorphism.
 -->
-Ein zweites Merkmal, das die Lesbarkeit einer Programmiersprache beeinträchtigt, ist die Existenz von mehr als einem Weg, um dieselbe Operation auszuführen.
-In @sec-bindings-and-scope wird ein Beispiel dafür näher erläutert.
-Dieses Beispiel erfordert die Überladung von Operatoren in Rym,
-bei dem ein einzelner Operator mehr als eine Implementierung haben kann.
-Obwohl dies oft nützlich ist, kann es zu einer geringeren Lesbarkeit führen, wenn es den Benutzern erlaubt ist, ihre eigenen Überladungen zu erstellen und sie dies nicht vernünftig tun.
-So ist es beispielsweise durchaus akzeptabel, "+" zu überladen, um es sowohl für die Ganzzahl- als auch für die Gleitkommaaddition zu verwenden.
-In der Tat vereinfacht diese Überladung eine Sprache, indem sie die Anzahl der verschiedenen Operatoren reduziert. Wie das Überladen in Rym funktioniert, wird in @sec-polymorphism erklärt.
+Weiterhin kann das Überladen von Operatoren<!-- ^[Wie das Überladen in Rym funktioniert, wird in @sec-polymorphism erklärt.] -->,
+bei dem ein einzelner Operator mehr als eine Implementierung haben kann,
+die Einfachheit beinflussen.
+Das ist zwar oft sinnvoll, kann aber das Lesen erschweren,
+wenn Benutzern erlaubt wird, ihre eigenen Überladungen zu erstellen
+und sie dies nicht in einer vernünftigen Art und Weise tun.
+So ist es beispielsweise durchaus akzeptabel, "+" zu überladen,
+um es sowohl für die Ganzzahl- als auch für die Gleitkommaaddition zu verwenden.
+In Wirklichkeit vereinfachen Überladung dieser Art eine Sprache jedoch,
+indem sie die Anzahl der verschiedenen Operatoren reduzieren.
 [@sebesta_2019 S. 43f]
+
+<!--
+A second complicating characteristic of a programming language is, having more than one way to accomplish the same operation.
+-->
+Ein drittes Merkmal, welches die Einfachheit einer Programmiersprache beeinträchtigt,
+ist das Vorhandensein mehrerer Möglichkeiten, dieselbe Operation auszuführen.
+<!-- TODO write more? -->
 
 <!--
 On the other hand, simplicity can be taken too far.
@@ -87,13 +92,10 @@ The same arguments apply to the less extreme case of languages with inadequate c
 -->
 Andererseits kann man es mit der Einfachheit auch übertreiben.
 Beispielsweise sind Form und Bedeutung der meisten Assembler-Anweisungen sehr einfach.
-Da komplexere Steueranweisungen fehlen, ist die Programmstruktur weniger offensichtlich.
+Da komplexere Steueranweisungen fehlen, ist die Programmstruktur jedoch weniger offensichtlich.
 Es werden mehr Anweisungen benötigt als in entsprechenden Programmen einer höheren Programmier-sprache.
 Die gleichen Argumente gelten auch für den weniger extremen Fall von Sprachen mit unzureichenden Kontroll- und Datenstrukturen.
 [@sebesta_2019 S. 44]
-
-- __TODO__
-  - as few things to think about at once as possible
 
 <!-- ### Orthogonality -->
 ### Orthogonalität
@@ -105,11 +107,12 @@ Therefore, a lack of orthogonality leads to exceptions to the rules of the langu
 The more orthogonal the design of a language, the fewer exceptions the language rules require.
 Fewer exceptions mean a higher degree of regularity in the design, which makes the language easier to learn, read, and understand.
 -->
-Orthogonalität^[Das Wort orthogonal stammt aus dem mathematischen Konzept der orthogonalen Vektoren, die voneinander unabhängig sind.] in einer Programmiersprache bedeutet, dass eine kleine Menge von primitiven Konstrukten auf wenige Arten kombiniert werden können, um die Kontroll- und Datenstrukturen der Sprache aufzubauen.
+Orthogonalität _(griech. orthos „gerade, aufrecht, richtig, rechtwinklig“)_ in einer Programmier-sprache bedeutet,
+dass eine kleine Menge von primitiven Konstrukten auf wenige Arten kombiniert werden können,
+um die Kontroll- und Datenstrukturen der Sprache aufzubauen.
 Außerdem sollte jede mögliche Kombination von Primitiven legal und sinnvoll sein.
-Ein Mangel an Orthogonalität führt daher zu Ausnahmen von den Regeln der Sprache.
-Je orthogonaler der Entwurf einer Sprache ist, desto weniger Ausnahmen erfordern die Sprachregeln.
-Weniger Ausnahmen bedeuten einen höheren Grad an Regelmäßigkeit im Design, wodurch die Sprache leichter zu lernen, zu lesen und zu verstehen ist.
+Ein Mangel an Orthogonalität führt also zu Ausnahmen an den Regeln der Sprache.
+Je weniger Ausnahmen es gibt, desto leichter ist die Sprache zu lesen, zu verstehen und zu erlernen.
 [@sebesta_2019 S.44ff]
 
 <!--
@@ -119,44 +122,60 @@ Because languages require a large number of primitives, a high degree of orthogo
 So, even if the combinations are simple, their sheer numbers leads to complexity.
 Simplicity in a language, therefore, is at least in part the result of a combination of a relatively small number of primitive constructs and a limited use of the concept of orthogonality.
 -->
-Die Bedeutung eines orthogonalen Sprachelements ist unabhängig von dem Kontext, in dem es in einem Programm auftritt.
-Aber alles kontextunabhängig zu machen, kann auch zu unnötiger Komplexität führen.
-Da Sprachen eine große Anzahl von Primitiven benötigen, führt ein hoher Grad an Orthogonalität zu einer Explosion an Kombinationen.
-Auch wenn Kombinationen einfach sind, erzeugt ihre Anzahl Komplexität.
-Die Einfachheit einer Sprache ist daher zumindest teilweise das Ergebnis einer Kombination aus einer relativ kleinen Anzahl von primitiven Konstrukten und einer begrenzten Verwendung des Konzepts der Orthogonalität.
+Die Bedeutung eines orthogonalen Sprachelements ist unabhängig vom Kontext,
+in dem es in einem Programm vorkommt.
+Alles kontextunabhängig zu machen, kann aber auch zu unnötiger Komplexität führen.
+Da Sprachen eine große Anzahl von Primitiven benötigen, führt ein hoher Grad an Orthogonalität zu einer Explosion von Kombinationen.
+Selbst wenn die Kombinationen einfach sind, erzeugt ihre Anzahl Komplexität.
+Die Einfachheit einer Sprache ist daher zumindest teilweise das Ergebnis einer Kombination aus einer relativ geringen Anzahl von primitiven Konstrukten und einer begrenzten Verwendung des Konzepts der Orthogonalität.
 [@stansifer_1995 S.60f; @sebesta_2019 S.46f]
 
 <!-- ### Data Types -->
 ### Datentypen
 
+<!--
 Readability can be increased even more by allowing users to define adequate data types and data structures for specific use cases.
-This especially applies to Booleans and Enumerations covered in @sec-bool and @sec-enum respectively.
-For example, in some languages that do not provide a Boolean type the following code could be used:
-
-```rym
-const timeout = 1
-```
-
-The meaning of this statement is unclear, whereas in a language that includes Boolean types, the following would be used:
-
-```rym
-const timeout = true
-```
-Which is clearer than the first one.
+This especially applies to Booleans and Enumerations.
+For example, in some languages that do not provide a Boolean type the following code could be used: -->
+Die Lesbarkeit kann noch weiter verbessert werden,
+indem den Benutzern die Möglichkeit gegeben wird,
+geeignete Datentypen und Datenstrukturen zu definieren.
+Dies gilt insbesondere für Booleans und Enumerationen.
 [@sebesta_2019 S. 47]
+In einigen Sprachen, die keinen Boolean-Typen bieten,
+könnte z.B. der folgende Code verwendet werden:
+
+```rym
+const use_timeout = 1
+```
+
+<!--
+The meaning of this statement is unclear,
+whereas in a language that includes Boolean types, the following would be used:
+-->
+Die Bedeutung dieser Anweisung ist unklar,
+und kann in einer Sprache mit Boolean-Typen wesentlich klarer dargestellt werden:
+
+```rym
+const use_timeout = true
+```
 
 ### Syntax
 
+Syntax, or the form of elements in a language, greatly impacts the readability of programs.
+There are various design choices that affect readability,
+such as special words, form, and meaning.
+Some languages use matching pairs of special words or symbols,
+while others use distinct closing syntax,
+which can result in greater readability.
+However, personal preferences play a role in determining which language is more readable.
+The meaning of reserved words can also vary depending on context.
+In some cases, the appearance of statements does not suggest their purpose,
+leading to difficulties for beginners.
+Ultimately, the readability of a programming language is subjective
+and depends on individual preferences and prior knowledge.
+Which is why adopting parts of the syntax of well known languages into a new one makes a lot of sense.
 [@sebesta_2019 S. 48f]
-
-- __TODO__
-  - simple
-  - expressive
-  - flat learning curve
-  - familiar syntax
-  - `{}` is a block (vs. `end`/`end if`)
-  - might not make as much sense for non-programmers
-  - comparable with the way that `+` and other math notation could be considered less readable then `plus`
 
 <!-- ## Writability -->
 ## Schreibbarkeit
@@ -167,11 +186,14 @@ Most of the language characteristics that affect readability also affect writabi
 This follows directly from the fact that the process of writing a program requires the programmer frequently to reread the part of the program that is already written.
 As is the case with readability, writability must be considered in the context of the target problem domain of a language.
 
+- __TODO__
+  - as few things to think about at once as possible
+
 <!-- ## Reliability -->
 ## Verlässlichkeit
 
-A program is said to be reliable if it performs to its specifications under all
-conditions and will continue to in the future.
+A program is said to be reliable if it performs as expected under all conditions
+and will continue to in the future.
 [@sebesta_2019 S. 51]
 
 <!-- ### Specification -->
