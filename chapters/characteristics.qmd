@@ -240,7 +240,7 @@ For this reason, a language should have as few of them as possible.
 -->
 Verhaltensweisen, die in der Spezifikation nicht erwähnt werden, nennt man _unspezifiziertes Verhalten_,
 und _undefiniertes Verhalten_, wenn sie zwar erwähnt werden, aber nicht definiert ist, wie sie sich verhalten.
-Sie stellen eine große Herausforderung für die Benutzer der Sprache dar, da sie nicht sicher sein können, wie und ob ihr Programm laufen wird.
+Sie stellen eine große Herausforderung für die Benutzer der Sprache dar, da sie nicht sicher sein können, wie und ob ihr Programm ausgeführt wird.
 Aus diesem Grund sollte eine Sprache so wenige von ihnen wie möglich haben.
 [@iso_24772_1_2019 S. 21]
 
