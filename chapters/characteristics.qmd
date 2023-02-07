@@ -1,5 +1,5 @@
-<!-- # Advantageous Characteristics of Programming Languages -->
-# Vorteilhafte Eigenschaften von Programmiersprachen
+<!-- # Characteristics of Programming Languages -->
+# Eigenschaften von Programmiersprachen
 
 <!-- # Positive/Advantageous/Desirable Characteristics/Properties of Programming Languages
 # Desirable Characteristics of Programming Languages
@@ -7,16 +7,16 @@
 # Eveluation Criteria -->
 
 <!--
-Crucial to achieving this goal is to find out which features of a programming language are beneficial.
+Crucial to achieving this goal is to find out which features of a programming language are beneficial and vice versa.
 These are then evaluated in terms of how they affect the software development process, including maintenance.
 Such a list of characteristics is necessarily controversial,
 as it is difficult to get everyone to agree on the value of some given language property relative to others.
 In spite of these differences, most would probably agree that the following criteria are at least important.
 -->
-Entscheidend für das Erreichen dieses Ziels ist es, herauszufinden, welche Eigenschaften einer Programmiersprache vorteilhaft sind.
-Diese werden dann bewertet, wie sie den Softwareentwicklungsprozess, einschließlich der Wartung, beeinflussen.
-Eine solche Liste von Merkmalen ist zwangsläufig umstritten, da sich nicht jeder über den Wert einer bestimmten Spracheigenschaft im Vergleich mit anderen einig ist.
-Trotz dieser Unterschiede würden die meisten wahrscheinlich zustimmen, dass die folgenden Kriterien zumindest wichtig sind.
+Eine Liste dieser Art ist stets umstritten,
+da es unterschiedliche Meinungen über den Wert einer bestimmten Spracheigenschaft im Vergleich zu anderen gibt.
+Obwohl es auch aufgrund der Unterschiedlichen Anwendungsbereiche einer Programmiersprache keine allgemeingültigen positiven Aspekte gibt,
+werden die folgende Kriterien häufig genannt.
 [@stansifer_1995 S. 60; @sebesta_2019 S. 41]
 
 <!-- ## Readability -->
@@ -61,26 +61,27 @@ Probleme mit der Lesbarkeit treten immer dann auf, wenn der Programmverfasser ei
 <!--
 in which a single operator can have more than one meaning.
 Although this is often useful, it can lead to reduced readability if users are allowed to create their own overloading and do not do it sensibly.
-For example, it is clearly acceptable to overload "+"" to use it for both integer and floating-point addition.
+For example, it is clearly acceptable to overload "+" to use it for both integer and floating-point addition.
 In fact, this overloading simplifies a language by reducing the number of operators. How the overloading in Rym works is explained in @sec-polymorphism.
 -->
 Weiterhin kann das Überladen von Operatoren<!-- ^[Wie das Überladen in Rym funktioniert, wird in @sec-polymorphism erklärt.] -->,
-bei dem ein einzelner Operator mehr als eine Implementierung haben kann,
+bei dem ein einzelner Operator viele verschiedene Implementierung haben kann,
 die Einfachheit beinflussen.
 Das ist zwar oft sinnvoll, kann aber das Lesen erschweren,
 wenn Benutzern erlaubt wird, ihre eigenen Überladungen zu erstellen
 und sie dies nicht in einer vernünftigen Art und Weise tun.
-So ist es beispielsweise durchaus akzeptabel, "+" zu überladen,
+Es ist jedoch durchaus akzeptabel, "+" zu überladen,
 um es sowohl für die Ganzzahl- als auch für die Gleitkommaaddition zu verwenden.
-In Wirklichkeit vereinfachen Überladung dieser Art eine Sprache jedoch,
-indem sie die Anzahl der verschiedenen Operatoren reduzieren.
-[@sebesta_2019 S. 43f]
+In diesem Fall vereinfachen Überladung die Sprache sogar,
+da sie die Anzahl der verschiedenen Operatoren reduzieren.
+[@sebesta_2019 S. 43f; @sebesta_2019 S. 664]
 
-<!--
-A second complicating characteristic of a programming language is, having more than one way to accomplish the same operation.
+<!-- feature multiplicity
+A third complicating characteristic of a programming language is, having more than one way to accomplish the same operation.
 -->
-Ein drittes Merkmal, welches die Einfachheit einer Programmiersprache beeinträchtigt,
+Eine dritte Charakteristik, welches die Einfachheit einer Programmiersprache beeinträchtigt,
 ist das Vorhandensein mehrerer Möglichkeiten, dieselbe Operation auszuführen.
+[@sebesta_2019 S. 43]
 <!-- TODO write more? -->
 
 <!--
@@ -184,20 +185,51 @@ Daher sollten Elemente mit ähnlicher Bedeutung ähnlich geschrieben werden.
 Zu viele Alternativen, um Code mit der gleichen Bedeutung zu schreiben, verstoßen ebenfalls gegen die Orthogonalität.
 Letztlich hängt die Lesbarkeit einer Sprache jedoch von individuellen Vorlieben und Vorkenntnissen ab.
 Die Übernahme von Teilen der Syntax bekannter Sprachen in eine neue Sprache ist daher sehr sinnvoll.
-[@sebesta_2019 S. 48f]
+[@stansifer_1995 S. 61ff; @sebesta_2019 S. 48f]
 
 <!-- ## Writability -->
 ## Schreibbarkeit
 
-<!-- TODO -->
-Writability is a measure of how easily a language can be used to create programs for a chosen problem domain.
+<!-- Writability is a measure of how easily a language can be used to create programs for a chosen problem domain.
 Most of the language characteristics that affect readability also affect writability.
 This follows directly from the fact that the process of writing a program requires the programmer to frequently reread the part of the program that they just wrote.
 
+As programming languages are usually based on english, which is written from left to right.
+Therefore it is beneficial if the syntax prevents having to jump around as much as possible. -->
 
+<!--
+The ease with which a programming language can be used to write programs for a particular task is known as its writeability.
+The language characteristics that improve readability also contribute to its writability,
+because writing a program often involves re-reading parts of the code.
+In order to optimise writability it is desirable for the syntax to minimise the need for the programmer to jump around,
+which makes it easier to focus on writing code.
+This can be achieved by having a syntax based on a left-to-right reading direction, as in English.
+-->
+Die Leichtigkeit, mit der eine Programmiersprache verwendet werden kann, um Programme für eine bestimmte Aufgabe zu schreiben, wird als ihre Schreibfähigkeit bezeichnet.
+Die Sprachmerkmale, die die Lesbarkeit verbessern, tragen auch zu ihrer Schreibbarkeit bei,
+denn das Schreiben eines Programms erfordert häufig das erneute Lesen von Teilen des Codes.
+Um die Schreibbarkeit zu optimieren, ist es wünschenswert, dass die Syntax die Notwendigkeit für den Programmierer minimiert, herumzuspringen,
+Das macht es einfacher, sich auf das Schreiben von Code zu konzentrieren.
+Dies kann durch eine Syntax erreicht werden, die auf einer Leserichtung von links nach rechts basiert, wie im Englischen.
+[@sebesta_2019 S. 49ff]
 
-- __TODO__
-  - as few things to think about at once as possible
+<!--
+In addition to easy-to-understand syntax, it is important for a programming language to have a clear and simple structure.
+This allows a programmer to concentrate on one task at a time,
+rather than having to keep several concepts in their head at the same time.
+A language with a straightforward and intuitive structure reduces the mental effort required to write code,
+making it easier to focus on the task at hand and reducing the potential for errors.
+In other words, a language that minimises the number of things a programmer has to think about at once is a key factor in improving its writability.
+-->
+Neben einer leicht verständlichen Syntax ist es für eine Programmiersprache wichtig, dass sie eine klare und einfache Struktur hat.
+So kann sich ein Programmierer auf eine Aufgabe konzentrieren,
+anstatt mehrere Konzepte gleichzeitig im Kopf behalten zu müssen.
+Eine Sprache mit einer einfachen und intuitiven Struktur verringert die geistige Anstrengung, die zum Schreiben von Code erforderlich ist,
+Das macht es einfacher, sich auf die Aufgabe zu konzentrieren, und verringert die Fehleranfälligkeit.
+Mit anderen Worten: Eine Sprache, die die Anzahl der Dinge, über die ein Programmierer gleichzeitig nachdenken muss, minimiert, ist ein Schlüsselfaktor für die Verbesserung der Schreibfähigkeit.
+[@sebesta_2019 S. 49ff]
+
+{{< pagebreak >}}
 
 <!-- ## Reliability -->
 ## Verlässlichkeit
@@ -219,6 +251,7 @@ Bei dieser Spezifikation handelt es sich um eine Reihe von Regeln,
 die eine Implementierung der Sprache befolgen muss, um sicherzustellen,
 dass sich die Programme wie vorgesehen verhalten.
 Sie sollte alle möglichen Kombinationen an Merkmalen der Programmiersprache abdecken.
+[@scott_2016 S. 615]
 
 <!--
 In some cases, the behaviour of certain features may be poorly defined.
@@ -226,7 +259,7 @@ This can lead to different implementations that produce different results.
 Some of the possible outcomes can be harmful and the implementations are not required to remain consistent across executions,
 versions, or levels of optimisation.
 -->
-In einigen Fällen kann das Verhalten bestimmter Merkmale schlecht definiert sein.
+In einigen Fällen kann das Verhalten bestimmter Merkmale unzureichend definiert sein.
 Dies kann zu verschiedenen Implementierungen führen, die unterschiedliche Ergebnisse liefern.
 Einige der möglichen Ergebnisse können schädlich sein, und die Implementierungen müssen nicht über alle Ausführungen hinweg konsistent bleiben,
 Versionen oder Optimierungsstufen konsistent bleiben.
@@ -264,16 +297,53 @@ Overall, having a language that is future-proof allows for the language to stay 
 
 <!-- Safety is also an important aspect of specification, as it helps to avoid undefined behavior and aliasing, which can lead to unexpected and unpredictable results. Type checking is another important aspect of specification, as it helps to ensure that the program is using the correct data types in the correct way, which can help to prevent errors and improve the overall reliability of the program. -->
 
-- __TODO__
-  - aliasing
-  - type checking
+<!--
+In addition to the security issues introduced by unspecified or undefined behaviour,
+there are other concerns that should be addressed to ensure the security of the program.
+One of these is mutable aliasing,
+which occurs when multiple variables reference the same memory location.
+This can result in unexpected changes to the data and can lead to bugs that are very difficult to detect.
+To mitigate these risks, the programming language can be designed with robust static analysis mechanisms,
+such as data/control flow analysis, bounds checking and type checking in mind.
+This ensures that the user's assumptions about the data being processed are correct,
+which helps to prevent bugs and improves the overall reliability of programs.
+-->
+Zusätzlich zu den Sicherheitslücken, die durch nicht spezifiziertes oder undefiniertes Verhalten entstehen,
+gibt es weitere Probleme, die angegangen werden sollten, um die Sicherheit des Programms zu gewährleisten.
+Eines dieser Probleme ist das Aliasing,
+welches auftritt, wenn mehrere Variablen auf dieselbe Speicherstelle verweisen.
+Dies kann zu unerwarteten Änderungen an den Daten führen und Fehler verursachen, die nur schwer zu erkennen sind.
+Um diese Risiken zu mindern, kann die Programmiersprache mit robusten statischen Analysemechanismen entworfen werden,
+wie z.B. Daten-/Kontrollflussanalyse, Bounds-Checking und Type Checking.
+Dadurch wird sichergestellt, dass die Annahmen des Benutzers über die zu verarbeitenden Daten korrekt sind,
+was zur Vermeidung von Fehlern beiträgt und die Zuverlässigkeit von Programmen verbessert.
+[@sebesta_2019 S. 51ff]
+[@iso_24772_1_2019 S. 81f]
+[@iso_24772_1_2019 S. 37f]
+[@iso_24772_1_2019 S. 16]
 
 <!-- ### Future Proof -->
 ### Zukunftssicherheit
 
-- __TODO__
-  - allow breaking changes
-  - reserved keywords
+<!--
+A programming language can be made future-proof by designing it with scalability and maintainability in mind.
+Technical debt can be kept under control by avoiding the use of overly complex constructs,
+and incorporating feedback from users and developers.
+Breaking changes to a language can make sense in order to address fundamental design issues or to incorporate new, game-changing technologies.
+However, such changes must be made carefully, as they can cause backward compatibility issues.
+The impact of breaking changes can be mitigated by considering the long-term implications of language design decisions.
+An example of this are reserved keywords, which programmers are not allowed to use for naming purposes.
+Many languages add keywords to this list that may be used in the future to avoid breaking changes later on.
+-->
+Eine Programmiersprache kann zukunftssicher gemacht werden, indem sie mit Blick auf Skalierbarkeit und Wartungsfreundlichkeit entwickelt wird.
+Technische Schulden können unter Kontrolle gehalten werden, indem übermäßig komplexe Konstrukte vermieden werden,
+und das Feedback von Benutzern und Entwicklern berücksichtigt wird.
+Grundlegende Änderungen an einer Sprache können sinnvoll sein, um grundlegende Designprobleme zu beheben oder neue, bahnbrechende Technologien einzubinden.
+Solche Änderungen müssen jedoch sorgfältig durchgeführt werden, da sie zu Problemen mit der Rückwärts-kompatibilität führen können.
+Die Auswirkungen von Änderungen können abgeschwächt werden, indem man die langfristigen Auswirkungen von Entscheidungen im Sprachdesign berücksichtigt.
+Ein Beispiel hierfür sind reservierte Schlüsselwörter, die Programmierer nicht zur Namensgebung verwenden dürfen.
+Viele Sprachen fügen dieser Liste Schlüsselwörter hinzu, die in der Zukunft verwendet werden könnten, um spätere grundlegende Änderungen zu vermeiden.
+[@sebesta_2019 S. 344]
 
 <!-- Portability
 

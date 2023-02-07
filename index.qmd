@@ -24,7 +24,8 @@ Eine neue Sprache hat den Vorteil, dass ihre Entwicklung nicht durch interne Une
 wie dies bei vielen älteren Programmiersprachen der Fall ist.
 Bei der Umsetzung kann man von Null anfangen und konzeptionell alle Erkenntnisse aus früheren Versuchen nutzen.
 Völlig neue Ideen können so viel einfacher und schneller ausprobiert werden.
-Bei einer Sprache, die von Tausenden von Menschen benutzt wird und möglichst stabil bleiben soll, ist dieser Prozess schwieriger.
+Bei einer Sprache, die von Tausenden von Menschen benutzt wird und möglichst stabil bleiben soll,
+gestaltet sich dieser Prozess schwieriger.
 
 <!--
 Another advantage of small new projects is that there is less bureaucracy and coordination,

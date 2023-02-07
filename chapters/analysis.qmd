@@ -61,9 +61,9 @@ TypeScript's static typing allows for better tooling and increased developer pro
 Because it is just a super-set of JavaScript, developers are able to adopt TypeScript incrementally into existing JavaScript projects.
 -->
 Alle neueren Programmiersprachen, die in der Statistik aufgeführt sind, wurden von anderen Sprachen inspiriert oder sind sogar die Nachfolger dieser Sprachen.
-Zu diesen Sprachen gehört z.B. TypeScript, eine statisch typisierte Sprache, die auf JavaScript aufbaut,
-indem sie optionale Typ-Annotationen und andere Funktionen hinzufügt.
-Sie wird von Microsoft entwickelt und hat in den letzten Jahren vor allem bei großen Webentwicklungsprojekten erheblich an Popularität gewonnen.
+Eine dieser Sprachen ist TypeScript, eine statisch typisierte Sprache,
+die JavaScript um optionale Typ-Annotationen und andere Funktionen erweitert.
+Sie wird von Microsoft entwickelt und hat in den letzten Jahren vor allem bei großen Webentwicklungsprojekten stark an Popularität gewonnen.
 Da es sich nur um ein Super-Set von JavaScript handelt, können Entwickler TypeScript schrittweise in bestehende JavaScript-Projekte integrieren.
 [@ts_web]
 
@@ -92,8 +92,9 @@ Apache's^[The Apache Software Foundation is a nonprofit organisation supporting 
 that have not gained as much popularity as Kotlin.
 One of the biggest factors in its success has been Google's official support for Android development using Kotlin.
 -->
-Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt] kann als Nachfolger von Java betrachtet werden.
-Sie ist übersichtlicher, eindeutiger und sicherer, sie ist interoperabel mit Java und läuft nach wie vor auf der Java Virtual Machine (JVM).
+Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt]
+kann als Nachfolger von Java angesehen werden, der übersichtlicher, klarer und sicherer ist.
+Die Interoperabilität mit Java ist durch die Verwendung der Java Virtual Machine (JVM) weiterhin gewährleistet.
 Groovy von Apache^[Die Apache Software Foundation ist eine gemeinnützige Organisation, die Open-Source-Softwareprojekte unterstützt. @apache], Closure und Scala sind weitere Sprachen, die auf der JVM basieren,
 aber nicht so populär geworden sind wie Kotlin.
 Einer der größten Faktoren für den Erfolg war die offizielle Unterstützung von Google für Android-Entwicklung mit Kotlin.
@@ -112,8 +113,8 @@ Go wurde entwickelt, um die Effizienz von kompilierten Sprachen mit der Einfachh
 Es wird für die Entwicklung von vernetzten Diensten, groß angelegten Webanwendungen und anderer parallel laufender Software verwendet.
 Dart wurde entwickelt, um eine schnelle Entwicklung von Benutzeroberflächen für viele Plattformen zu ermöglichen.
 Mit dem Flutter-Framework lassen sich plattform-übergreifende Anwendungen für Android, IOS, Web, Windows, macOS und Linux erstellen.
-Das jüngste Projekt ist Carbon, ein experimenteller Nachfolger für C++.
-Es wurde Ende 2022 veröffentlicht und ist noch lange nicht ausgereift.
+Das jüngste Projekt ist Carbon, ein experimenteller Nachfolger für C++,
+welcher Ende 2022 veröffentlicht wurde und ist noch lange nicht ausgereift ist.
 [@go_web; @go_spec; @flutter_multi; @carbon]
 
 <!--
@@ -123,7 +124,7 @@ Swift offers modern language features like functional programming, generics and 
 Swift has also gained popularity in server-side development with the introduction of Swift on the server, a project that enables the use of Swift for backend systems. -->
 <!-- TODO Refine sources -->
 Swift hingegen wurde 2014 von Apple als Ersatz für Objective-C eingeführt.
-Es wurde entwickelt, um lesbarer, sicherer und schneller als Objective-C zu sein
+Swift soll lesbarer, sicherer und schneller als Objective-C sein
 und hat bei iOS- und macOS-Entwicklern schnell an Popularität gewonnen.
 Swift bietet moderne Features wie funktionale Programmierung, Generics und Typinferenz,
 die das Schreiben komplexer Softwaresysteme erleichtern.

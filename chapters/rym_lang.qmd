@@ -14,6 +14,7 @@ like Kotlin, Rust, Dart, and others simply adapts it.
 Actual functional changes happen at the semantic level.
 
 - __TODO__
+  - naming: @sebesta_2019 S. 344
   - simple
   - expressive
   - flat learning curve
@@ -90,6 +91,8 @@ They are also higher order functions, meaning that they can be used as arguments
 @higher_order_func
 
 Because functions are a data type
+
+- closures: [@sebesta_2019 S. 665]
 
 To allow for easier declaration of functions inline
 
