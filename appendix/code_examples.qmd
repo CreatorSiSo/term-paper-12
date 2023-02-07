@@ -6,215 +6,108 @@
 ### Booleans
 
 ```rym
-enum bool {
-  true,
-  false,
-}
+type bool = true | false
 use bool.true
 use bool.false
 ```
 
-### Numbers
+### Integers
 
 ```rym
-type int
-type uint
+type int;__TODO__
+type uint;__TODO__
+
+0 44 1834
 ```
 
+### Floats
+
 ```rym
-type float
+type float;__TODO__
+
+0.1 -1.4
+-444. // same as -444.0
 ```
 
 ### Text
 
 ```rym
-type char
-type string
+type char;__TODO__
+
+'a' '\n' '\t' '\u{2192}'
+
+type string;__TODO__
+
+"Hello World!\n" "testing"
 ```
 
-### Other
+### Structures
 
 ```rym
-type Option<T> = None | Some(T)
+type Vec3 = {
+  x: float,
+  y: float,
+  z: float,
+}
+
+const pos = Vec3 { x: 2.5, y: -1.2, z: 0.0, }
+```
+
+{{< pagebreak >}}
+
+### Enumerations / Union Types
+
+```rym
+type EnumName =
+  | Variant1
+  | Variant2
+  | VariantN
+
+const variant = EnumName.VariantN
+```
+
+There is also a shorter syntax for small enums.
+
+```rym
+type SmallEnum = VerySmall | ActuallyLarge
+```
+
+Each variant can be associated with a specific value.
+These values are automatically chosen if not defined and are usually represented by an integer.
+
+```rym
+type EnumName =
+  | Variant1 = 1
+  | Variant2 = 2
+  | VariantN = 156
+
+const variant_n = EnumName.VariantN
+const repr = variant_n as uint       // 156
+const variant_2 = 2 as EnumName      // EnumName.Variant2
+```
+
+### Builtin Enumerations
+
+The Option type is used for something that might not have a value.
+
+```rym
+type Option<T> =
+  | Some(T)
+  | None
+
 use Option.Some
 use Option.None
 ```
 
-<!-- ```rym
-// TODO
-// If you want access to the ordinal value of an enum, you
-// can specify the tag type.
-const Value = enum(u2) {
-  Zero,
-  One,
-  Two,
-}
-// Now you can cast between u2 and Value.
-// The ordinal value starts from 0, counting up by 1 from the previous member.
-test "enum ordinal value" {
-  assert_eq(@enumToInt(Value.Zero), 0)
-  assert_eq(@enumToInt(Value.One), 1)
-  assert_eq(@enumToInt(Value.Two), 2)
-}
-```
-
-You can override the ordinal value for an `enum`.
+The Result type is used to specify that something can either have a value or contain an error.
 
 ```rym
-enum Value2 {
-  Hundred = 100,
-  Thousand = 1_000,
-  Million = 1_000_000,
-}
-test "set enum ordinal value" {
-  // TODO: How to convert enum to int/uint?
-  assert_eq(@enumToInt(Value2.Hundred), 100)
-  assert_eq(@enumToInt(Value2.Thousand), 1000)
-  assert_eq(@enumToInt(Value2.Million), 1000000)
-}
-```
+type Result<T, E> =
+  | Ok(T)
+  | Err(E)
 
-You can also override only some values.
-
-```rym
-enum Value3 {
-  A,
-  B = 8,
-  C,
-  D = 4,
-  E,
-}
-test "enum implicit ordinal values and overridden values" {
-  assert_eq(@enumToInt(Value3.A), 0)
-  assert_eq(@enumToInt(Value3.B), 8)
-  assert_eq(@enumToInt(Value3.C), 9)
-  assert_eq(@enumToInt(Value3.D), 4)
-  assert_eq(@enumToInt(Value3.E), 5)
-}
-```
-
-`Enum`s can have methods, the same as `struct`s.
-`Enum` methods are not special, they are only namespaced functions that you can call with dot syntax.
-
-```rym
-enum Suit {
-  Clubs,
-  Spades,
-  Diamonds,
-  Hearts,
-
-  pub fn isClubs(self: Suit) bool {
-    self == Suit.Clubs
-  }
-}
-test "enum method" {
-  const suit = Suit.Spades
-  assert_eq(suit.isClubs(), false)
-}
-```
-
-An `enum` can be `match`ed upon.
-
-```rym
-enum Foo {
-  String,
-  Number,
-  None,
-}
-test "enum match" {
-  const foo = Foo.Number
-  const what_is_it = match foo {
-    Foo.String => "this is a string",
-    Foo.Number => "this is a number",
-    Foo.None => "this is a none",
-  }
-  assert_eq(what_is_it, "this is a number")
-}
-```
-
-```rym
-// TODO
-// `@typeInfo` can be used to access the integer tag type of an enum.
-enum Small {
-  One,
-  Two,
-  Three,
-  Four,
-}
-test "std.meta.Tag" {
-  assert_eq(@typeInfo(Small).Enum.tag_type, u2)
-}
-
-// `@typeInfo` tells us the field count and the fields names:
-test "@typeInfo" {
-  assert_eq(@typeInfo(Small).Enum.fields.len, 4)
-  assert_eq(@typeInfo(Small).Enum.fields[1].name, "Two")
-}
-
-// `@tagName` gives a `string` representation of an enum value:
-test "@tagName" {
-  assert_eq(@tagName(Small.Three), "Three")
-}
-```
-
-### Non-exhaustive enum
-
-A non-exhaustive enum can be created by adding an underscore as the last field.
-Non-exhaustive means the enum might gain additional variants in the future,
-so <!-- it must specify a tag type and --> when unpacking the enum it is required to add a fall through case.
-
-```rym
-// TODO: Use #NonExhaustive Attribute insted?
-#NonExhaustive
-enum Number {
-  One,
-  Two,
-  Three,
-  _,
-}
-
-test "match on non-exhaustive enum" {
-  const number = Number.One
-  const result = match number {
-    .One => true,
-    .Two | .Three => false,
-    _ => false,
-  }
-  assert(result)
-  const is_one = match number {
-      .One => true,
-      else => false,
-  }
-  assert(is_one)
-}
-```
-
-```rym
-type bool = true | false
-type Testing = One | Other
-
-enum Option<T> = {
-  Some(T),
-  None,
-}
-
-struct Something {
-  x: uint,
-  y: uint,
-}
-``` -->
-
-{{< pagebreak >}}
-
-## Statements
-
-### Variables
-
-Uninitialized variables must have a value assigned to them before they can be used.
-
-```rym
-const name
-const name: OptionalType
+use Result.Ok
+use Result.Err
 ```
 
 ## Expressions
@@ -273,15 +166,90 @@ if const Some(value) = maybe_value {
 }
 ```
 
-## Functions
+### Match
+
+Used to destructure complex data types like enumerations.
+
+```rym
+match maybe_value {
+  Some(value) => print(value)
+  None => print("None")
+}
+```
+
+Works just as well with structures.
+
+```rym
+match pos {
+  Vec3 { x: 0.0, .. } => print("Position: on ground")
+  Vec3 { y: 0.0, z: 0.0, .. } => print("Position: on x axis")
+  Vec3 { x: 0.0, z: 0.0, .. } => print("Position: on y axis")
+  Vec3 { x: 0.0, y: 0.0, .. } => print("Position: on z axis")
+  Vec3 { x: 0.0, y: 0.0, z: 0.0 } => print("Position: at origin")
+  Vec3 { x, y, z } => print("Position:", x, y, z)
+}
+```
+
+It is also possible to use "_" as a wildcard for catching all remaining cases.
+
+```rym
+match pos {
+  Vec3 { x: 0.0, y: 0.0, z: 0.0 } => print("at origin")
+  _ => print("not at origin")
+}
+```
+
+## Statements
+
+### Variables
+
+```rym
+const const_name = "Hello World!"
+
+mut mut_name = "Hello "
+mut_name += "Universe!"
+
+print(const_name, mut_name) // "Hello World! Hello Universe!/n"
+```
+
+Uninitialized variables must have a value assigned to them before they can be used.
+
+```rym
+const name
+
+if condition { name = "Simon" } else { name = "Robert" }
+
+// allowed because name always has a value
+print(name)
+```
+
+### Imports / Use
+
+```rym
+use std.fs.{self, File}
+
+const path = "./dad_jokes.txt"
+const joke = "What should you do if you meet a giant? Use big words."
+
+const create_result = File.create(path)
+const write_result = fs.write(path, joke)
+const data = fs.read_to_string(path).unwrap()
+
+print(data) // "What should you do if you meet a giant?
+            //  Use big words.\n"
+```
+
+### Functions
 
 ```rym
 func func_name(param_1: Type1, param_2: Type2) -> ReturnType {
   ReturnType
 }
+
+const of_return_type = func_name(of_type_1, of_type_2)
 ```
 
-### Parameter Default Values
+#### Parameter Default Values
 
 ```rym
 func increment(num: int, by = 1) -> int {
@@ -293,7 +261,7 @@ const plus_50 = increment(100, 50)     // 150
 const plus_50 = increment(100, by: 50) // 150
 ```
 
-### Force Named Arguments
+#### Force Named Arguments
 
 ```rym
 func testing(pos_or_named: int, .., named: string) { }
@@ -304,7 +272,9 @@ testing(pos_or_named: 2, named: "Hello World!")
 testing(named: "Hello World!", pos_or_named: 2)
 ```
 
-### Variable Arguments
+{{< pagebreak >}}
+
+#### Variable Arguments
 
 ```rym
 func concat(..strings: [string], sep = "") -> string {
@@ -323,7 +293,7 @@ concat(2.to_string(), true.to_string(), name, sep: ", ") // "2, true, Mr. Walker
 concat(sep: ", ", 2.to_string(), true.to_string(), name) // "2, true, Mr. Walker"
 ```
 
-## Print Function
+#### Builtin Print Function
 
 ```rym
 func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {

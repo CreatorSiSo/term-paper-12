@@ -139,10 +139,18 @@ Swift is also open-source, meaning that developers from all around the world can
 <!-- - __TODO__
   - Julia: Developed to be used in scientific, engineering, and technical computing, Julia is a high-performance, high-level dynamic programming language. It is designed to be easy to use and has a syntax similar to that of MATLAB or Python. Julia is particularly well-suited for data science and numerical computing and it's been gaining popularity among researchers and data scientists. -->
 
-## Common Recent Changes
+<!-- ## Innovations / Recent Changes -->
+## Neuerungen
 
-These new languages improve on their predecessors by fixing problems and inconveniences that they encountered and could not remove.
-Sometimes the new features that improve safety and usability are ported back to the older languages.
+<!--
+These new languages improve on their predecessors by fixing many problems and inconveniences that they encountered and could not remove.
+New features that improve safety and usability are sometimes ported back to older languages where possible.
+-->
+Diese neuen Sprachen sind besser als ihre Vorgänger,
+denn sie bieten Lösungen für viele Probleme und Unannehmlichkeiten
+die ihre Vorgänger nicht lösen konnten.
+Neue Funktionen, die zur Verbesserung der Sicherheit und der Benutzerfreundlichkeit beitragen,
+werden jedoch -- soweit dies möglich ist -- in die älteren Sprachen übernommen.
 
 ### Type Systems
 
@@ -151,26 +159,37 @@ This feature allows the compiler or third party tools to check for type errors a
 making it easier to catch bugs early in the development process.
 TypeScript is a very good example of this, as it adds an entire type system on top of JavaScript,
 which can prevent about 15% of bugs.
-[@to_type_or_not_to_type]
+[@to_type_or_not_to_type S. 7]
 There is even a proposal to add type annotations to JavaScript,
 so that tools like TypeScript can skip large parts of the compilation step.
 [@stateofjs_missing; @tc39_type_annotations]
 Other dynamically typed languages, like Python and PHP already support type hints and Lua has tools that are similar to TypeScript.
 All the other languages just mentioned (Rust, Kotlin, Go, Dart, Swift) require static types.
+[@python_docs_typings; @python_pep_484; @php_ref_type_declarations; @go_spec; @rust_ref_types; @swift_docs]
 
-- getting more powerful
-- type inference
+The problem is that it can get very verbose, which is why many type systems allow for type inference.
+It allows the language to automatically determine the type of a value or expression based on its usage,
+without the user to explicitly declare it.
+Originally coming from functional languages like Haskell, F# and OCaml it has found its way into TypeScript, Go, Rust, Kotlin, Dart, Swift and many more.
+Even C++, Java and C# have added support for it in some places.
+[@ts_handbook_type_inference; @go_spec; @rust_ref_let_stmt; @rust_ref_influences; @kotlin_ref S. 236; @dart_spec S. 12; @swift_docs]
+[@cpp_ref_auto; @java_spec_type_inference; @fsharp_spec S. 13]
+
 - Type Classes have been adapted
   - easily extend the functionality of uncontrollable 3rd parties
   - Swift protocols
   - C++23 concepts
   - Rust traits
   - Java, C# Interfaces?
-- where?
-  - Rust, Go, Swift
-  - auto in C++
-  - state of C, C++, C#, Java, php types?
 
+Type classes are another concept from functional languages, particularly Haskell.
+They are useful for writing reusable code and for extending the functionality of user-defined or external data structures.
+Type classes have been adapted into several programming languages,
+including Swift, where they are known as protocols,
+C++, where they are called concepts
+and Rust, where they are referred to as traits.
+Java and C# have similar constructs called interfaces.
+<!-- TODO citation needed -->
 
 ### Null Safety
 

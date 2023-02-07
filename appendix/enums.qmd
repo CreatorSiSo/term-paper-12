@@ -1,0 +1,163 @@
+```rym
+// TODO
+// If you want access to the ordinal value of an enum, you
+// can specify the tag type.
+const Value = enum(u2) {
+  Zero,
+  One,
+  Two,
+}
+// Now you can cast between u2 and Value.
+// The ordinal value starts from 0, counting up by 1 from the previous member.
+test "enum ordinal value" {
+  assert_eq(@enumToInt(Value.Zero), 0)
+  assert_eq(@enumToInt(Value.One), 1)
+  assert_eq(@enumToInt(Value.Two), 2)
+}
+```
+
+You can override the ordinal value for an `enum`.
+
+```rym
+enum Value2 {
+  Hundred = 100,
+  Thousand = 1_000,
+  Million = 1_000_000,
+}
+test "set enum ordinal value" {
+  // TODO: How to convert enum to int/uint?
+  assert_eq(@enumToInt(Value2.Hundred), 100)
+  assert_eq(@enumToInt(Value2.Thousand), 1000)
+  assert_eq(@enumToInt(Value2.Million), 1000000)
+}
+```
+
+You can also override only some values.
+
+```rym
+enum Value3 {
+  A,
+  B = 8,
+  C,
+  D = 4,
+  E,
+}
+test "enum implicit ordinal values and overridden values" {
+  assert_eq(@enumToInt(Value3.A), 0)
+  assert_eq(@enumToInt(Value3.B), 8)
+  assert_eq(@enumToInt(Value3.C), 9)
+  assert_eq(@enumToInt(Value3.D), 4)
+  assert_eq(@enumToInt(Value3.E), 5)
+}
+```
+
+`Enum`s can have methods, the same as `struct`s.
+`Enum` methods are not special, they are only namespaced functions that you can call with dot syntax.
+
+```rym
+enum Suit {
+  Clubs,
+  Spades,
+  Diamonds,
+  Hearts,
+
+  pub fn isClubs(self: Suit) bool {
+    self == Suit.Clubs
+  }
+}
+test "enum method" {
+  const suit = Suit.Spades
+  assert_eq(suit.isClubs(), false)
+}
+```
+
+An `enum` can be `match`ed upon.
+
+```rym
+enum Foo {
+  String,
+  Number,
+  None,
+}
+test "enum match" {
+  const foo = Foo.Number
+  const what_is_it = match foo {
+    Foo.String => "this is a string",
+    Foo.Number => "this is a number",
+    Foo.None => "this is a none",
+  }
+  assert_eq(what_is_it, "this is a number")
+}
+```
+
+```rym
+// TODO
+// `@typeInfo` can be used to access the integer tag type of an enum.
+enum Small {
+  One,
+  Two,
+  Three,
+  Four,
+}
+test "std.meta.Tag" {
+  assert_eq(@typeInfo(Small).Enum.tag_type, u2)
+}
+
+// `@typeInfo` tells us the field count and the fields names:
+test "@typeInfo" {
+  assert_eq(@typeInfo(Small).Enum.fields.len, 4)
+  assert_eq(@typeInfo(Small).Enum.fields[1].name, "Two")
+}
+
+// `@tagName` gives a `string` representation of an enum value:
+test "@tagName" {
+  assert_eq(@tagName(Small.Three), "Three")
+}
+```
+
+### Non-exhaustive enum
+
+A non-exhaustive enum can be created by adding an underscore as the last field.
+Non-exhaustive means the enum might gain additional variants in the future,
+so it must specify a tag type and when unpacking the enum it is required to add a fall through case.
+
+```rym
+// TODO: Use #NonExhaustive Attribute insted?
+#NonExhaustive
+enum Number {
+  One,
+  Two,
+  Three,
+  _,
+}
+
+test "match on non-exhaustive enum" {
+  const number = Number.One
+  const result = match number {
+    .One => true,
+    .Two | .Three => false,
+    _ => false,
+  }
+  assert(result)
+  const is_one = match number {
+      .One => true,
+      else => false,
+  }
+  assert(is_one)
+}
+```
+
+```rym
+type bool = true | false
+type Testing = One | Other
+
+enum Option<T> = {
+  Some(T),
+  None,
+}
+
+struct Something {
+  x: uint,
+  y: uint,
+}
+```
