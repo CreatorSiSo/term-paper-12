@@ -14,11 +14,11 @@ book:
     - chapters/analysis.qmd
     # - chapters/analysis_de.qmd
     - chapters/rym_lang.qmd
-    - chapters/primitive_data_types.qmd
-    - chapters/algebraic_data_types.qmd
-    - chapters/function.qmd
-    - chapters/polymorphism.qmd
-    - chapters/tooling_ecosystem.qmd
+    # - chapters/primitive_data_types.qmd
+    # - chapters/algebraic_data_types.qmd
+    # - chapters/function.qmd
+    # - chapters/polymorphism.qmd
+    # - chapters/tooling_ecosystem.qmd
     - chapters/conclusion.qmd
     - chapters/references.qmd
   appendices:

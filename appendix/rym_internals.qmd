@@ -202,6 +202,17 @@ match pos {
 }
 ```
 
+### "?" Operator {#sec-qestion-mark-op}
+
+```rym
+func read_to_string(path: string) -> Result<string, IoError> {
+  mut file = File.open(path)?
+  mut data = ""
+  file.read_to_string(mut data)?
+  Ok(data)
+}
+```
+
 ## Statements
 
 ### Variables

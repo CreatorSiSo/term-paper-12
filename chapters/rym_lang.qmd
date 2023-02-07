@@ -148,17 +148,18 @@ __TODO__
 
 ## Operators
 
-For example, in Java, a user can increment a simple integer variable in four different ways:
+Rym provides a set of unary and binary operators.
+The unary operators include the "!" operator used to invert the value of a boolean,
+the "-" operator used to negate numbers
+and the "?" operator.
+The last operator unwraps types like _Option_ or _Result_
+and returns the value out of the current function if an unsuccessfull variant (_None_, _Err_) is met.^[Beispiel siehe @sec-qestion-mark-op]
+Rym does not support the "++" and "-\-" operators,
+which are often used increment or decrement an integer,
+as it is often unclear what these operators exactly do.
+The same
 
-    count = count + 1
-    count += 1
-    count++
-    ++count
-
-Although the last two statements have slightly different meanings from each
-other and from the others in some contexts, all of them have the same
-meaning when used as stand-alone expressions. These variations are
-discussed in Chapter 7.
+The assignment operators can only be used with variables that are marked as mutable (via mut keyword).
 
 ## Control Flow {#sec-control-flow}
 
