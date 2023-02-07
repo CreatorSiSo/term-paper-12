@@ -22,6 +22,7 @@ book:
     - chapters/conclusion.qmd
     - chapters/references.qmd
   appendices:
+    - appendix/rym_internals.qmd
     - appendix/code_examples.qmd
     # - appendix/rym_parser_grammar.qmd
 lang: "de-DE"

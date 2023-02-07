@@ -1,0 +1,386 @@
+<!-- Rym Overview -->
+# Rym Überblick
+
+<!-- ## Data Types -->
+## Datentypen
+
+### Booleans
+
+```rym
+type bool = true | false
+use bool.true
+use bool.false
+```
+
+### Integers
+
+```rym
+type int
+type isize
+type uint
+type usize
+
+0 44 1834
+```
+
+### Floats
+
+```rym
+type float
+
+0.1 -1.4
+-444. // same as -444.0
+```
+
+### Text
+
+```rym
+type char
+
+'a' '\n' '\t' '\u{2192}'
+
+type string
+
+"Hello World!\n" "testing"
+```
+
+### Structures
+
+```rym
+type Vec3 = {
+  x: float,
+  y: float,
+  z: float,
+}
+
+const pos = Vec3 { x: 2.5, y: -1.2, z: 0.0, }
+```
+
+### Enumerations / Union Types
+
+```rym
+type EnumName =
+  | Variant1
+  | Variant2
+  | VariantN
+
+const variant = EnumName.VariantN
+```
+
+There is also a shorter syntax for small enums.
+
+```rym
+type SmallEnum = VerySmall | ActuallyLarge
+```
+
+Each variant can be associated with a specific value.
+These values are automatically chosen if not defined and are usually represented by an integer.
+
+```rym
+type EnumName =
+  | Variant1 = 1
+  | Variant2 = 2
+  | VariantN = 156
+
+const variant_n = EnumName.VariantN
+const repr = variant_n as uint       // 156
+const variant_2 = 2 as EnumName      // EnumName.Variant2
+```
+
+### Builtin Enumerations
+
+The Option type is used for something that might not have a value.
+
+```rym
+type Option<T> =
+  | Some(T)
+  | None
+
+use Option.Some
+use Option.None
+```
+
+The Result type is used to specify that something can either have a value or contain an error.
+
+```rym
+type Result<T, E> =
+  | Ok(T)
+  | Err(E)
+
+use Result.Ok
+use Result.Err
+```
+
+## Expressions
+
+### Block
+
+Block expression evaluate to the value of their last statement:
+
+```rym
+const outer_index = 0
+
+// evaluates to "One"
+{
+  const array = ["One", "Two", "Three"]
+  array[outer_index]
+}
+```
+
+They, like any other expression, can be used as an initializer for a variable:
+
+```rym
+const outer_index = 0
+
+const one_str = {
+  const array = ["One", "Two", "Three"]
+  array[outer_index]
+}
+```
+
+### If..Else
+
+```rym
+if expression {
+  print("true branch")
+}
+
+if expression {
+  print("true branch")
+} else {
+  print("false branch")
+}
+```
+
+### IfVar..Else
+
+```rym
+const maybe_value = Some(2)
+if const Some(value) = maybe_value {
+  print(value)
+}
+
+if const Some(value) = maybe_value {
+  print(value)
+} else {
+  print("None")
+}
+```
+
+### Match
+
+Used to destructure complex data types like enumerations.
+
+```rym
+match maybe_value {
+  Some(value) => print(value)
+  None => print("None")
+}
+```
+
+Works just as well with structures.
+
+```rym
+match pos {
+  Vec3 { x: 0.0, .. } => print("Position: on ground")
+  Vec3 { y: 0.0, z: 0.0, .. } => print("Position: on x axis")
+  Vec3 { x: 0.0, z: 0.0, .. } => print("Position: on y axis")
+  Vec3 { x: 0.0, y: 0.0, .. } => print("Position: on z axis")
+  Vec3 { x: 0.0, y: 0.0, z: 0.0 } => print("Position: at origin")
+  Vec3 { x, y, z } => print("Position:", x, y, z)
+}
+```
+
+It is also possible to use "_" as a wildcard for catching all remaining cases.
+
+```rym
+match pos {
+  Vec3 { x: 0.0, y: 0.0, z: 0.0 } => print("at origin")
+  _ => print("not at origin")
+}
+```
+
+## Statements
+
+### Variables
+
+```rym
+const const_name = "Hello World!"
+
+mut mut_name = "Hello "
+mut_name += "Universe!"
+
+print(const_name, mut_name) // "Hello World! Hello Universe!/n"
+```
+
+Uninitialized variables must have a value assigned to them before they can be used.
+
+```rym
+const name
+
+if condition { name = "Simon" } else { name = "Robert" }
+
+// allowed because name always has a value
+print(name)
+```
+
+### Imports / Use
+
+```rym
+use std.fs.{self, File}
+
+const path = "./dad_jokes.txt"
+const joke = "What should you do if you meet a giant? Use big words."
+
+const create_result = File.create(path)
+const write_result = fs.write(path, joke)
+const data = fs.read_to_string(path).unwrap()
+
+print(data) // "What should you do if you meet a giant?
+            //  Use big words.\n"
+```
+
+### Functions
+
+```rym
+func func_name(param_1: Type1, param_2: Type2) -> ReturnType {
+  ReturnType
+}
+
+const of_return_type = func_name(of_type_1, of_type_2)
+```
+
+#### Parameter Default Values
+
+```rym
+func increment(num: int, by = 1) -> int {
+  num + by
+}
+
+const plus_one = increment(100)        // 101
+const plus_50 = increment(100, 50)     // 150
+const plus_50 = increment(100, by: 50) // 150
+```
+
+#### Force Named Arguments
+
+```rym
+func testing(pos_or_named: int, .., named: string) { }
+
+testing(2, named: "Hello World!")
+testing(2, named: "Hello World!")
+testing(pos_or_named: 2, named: "Hello World!")
+testing(named: "Hello World!", pos_or_named: 2)
+```
+
+{{< pagebreak >}}
+
+#### Variable Arguments
+
+```rym
+func concat(..strings: [string], sep = "") -> string {
+  strings.join(sep)
+}
+
+const name = "Mr. Walker"
+
+// all arguments must be of type string
+// they are collected into the strings array
+concat("Hello ", name, "!") // "Hello Mr. Walker!"
+
+// arguments defined after the variable argument
+// must be passed in by name
+concat(2.to_string(), true.to_string(), name, sep: ", ") // "2, true, Mr. Walker"
+concat(sep: ", ", 2.to_string(), true.to_string(), name) // "2, true, Mr. Walker"
+```
+
+<!-- #### Builtin Print Function -->
+#### Eingebaute Print Function
+
+```rym
+func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
+  mut output = ""
+  for arg in args {
+    output.push(arg.fmt())
+  }
+  /* .. */
+}
+
+print("Hello World")               // "Hello World\n"
+print("Hello World", end: "")      // "Hello World"
+
+print(true, 2, "three")            // "true 2 three\n"
+print(true, 2, "three", sep: ", ") // "true, 2, three\n"
+```
+
+### Implementations
+
+Every type can have several "impl" blocks,
+that must be located in the same module as the type.
+They hold static/non-static methods and internal types.
+These methods are private by default and can be made public with the "pub" keyword.
+
+```rym
+impl bool {
+  pub func then_some<T>(self, value: T) -> Option<T> {
+    if self { Some(value) } else { None }
+  }
+}
+```
+
+### Traits / Type Classes
+
+Traits are used to define common functionality between types.
+
+```rym
+trait Default {
+  func default() -> Self
+}
+```
+
+They can then be defined for some specific type.
+
+```rym
+impl Default for bool { func default() -> Self { false } }
+
+impl Default for int { func default() -> Self { 0 } }
+
+impl Default for string { func default() -> Self { "" } }
+
+impl<T> Default for [T] { func default() -> Self { [] } }
+```
+
+This is also how iterators are specified in Rym.
+
+```rym
+trait Iterator {
+  type Item
+
+  func next(mut self) -> Option<Self.Item>
+}
+```
+
+These iterators can be used to implement a simple couner like the following or to go over all items of an array one by one.
+
+```rym
+type Counter = { count: usize, max: usize }
+
+impl Iterator for Counter {
+  type Item = usize
+
+  func next(mut self) -> Option<Self.Item> {
+    self.count += 1
+
+    if self.count <= self.max { Some(self.count) } else { None }
+  }
+}
+
+mut counter = Counter { count: 0, max: 3 }
+
+print(counter.next()) // Some(1)
+print(counter.next()) // Some(2)
+print(counter.next()) // Some(3)
+print(counter.next()) // None
+```
+
+{{< pagebreak >}}
