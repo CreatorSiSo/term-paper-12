@@ -1,10 +1,20 @@
-# Rym Programming Language
-<!-- # Rym Programmiersprache -->
+<!-- # Concept of a modern programming language -->
+# Konzept einer modernen Programmiersprache
 
-Rym is a general-purpose language designed for working at a level above systems programming,
-while still allowing the use of lower level features when required.
-While both an interpreter and a compiler can be used to implement Rym, the current implementation is an interpreter.
-This description, however, does not assume anything about the implementaion and makes a future compiled version possible.
+<!--
+Rym is a general purpose language designed to work at a level above systems
+programming, while still allowing the use of lower level features when required.
+Although both an interpreter and a compiler can be used to implement Rym,
+the current implementation is an interpreter.
+However, this description makes no assumptions about the
+implementation and enables a future compiled version.
+-->
+Rym ist eine Sprache für allgemeine Zwecke, die auf einer höheren Ebene als die System
+Programmierung arbeitet, aber dennoch die Verwendung von tieferliegenden Funktionen erlaubt, wenn dies erforderlich ist.
+Obwohl sowohl ein Interpreter als auch ein Kompiler zur Umsetzung der Sprache verwendet werden können,
+ist die derzeitige Implementierung ein Interpreter.
+Diese Beschreibung macht jedoch keine Annahmen über die
+Implementierung und ermöglicht eine zukünftige kompilierte Version.
 
 ## Syntax {#sec-syntax}
 

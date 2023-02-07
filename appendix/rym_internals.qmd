@@ -1,6 +1,8 @@
 <!-- Rym Overview -->
 # Rym Überblick
 
+Most of the following structures are automatically imported for every file.
+
 <!-- ## Data Types -->
 ## Datentypen
 
@@ -338,7 +340,7 @@ trait Default {
 }
 ```
 
-They can then be defined for some specific type.
+They are implemented for specific types through separate implementations.
 
 ```rym
 impl Default for bool { func default() -> Self { false } }

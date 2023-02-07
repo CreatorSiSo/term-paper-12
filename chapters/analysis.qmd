@@ -146,19 +146,21 @@ Swift is also open-source, meaning that developers from all around the world can
 These new languages improve on their predecessors by fixing many problems and inconveniences that they encountered and could not remove.
 New features that improve safety and usability are sometimes ported back to older languages where possible.
 -->
-Diese neuen Sprachen sind besser als ihre Vorgänger,
-denn sie bieten Lösungen für viele Probleme und Unannehmlichkeiten
-die ihre Vorgänger nicht lösen konnten.
+Diese neueren Sprachen unterscheiden sich von ihren Vorgängern dadurch,
+dass Lösungen für viele Probleme und Unannehmlichkeiten gefunden wurden,
+die von ihren Vorgängern nicht gelöst werden konnten.
 Neue Funktionen, die zur Verbesserung der Sicherheit und der Benutzerfreundlichkeit beitragen,
 werden jedoch -- soweit dies möglich ist -- in die älteren Sprachen übernommen.
 
-### Type Systems
+<!-- ### Type Systems -->
+### Typ-Syteme
 
+<!--
 A common change is the introduction of static typing, or at least type annotations.
 This feature allows the compiler or third party tools to check for type errors at compile time,
 making it easier to catch bugs early in the development process.
 TypeScript is a very good example of this, as it adds an entire type system on top of JavaScript,
-which can prevent about 15% of bugs.
+which can prevent about 15% of often occuring bugs.
 [@to_type_or_not_to_type S. 7]
 There is even a proposal to add type annotations to JavaScript,
 so that tools like TypeScript can skip large parts of the compilation step.
@@ -166,38 +168,72 @@ so that tools like TypeScript can skip large parts of the compilation step.
 Other dynamically typed languages, like Python and PHP already support type hints and Lua has tools that are similar to TypeScript.
 All the other languages just mentioned (Rust, Kotlin, Go, Dart, Swift) require static types.
 [@python_docs_typings; @python_pep_484; @php_ref_type_declarations; @go_spec; @rust_ref_types; @swift_docs]
+-->
+Eine gängige Änderung ist die Einführung der statischen Typisierung oder zumindest der Typ-Hinweise _(engl. type annotations)_.
+Diese Funktion ermöglicht es dem Compiler oder Tools von Drittanbietern, während der Kompilierung auf Typfehler zu prüfen,
+Dadurch wird es einfacher, Fehler zu einem frühen Zeitpunkt im Entwicklungsprozess zu erkennen.
+TypeScript ist ein sehr gutes Beispiel dafür, da es ein komplettes Typisierungssystem für JavaScript bereitstellt,
+welches etwa 15% der häufig auftretenden Fehler verhindern kann.
+[@to_type_or_not_to_type S. 7]
+Es gibt sogar einen Entwurf, JavaScript mit Typ-Hinweisen zu versehen,
+so dass Werkzeuge wie TypeScript große Teile des Kompilierungsschrittes überspringen können.
+[@stateofjs_missing; @tc39_type_annotations]
+Andere dynamisch typisierte Sprachen wie Python und PHP unterstützen bereits Typ-Hinweise, und Lua verfügt über Werkzeuge, die TypeScript sehr ähnlich sind.
+Alle anderen gerade genannten Sprachen (Rust, Kotlin, Go, Dart, Swift) erfordern statische Typen.
+[@python_docs_typings; @python_pep_484; @php_ref_type_declarations; @go_spec; @rust_ref_types; @swift_docs]
 
-The problem is that it can get very verbose, which is why many type systems allow for type inference.
+<!--
+The problem is that their syntax can get very verbose, which is why many type systems allow for type inference.
 It allows the language to automatically determine the type of a value or expression based on its usage,
 without the user to explicitly declare it.
 Originally coming from functional languages like Haskell, F# and OCaml it has found its way into TypeScript, Go, Rust, Kotlin, Dart, Swift and many more.
 Even C++, Java and C# have added support for it in some places.
+-->
+Das Problem ist, dass ihre Syntax sehr umfangreich werden kann, weshalb viele Typsysteme Typinferenz ermöglichen.
+Dadurch kann die Sprache automatisch den Typ eines Wertes oder Ausdrucks auf der Grundlage seiner Verwendung bestimmen,
+ohne dass der Benutzer ihn explizit angeben muss.
+Ursprünglich kommt dieses System von funktionellen Sprachen wie Haskell, F# und OCaml und hat seinen Weg zu TypeScript, Go, Rust, Kotlin, Dart, Swift und vielen anderen gefunden.
+Selbst C++, Java und C# haben an einigen Stellen entsprechende Funktionen hinzugefügt.
 [@ts_handbook_type_inference; @go_spec; @rust_ref_let_stmt; @rust_ref_influences; @kotlin_ref S. 236; @dart_spec S. 12; @swift_docs]
 [@cpp_ref_auto; @java_spec_type_inference; @fsharp_spec S. 13]
 
-- Type Classes have been adapted
-  - easily extend the functionality of uncontrollable 3rd parties
-  - Swift protocols
-  - C++23 concepts
-  - Rust traits
-  - Java, C# Interfaces?
+{{< pagebreak >}}
 
+<!--
 Type classes are another concept from functional languages, particularly Haskell.
-They are useful for writing reusable code and for extending the functionality of user-defined or external data structures.
+They are used for validating connections between user-defined or external data structures,
+and for extending their functionality.
 Type classes have been adapted into several programming languages,
 including Swift, where they are known as protocols,
 C++, where they are called concepts
 and Rust, where they are referred to as traits.
-Java and C# have similar constructs called interfaces.
-<!-- TODO citation needed -->
+Java, C# and many other languages have similar, although less powerful constructs called interfaces.
+-->
+Typ-Klassen sind ein weiteres Konzept aus dem Bereich der funktionalen Sprachen, insbesondere Haskell.
+Sie werden zur Validierung von Verbindungen zwischen benutzer-definierten oder externen Datenstrukturen verwendet,
+und zur Erweiterung ihrer Funktion-alität.
+Typ-Klassen wurden in verschiedene Programmiersprachen übernommen,
+darunter Swift, wo sie als "protocols" bekannt sind,
+C++, wo sie "concepts" heißen
+und Rust, wo sie "traits" genannt werden.
+Java, C# und viele andere Sprachen haben ähnliche, wenn auch weniger leistungsfähige Konstrukte
+und heißens oft "interfaces".
+[@haskell_spec S. 44f; @swift_book_protocols; @iso_14882_2020 S. 526; @rust_ref_traits; @java_spec_interfaces; @csharp_spec_interfaces]
 
 ### Null Safety
 
-Tony Hoare considers calling null references, which he added to ALGOL W in 1965, his "billion dollar mistake" @infoq_null_ref.
+<!--
+Tony Hoare considers calling null references, which he added to ALGOL W in 1965, his "billion dollar mistake" [@infoq_null_ref].
 They can represent the absence of a value, but can also cause hard to find bugs if not properly handled.
 To address this, many programming languages have introduced null safety features that make it easier for developers to handle and prevent null pointers.
 These include optional classes, nullable type hints, and optional enums.
 The null coalescing operator and optional chaining operator are also commonly used to handle these issues and make code more readable.
+-->
+Tony Hoare betrachtet die von ihm 1965 zu ALGOL W hinzugefügten Nullreferenzen als seinen
+"Milliarden-Dollar-Fehler" [@infoq_null_ref]. Sie können das Nichtvorhandensein eines Wertes darstellen, aber auch
+schwer zu findende Fehler verursachen, wenn sie nicht richtig behandelt werden. Um dieses Problem zu lösen, haben viele Programmiersprachen
+Sicherheitsfunktionen eingeführt, die es den Entwicklern erleichtern, mit Null-Pointern umzugehen und sie zu vermeiden.
+Dazu gehören optionale Klassen, Typen, Enums und Typ-Hinweise. Der Null-Coalescing-Operator und der optionale Verkettungsoperator werden ebenfalls häufig verwendet, um diese Probleme zu lösen und den Quellcode zu verkürzen.
 <!-- TODO Citation needed -->
 
 <!-- - null safety
