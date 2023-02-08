@@ -270,12 +270,39 @@ Der Null-Coalescing-Operator und der optionale Verkettungsoperator werden ebenfa
   - Optional chaining / Null conditional operator
     - Js, Ts, C#, PHP (Null-safe operator), Kotlin (Safe calls), Dart, Swift -->
 
-### Functional/Declarative programming
+### Deklarative und funktionale Programmierung
 
-- C++
-  - addition and work on the _functional_ module
-  - algorithms to work with lists and iterators
-- Python
+<!--
+Most of the changes just mentioned originated in the field of declarative and, more specifically, functional languages.
+Their recent popularity has led to an increasing adoption of their features in general-purpose programming languages.
+This is in response to the need for more intuitive, readable, and efficient code, as well as better handling of complex problems and data structures.
+For example, C++ has added features to support functional programming through the addition of a _functional_ module, and the implementation of algorithms to work with iterators.
+[@iso_14882_2020 S. 622-684]
+TypeScript, Rust, Go, Dart, Kotlin and Swift all support functional programming features such as higher-order functions and immutable data structures.
+Although they make it easier to see where side effects can occur, support for controlling them could be improved.
+-->
+Die meisten der soeben erwähnten Änderungen haben ihren Ursprung im Bereich der deklarativen und insbesondere der funktionalen Sprachen.
+Ihre zunehmende Popularität hat dazu geführt, dass ihre Besonderheiten zunehmend in allgemeinen Programmiersprachen eingesetzt werden.
+Dies ist eine Reaktion auf den Bedarf an intuitivem, lesbarem und effizientem Code sowie an einer besseren Handhabung komplexer Probleme und Datenstrukturen.
+C++ hat zum Beispiel Funktionen zur Unterstützung der funktionalen Programmierung hinzugefügt.
+Dies geschah durch die Hinzufügung des _functional_ Moduls und die Implementierung von Algorithmen zur Arbeit mit Iteratoren.
+[@iso_14882_2020 S. 622-684]
+TypeScript, Rust, Go, Dart, Kotlin und Swift unterstützen alle Merkmale der funktionalen Programmierung wie z.B.
+Funktionen höherer Ordnung^[Funktionen höherer Ordnung sind Funktionen, welche andere Funktionen als Parameter verwenden oder eine Funktion zurüchgeben.]
+und unveränderliche Daten-strukturen.
+Obwohl sie es einfacher machen, zu sehen, wo Seiteneffekte auftreten können, könnte die Unterstützung für deren Kontrolle verbessert werden.
+[@rust_ref_influences; @blog_logrocket_functional_go; @dart_spec S. 126fff; @kotlin_ref S. 331f; @swift_book_closures]
+
+<!--
+The integration of these paradigms into general purpose programming languages has allowed developers to take advantage of the strengths of both imperative and declarative programming styles, resulting in a more flexible and expressive programming experience.
+This trend is likely to continue in the future, as the demand for more sophisticated and efficient programming solutions continues to grow.
+-->
+Die Integration dieser Paradigmen in allgemeine Programmiersprachen ermöglicht es Entwicklern,
+die Stärken sowohl des imperativen als auch des deklarativen Programmierstils zu nutzen,
+was zu einer flexibleren und ausdrucksstärkeren Programmierung führt.
+Dieser Trend wird sich in Zukunft wahrscheinlich fortsetzen,
+da die Nachfrage nach anspruchs-volleren und effizienteren Programmierlösungen weiter steigt.
+[@github_readme_functional_programming]
 
 <!-- ## Results
 
@@ -317,5 +344,3 @@ Der Null-Coalescing-Operator und der optionale Verkettungsoperator werden ebenfa
 
 
 <!-- [Programming Language Explorations](https://rtoal.github.io/ple) -->
-
-{{< pagebreak >}}
