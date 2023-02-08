@@ -121,7 +121,7 @@ use Result.Ok
 use Result.Err
 ```
 
-## Expressions
+## Expressions {#sec-appendix-expressions}
 
 ### Block
 
@@ -217,6 +217,10 @@ match pos {
 }
 ```
 
+### TODO: Loop
+### TODO: While
+### TODO: For
+
 ### "?" Operator {#sec-qestion-mark-op}
 
 ```rym
@@ -230,11 +234,13 @@ func read_to_string(path: string) -> Result<string, IoError> {
 
 ## Statements
 
-### Variables
+### Variables {#sec-appendix-variables}
 
 ```rym
+// unveränderliche variable
 const const_name = "Hello World!"
 
+// änderbare variable
 mut mut_name = "Hello "
 mut_name += "Universe!"
 

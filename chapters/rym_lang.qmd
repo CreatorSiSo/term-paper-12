@@ -20,11 +20,17 @@ Implementierung und ermöglicht eine zukünftige kompilierte Version.
 
 <!--
 The syntax follows the aspects mentioned in @sec-readability, especially @sec-syntax.
+-->
+Die Syntax folgt den in @sec-readability sowie @sec-writability genannten Aspekten und ist so aufge-baut,
+dass das Prinzip des Spiralcurriculums^[Das Spiralcurriculum festigt Vorwissen durch wiederholte Begegnungen mit dem selben Thema und baut im Laufe der Zeit darauf auf. @spiral_curriculum] angewendet werden kann.
+Rym ermöglicht es, zunächst sehr einfachen Code zu schreiben, ohne alle Details der Sprache zu kennen.
+Wenn der Benutzer später mehr Kontrolle haben möchte, muss er nur kleine Änderungen vornehmen.
+
+<!--
 Rym can be considered part of the C-style languages, as it combines syntax from C, Go, Rust, F# and others.
 The typical braces -- "{" and "}" -- are used for structure types and to enclose blocks of statements.
 Function definitions begin with "func", just as they do in Go or Swift, and the type declarations are very similar to those in F#.
 -->
-Die Syntax folgt den in @sec-readability genannten Aspekten, insbesondere aus @sec-syntax.
 Rym kann als Teil der C-ähnlichen Sprachen betrachtet werden, da es die Syntax von C, Go, Rust, F# und anderen verbindet.
 Die typischen geschweiften Klammern -- "{" und "}" -- werden für Struktur-Typen und zum Umschließen von Anweisungsblöcken verwendet.
 Funktionsdefinitionen beginnen mit "func", genau wie in Go oder Swift, und die Typ-Deklarationen sind denen in F# sehr ähnlich.
@@ -94,7 +100,8 @@ In Rym, modules are the building blocks of a package and provide a way to organi
 Each module can contain its own functions, constants, and other definitions.
 Modules can be imported into other modules, allowing for the reuse of code.
 
-## Data Types {#sec-data-types}
+<!-- ## Data Types {#sec-data-types} -->
+## Datentypen {#sec-data-types}
 
 Rym provides a rich set of data types, including primitive types (such as integers, floats, and strings)
 and composite types (such as arrays and tuples). Rym also provides support for algebraic data types,
@@ -116,7 +123,7 @@ Functions in Rym are first-class citizens, just like values and data types.
 They are blocks of code that can be passed as parameters, assigned to variables, and used in expressions.
 Functions can return values and accept parameters, which makes them powerful tools for creating modular, reusable code.
 
-## Higher Order Functions
+<!-- ## Higher Order Functions
 
 Functions in Rym can be used as values, just like booleans, numbers and strings.
 They are also higher order functions, meaning that they can be used as arguments to another function, or they can be a function's result.
@@ -143,50 +150,55 @@ func main() {
   print(f"{specific_twice(7)}") // 13
 }
 ```
+-->
 
 
-## Bindings and Scope {#sec-bindings-and-scope}
+<!-- ## Variables -->
+## Variablen
 
-Bindings in Rym are the association of a name with a value, and scope determines the accessibility of these bindings.
-Rym has both global and local scopes, and bindings declared in a local scope are only accessible within that scope.
+<!--
+Variables in Rym are either immutable, which is preferred, or mutable.
+The _const_ and _mut_ keywords can be used to declare a new variable.
+Examples for creating variables can be found in @sec-appendix-variables.
+-->
+Variablen in Rym sind entweder unveränderlich, was vorzuziehen ist, oder veränderbar.
+Die Schlüsselwörter _const_ und _mut_ können verwendet werden, um eine neue Variable zu erstellen.
+Beispiele für die Erstellung von Variablen finden Sie in @sec-appendix-variables.
 
-Immutable
-
-```rym
-const example_1 = 99
-example_1 = 100     // error: Cannot assing to immutable variable example_1
-print(example_1)
-```
-
-Mutable
-
-```rym
-mut example_1 = 99
-example_1 = 100
-print(example_1) // prints "100"
-```
-
-__TODO__
-
-## Operators
+<!-- ## Operators -->
+## Operatoren
 
 Rym provides a set of unary and binary operators.
 The unary operators include the "!" operator used to invert the value of a boolean,
 the "-" operator used to negate numbers
 and the "?" operator.
-The last operator unwraps types like _Option_ or _Result_
+This operator unwraps types like _Option_ or _Result_
 and returns the value out of the current function if an unsuccessfull variant (_None_, _Err_) is met.^[Beispiel siehe @sec-qestion-mark-op]
 Rym does not support the "++" and "-\-" operators,
 which are often used increment or decrement an integer,
 as it is often unclear what these operators exactly do.
-The same
 
-The assignment operators can only be used with variables that are marked as mutable (via mut keyword).
+There are two categories of binary operators in Rym.
+Those in the first category produce a new value^[Addition: "+" Subtraktion: "-" Multiplikation: "\*" Division: "/" Rest: "%": Gleichheit: "==" Und: "&" Oder: "|"] and the others change an existing variable ^[Zuweisung: "="].
+The assignment operators can only be used with variables that are marked as mutable.
+This very typical syntacic sugar is also supported:
 
-## Control Flow {#sec-control-flow}
+```rym
+mut counter = 0
 
-Control flow in Rym is achieved through the use of conditional statements (if/else) and loops (for/while).
-Rym also provides a mechanism for early exits from loops or functions through the use of return statements.
+counter = counter + 1
+counter += 1
+
+print(counter) // "2\n"
+```
+
+## Control Flow
+
+Although Rym can be used to model control flow in a purely functional way it also supports imperative control flow expressions like (if, else, match) and loops (loop, while, for).
+Examples for how these expressions are used can be found in @sec-appendix-expressions.
+Furthermore Rym provides a mechanism for early exits from loops through the use of break statements.
+The continue statement ends the current iteration of a loop and jumps starts the next one.
+Return statements are used for early returns out of functions.
 
 ## Tooling and Ecosystem {#sec-tooling-and-ecosystem}
 

@@ -50,12 +50,15 @@ Genau eine solche Sprache wird im Rahmen dieser Arbeit entworfen und umgesetzt, 
 <!--
 This thesis therefore mainly deals with the analysis of different programming languages in order to find out in which direction they are developing.
 From the knowledge gained from this, a new language will be designed,
-which should make a possible answer to the question: _What would a next generation programming language look like?_
+which should make a possible answer to the question:
+_What would a next generation programming language look like?_
  -->
 Diese Arbeit befasst sich daher mit der Analyse verschiedener Programmiersprachen,
 um herauszufinden, in welche Richtung sie sich entwickeln.
 Aus den daraus gewonnenen Erkenntnissen soll eine neue Sprache entworfen werden,
-die eine mögliche Antwort auf die Frage geben soll: _Wie könnte eine Programmiersprache der nächsten Generation aussehen?_
+die eine mögliche Antwort auf die Frage geben soll:
+
+_Wie könnte eine Programmiersprache der nächsten Generation aussehen?_
 
 <!--
 - The goal of this paper is the conception and implementation of a new programming language called Rym

@@ -304,43 +304,23 @@ Dieser Trend wird sich in Zukunft wahrscheinlich fortsetzen,
 da die Nachfrage nach anspruchs-volleren und effizienteren Programmierlösungen weiter steigt.
 [@github_readme_functional_programming]
 
-<!-- ## Results
+<!-- ### Modular Code -->
+### Modularer Code
 
-### Problems of current and past programming languages
+<!--
+Apart from the differences between declarative and imperative programming languages, they also have one change in common.
+The systems used to modularise projects and to import an item from one module into another have improved greatly.
+In older languages, this was traditionally done by simply inserting the contents of another file.
+Today, built-in packaging systems are the de facto standard.
+C++20 adds support for modules that work like this, and JavaScript adapted a similar system in 2015.
+Rust, Go, Dart, Kotlin and Swift have supported this functionality since their creation.
+-->
+Abgesehen von den Unterschieden zwischen deklarativen und imperativen Programmier-sprachen haben sie eine Veränderung gemeinsam.
+Die Systeme zur Modularisierung von Projekten und zum Importieren eines Elements aus einem Modul in ein anderes haben sich stark verbessert.
+In älteren Sprachen geschah dies traditionell durch einfaches Einfügen des Inhalts einer anderen Datei.
+Heute sind eingebaute Paketsysteme der De-facto-Standard.
+C++20 bietet Unterstützung für Module, die auf diese Weise funktionieren, und JavaScript hat 2015 ein ähnliches System eingeführt.
+Rust, Go, Dart, Kotlin und Swift unterstützen diese Funktionalität seit ihrer Entwicklung.
+[@iso_14882_2020 S. 232-242; @ecmascript_spec S. 390-425; @rust_ref_modules; @go_spec; @kotlin_ref S. 295f; @swift_book_access_control]
 
-- Parallelization
-- (Uncontrolled) Undefined Behaviour
-  - https://blog.sigplan.org/2021/11/18/undefined-behavior-deserves-a-better-reputation
-- Side Effect Safety, Non-local reasoning, Sand Boxing
-  - https://www.reddit.com/r/ProgrammingLanguages/comments/9eqrfy/comment/e5s3vhb/?utm_source=share&utm_medium=web2x&context=3
-  - The code that we read is not understandable in isolation. For example, taking C++: `call(foo);`, is `foo` modified? Dunno.
-    - https://www.reddit.com/r/ProgrammingLanguages/comments/9eqrfy/comment/e5v3vj5/?utm_source=share&utm_medium=web2x&context=3
-  - Solved by: Koka
-- Cannot rewind time while debugging
-  - [Reversible Computation: Extending Horizons of Computing](https://link.springer.com/content/pdf/10.1007/978-3-030-47361-7.pdf)
-- Rust solves most of these, but a watered-down version which only loses a bit of efficiency could probably help a lot. [Source](https://www.reddit.com/r/ProgrammingLanguages/comments/9eqrfy/comment/e5v3vj5/?utm_source=share&utm_medium=web2x&context=3) => Basically what Rym tries to be :)
-
-### Problems of new programming languages
-
-- https://www.quora.com/What-are-the-biggest-problems-with-modern-programming-languages?share=1
-- There are too many of them
-- No innovation
-  - Too conservative, offer no real improvement to what came before
-  - No clear gain to switching to this language
-- Being specific to one problem
-  - do interesting thing X but do not advance in all other places
-
-### Qualities of a good programming language
-
-- (progressively having to learn new parts / not having to learn everything at once) makes the language easier to learn
-  - see talk about type classes, concept is from Swift
-  - begin with a simple script like Python and be able to make it complex over time
-- future proof
-  - reserved keywords: try, catch, throw, ..
-  - allow breaking changes (semantic versioning), Rust good, Python ok, Js/C++ bad, C does not extend language anymore but rather core-libs right?
-- Good Package Manager
-  - https://www.reddit.com/r/ProgrammingLanguages/comments/zqjf47/a_good_dependency_manager_for_a_new_programming/
-  - https://futhark-lang.org/blog/2018-07-20-the-future-futhark-package-manager.html -->
-
-
-<!-- [Programming Language Explorations](https://rtoal.github.io/ple) -->
+{{< pagebreak >}}

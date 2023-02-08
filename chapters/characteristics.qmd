@@ -191,7 +191,7 @@ Die Übernahme von Teilen der Syntax bekannter Sprachen in eine neue Sprache ist
 [@stansifer_1995 S. 61ff; @sebesta_2019 S. 48f]
 
 <!-- ## Writability -->
-## Schreibbarkeit
+## Schreibbarkeit {#sec-writability}
 
 <!-- Writability is a measure of how easily a language can be used to create programs for a chosen problem domain.
 Most of the language characteristics that affect readability also affect writability.
