@@ -117,6 +117,8 @@ Das jüngste Projekt ist Carbon, ein experimenteller Nachfolger für C++,
 welcher Ende 2022 veröffentlicht wurde und ist noch lange nicht ausgereift ist.
 [@go_web; @go_spec; @flutter_multi; @carbon]
 
+{{< pagebreak >}}
+
 <!--
 Swift, on the other hand, was introduced by Apple in 2014 as a replacement for Objective-C.
 It was designed to be more readable, safer and faster than Objective-C and has quickly gained popularity in the iOS and macOS development community.
@@ -194,10 +196,9 @@ Dadurch kann die Sprache automatisch den Typ eines Wertes oder Ausdrucks auf der
 ohne dass der Benutzer ihn explizit angeben muss.
 Ursprünglich kommt dieses System von funktionellen Sprachen wie Haskell, F# und OCaml und hat seinen Weg zu TypeScript, Go, Rust, Kotlin, Dart, Swift und vielen anderen gefunden.
 Selbst C++, Java und C# haben an einigen Stellen entsprechende Funktionen hinzugefügt.
-[@ts_handbook_type_inference; @go_spec; @rust_ref_let_stmt; @rust_ref_influences; @kotlin_ref S. 236; @dart_spec S. 12; @swift_docs]
-[@cpp_ref_auto; @java_spec_type_inference; @fsharp_spec S. 13]
+[@ts_handbook_type_inference; @go_spec; @rust_ref_let_stmt; @rust_ref_influences; @kotlin_ref S. 236; @dart_spec S. 12; @swift_docs; @cpp_ref_auto; @java_spec_type_inference; @fsharp_spec S. 13]
 
-{{< pagebreak >}}
+<!-- {{< pagebreak >}} -->
 
 <!--
 Type classes are another concept from functional languages, particularly Haskell.
@@ -298,14 +299,14 @@ The integration of these paradigms into general purpose programming languages ha
 This trend is likely to continue in the future, as the demand for more sophisticated and efficient programming solutions continues to grow.
 -->
 Die Integration dieser Paradigmen in allgemeine Programmiersprachen ermöglicht es Entwicklern,
-die Stärken sowohl des imperativen als auch des deklarativen Programmierstils zu nutzen,
+die Stärken der imperativen und deklarativen Programmierstile gleichzeitig zu nutzen,
 was zu einer flexibleren und ausdrucksstärkeren Programmierung führt.
 Dieser Trend wird sich in Zukunft wahrscheinlich fortsetzen,
 da die Nachfrage nach anspruchs-volleren und effizienteren Programmierlösungen weiter steigt.
 [@github_readme_functional_programming]
 
-<!-- ### Modular Code -->
-### Modularer Code
+<!-- ### Modular Project Structure -->
+### Modulare Projektstruktur
 
 <!--
 Apart from the differences between declarative and imperative programming languages, they also have one change in common.

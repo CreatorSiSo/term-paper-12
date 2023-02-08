@@ -13,9 +13,9 @@ Such a list of characteristics is necessarily controversial,
 as it is difficult to get everyone to agree on the value of some given language property relative to others.
 In spite of these differences, most would probably agree that the following criteria are at least important.
 -->
-Eine Liste dieser Art ist stets umstritten,
-da es unterschiedliche Meinungen über den Wert einer bestimmten Spracheigenschaft im Vergleich zu anderen gibt.
-Obwohl es auch aufgrund der Unterschiedlichen Anwendungsbereiche einer Programmiersprache keine allgemeingültigen positiven Aspekte gibt,
+Eine Liste dieser Art ist umstritten,
+da es unterschiedliche Meinungen über den Wert jeder bestimmten Spracheigenschaft im Vergleich zu anderen gibt.
+Obwohl es auch aufgrund der Unterschiedlichen Anwendungsbereiche einer Programmiersprache keine allgemeingültigen Vorteile gibt,
 werden die folgende Kriterien häufig genannt.
 [@stansifer_1995 S. 60; @sebesta_2019 S. 41]
 
@@ -79,10 +79,10 @@ da sie die Anzahl der verschiedenen Operatoren reduzieren.
 <!-- feature multiplicity
 A third complicating characteristic of a programming language is, having more than one way to accomplish the same operation.
 -->
-Eine dritte Charakteristik, welches die Einfachheit einer Programmiersprache beeinträchtigt,
-ist das Vorhandensein mehrerer Möglichkeiten, dieselbe Operation auszuführen.
-[@sebesta_2019 S. 43]
 <!-- TODO write more? -->
+Eine dritte Charakteristik, welche die Einfachheit einer Programmiersprache negativ beeinträchtigt,
+ist das Vorhandensein zu vieler Möglichkeiten, dieselbe Operation auszu-führen.
+[@sebesta_2019 S. 43]
 
 <!--
 On the other hand, simplicity can be taken too far.
@@ -320,10 +320,7 @@ Um diese Risiken zu mindern, kann die Programmiersprache mit robusten statischen
 wie z.B. Daten-/Kontrollflussanalyse, Bounds-Checking und Type Checking.
 Dadurch wird sichergestellt, dass die Annahmen des Benutzers über die zu verarbeitenden Daten korrekt sind,
 was zur Vermeidung von Fehlern beiträgt und die Zuverlässigkeit von Programmen verbessert.
-[@sebesta_2019 S. 51ff]
-[@iso_24772_1_2019 S. 81f]
-[@iso_24772_1_2019 S. 37f]
-[@iso_24772_1_2019 S. 16]
+[@sebesta_2019 S. 51ff; @iso_24772_1_2019 S. 81f; @iso_24772_1_2019 S. 37f; @iso_24772_1_2019 S. 16]
 
 <!-- ### Future Proof -->
 ### Zukunftssicherheit
