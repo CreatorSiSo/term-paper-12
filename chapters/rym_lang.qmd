@@ -10,7 +10,7 @@ However, this description makes no assumptions about the
 implementation and enables a future compiled version^[A compiler is a computer program that translates computer code written in one programming language into another language.].
 -->
 Rym ist eine Sprache für allgemeine Zwecke, die auf einer höheren Ebene als die System Programmierung arbeitet,
-aber dennoch die Verwendung von tieferliegenden Funktionen erlaubt.
+aber dennoch die Verwendung von tieferliegenden Funktionen gestattet.
 Die aktuelle Implementierung ist nur ein Interpreter^[Ein Interpreter ist ein Computerprogramm, das die in einer Programmiersprache geschriebene Anweisungen direkt ausführt.].
 Rym kann jedoch auch durch einem Kompiler^[Ein Kompiler ist ein Computerprogramm, das den in einer Programmiersprache geschriebenen Code in eine andere Sprache übersetzt.] umgesetzt werden.
 
@@ -23,15 +23,15 @@ The syntax follows the aspects mentioned in @sec-readability, especially @sec-sy
 -->
 Die Syntax folgt den in @sec-readability sowie @sec-writability genannten Aspekten und ist so aufge-baut,
 dass das Prinzip des Spiralcurriculums^[Das Spiralcurriculum festigt Vorwissen durch wiederholte Begegnungen mit dem selben Thema und baut im Laufe der Zeit darauf auf. @spiral_curriculum] angewendet werden kann.
-Rym ermöglicht es, zunächst sehr einfachen Code zu schreiben, ohne alle Details der Sprache zu kennen.
-Wenn der Benutzer später mehr Kontrolle haben möchte, muss er nur kleine Änderungen vornehmen.
+Rym ermöglicht es, zunächst sehr simplen Code zu schreiben, ohne alle Details der Sprache kennen zu müssen.
+Später kann der Benutzer durch kleine Änderungen mehr Kontrolle erlangen.
 
 <!--
 Rym can be considered part of the C-style languages, as it combines syntax from C, Go, Rust, F# and others.
 The typical braces -- "{" and "}" -- are used for structure types and to enclose blocks of statements.
 Function definitions begin with "func", just as they do in Go or Swift, and the type declarations are very similar to those in F#.
 -->
-Rym kann als Teil der C-ähnlichen Sprachen betrachtet werden, da es die Syntax von C, Go, Rust, TypeScript, F# und anderen verbindet.
+Rym kann als Teil der C-ähnlichen Sprachen betrachtet werden, da die Syntax ähnlich der von C, Go, Rust, TypeScript, F# ist.
 Die typischen geschweiften Klammern -- "{" und "}" -- werden für Struktur-Typen und zum Umschließen von Anweisungsblöcken verwendet.
 Funktionsdefinitionen beginnen mit "func", genau wie in Go oder Swift und die Typ-Deklarationen sind denen in TypeScript sowie F# sehr ähnlich.
 [@go_spec; @swift_book_functions; @fsharp_spec S. 39f]
@@ -57,10 +57,8 @@ Pascal case distinguishes types from values.
 -->
 Rym hat auch strikte Regeln für die Namensgebung.
 Namen dürfen nur mit den ASCII-Zeichen "a-z", "A-Z" oder "\_" beginnen. Anschließend sind auch die Zahlen "0-9" erlaubt.
-Dies erleichtert den Benutzern die Zusammenarbeit, da die Sprache sie veranlasst, ähnlichen Code zu schreiben.
-Variablen-, Funktions- und Modulnamen werden in _snake\_case_ geschrieben und Typ-Namen müssen in _PascalCase_ geschrieben werden.
-Eingebaute Standardtypen wie "bool" bestehen aus einem kleingeschriebenen Wort.
-
+Dies erleichtert den Benutzern die Zusammenarbeit, da die Sprache sie veranlasst, ähn-lichen Code zu schreiben.
+Variablen-, Funktions- und Modulnamen werden in _snake\_case_ geschrieben und die Namen von komplexen Typen müssen in _PascalCase_ geschrieben werden.
 Snake-Case wird verwendet, da der Unterstrich die Lesbarkeit verbessert.
 Pascal-Case vereinfacht die Unterscheidung von komplexen Datentypen und Werten.
 [@sebesta_2019 S. 344fff]
@@ -114,61 +112,93 @@ func main() {
 
 <!--
 Variables in Rym are either immutable, which is preferred, or mutable.
-The _const_ and _mut_ keywords can be used to declare a new variable.
+The "const" and "mut" keywords can be used to declare a new variable.
 Examples for creating variables can be found in @sec-appendix-variables.
 -->
 Variablen in Rym sind entweder unveränderlich, was vorzuziehen ist, oder veränderbar.
-Die Schlüsselwörter _const_ und _mut_ können verwendet werden, um eine neue Variable zu erstellen.
+Die Schlüsselwörter "const" und "mut" können verwendet werden, um eine neue Variable zu erstellen.
 Beispiele für die Erstellung von Variablen finden Sie in @sec-appendix-variables.
 
 <!-- ## Data Types -->
 ## Datentypen
 
-Types in Rym are generally declared by the "type" keyword.
-The keyword can be followed by some syntax that defines what data value of this type holds.
-All types in Rym can be described by a concept called algebraic data types _(ADT/ADTs)_.
-This model associates each type with the amount of values it can represent.
+<!--
+Types in Rym are generally declared with the keyword "type".
+The keyword can be followed by some syntax that defines what values this type holds.
+All types in Rym can be described by the concept of algebraic data types _(ADT/ADTs)_ .
+This model associates each type with the set of values it can represent.
+-->
+Typen in Rym werden im Allgemeinen mit dem Schlüsselwort "type" deklariert.
+Dem Schlüsselwort kann eine Syntax folgen, die definiert, welche Werte dieser Typ enthält.
+Alle Typen in Rym können durch das Konzept der algebraischen Datentypen _(ADT/ADTs)_ beschrieben werden.
+Dieses Modell verknüpft jeden Typ mit der Menge der Werte, die er darstellen kann.
 
 <!-- ### Unit Type -->
 ### Unit
 
-The unit type comes from the functional languages but is very similar to the void type from C, C++, JavaScript, etc.
-It has exactly one value and is the value that functions and expressions without a result return.
+<!--
+The unit type originated in functional languages, but is very similar to the void type of C, C++, JavaScript, etc.
+It is the exact value that functions and expressions without a result return.
+-->
+Der Unit-Typ hat seinen Ursprung in funktionalen Sprachen, ist aber dem void-Typ von C, C++, JavaScript usw. sehr ähnlich.
+Er kann hat genau einen Wert und wird von Funktionen und Ausdrücken ohne Ergebnis zurückgeben.
 
 <!-- ### Boolean Type -->
 ### Boolean
 
-Boolean types are perhaps the simplest of all types and have been included in most general-purpose languages designed since 1960.
-They only have two possible values, "true" and "false".
-Boolean types are often used to represent switches or flags in programs.
+<!--
+Boolean types are some of the simplest of all types and have been included in most general-purpose programming languages designed since 1960.
+The boolean type in Rym is called "bool" like in Python, PHP, C#, Go, Rust, Swift and many others.
+It was named after _George Boole_ who pioneered the field of mathematical logic.
+-->
+Boolean-Typen gehören zu den einfachsten aller Typen und sind in den meisten seit 1960 entwickelten allgemeinen Programmiersprachen enthalten.
+Der Boolean-Typ in Rym heißt "bool", wie in Python, PHP, C#, Go, Rust, Swift und vielen anderen.
+Er wurde nach _George Boole_ benannt, einem Pionier der mathematischen Logik.
+[@php_ref_types; @csharp_spec_types; @go_spec; @rust_ref_types; @swift_docs]
+
+<!--
+Boolean only have two possible values, "true" and "false".
+Therefore they are often used to represent switches or flags in programs.
 Although other types, such as integers, can be used for these purposes,
 the use of boolean types is more readable.
 C and C++ still allow numeric expressions to be used as if they were boolean.
-This is not the case in the subsequent languages, Java and C# which is why Rym will disallow this as well.
+This is not the case in their successor languages, Java and C#. Therefore, Rym will not allow this either.
+-->
+Booleans haben nur zwei mögliche Werte, "true" und "false".
+Deshalb verwendet man sie häufig, um Schalter oder Marker in Programmen darzustellen.
+Obwohl auch andere Typen, wie z.B. Integer, für diese Zwecke verwendet werden können,
+ist die Verwendung von Boolescher Werten besser lesbar.
+In C und C++ können numerische Ausdrücke immer noch so verwendet werden, als wären sie Booleans.
+In den nachfolgenden Sprachen, Java und C#, ist dies nicht der Fall.
+Daher wird Rym dies auch nicht erlauben.
 [@sebesta_2019 S. 404; @java_spec_types; @csharp_spec_types]
 <!-- TODO: C, C++ citetation for numerics usable as booleans -->
 
+<!--
 A boolean value could be represented by a single bit,
 but because a single bit of memory cannot be accessed efficiently on many machines,
 they are often stored in the smallest efficiently addressable cell of memory, typically a byte.
 As this detail is unimportant Rym does not specify how to store boolean values.
+-->
+Ein Boolescher Wert könnte durch ein einziges Bit dargestellt werden.
+Da aber auf vielen Rechnern nicht effizient auf ein einzelnes Bit im Speicher zugegriffen werden kann,
+werden sie oft in der kleinsten effizient adressierbaren Speicherzelle gespeichert, in der Regel einem Byte.
+Da dieses Detail unwichtig ist, spezifiziert Rym nicht, wie Boolesche Werte zu speichern sind.
 [@sebesta_2019 S. 404f]
-
-The boolean type in Rym is called "bool" like in Python, PHP, C#, Go, Rust, Swift and many others.
-The was named after _George Boole_ who pioneered the field of mathematical logic.
-[@php_ref_types; @csharp_spec_types; @go_spec; @rust_ref_types; @swift_docs]
 
 <!-- ### Boolean Operations -->
 ### Benutzung von Booleans
 
-A Boolean value may be created using the "true" or "false" literals.
+<!-- A Boolean value may be created using the "true" or "false" literals. -->
+Ein Boolescher Wert kann mit den Begriffen "true" oder "false" erstellt werden.
 
 ```rym
 const var_1 = true
 const var_2 = false
 ```
 
-In Rym the control-flow expressions _if_ and _while_ use booleans to decide whether some code should be executed or not.
+<!-- In Rym the control-flow expressions _if_ and _while_ use booleans to decide whether some code should be executed or not. -->
+In Rym verwenden die Kontrollflussausdrücke _if_ und _while_ Boolesche Werte, um zu ent-scheiden, welcher Code ausgeführt werden soll und vice versa.
 
 ```rym
 const condition = true
@@ -180,15 +210,27 @@ while condition { /* do something forever */ }
 
 ### Integer
 
+<!--
 Another very common primitive numeric data type is the integer.
 As seen in @tbl-int-formats defining a specific size for integers, is only supported by some programming languages.
 Some languages, for example C, C++ and C# include unsigned integer types, which are types for integer values without signs.
 Unsigned types are often used for binary data. 8 bit large unsigned integers can for example represent exactly one byte.
 [@sebesta_2019 S. 400]
+-->
+Ein weiterer sehr verbreiteter Datentyp ist der Integer, welcher nur in manchen Sprachen existiert.
+Wie in @tbl-int-formats zu sehen, wird die Definition einer bestimmten Größe für Integers von noch weniger Programmiersprachen unterstützt.
+Einige Sprachen unterstützen vorzeichenlose Integer-Typen.
+Diese Typen können werden zur Speicherung von natür-lichen Zahlen und häufig für binäre Daten verwendet.
+Acht Bit große vorzeichenlose Integers können zum Beispiel genau einen Byte darstellen.
 
+<!--
 The types for C and C++ that are represented in @tbl-int-formats are using the "cstdint" header
 as the language standards do not specify the sizes for default integer types and leave them up to the implementation.
 Types from this standard header file are however required to that exact size.
+-->
+Die Typen für C und C++, welche in @tbl-int-formats dargestellt werden, verwenden den "cstdint"-Header,
+da ihre Standards die Größen für Integers nicht vorgeben und sie der Implementierung überlassen.
+Die Typen aus der Header-Datei müssen jedoch genau diese Größe haben.
 [@cstdint_header]
 
 | Size [Bits] | Java  | C#            | C, C++              | Go              | Rust         |
@@ -201,17 +243,27 @@ Types from this standard header file are however required to that exact size.
 |     128     | ---   | ---           | ---                 | ---             | i128, u128   |
 |   pointer   | ---   | ---           | intptr_t, uintptr_t | intptr, uintptr | isize, usize |
 
-: __TODO__ Supported integer formats {#tbl-int-formats tbl-colwidths="[16,10,16,23,19,16]"}
+: __TODO__ <!-- Supported integer formats --> Unterstützte Integer-Formate {#tbl-int-formats tbl-colwidths="[16,10,16,23,19,16]"}
 
-The cstdint header, Go and Rust have names for these types that clearly indicate how large a value is.
-This is why Rym will just Rust's version as it is the shortest one.
-They also allow for the possiblity to add integers of arbitrary size.
+<!--
+The "cstdint" header, Go and Rust have names for these types that clearly indicate how large a value is.
+Rym just uses Rust's version as it is the shortest one.
+They also allow for the future possiblity to add integers of arbitrary size.
+-->
+Der "cstdint"-Header, Go und Rust haben Namen für diese Typen, die eindeutig angeben, wie groß ein Wert ist.
+Rym verwendet einfach die Version von Rust, da sie die kürzeste ist.
+Diese Namen ermöglichen es auch in der Zukunft, Integers beliebiger Größe hinzuzufügen.
 
 ### Float
 
+<!--
 Most languages provide floating point data types that adhere to the _IEEE-754_ floating point arithmetic standard [@ieee754_2019] or its ISO adoption _ISO-60559_ [@iso60559_2020].
 Some examples can be seen in @tbl-float-formats.
 C and C++ are marked with a question mark as their standards do not requiere the use of _IEEE-754_.
+-->
+Die meisten Sprachen bieten Fließkommazahl-Typen an, die dem _IEEE-754_ [@ieee754_2019] Standard für Fließkommaarithmetik oder seiner ISO-Adaption _ISO-60559_ [@iso60559_2020] entsprechen.
+Einige Beispiele dafür sind in @tbl-float-formats zu sehen.
+C und C++ sind mit einem Fragezeichen gekennzeichnet, da ihre Standards die Verwendung von _IEEE-754_ nicht vorschreiben.
 
 | Size [Bits] | Js/Ts  | Python | PHP   | Java   | C#     | C, C++ | Go      | Rust |
 | :---------: | ------ | ------ | ----- | ------ | ------ | ------ | ------- | ---- |
@@ -219,9 +271,10 @@ C and C++ are marked with a question mark as their standards do not requiere the
 |     64      | ---    | ---    | ---   | double | double | ?      | float64 | f64  |
 |   32\|64    | ---    | float  | float | ---    | ---    | ---    | ---     | ---  |
 
-: __TODO__ Supported _IEEE-754_ floating point formats {#tbl-float-formats tbl-colwidths="[16,12,10,8,10,10,12,12,10]"}
+: __TODO__ <!-- Supported _IEEE-754_ floating point formats --> Unterstützte _IEEE-754_ Fließkommazahl-Formate {#tbl-float-formats tbl-colwidths="[16,12,10,8,10,10,12,12,10]"}
 
-Rym -- again just like Rust -- provides the "f32" and "f64" types to allow for possible additions and changes in the future.
+<!-- Rym -- again just like Rust -- provides the "f32" and "f64" types to allow for possible additions and changes in the future. -->
+Rym bietet -- wieder genau wie Rust -- die Typen "f32" und "f64", um Ergänzungen und Änderungen in der Zukunft zu ermöglichen.
 
 ### String
 
@@ -250,9 +303,8 @@ They can be used as arguments, assigned to variables, and function calls are exp
 Functions can return values and take parameters, making them powerful tools for writing modular, reusable code.
 See @sec-appendix-functions for examples of how to define and use them.
 
-In Rym it will be possible to define a function by using the _func_ keyword followed by a name for the function,
+In Rym it is be possible to define a function by using the _func_ keyword followed by a name for the function,
 a comma separated list of parameters and their respective types as well as the return type of the function.
-
 This means that a function with multiple parameters will generally look like this:
 
 ```rym
