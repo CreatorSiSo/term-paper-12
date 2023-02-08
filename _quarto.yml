@@ -24,6 +24,7 @@ book:
   appendices:
     - appendix/rym_internals.qmd
     - appendix/code_examples.qmd
+    - chapters/selbst.qmd
     # - appendix/rym_parser_grammar.qmd
 lang: "de-DE"
 filters:

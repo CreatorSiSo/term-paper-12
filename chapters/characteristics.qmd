@@ -72,8 +72,7 @@ wenn Benutzern erlaubt wird, ihre eigenen Überladungen zu erstellen
 und sie dies nicht in einer vernünftigen Art und Weise tun.
 Es ist jedoch durchaus akzeptabel, "+" zu überladen,
 um es sowohl für die Ganzzahl- als auch für die Gleitkommaaddition zu verwenden.
-In diesem Fall vereinfachen Überladung die Sprache sogar,
-da sie die Anzahl der verschiedenen Operatoren reduzieren.
+In diesem Fall vereinfachen Überladungen die Sprache, da sie die Anzahl der verschiedenen Operatoren reduzieren.
 [@sebesta_2019 S. 43f; @sebesta_2019 S. 664]
 
 <!-- feature multiplicity
@@ -94,7 +93,7 @@ The same arguments apply to the less extreme case of languages with inadequate c
 Andererseits kann man es mit der Einfachheit auch übertreiben.
 Beispielsweise sind Form und Bedeutung der meisten Assembler-Anweisungen sehr einfach.
 Da komplexere Steueranweisungen fehlen, ist die Programmstruktur jedoch weniger offensichtlich.
-Es werden mehr Anweisungen benötigt als in entsprechenden Programmen einer höheren Programmier-sprache.
+Es werden mehr Anweisungen benötigt als in entsprechenden Programmen einer höheren Programmiersprache.
 Die gleichen Argumente gelten auch für den weniger extremen Fall von Sprachen mit unzureichenden Kontroll- und Datenstrukturen.
 [@sebesta_2019 S. 44]
 
@@ -185,9 +184,9 @@ Syntax bezieht sich auf die Regeln und die Struktur, die vorgeben, wie ein Progr
 Diese Regeln definieren die Reihenfolge, den Aufbau und die Verwendung von Anweisungen, Ausdrücken, Schlüssel-wörtern und Zeichensetzung innerhalb der Sprache.
 Auch hier ist es sinnvoll, die Grundsätze der Einfachheit und Orthogonalität anzuwenden.
 Daher sollten Elemente mit ähnlicher Bedeutung ähnlich geschrieben werden.
-Zu viele Alternativen, um Code mit der gleichen Bedeutung zu schreiben, verstoßen ebenfalls gegen die Orthogonalität.
+Zu viele Alternativen, um den Code mit der gleichen Bedeutung zu schreiben, verstoßen ebenfalls gegen die Orthogonalität.
 Letztlich hängt die Lesbarkeit einer Sprache jedoch von individuellen Vorlieben und Vorkenntnissen ab.
-Die Übernahme von Teilen der Syntax bekannter Sprachen in eine neue Sprache ist demnach sehr sinnvoll, da diese Teile bereits vielen bekannt sind.
+Die Übernahme von Teilen der Syntax bekannter Sprachen in eine neue Sprache ist sinnvoll, da diese Teile bereits vielen bekannt sind.
 [@stansifer_1995 S. 61ff; @sebesta_2019 S. 48f]
 
 <!-- ## Writability -->
@@ -209,11 +208,12 @@ which makes it easier to focus on writing code.
 This can be achieved by having a syntax based on a left-to-right reading direction, as in English.
 -->
 Die Leichtigkeit, mit der eine Programmiersprache verwendet werden kann, um Programme für eine bestimmte Aufgabe zu schreiben, wird als ihre Schreibfähigkeit bezeichnet.
-Die Sprachmerkmale, die die Lesbarkeit verbessern, tragen auch zu ihrer Schreibbarkeit bei,
-denn das Schreiben eines Programms erfordert häufig das erneute Lesen von Teilen des Codes.
-Um die Schreibbarkeit zu optimieren, ist es wünschenswert, dass die Syntax die Notwendigkeit für den Programmierer minimiert, herumzuspringen,
-Das macht es einfacher, sich auf das Schreiben von Code zu konzentrieren.
-Dies kann durch eine Syntax erreicht werden, die auf einer Leserichtung von links nach rechts basiert, wie im Englischen.
+Die Sprachmerkmale, die die Lesbarkeit verbessern, tragen auch zu ihrer Schreibbarkeit bei.
+Denn das Schreiben eines Programms erfordert häufig das erneute Lesen von Teilen des Codes.
+Um die Schreibbarkeit zu optimieren sollte die Syntax dem Programmierer dabei helfen, so wenig wie möglich im Programm herumzuspringen.
+Das macht es einfacher, sich auf das Schreiben des Codes zu konzentrieren.
+Dies kann durch eine Syntax erreicht werden, die wie im Englischen^[Englisch ist die Sprache in der die meisten Programmiersprachen geschrieben werden.],
+auf einer Leserichtung von links nach rechts basiert.
 [@sebesta_2019 S. 49ff]
 
 <!--
@@ -225,11 +225,9 @@ making it easier to focus on the task at hand and reducing the potential for err
 In other words, a language that minimises the number of things a programmer has to think about at once is a key factor in improving its writability.
 -->
 Neben einer leicht verständlichen Syntax ist es für eine Programmiersprache wichtig, dass sie eine klare und einfache Struktur hat.
-So kann sich ein Programmierer auf eine Aufgabe konzentrieren,
-anstatt mehrere Konzepte gleichzeitig im Kopf behalten zu müssen.
-Eine Sprache mit einer einfachen und intuitiven Struktur verringert die geistige Anstrengung, die zum Schreiben von Code erforderlich ist,
-Das macht es einfacher, sich auf die Aufgabe zu konzentrieren, und verringert die Fehleranfälligkeit.
-Mit anderen Worten: Eine Sprache, die die Anzahl der Dinge, über die ein Programmierer gleichzeitig nachdenken muss, minimiert, ist ein Schlüsselfaktor für die Verbesserung der Schreibfähigkeit.
+So kann sich ein Programmierer auf eine Aufgabe konzentrieren, anstatt mehrere Konzepte gleichzeitig im Kopf behalten zu müssen.
+Dadurch verringert sich auch die Fehleranfälligkeit.
+In anderen Worten: Eine Sprache sollte die Anzahl der Dinge minimieren, über die der Nutzer gleichzeitig nachdenken muss.
 [@sebesta_2019 S. 49ff]
 
 {{< pagebreak >}}
@@ -265,7 +263,7 @@ versions, or levels of optimisation.
 In einigen Fällen kann das Verhalten bestimmter Merkmale unzureichend definiert sein.
 Dies kann zu verschiedenen Implementierungen führen, die unterschiedliche Ergebnisse liefern.
 Einige der möglichen Ergebnisse können schädlich sein, und die Implementierungen müssen nicht über alle Ausführungen hinweg konsistent bleiben,
-Versionen oder Optimierungsstufen konsistent bleiben.
+Versionen oder Optimier-ungsstufen konsistent bleiben.
 [@iso_24772_1_2019 S. 21; @michell_2009 S. 190]
 
 <!--
@@ -274,9 +272,9 @@ and _undefined behaviour_ if they are mentioned, but it is not defined how they 
 They pose a significant challenge to users of the language, as they cannot be sure how and whether their program will run.
 For this reason, a language should have as few of them as possible.
 -->
-Verhaltensweisen, die in der Spezifikation nicht erwähnt werden, nennt man _unspezifiziertes Verhalten_,
-und _undefiniertes Verhalten_, wenn sie zwar erwähnt werden, aber nicht definiert ist, wie sie sich verhalten.
-Sie stellen eine große Herausforderung für die Benutzer der Sprache dar, da sie nicht sicher sein können, wie und ob ihr Programm ausgeführt wird.
+Verhaltensweisen, die in der Spezifikation nicht erwähnt werden, nennt man _unspezifiziertes Verhalten_.
+_Undefiniertes Verhalten_ nennt man die Verhaltensweisen die zwar erwähnt werden, jedoch in ihrem Verhalten nicht definiert werden.
+Sie stellen eine große Heraus-forderung für die Benutzer der Sprache dar, da sie nicht sicher sein können, wie und ob ihr Programm ausgeführt wird.
 Aus diesem Grund sollte eine Sprache so wenige von ihnen wie möglich haben.
 [@iso_24772_1_2019 S. 21]
 
@@ -311,8 +309,8 @@ such as data/control flow analysis, bounds checking and type checking in mind.
 This ensures that the user's assumptions about the data being processed are correct,
 which helps to prevent bugs and improves the overall reliability of programs.
 -->
-Zusätzlich zu den Sicherheitslücken, die durch nicht spezifiziertes oder undefiniertes Verhalten entstehen,
-gibt es weitere Probleme, die angegangen werden sollten, um die Sicherheit des Programms zu gewährleisten.
+Zusätzlich zu den Sicherheitslücken, die durch unspezifiziertes oder undefiniertes Verhalten entstehen, gibt es weitere Probleme.
+Diese sollten angegangen werden, um die Sicherheit des Programms zu gewährleisten.
 Eines dieser Probleme ist das Aliasing,
 welches auftritt, wenn mehrere Variablen auf dieselbe Speicherstelle verweisen.
 Dies kann zu unerwarteten Änderungen an den Daten führen und Fehler verursachen, die nur schwer zu erkennen sind.

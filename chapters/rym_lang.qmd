@@ -5,16 +5,16 @@
 Rym is a general purpose language designed to work at a level above systems
 programming, while still allowing the use of lower level features when required.
 Although both an interpreter and a compiler can be used to implement Rym,
-the current implementation is an interpreter.
+the current implementation is an interpreter^[An interpreter is a computer program that directly executes instructions written in a programming language.].
 However, this description makes no assumptions about the
-implementation and enables a future compiled version.
+implementation and enables a future compiled version^[A compiler is a computer program that translates computer code written in one programming language into another language.].
 -->
-Rym ist eine Sprache für allgemeine Zwecke, die auf einer höheren Ebene als die System
-Programmierung arbeitet, aber dennoch die Verwendung von tieferliegenden Funktionen erlaubt, wenn dies erforderlich ist.
-Obwohl sowohl ein Interpreter als auch ein Kompiler zur Umsetzung der Sprache verwendet werden können,
-ist die derzeitige Implementierung ein Interpreter.
-Diese Beschreibung macht jedoch keine Annahmen über die
-Implementierung und ermöglicht eine zukünftige kompilierte Version.
+Rym ist eine Sprache für allgemeine Zwecke, die auf einer höheren Ebene als die System Programmierung arbeitet,
+aber dennoch die Verwendung von tieferliegenden Funktionen erlaubt.
+Die aktuelle Implementierung ist nur ein Interpreter^[Ein Interpreter ist ein Computerprogramm, das die in einer Programmiersprache geschriebene Anweisungen direkt ausführt.].
+Rym kann jedoch auch durch einem Kompiler^[Ein Kompiler ist ein Computerprogramm, das den in einer Programmiersprache geschriebenen Code in eine andere Sprache übersetzt.] umgesetzt werden.
+
+Die Git-Repository für dieses Projekt ist unter _[https://github.com/CreatorSiSo/rym](https://github.com/CreatorSiSo/rym)_ zu finden.
 
 ## Syntax
 
@@ -31,9 +31,9 @@ Rym can be considered part of the C-style languages, as it combines syntax from 
 The typical braces -- "{" and "}" -- are used for structure types and to enclose blocks of statements.
 Function definitions begin with "func", just as they do in Go or Swift, and the type declarations are very similar to those in F#.
 -->
-Rym kann als Teil der C-ähnlichen Sprachen betrachtet werden, da es die Syntax von C, Go, Rust, F# und anderen verbindet.
+Rym kann als Teil der C-ähnlichen Sprachen betrachtet werden, da es die Syntax von C, Go, Rust, TypeScript, F# und anderen verbindet.
 Die typischen geschweiften Klammern -- "{" und "}" -- werden für Struktur-Typen und zum Umschließen von Anweisungsblöcken verwendet.
-Funktionsdefinitionen beginnen mit "func", genau wie in Go oder Swift, und die Typ-Deklarationen sind denen in F# sehr ähnlich.
+Funktionsdefinitionen beginnen mit "func", genau wie in Go oder Swift und die Typ-Deklarationen sind denen in TypeScript sowie F# sehr ähnlich.
 [@go_spec; @swift_book_functions; @fsharp_spec S. 39f]
 
 <!--
@@ -58,9 +58,11 @@ Pascal case distinguishes types from values.
 Rym hat auch strikte Regeln für die Namensgebung.
 Namen dürfen nur mit den ASCII-Zeichen "a-z", "A-Z" oder "\_" beginnen. Anschließend sind auch die Zahlen "0-9" erlaubt.
 Dies erleichtert den Benutzern die Zusammenarbeit, da die Sprache sie veranlasst, ähnlichen Code zu schreiben.
-Variablen-, Funktions- und Modulnamen werden in _snake\_case_ geschrieben,
-benutzerdefinierte Typen müssen in _PascalCase_ geschrieben werden und die eingebauten Standardtypen wie "bool" bestehen aus einem kleinge-schriebenen Wort.
-Snake-Case wird verwendet, da der Unterstrich die Lesbarkeit verbessert und Pascal-Case Typen von Werten unterscheidet.
+Variablen-, Funktions- und Modulnamen werden in _snake\_case_ geschrieben und Typ-Namen müssen in _PascalCase_ geschrieben werden.
+Eingebaute Standardtypen wie "bool" bestehen aus einem kleingeschriebenen Wort.
+
+Snake-Case wird verwendet, da der Unterstrich die Lesbarkeit verbessert.
+Pascal-Case vereinfacht die Unterscheidung von komplexen Datentypen und Werten.
 [@sebesta_2019 S. 344fff]
 
 <!-- __TODO Explain difference between syntax and semantics__ -->
@@ -68,68 +70,203 @@ Snake-Case wird verwendet, da der Unterstrich die Lesbarkeit verbessert und Pasc
 <!-- ## Program Structure -->
 ## Programmstruktur
 
+<!--
 Rym's execution model is based on packages, which can be either a library or an executable.
 Packages containing a "main" function can be run as standalone programs, while others are reusable libraries.
-These packages are made up of modules, functions, constants and other definitions that form a tree-like structure,
-that provides organisation for the code.
-__TODO Mention where the constructs are explained in detail__
+These packages are made up of modules, functions, constants and other definitions that form a tree-like structure, providing organisation for the code.
+-->
+Das Ausführungsmodell von Rym basiert auf Paketen, die entweder eine Bibliothek oder eine ausführbare Datei sein können.
+Pakete, die eine Funktion namens "main" enthalten, können als eigenständige Programme ausgeführt werden, während andere wieder-verwendbare Bibliotheken sind.
+Diese Pakete bestehen aus Modulen, Funktionen, Konstanten und anderen Definitionen, die eine baumartige Struktur bilden und für die Organisation des Codes sorgen.
 
+<!--
 Source files that represent a top-level module use the .rym extension.
-To better adhere to the __TODO__ principle, Rym also allows the execution of ".rys" script files.
+Rym also allows the execution of ".rys" script files, to allow for quick testing and to help people learning the language get started.
 These scripts work much like a JavaScript or Python file,
 where all statements are executed immediately without the need to define an entry function.
 Rym achieves this by simply wrapping the contents of the script in a main function.
+-->
+Quelldateien, die ein Top-Level-Modul darstellen, verwenden die Erweiterung .rym.
+Rym erlaubt auch die Ausführung von ".rys"-Skriptdateien, um schnelle Tests zu ermöglichen und Personen, die die Sprache lernen, den Einstieg zu erleichtern.
+Diese Skripte funktionieren ähnlich wie eine JavaScript- oder Python-Datei,
+wo alle Anweisungen sofort ausgeführt werden, ohne dass eine Eingangsfunktion definiert werden muss.
+Rym erreicht dies, indem es den Inhalt des Skripts einfach in eine Hauptfunktion einbettet.
 
-A look at the typical "Hello World!" script shows what this transformation looks like in practice _(main.rys)_ :
+<!-- A look at the typical "Hello World!" script shows what this transformation looks like in practice _(main.rys)_ : -->
+Ein Blick auf das typische "Hello World!"-Skript zeigt, wie diese Umwandlung in der Praxis aussieht _(main.rys)_ :
 
 ```rym
 print("Hello World!")
 ```
 
-It is just as simple as a Python script that prints "Hello World!\n", but actually gets transformed to this module file _(main.rym)_ :
+<!-- It is just as simple as a Python script that prints "Hello World!\n", but actually gets transformed to this module file _(main.rym)_ : -->
+Es ist genauso simpel wie ein Python-Skript, welches "Hello World!\n" ausgibt.
+Tatsächlich wird es aber in diese Moduldatei umgewandelt _(main.rym)_ :
 
 ```rym
-func main() -> () {
+func main() {
   print("Hello World!")
 }
 ```
 
-## Modules {#sec-modules}
+<!-- ## Variables -->
+## Variablen
 
-In Rym, modules are the building blocks of a package and provide a way to organize code into logical units.
-Each module can contain its own functions, constants, and other definitions.
-Modules can be imported into other modules, allowing for the reuse of code.
+<!--
+Variables in Rym are either immutable, which is preferred, or mutable.
+The _const_ and _mut_ keywords can be used to declare a new variable.
+Examples for creating variables can be found in @sec-appendix-variables.
+-->
+Variablen in Rym sind entweder unveränderlich, was vorzuziehen ist, oder veränderbar.
+Die Schlüsselwörter _const_ und _mut_ können verwendet werden, um eine neue Variable zu erstellen.
+Beispiele für die Erstellung von Variablen finden Sie in @sec-appendix-variables.
 
-<!-- ## Data Types {#sec-data-types} -->
-## Datentypen {#sec-data-types}
+<!-- ## Data Types -->
+## Datentypen
 
 Rym provides a rich set of data types, including primitive types (such as integers, floats, and strings)
 and composite types (such as arrays and tuples). Rym also provides support for algebraic data types,
 which allow for the creation of custom, named data types.
 
-### Primitive Data Types {#sec-primitive-data-types}
+
+## Primitive Data Types
 
 Rym provides a set of basic data types such as integers, floating-point numbers, strings, and booleans.
 These types can be used to build more complex data structures.
 
-### Algebraic Data Types {#sec-algebraic-data-types}
+Data types that are not defined in terms of other types are called primitive data types.
+Nearly all programming languages provide a set of primitive data types.
+Some of the primitive types are merely reflections of the hardware for example, most integer types and others require only a little nonhardware support for their implementation.
+More complex types can be created by combining primitive types as we will see in @sec-algebraic-data-types.
+[@sebesta_2019 S. 400]
+
+
+### Boolean {#sec-bool}
+
+Boolean types are perhaps the simplest of all types and have been included in most general-purpose languages designed since 1960.
+They only have two possible values one for true and one for false.
+Boolean types are often used to represent switches or flags in programs.
+Although other types, such as integers, can be used for these purposes,
+the use of boolean types is more readable.
+C and C++ still allow numeric expressions to be used as if they were boolean.
+This is not the case in the subsequent languages, Java and C# which is why Rym will disallow this as well.
+[@java_spec_types; @csharp_spec_types]
+<!-- TODO: C, C++ citetation for numerics usable as booleans -->
+
+A boolean value could be represented by a single bit,
+but because a single bit of memory cannot be accessed efficiently on many machines,
+they are often stored in the smallest efficiently addressable cell of memory, typically a byte.
+As this detail is trivial Rym does not specify how to store boolean values.
+[@sebesta_2019 S. 404f]
+
+The boolean type in Rym is called "bool" like in Python, PHP, C#, Go, Rust, Swift and many others.
+It is named after _George Boole_ who pioneered the field of mathematical logic.
+[@php_ref_types; @csharp_spec_types; @go_spec; @rust_ref_types; @swift_docs]
+
+### Boolean Operations
+
+A Boolean value may be created using the _true_ or _false_ literals
+
+```rym
+const var_1 = true
+const var_2 = false
+```
+
+and is always the result for the comparison binary operators ==, <, <=, >= and >.
+The comparision operations actually use the literals in their implementation as well,
+which can be seen in @sec-polymorphism.
+There is also the unary not prefix operator represented by ! which allow one to invert a boolens value .
+The prefix already suggests that this operator must come before the expression it operates on,
+as the ! can be used as a unary postfix operator to unwrap a value and __TODO: INSERT CHAPTER REF__ explains why that is useful.
+
+<!-- TODO Explain why Rym boolean operations work the way they work  -->
+
+In Rym the control-flow expressions _if_ and _while_ use booleans to decide whether some code should be executed or not. How they work and why their syntax tooks like this will be covered in __TODO: INSERT CHAPTER REF__.
+```rym
+const condition = true
+if condition { /* do something once */ }
+while condition { /* do something forever */ }
+```
+
+### Ganzzahlen
+
+Another very common primitive numeric data type is the integer.
+The hardware of many computers supports several sizes of integers.
+These sizes of integers, and often a few others, are supported by some programming languages.
+As seen in @tbl-int-formats, Java includes four signed integer sizes: byte, short, int, and long.
+Some languages, for example C, C++ and C# include unsigned integer types, which are types for integer values without signs.
+Unsigned types are often used for binary data. 8 bit large unsigned integers can for example represent exactly one byte.
+[@sebesta_2019 S. 400]
+
+The types for C and C++ that are represented in @tbl-int-formats are using the "cstdint" header
+as the language standards do not specify the sizes for default integer types and leave them up to the implementation.
+Types from this standard header file are however required to that exact size.
+[@iso_9899_2018 S. 0; @iso_14882_2020 S. 0] <!-- TODO citation pages -->
+
+| Size [Bits] | Java  | C#            | C, C++              | Go              | Rust         |
+| :---------: | ----- | ------------- | ------------------- | --------------- | ------------ |
+|      8      | byte  | sbyte, byte   | int8_t, uint8_t     | int8, uint8     | i8, u8       |
+|     16      | short | short, ushort | int16_t, uint16_t   | int16, uint16   | i16, u16     |
+|     32      | int   | int, uint     | int32_t, uint32_t   | int32, uint32   | i32, u32     |
+|     64      | long  | long, ulong   | int64_t, uint64_t   | int64, uint64   | i64, u64     |
+|   32\|64    | ---   | nint, nuint   | ---                 | int, uint       | ---          |
+|     128     | ---   | ---           | ---                 | ---             | i128, u128   |
+|   pointer   | ---   | ---           | intptr_t, uintptr_t | intptr, uintptr | isize, usize |
+
+: Supported integer formats {#tbl-int-formats tbl-colwidths="[16,10,16,23,19,16]"}
+
+### Dezimalzahlen
+
+Generally languages provide floating point data types that adhere to the "IEEE 754 - Floating-Point" arithmetic standard [@ieee754_2019] or its ISO adoption "ISO/IEC 60559" [@iso60559_2020]. How wide that support is can be seen in @tbl-float-formats.
+
+| Size [Bits] | Js/Ts  | Python | PHP   | Java   | C#     | C, C++ | Go      | Rust |
+| :---------: | ------ | ------ | ----- | ------ | ------ | ------ | ------- | ---- |
+|     32      | Number | ---    | ---   | float  | float  | ?      | float32 | f32  |
+|     64      | ---    | ---    | ---   | double | double | ?      | float64 | f64  |
+|   32\|64    | ---    | float  | float | ---    | ---    | ---    | ---     | ---  |
+
+: Supported IEEE-754 floating point formats {#tbl-float-formats tbl-colwidths="[16,12,10,8,10,10,12,12,10]"}
+
+### Character
+
+- Rym:
+  - Name: char
+  - valid utf-8 character
+  - space: 1 byte?
+
+### String
+
+- Rym:
+  - characters array: [char]
+  - dynamic characters vector: String
+
+```rym
+const const_string: [char; 12] = "Hello World!"
+
+impl Add for [char] {
+  func add(move self, move rhs: Self) -> Self {
+    [..self, ..rhs]
+    // or
+    mut new_array = ['\0'; self.length + rhs.length]
+    new_array[0..self.length] = self
+    new_array[self.length..] = rhs
+  }
+}
+```
+
+### Algebraic Data Types
 
 Algebraic data types (ADTs) in Rym provide a way to create custom, named data types that can be used in the same way as other built-in types.
 ADTs can be constructed from primitive types or other ADTs, and can be used to model complex data structures in a type-safe manner.
 
-## Functions {#sec-functions}
+## Functions
 
-Functions in Rym are first-class citizens, just like values and data types.
-They are blocks of code that can be passed as parameters, assigned to variables, and used in expressions.
-Functions can return values and accept parameters, which makes them powerful tools for creating modular, reusable code.
+Functions are first-class citizens in Rym, just like values and data types.
+They can be used as arguments, assigned to variables, and function calls are expressions.
+Functions can return values and take parameters, making them powerful tools for writing modular, reusable code.
+See @sec-appendix-functions for examples of how to define and use them.
 
-<!-- ## Higher Order Functions
-
-Functions in Rym can be used as values, just like booleans, numbers and strings.
-They are also higher order functions, meaning that they can be used as arguments to another function, or they can be a function's result.
-@higher_order_func
-
-Because functions are a data type
+## Closures
 
 - closures: [@sebesta_2019 S. 665]
 
@@ -150,20 +287,6 @@ func main() {
   print(f"{specific_twice(7)}") // 13
 }
 ```
--->
-
-
-<!-- ## Variables -->
-## Variablen
-
-<!--
-Variables in Rym are either immutable, which is preferred, or mutable.
-The _const_ and _mut_ keywords can be used to declare a new variable.
-Examples for creating variables can be found in @sec-appendix-variables.
--->
-Variablen in Rym sind entweder unveränderlich, was vorzuziehen ist, oder veränderbar.
-Die Schlüsselwörter _const_ und _mut_ können verwendet werden, um eine neue Variable zu erstellen.
-Beispiele für die Erstellung von Variablen finden Sie in @sec-appendix-variables.
 
 <!-- ## Operators -->
 ## Operatoren
@@ -179,7 +302,7 @@ which are often used increment or decrement an integer,
 as it is often unclear what these operators exactly do.
 
 There are two categories of binary operators in Rym.
-Those in the first category produce a new value^[Addition: "+" Subtraktion: "-" Multiplikation: "\*" Division: "/" Rest: "%": Gleichheit: "==" Und: "&" Oder: "|"] and the others change an existing variable ^[Zuweisung: "="].
+Those in the first category produce a new value (Addition: "+" Subtraktion: "-" Multiplikation: "\*" Division: "/" Rest: "%" Und: "&" Oder: "|"), (Gleich: "==" Kleiner: "<" Kleiner gleich "<=" Größer ">" Größer gleich ">=") and the others change an existing variable ("=" "+=" "-=" "*=" "/=" "%=" "&=" "|=").
 The assignment operators can only be used with variables that are marked as mutable.
 This very typical syntacic sugar is also supported:
 
@@ -194,13 +317,24 @@ print(counter) // "2\n"
 
 ## Control Flow
 
+<!--
 Although Rym can be used to model control flow in a purely functional way it also supports imperative control flow expressions like (if, else, match) and loops (loop, while, for).
 Examples for how these expressions are used can be found in @sec-appendix-expressions.
+-->
+Obwohl Rym zur Beschreibung des Kontrollflusses in einer rein funktionalen Weise verwendet werden kann,
+unterstützt es auch imperative Kontrollflussausdrücke wie (if, else, match) und Schleifen (loop, while, for).
+Beispiele für die Verwendung dieser Ausdrücke können in @sec-appendix-expressions nachgelesen werden.
+
+<!--
 Furthermore Rym provides a mechanism for early exits from loops through the use of break statements.
 The continue statement ends the current iteration of a loop and jumps starts the next one.
 Return statements are used for early returns out of functions.
+-->
+Außerdem bietet Rym einen Mechanismus zum vorzeitigen Verlassen von Schleifen durch die Verwendung von break-Anweisungen.
+Die continue-Anweisung beendet die aktuelle Iteration einer Schleife und springt in die nächste.
+Return-Anweisungen werden für das vorzeitige Verlassen von Funktionen verwendet.
 
-## Tooling and Ecosystem {#sec-tooling-and-ecosystem}
+## Tooling and Ecosystem
 
 Rym has a growing ecosystem of tools and libraries that make it easier to develop, test, and deploy applications.
 These tools include IDEs, text editors with Rym plugins, build tools, package managers, and libraries for various domains.

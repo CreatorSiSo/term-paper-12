@@ -276,7 +276,7 @@ print(data) // "What should you do if you meet a giant?
             //  Use big words.\n"
 ```
 
-### Functions
+### Functions {#sec-appendix-functions}
 
 ```rym
 func func_name(param_1: Type1, param_2: Type2) -> ReturnType {

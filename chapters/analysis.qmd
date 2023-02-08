@@ -113,8 +113,8 @@ Go wurde entwickelt, um die Effizienz von kompilierten Sprachen mit der Einfachh
 Es wird für die Entwicklung von vernetzten Diensten, groß angelegten Webanwendungen und anderer parallel laufender Software verwendet.
 Dart wurde entwickelt, um eine schnelle Entwicklung von Benutzeroberflächen für viele Plattformen zu ermöglichen.
 Mit dem Flutter-Framework lassen sich plattform-übergreifende Anwendungen für Android, IOS, Web, Windows, macOS und Linux erstellen.
-Das jüngste Projekt ist Carbon, ein experimenteller Nachfolger für C++,
-welcher Ende 2022 veröffentlicht wurde und ist noch lange nicht ausgereift ist.
+Das jüngste Projekt ist Carbon, ein experimenteller Nachfolger für C++.
+Es wurde erst Ende 2022 veröffentlicht und ist noch lange nicht ausgereift.
 [@go_web; @go_spec; @flutter_multi; @carbon]
 
 {{< pagebreak >}}
