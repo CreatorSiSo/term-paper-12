@@ -75,8 +75,8 @@ Rym's execution model is based on packages, which can be either a library or an 
 Packages containing a "main" function can be run as standalone programs, while others are reusable libraries.
 These packages are made up of modules, functions, constants and other definitions that form a tree-like structure, providing organisation for the code.
 -->
-Das Ausführungsmodell von Rym basiert auf Paketen, die entweder eine Bibliothek oder eine ausführbare Datei sein können.
-Pakete, die eine Funktion namens "main" enthalten, können als eigenständige Programme ausgeführt werden, während andere wieder-verwendbare Bibliotheken sind.
+Das Ausführungsmodell von Rym basiert auf Paketen, die entweder eine Bibliothek oder eine ausführbares Programm sein können.
+Pakete, die eine Funktion namens "main" enthalten, können als eigenständige Programme ausgeführt werden, während andere wiederverwendbare Bibliotheken sind.
 Diese Pakete bestehen aus Modulen, Funktionen, Konstanten und anderen Definitionen, die eine baumartige Struktur bilden und für die Organisation des Codes sorgen.
 
 <!--
@@ -124,76 +124,64 @@ Beispiele für die Erstellung von Variablen finden Sie in @sec-appendix-variable
 <!-- ## Data Types -->
 ## Datentypen
 
-Rym provides a rich set of data types, including primitive types (such as integers, floats, and strings)
-and composite types (such as arrays and tuples). Rym also provides support for algebraic data types,
-which allow for the creation of custom, named data types.
+Types in Rym are generally declared by the "type" keyword.
+The keyword can be followed by some syntax that defines what data value of this type holds.
+All types in Rym can be described by a concept called algebraic data types _(ADT/ADTs)_.
+This model associates each type with the amount of values it can represent.
 
+<!-- ### Unit Type -->
+### Unit
 
-## Primitive Data Types
+The unit type comes from the functional languages but is very similar to the void type from C, C++, JavaScript, etc.
+It has exactly one value and is the value that functions and expressions without a result return.
 
-Rym provides a set of basic data types such as integers, floating-point numbers, strings, and booleans.
-These types can be used to build more complex data structures.
-
-Data types that are not defined in terms of other types are called primitive data types.
-Nearly all programming languages provide a set of primitive data types.
-Some of the primitive types are merely reflections of the hardware for example, most integer types and others require only a little nonhardware support for their implementation.
-More complex types can be created by combining primitive types as we will see in @sec-algebraic-data-types.
-[@sebesta_2019 S. 400]
-
-
-### Boolean {#sec-bool}
+<!-- ### Boolean Type -->
+### Boolean
 
 Boolean types are perhaps the simplest of all types and have been included in most general-purpose languages designed since 1960.
-They only have two possible values one for true and one for false.
+They only have two possible values, "true" and "false".
 Boolean types are often used to represent switches or flags in programs.
 Although other types, such as integers, can be used for these purposes,
 the use of boolean types is more readable.
 C and C++ still allow numeric expressions to be used as if they were boolean.
 This is not the case in the subsequent languages, Java and C# which is why Rym will disallow this as well.
-[@java_spec_types; @csharp_spec_types]
+[@sebesta_2019 S. 404; @java_spec_types; @csharp_spec_types]
 <!-- TODO: C, C++ citetation for numerics usable as booleans -->
 
 A boolean value could be represented by a single bit,
 but because a single bit of memory cannot be accessed efficiently on many machines,
 they are often stored in the smallest efficiently addressable cell of memory, typically a byte.
-As this detail is trivial Rym does not specify how to store boolean values.
+As this detail is unimportant Rym does not specify how to store boolean values.
 [@sebesta_2019 S. 404f]
 
 The boolean type in Rym is called "bool" like in Python, PHP, C#, Go, Rust, Swift and many others.
-It is named after _George Boole_ who pioneered the field of mathematical logic.
+The was named after _George Boole_ who pioneered the field of mathematical logic.
 [@php_ref_types; @csharp_spec_types; @go_spec; @rust_ref_types; @swift_docs]
 
-### Boolean Operations
+<!-- ### Boolean Operations -->
+### Benutzung von Booleans
 
-A Boolean value may be created using the _true_ or _false_ literals
+A Boolean value may be created using the "true" or "false" literals.
 
 ```rym
 const var_1 = true
 const var_2 = false
 ```
 
-and is always the result for the comparison binary operators ==, <, <=, >= and >.
-The comparision operations actually use the literals in their implementation as well,
-which can be seen in @sec-polymorphism.
-There is also the unary not prefix operator represented by ! which allow one to invert a boolens value .
-The prefix already suggests that this operator must come before the expression it operates on,
-as the ! can be used as a unary postfix operator to unwrap a value and __TODO: INSERT CHAPTER REF__ explains why that is useful.
+In Rym the control-flow expressions _if_ and _while_ use booleans to decide whether some code should be executed or not.
 
-<!-- TODO Explain why Rym boolean operations work the way they work  -->
-
-In Rym the control-flow expressions _if_ and _while_ use booleans to decide whether some code should be executed or not. How they work and why their syntax tooks like this will be covered in __TODO: INSERT CHAPTER REF__.
 ```rym
 const condition = true
 if condition { /* do something once */ }
 while condition { /* do something forever */ }
 ```
 
-### Ganzzahlen
+{{< pagebreak >}}
+
+### Integer
 
 Another very common primitive numeric data type is the integer.
-The hardware of many computers supports several sizes of integers.
-These sizes of integers, and often a few others, are supported by some programming languages.
-As seen in @tbl-int-formats, Java includes four signed integer sizes: byte, short, int, and long.
+As seen in @tbl-int-formats defining a specific size for integers, is only supported by some programming languages.
 Some languages, for example C, C++ and C# include unsigned integer types, which are types for integer values without signs.
 Unsigned types are often used for binary data. 8 bit large unsigned integers can for example represent exactly one byte.
 [@sebesta_2019 S. 400]
@@ -201,7 +189,7 @@ Unsigned types are often used for binary data. 8 bit large unsigned integers can
 The types for C and C++ that are represented in @tbl-int-formats are using the "cstdint" header
 as the language standards do not specify the sizes for default integer types and leave them up to the implementation.
 Types from this standard header file are however required to that exact size.
-[@iso_9899_2018 S. 0; @iso_14882_2020 S. 0] <!-- TODO citation pages -->
+[@cstdint_header]
 
 | Size [Bits] | Java  | C#            | C, C++              | Go              | Rust         |
 | :---------: | ----- | ------------- | ------------------- | --------------- | ------------ |
@@ -213,11 +201,17 @@ Types from this standard header file are however required to that exact size.
 |     128     | ---   | ---           | ---                 | ---             | i128, u128   |
 |   pointer   | ---   | ---           | intptr_t, uintptr_t | intptr, uintptr | isize, usize |
 
-: Supported integer formats {#tbl-int-formats tbl-colwidths="[16,10,16,23,19,16]"}
+: __TODO__ Supported integer formats {#tbl-int-formats tbl-colwidths="[16,10,16,23,19,16]"}
 
-### Dezimalzahlen
+The cstdint header, Go and Rust have names for these types that clearly indicate how large a value is.
+This is why Rym will just Rust's version as it is the shortest one.
+They also allow for the possiblity to add integers of arbitrary size.
 
-Generally languages provide floating point data types that adhere to the "IEEE 754 - Floating-Point" arithmetic standard [@ieee754_2019] or its ISO adoption "ISO/IEC 60559" [@iso60559_2020]. How wide that support is can be seen in @tbl-float-formats.
+### Float
+
+Most languages provide floating point data types that adhere to the _IEEE-754_ floating point arithmetic standard [@ieee754_2019] or its ISO adoption _ISO-60559_ [@iso60559_2020].
+Some examples can be seen in @tbl-float-formats.
+C and C++ are marked with a question mark as their standards do not requiere the use of _IEEE-754_.
 
 | Size [Bits] | Js/Ts  | Python | PHP   | Java   | C#     | C, C++ | Go      | Rust |
 | :---------: | ------ | ------ | ----- | ------ | ------ | ------ | ------- | ---- |
@@ -225,14 +219,9 @@ Generally languages provide floating point data types that adhere to the "IEEE 7
 |     64      | ---    | ---    | ---   | double | double | ?      | float64 | f64  |
 |   32\|64    | ---    | float  | float | ---    | ---    | ---    | ---     | ---  |
 
-: Supported IEEE-754 floating point formats {#tbl-float-formats tbl-colwidths="[16,12,10,8,10,10,12,12,10]"}
+: __TODO__ Supported _IEEE-754_ floating point formats {#tbl-float-formats tbl-colwidths="[16,12,10,8,10,10,12,12,10]"}
 
-### Character
-
-- Rym:
-  - Name: char
-  - valid utf-8 character
-  - space: 1 byte?
+Rym -- again just like Rust -- provides the "f32" and "f64" types to allow for possible additions and changes in the future.
 
 ### String
 
@@ -254,11 +243,6 @@ impl Add for [char] {
 }
 ```
 
-### Algebraic Data Types
-
-Algebraic data types (ADTs) in Rym provide a way to create custom, named data types that can be used in the same way as other built-in types.
-ADTs can be constructed from primitive types or other ADTs, and can be used to model complex data structures in a type-safe manner.
-
 ## Functions
 
 Functions are first-class citizens in Rym, just like values and data types.
@@ -266,7 +250,83 @@ They can be used as arguments, assigned to variables, and function calls are exp
 Functions can return values and take parameters, making them powerful tools for writing modular, reusable code.
 See @sec-appendix-functions for examples of how to define and use them.
 
-## Closures
+In Rym it will be possible to define a function by using the _func_ keyword followed by a name for the function,
+a comma separated list of parameters and their respective types as well as the return type of the function.
+
+This means that a function with multiple parameters will generally look like this:
+
+```rym
+func name(parameter0: Type0, parameter1: Type1) -> ReturnType {
+  // ..
+}
+```
+
+Just like in any _C-style_ language this function may be called by specifying the name of the function followed by a list of arguments within parentheses separated by commas.
+The arguments must match the types of the parameters defined in the function definition.
+The previous example function would be called like this:
+
+```rym
+const result = name(argument0, argument1)
+```
+
+This would assign the return value to the variable result.
+
+### Scope
+
+<!-- TODO -->
+
+When a function is called, the variables and values in the current scope are temporarily suspended and a new scope is created for the function.
+This new scope contains the parameters of the function as variables, initialized with the values of the arguments passed to the function.
+The function body is then executed within this new scope, and any variables or values defined within the function are only accessible within this scope.
+When the function execution is complete, the function scope is destroyed and the original scope is restored.
+
+For example, consider the following code:
+
+```rym
+const x = 5
+
+func changeX(x: Int) -> Int {
+  const y = 10
+  return x + y
+}
+
+const result = changeX(3) // result = 13
+```
+
+When the function changeX is called, a new scope is created containing the parameter newX initialized with the value 3. The variable y is also defined within this scope and initialized with the value 10. The function body is executed, and the value of newX + y (13) is returned. The function scope is then destroyed and the original scope is restored, resulting in the value 13 being assigned to the variable result. The variable y is not accessible outside of the function scope and therefore does not affect the value of x.
+
+### Returning
+
+In the Rym programming language, a function may be defined with a return type, which specifies the type of value that will be returned by the function. The return type is specified after the arrow symbol (->) in the function definition, followed by the function body in curly braces ({}). The function body may contain any number of statements and expressions, and the value of the final expression in the function body will be returned as the result of the function.
+
+For example, consider the following function definition:
+
+```rym
+func multiply(x: Int, y: Int) -> Int {
+  const result = x * y
+  return result
+}
+```
+
+In this example, the function multiply takes two integer arguments, x and y, and returns the result of their multiplication as an integer. The function body contains a single statement that defines a local variable result and initializes it with the value of x * y. The return statement then specifies that the value of result should be returned as the result of the function.
+
+However, it is not necessary to specify a return statement in every function. If the return type of the function is specified, the value of the final expression in the function body will be returned automatically. For example, the following function is equivalent to the one above:
+
+```rym
+func multiply(x: Int, y: Int) -> Int {
+  x * y
+}
+```
+
+In this case, the value of the expression x * y is returned as the result of the function, without the need for a separate return statement. This allows for more concise and readable code, as the return statement is often unnecessary when the function body contains only a single expression.
+
+### Closures
+
+Rym is trying to combine imperative and declarative approaches of programming and already allows functions to used like data.
+But function declarartions are statements and cannot be used as expressions.
+This can become very cumbersome if functions should be passed into a function call as they first have to be defined and then referenced via their name.
+Closure solve this problem, as they are expressions and allow functions to be created inline.
+Their syntax is based on the function declarations of Rym and can be generalized like this:
 
 - closures: [@sebesta_2019 S. 665]
 
@@ -281,12 +341,20 @@ func plus_three(i: int) -> int {
   i + 3
 }
 
-func main() {
-  const specific_twice = twice(plus_three)
-
-  print(f"{specific_twice(7)}") // 13
-}
+const plus_three_twice = twice(plus_three)
+print(f"{plus_three_twice(10)}") // 16
 ```
+
+<!--
+```rym
+func twice(f: func(int) -> int) -> func(int) -> int {
+  x -> f(f(x))
+}
+
+const plus_three_twice = twice(i -> i + 3)
+print(f"{plus_three_twice(10)}") // 16
+```
+-->
 
 <!-- ## Operators -->
 ## Operatoren
@@ -315,24 +383,24 @@ counter += 1
 print(counter) // "2\n"
 ```
 
-## Control Flow
+<!-- ## Control Flow
 
-<!--
+
 Although Rym can be used to model control flow in a purely functional way it also supports imperative control flow expressions like (if, else, match) and loops (loop, while, for).
 Examples for how these expressions are used can be found in @sec-appendix-expressions.
--->
+
 Obwohl Rym zur Beschreibung des Kontrollflusses in einer rein funktionalen Weise verwendet werden kann,
 unterstützt es auch imperative Kontrollflussausdrücke wie (if, else, match) und Schleifen (loop, while, for).
 Beispiele für die Verwendung dieser Ausdrücke können in @sec-appendix-expressions nachgelesen werden.
 
-<!--
+
 Furthermore Rym provides a mechanism for early exits from loops through the use of break statements.
 The continue statement ends the current iteration of a loop and jumps starts the next one.
 Return statements are used for early returns out of functions.
--->
+
 Außerdem bietet Rym einen Mechanismus zum vorzeitigen Verlassen von Schleifen durch die Verwendung von break-Anweisungen.
 Die continue-Anweisung beendet die aktuelle Iteration einer Schleife und springt in die nächste.
-Return-Anweisungen werden für das vorzeitige Verlassen von Funktionen verwendet.
+Return-Anweisungen werden für das vorzeitige Verlassen von Funktionen verwendet. -->
 
 ## Tooling and Ecosystem
 

@@ -140,7 +140,7 @@ For example, in some languages that do not provide a Boolean type the following 
 Die Lesbarkeit kann noch weiter verbessert werden,
 indem den Benutzern die Möglichkeit gegeben wird,
 geeignete Datentypen und Datenstrukturen zu definieren.
-Dies gilt insbesondere für Booleans und Enumerationen.
+Dies gilt insbe-sondere für Booleans und Enumerationen.
 [@sebesta_2019 S. 47]
 In einigen Sprachen, die keinen Boolean-Typen bieten,
 könnte z.B. der folgende Code verwendet werden:

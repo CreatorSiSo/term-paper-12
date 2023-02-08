@@ -32,7 +32,10 @@ This would assign the return value to the variable result.
 
 <!-- TODO -->
 
-When a function is called, the variables and values in the current scope are temporarily suspended and a new scope is created for the function. This new scope contains the parameters of the function as variables, initialized with the values of the arguments passed to the function. The function body is then executed within this new scope, and any variables or values defined within the function are only accessible within this scope. When the function execution is complete, the function scope is destroyed and the original scope is restored.
+When a function is called, the variables and values in the current scope are temporarily suspended and a new scope is created for the function.
+This new scope contains the parameters of the function as variables, initialized with the values of the arguments passed to the function.
+The function body is then executed within this new scope, and any variables or values defined within the function are only accessible within this scope.
+When the function execution is complete, the function scope is destroyed and the original scope is restored.
 
 For example, consider the following code:
 
@@ -49,12 +52,6 @@ const result = changeX(3) // result = 13
 
 When the function changeX is called, a new scope is created containing the parameter newX initialized with the value 3. The variable y is also defined within this scope and initialized with the value 10. The function body is executed, and the value of newX + y (13) is returned. The function scope is then destroyed and the original scope is restored, resulting in the value 13 being assigned to the variable result. The variable y is not accessible outside of the function scope and therefore does not affect the value of x.
 
-<!-- func print(args: ..[impl Display]) -> @Io {
-  for arg in args {
-    stdout.write(Debug.fmt(arg))
-  }
-} -->
-
 ## Returning
 
 In the Rym programming language, a function may be defined with a return type, which specifies the type of value that will be returned by the function. The return type is specified after the arrow symbol (->) in the function definition, followed by the function body in curly braces ({}). The function body may contain any number of statements and expressions, and the value of the final expression in the function body will be returned as the result of the function.
@@ -63,7 +60,7 @@ For example, consider the following function definition:
 
 ```rym
 func multiply(x: Int, y: Int) -> Int {
-  let result = x * y
+  const result = x * y
   return result
 }
 ```
