@@ -20,7 +20,7 @@ werden die folgende Kriterien häufig genannt.
 [@stansifer_1995 S. 60; @sebesta_2019 S. 41]
 
 <!-- ## Readability -->
-## Lesbarkeit
+## Lesbarkeit {#sec-readability}
 
 <!--
 One key criteria for judging a programming language is the ease with which programs can be read and understood.
@@ -161,11 +161,14 @@ und kann in einer Sprache mit Boolean-Typen wesentlich klarer dargestellt werden
 const use_timeout = true
 ```
 
-### Syntax
+### Syntax {#sec-syntax}
 
 <!-- Syntax greatly impacts the readability of programs.
 It refers to the rules and structure of a programming language.
 These rules define how a program must be written including the arrangement and formation of statements, expressions, keywords, punctuation. -->
+
+<!-- As is advantageous if not everything is completely new when getting to know the language,
+as it can then be learned more quickly if you already know how to program. -->
 
 <!--
 The readability of a program is greatly influenced by its syntax.
@@ -184,7 +187,7 @@ Auch hier ist es sinnvoll, die Grundsätze der Einfachheit und Orthogonalität a
 Daher sollten Elemente mit ähnlicher Bedeutung ähnlich geschrieben werden.
 Zu viele Alternativen, um Code mit der gleichen Bedeutung zu schreiben, verstoßen ebenfalls gegen die Orthogonalität.
 Letztlich hängt die Lesbarkeit einer Sprache jedoch von individuellen Vorlieben und Vorkenntnissen ab.
-Die Übernahme von Teilen der Syntax bekannter Sprachen in eine neue Sprache ist daher sehr sinnvoll.
+Die Übernahme von Teilen der Syntax bekannter Sprachen in eine neue Sprache ist demnach sehr sinnvoll, da diese Teile bereits vielen bekannt sind.
 [@stansifer_1995 S. 61ff; @sebesta_2019 S. 48f]
 
 <!-- ## Writability -->

@@ -1,7 +1,7 @@
 # Functions
 
 __TODO refer to characteristics and analysis__;
-__TODO compare function keywords: https://twitter.com/code_report/status/1325472952750665728/photo/1__
+__TODO compare function keywords: https://twitter.com/code_report/status/1325472952750665728__
 
 Functions are one of the most important building blocks of many programming languages.
 

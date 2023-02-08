@@ -220,7 +220,8 @@ Java, C# und viele andere Sprachen haben ähnliche, wenn auch weniger leistungsf
 und heißens oft "interfaces".
 [@haskell_spec S. 44f; @swift_book_protocols; @iso_14882_2020 S. 526; @rust_ref_traits; @java_spec_interfaces; @csharp_spec_interfaces]
 
-### Null Safety
+<!-- ### Null Safety -->
+### Null Sicherheit
 
 <!--
 Tony Hoare considers calling null references, which he added to ALGOL W in 1965, his "billion dollar mistake" [@infoq_null_ref].
@@ -233,7 +234,8 @@ Tony Hoare betrachtet die von ihm 1965 zu ALGOL W hinzugefügten Nullreferenzen 
 "Milliarden-Dollar-Fehler" [@infoq_null_ref]. Sie können das Nichtvorhandensein eines Wertes darstellen, aber auch
 schwer zu findende Fehler verursachen, wenn sie nicht richtig behandelt werden. Um dieses Problem zu lösen, haben viele Programmiersprachen
 Sicherheitsfunktionen eingeführt, die es den Entwicklern erleichtern, mit Null-Pointern umzugehen und sie zu vermeiden.
-Dazu gehören optionale Klassen, Typen, Enums und Typ-Hinweise. Der Null-Coalescing-Operator und der optionale Verkettungsoperator werden ebenfalls häufig verwendet, um diese Probleme zu lösen und den Quellcode zu verkürzen.
+Dazu gehören optionale Klassen, Typen, Enums und Typ-Hinweise.
+Der Null-Coalescing-Operator und der optionale Verkettungsoperator werden ebenfalls häufig verwendet, um diese Probleme zu umgehen und den Quellcode zu verkürzen.
 <!-- TODO Citation needed -->
 
 <!-- - null safety

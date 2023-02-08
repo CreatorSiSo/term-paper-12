@@ -1,7 +1,7 @@
 <!-- Rym Overview -->
 # Rym Überblick
 
-Most of the following structures are automatically imported for every file.
+<!-- Most of the following structures are automatically imported for every file. -->
 
 <!-- ## Data Types -->
 ## Datentypen
@@ -14,7 +14,7 @@ use bool.true
 use bool.false
 ```
 
-### Integers
+### Ganzzahlen
 
 ```rym
 type int
@@ -25,7 +25,7 @@ type usize
 0 44 1834
 ```
 
-### Floats
+### Dezimalzahlen
 
 ```rym
 type float
@@ -58,7 +58,7 @@ type Vec3 = {
 const pos = Vec3 { x: 2.5, y: -1.2, z: 0.0, }
 ```
 
-### Enumerations / Union Types
+### Enumerationen / Union Typen
 
 ```rym
 type EnumName =
@@ -69,14 +69,19 @@ type EnumName =
 const variant = EnumName.VariantN
 ```
 
-There is also a shorter syntax for small enums.
+<!-- There is also a shorter syntax for small enums: -->
+Für kleine Enumerationen gibt es auch eine kürzere Syntax:
 
 ```rym
 type SmallEnum = VerySmall | ActuallyLarge
 ```
-
+<!--
 Each variant can be associated with a specific value.
-These values are automatically chosen if not defined and are usually represented by an integer.
+These values are automatically chosen if not defined and are usually represented by an integer:
+-->
+Jede Variante kann mit einem bestimmten Wert verknüpft werden.
+Diese Werte werden automatisch ausgewählt, wenn sie nicht definiert sind,
+und werden normalerweise durch eine Integerzahl dargestellt:
 
 ```rym
 type EnumName =
@@ -89,9 +94,11 @@ const repr = variant_n as uint       // 156
 const variant_2 = 2 as EnumName      // EnumName.Variant2
 ```
 
-### Builtin Enumerations
+<!-- ### Builtin Enumerations -->
+### Eingebaute Enumerationen
 
-The Option type is used for something that might not have a value.
+<!-- The Option type is used for something that might not have a value. -->
+Der Option-Typ wird für etwas verwendet, das möglicherweise keinen Wert hat:
 
 ```rym
 type Option<T> =
@@ -102,7 +109,8 @@ use Option.Some
 use Option.None
 ```
 
-The Result type is used to specify that something can either have a value or contain an error.
+<!-- The Result type is used to specify that something can either have a value or contain an error. -->
+Der Result-Typ wird verwendet, um anzugeben, dass etwas entweder einen Wert oder einen Fehler enthalten kann:
 
 ```rym
 type Result<T, E> =
@@ -117,27 +125,31 @@ use Result.Err
 
 ### Block
 
-Block expression evaluate to the value of their last statement:
+<!-- Block expression evaluate to the value of their last statement: -->
+Blockausdrücke geben den Wert ihrer letzten Anweisung zurück:
 
 ```rym
 const outer_index = 0
 
-// evaluates to "One"
+// gibt "One" zurück
 {
   const array = ["One", "Two", "Three"]
   array[outer_index]
 }
 ```
+<!-- // evaluates to "One" -->
 
-They, like any other expression, can be used as an initializer for a variable:
+<!-- They, like any other expression, can be used as an initializer for a variable: -->
+Sie können, wie jeder andere Ausdruck, als Initialisierer für eine Variable verwendet werden:
 
 ```rym
 const outer_index = 0
 
-const one_str = {
+const str = {
   const array = ["One", "Two", "Three"]
   array[outer_index]
 }
+print(str) // "One\n"
 ```
 
 ### If..Else
@@ -171,7 +183,8 @@ if const Some(value) = maybe_value {
 
 ### Match
 
-Used to destructure complex data types like enumerations.
+<!-- Used to destructure complex data types like enumerations: -->
+Dient der Destrukturierung komplexer Datentypen wie Enumerationen:
 
 ```rym
 match maybe_value {
@@ -180,7 +193,8 @@ match maybe_value {
 }
 ```
 
-Works just as well with structures.
+<!-- And works just as well with structures. -->
+Und funktioniert genauso gut mit Strukturen:
 
 ```rym
 match pos {
@@ -193,7 +207,8 @@ match pos {
 }
 ```
 
-It is also possible to use "_" as a wildcard for catching all remaining cases.
+<!-- It is also possible to use "_" as a wildcard for catching all remaining cases. -->
+Es ist auch möglich, "_" als Platzhalter zu verwenden, um alle übrigen Fälle zu erfassen:
 
 ```rym
 match pos {
@@ -226,16 +241,18 @@ mut_name += "Universe!"
 print(const_name, mut_name) // "Hello World! Hello Universe!/n"
 ```
 
-Uninitialized variables must have a value assigned to them before they can be used.
+<!-- Uninitialized variables must have a value assigned to them before they can be used. -->
+Nicht initialisierte Variablen müssen mit einem Wert versehen werden, bevor sie verwendet werden können:
 
 ```rym
 const name
 
 if condition { name = "Simon" } else { name = "Robert" }
 
-// allowed because name always has a value
+// erlaubt, da "name" immer einen Wert hat
 print(name)
 ```
+<!-- // allowed because name always has a value -->
 
 ### Imports / Use
 
@@ -297,12 +314,8 @@ func concat(..strings: [string], sep = "") -> string {
 
 const name = "Mr. Walker"
 
-// all arguments must be of type string
-// they are collected into the strings array
 concat("Hello ", name, "!") // "Hello Mr. Walker!"
 
-// arguments defined after the variable argument
-// must be passed in by name
 concat(2.to_string(), true.to_string(), name, sep: ", ") // "2, true, Mr. Walker"
 concat(sep: ", ", 2.to_string(), true.to_string(), name) // "2, true, Mr. Walker"
 ```
@@ -328,10 +341,14 @@ print(true, 2, "three", sep: ", ") // "true, 2, three\n"
 
 ### Implementations
 
-Every type can have several "impl" blocks,
+<!-- Every type can have several "impl" blocks,
 that must be located in the same module as the type.
 They hold static/non-static methods and internal types.
-These methods are private by default and can be made public with the "pub" keyword.
+These methods are private by default and can be made public with the "pub" keyword. -->
+Jeder Typ kann mehrere "impl"-Blöcke haben,
+welche sich im selben Modul wie der Typ befinden müssen.
+Sie enthalten statische/nicht-statische Methoden und interne Typen.
+Standardmäßig sind Methoden privat und können mit dem Schlüsselwort "pub" öffentlich gemacht werden:
 
 ```rym
 impl bool {
@@ -343,7 +360,8 @@ impl bool {
 
 ### Traits / Type Classes
 
-Traits are used to define common functionality between types.
+<!-- Traits are used to define common functionality between types: -->
+Traits werden verwendet, um gemeinsame Funktionen zwischen Typen zu definieren:
 
 ```rym
 trait Default {
@@ -351,7 +369,8 @@ trait Default {
 }
 ```
 
-They are implemented for specific types through separate implementations.
+<!-- They are implemented for specific types through separate implementations: -->
+Sie werden für bestimmte Typen durch separate Implementierungen umgesetzt:
 
 ```rym
 impl Default for bool { func default() -> Self { false } }
@@ -363,7 +382,8 @@ impl Default for string { func default() -> Self { "" } }
 impl<T> Default for [T] { func default() -> Self { [] } }
 ```
 
-This is also how iterators are specified in Rym.
+<!-- This is also how iterators are specified in Rym: -->
+Auf diese Weise werden auch Iteratoren in Rym definiert:
 
 ```rym
 trait Iterator {
@@ -373,7 +393,8 @@ trait Iterator {
 }
 ```
 
-These iterators can be used to implement a simple couner like the following or to go over all items of an array one by one.
+<!-- These iterators can be used to implement a simple counter like the following or to go over all items of an array one by one. -->
+Diese Iteratoren können verwendet werden, um einen einfachen Zähler wie den folgenden zu implementieren oder um beispielsweise alle Elemente eines Arrays einzeln zu durchlaufen.
 
 ```rym
 type Counter = { count: usize, max: usize }

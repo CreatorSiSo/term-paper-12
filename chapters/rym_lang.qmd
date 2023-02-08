@@ -16,29 +16,51 @@ ist die derzeitige Implementierung ein Interpreter.
 Diese Beschreibung macht jedoch keine Annahmen über die
 Implementierung und ermöglicht eine zukünftige kompilierte Version.
 
-## Syntax {#sec-syntax}
+## Syntax
 
-Which syntax the user of a language prefers is their subjective opinion and it is not possible to give a subjective best answer.
-But most programmers are used to a C-style syntax which is why Rym,
-like Kotlin, Rust, Dart, and others simply adapts it.
-Actual functional changes happen at the semantic level.
+<!--
+The syntax follows the aspects mentioned in @sec-readability, especially @sec-syntax.
+Rym can be considered part of the C-style languages, as it combines syntax from C, Go, Rust, F# and others.
+The typical braces -- "{" and "}" -- are used for structure types and to enclose blocks of statements.
+Function definitions begin with "func", just as they do in Go or Swift, and the type declarations are very similar to those in F#.
+-->
+Die Syntax folgt den in @sec-readability genannten Aspekten, insbesondere aus @sec-syntax.
+Rym kann als Teil der C-ähnlichen Sprachen betrachtet werden, da es die Syntax von C, Go, Rust, F# und anderen verbindet.
+Die typischen geschweiften Klammern -- "{" und "}" -- werden für Struktur-Typen und zum Umschließen von Anweisungsblöcken verwendet.
+Funktionsdefinitionen beginnen mit "func", genau wie in Go oder Swift, und die Typ-Deklarationen sind denen in F# sehr ähnlich.
+[@go_spec; @swift_book_functions; @fsharp_spec S. 39f]
 
-- __TODO__
-  - naming: @sebesta_2019 S. 344
-  - simple
-  - expressive
-  - flat learning curve
-  - familiar syntax
-  - `{}` is a block (vs. `end`/`end if`)
-  - might not make as much sense for non-programmers
-  - comparable with the way that `+` and other math notation could be considered less readable then `plus`
+<!--
+However, it differs from typical C-style syntax in one major way: It is primarily expression-based, like Rust and F#.
+This means that most forms of value-producing or effect-causing evaluation are controlled by the syntax category of expressions.
+In contrast, statements are mostly used to contain and explicitly sequence the evaluation of expressions.
+-->
+In einem Punkt gibt es jedoch große Unterschiede zur typischen C-Syntax: Rym ist, wie Rust und F#, primär ausdrucksbasiert.
+Das bedeutet, dass die meisten Formen der wertbildenden oder effektverursachenden Auswertung durch die Syntaxkategorie der Ausdrücke gesteuert werden.
+Im Gegensatz dazu werden Anweisungen meist dazu verwendet, eine spezifische Reihe an Ausdrücken zu enthalten.
+<!-- TODO explain why expressions are useful -->
+
+<!--
+Rym also has strict naming rules.
+Names can only begin with the ASCII characters "a-z", "A-Z" or "\_". After that, the numbers "0-9" are also allowed.
+This makes it easier for users to work together because the language forces them to write similar code.
+Variable, function and module names are written in _snake\_case_,
+user-defined types must use _PascalCase_ and the core built-in types such as "bool" are single lowercase words.
+Snake case is used because the underscore improves readability.
+Pascal case distinguishes types from values.
+-->
+Rym hat auch strikte Regeln für die Namensgebung.
+Namen dürfen nur mit den ASCII-Zeichen "a-z", "A-Z" oder "\_" beginnen. Anschließend sind auch die Zahlen "0-9" erlaubt.
+Dies erleichtert den Benutzern die Zusammenarbeit, da die Sprache sie veranlasst, ähnlichen Code zu schreiben.
+Variablen-, Funktions- und Modulnamen werden in _snake\_case_ geschrieben,
+benutzerdefinierte Typen müssen in _PascalCase_ geschrieben werden und die eingebauten Standardtypen wie "bool" bestehen aus einem kleinge-schriebenen Wort.
+Snake-Case wird verwendet, da der Unterstrich die Lesbarkeit verbessert und Pascal-Case Typen von Werten unterscheidet.
+[@sebesta_2019 S. 344fff]
 
 <!-- __TODO Explain difference between syntax and semantics__ -->
 
-<!-- As is advantageous if not everything is completely new when getting to know the language,
-as it can then be learned more quickly if you already know how to program. -->
-
-## General Structure {#sec-general-structure}
+<!-- ## Program Structure -->
+## Programmstruktur
 
 Rym's execution model is based on packages, which can be either a library or an executable.
 Packages containing a "main" function can be run as standalone programs, while others are reusable libraries.
@@ -58,7 +80,7 @@ A look at the typical "Hello World!" script shows what this transformation looks
 print("Hello World!")
 ```
 
-It is just as simple as a Python version that does the same thing, but actually corresponds to this module file _(main.rym)_ :
+It is just as simple as a Python script that prints "Hello World!\n", but actually gets transformed to this module file _(main.rym)_ :
 
 ```rym
 func main() -> () {
@@ -171,3 +193,5 @@ Rym also provides a mechanism for early exits from loops or functions through th
 Rym has a growing ecosystem of tools and libraries that make it easier to develop, test, and deploy applications.
 These tools include IDEs, text editors with Rym plugins, build tools, package managers, and libraries for various domains.
 Rym's tooling and ecosystem are designed to be flexible and allow for easy integration with other systems and technologies.
+
+{{< pagebreak >}}
