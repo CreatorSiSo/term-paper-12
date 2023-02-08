@@ -298,11 +298,6 @@ impl Add for [char] {
 
 ## Functions
 
-Functions are first-class citizens in Rym, just like values and data types.
-They can be used as arguments, assigned to variables, and function calls are expressions.
-Functions can return values and take parameters, making them powerful tools for writing modular, reusable code.
-See @sec-appendix-functions for examples of how to define and use them.
-
 In Rym it is be possible to define a function by using the _func_ keyword followed by a name for the function,
 a comma separated list of parameters and their respective types as well as the return type of the function.
 This means that a function with multiple parameters will generally look like this:
@@ -325,8 +320,6 @@ This would assign the return value to the variable result.
 
 ### Scope
 
-<!-- TODO -->
-
 When a function is called, the variables and values in the current scope are temporarily suspended and a new scope is created for the function.
 This new scope contains the parameters of the function as variables, initialized with the values of the arguments passed to the function.
 The function body is then executed within this new scope, and any variables or values defined within the function are only accessible within this scope.
@@ -345,11 +338,17 @@ func changeX(x: Int) -> Int {
 const result = changeX(3) // result = 13
 ```
 
-When the function changeX is called, a new scope is created containing the parameter newX initialized with the value 3. The variable y is also defined within this scope and initialized with the value 10. The function body is executed, and the value of newX + y (13) is returned. The function scope is then destroyed and the original scope is restored, resulting in the value 13 being assigned to the variable result. The variable y is not accessible outside of the function scope and therefore does not affect the value of x.
+When the function "changeX(3)" is called, a new scope is created containing the parameter "x" initialised with the value "3".
+The outer variable "x" is not accessible inside the function scope and therefore does not affect the value of x.
+The variable "y" is also defined within this scope and initialised with the value 10.
+The body of the function is executed and the value of "x + y" (13) is returned.
+The function scope is then destroyed and the original scope is restored, resulting in the value 13 being assigned to the variable result.
 
 ### Returning
 
-In the Rym programming language, a function may be defined with a return type, which specifies the type of value that will be returned by the function. The return type is specified after the arrow symbol (->) in the function definition, followed by the function body in curly braces ({}). The function body may contain any number of statements and expressions, and the value of the final expression in the function body will be returned as the result of the function.
+In the Rym programming language, a function must be defined with a return type, which specifies the type of value that will be returned by the function.
+The return type is specified after the arrow symbol "->"" in the function definition.
+The function body may contain any number of statements and expressions, and the value of the last statement in the function body will be returned as the result of the function.
 
 For example, consider the following function definition:
 
@@ -360,7 +359,7 @@ func multiply(x: Int, y: Int) -> Int {
 }
 ```
 
-In this example, the function multiply takes two integer arguments, x and y, and returns the result of their multiplication as an integer. The function body contains a single statement that defines a local variable result and initializes it with the value of x * y. The return statement then specifies that the value of result should be returned as the result of the function.
+In this example, the function _multiply_ takes two integer arguments, x and y, and returns the result of their multiplication as an integer. The function body contains a single statement that defines a local variable result and initializes it with the value of x * y. The return statement then specifies that the value of result should be returned as the result of the function.
 
 However, it is not necessary to specify a return statement in every function. If the return type of the function is specified, the value of the final expression in the function body will be returned automatically. For example, the following function is equivalent to the one above:
 
