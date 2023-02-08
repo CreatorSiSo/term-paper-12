@@ -1,5 +1,5 @@
 <!-- # Concept of a modern programming language -->
-# Konzept einer modernen Programmiersprache
+# Konzept einer Programmiersprache der nächsten Generation
 
 <!--
 Rym is a general purpose language designed to work at a level above systems

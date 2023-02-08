@@ -42,7 +42,7 @@ crossref:
 #   tbl-title: Tabelle # (default is "Table")
 #   # title-delim: (default is ":")
 
-toc: false
+toc: true
 toc-depth: 2
 number-sections: true
 

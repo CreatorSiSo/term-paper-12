@@ -358,6 +358,8 @@ impl bool {
 }
 ```
 
+{{< pagebreak >}}
+
 ### Traits / Type Classes
 
 <!-- Traits are used to define common functionality between types: -->
@@ -416,5 +418,3 @@ print(counter.next()) // Some(2)
 print(counter.next()) // Some(3)
 print(counter.next()) // None
 ```
-
-{{< pagebreak >}}
