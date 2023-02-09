@@ -3,8 +3,13 @@
 
 ## Factorial
 
+<!--
 Two possible implementations for calculating factorials.
 Pseudo code from Wikipedia:
+-->
+Zwei mögliche Implementierungen für die Berechnung von Fakultäten.
+Pseudocode von Wikipedia [@wikipedia_factorial]:
+
 ```
 define factorial(n):
   f := 1
@@ -37,11 +42,10 @@ func factorial(n: uint) -> uint {
 
 ## Find Summands {#sec-appendix-find-summands}
 
+<!-- Function for finding two items in a sorted list, that add up to the given sum. -->
+Funktion zum Finden von zwei Elementen in einer sortierten Liste, die die angegebene Summe ergeben.
+
 ```rym
-/// Function for finding two items in a list,
-/// that add up to the given sum.
-///
-/// numbers array must be sorted
 func summands(numbers: [i32], sum: i32) -> Option<[usize; 2]> {
   mut low = 0
   mut high = numbers.len() - 1
