@@ -126,7 +126,7 @@ Examples for creating variables can be found in @sec-appendix-variables.
 -->
 Variablen in Rym sind entweder unveränderlich, was vorzuziehen ist, oder veränderbar.
 Die Schlüsselwörter "const" und "mut" können verwendet werden, um eine neue Variable zu erstellen.
-Beispiele für die Erstellung von Variablen finden Sie in @sec-appendix-variables.
+Beispiele für die Erstellung von Variablen sind in @sec-appendix-variables zu finden.
 
 <!-- ## Data Types -->
 ## Datentypen
@@ -150,7 +150,7 @@ The unit type originated in functional languages, but is very similar to the voi
 It is the exact value that functions and expressions without a result return.
 -->
 Der Unit-Typ hat seinen Ursprung in funktionalen Sprachen, ist aber dem void-Typ von C, C++, JavaScript usw. sehr ähnlich.
-Er kann hat genau einen Wert und wird von Funktionen und Ausdrücken ohne Ergebnis zurückgeben.
+Er hat genau einen Wert und wird von Funktionen und Ausdrücken ohne Ergebnis zurückgeben.
 
 <!-- ### Boolean Type -->
 ### Booleans
@@ -198,7 +198,7 @@ Da dieses Detail unwichtig ist, spezifiziert Rym nicht, wie Boolesche Werte zu s
 {{< pagebreak >}}
 
 <!-- ### Boolean Operations -->
-### Benutzung von Booleans
+### Verwedung von Booleans
 
 <!-- A Boolean value may be created using the "true" or "false" literals. -->
 Ein Boolescher Wert kann mit den Begriffen "true" oder "false" erstellt werden.
@@ -298,7 +298,7 @@ Dazwischen können alle in UTF-8 speicherbaren Zeichen stehen.
 
 Für spezielle unsichtbare Zeichen, wie Zeileinumbrüche oder Tabs gibt es spezialle Sequenzen, die mit "\\" beginnen.
 Sie verbessern die Lesbarkeit dieser Zeichen.
-z.B. steht "\\n" im oben zu sehenden Code für einen Zeilenumbruch^["\\n" stellt nur für Unix-Systeme einen vollen Zeilenumbruch dar, unter Windows muss "\\r\\n" benutzt werden.].
+Beispiels-weise steht "\\n" im oben zu sehenden Code für einen Zeilenumbruch^["\\n" stellt nur für Unix-Systeme einen vollen Zeilenumbruch dar, unter Windows muss "\\r\\n" benutzt werden.].
 
 <!--
 - Rym:
@@ -334,8 +334,8 @@ impl Add for [char] {
 
 Rym erlaubt neben den bereits erwähnten primitiven Datentypen auch die Verwendung komplexer Typen.
 Zu diesen Typen gehören Arrays, die eine Liste von Elementen desselben Typs darstellen.
-Vereinigungsarten oder auch Aufzählungen werden verwendet, um darzustellen, dass ein Wert verschiedene Typen haben kann.
-Strukturen können schließlich verwendet werden, um verschiedene Datentypen in einen neuen Typ zu kombinieren.
+Vereinigungstypen oder auch Enumerationen werden verwendet, um darzustellen, dass ein Wert verschiedene Typen haben kann.
+Strukturen können schließlich verwendet werden, um verschiedene Datentypen in einem Typ zu kombinieren.
 Beispiele für die Erstellung und Verwendung verschiedener komplexer Datentypen finden sich in @sec-appendix-structs, @sec-appendix-unions und @sec-appendix-impl.
 
 <!-- ## Functions -->
@@ -369,7 +369,9 @@ Die vorherige Beispielfunktion würde wie folgt aufgerufen werden:
 name(argument0, argument1)
 ```
 
-### Scope
+<!-- ### Scope -->
+### Speicherbereich der Funktion
+
 <!--
 When a function is called, the variables and values in the current scope are temporarily suspended and a new scope is created for the function.
 This new scope contains the parameters of the function as variables, initialised with the values of the arguments passed to the function.
@@ -383,7 +385,8 @@ Der Hauptteil der Funktion wird dann in diesem neuen Bereich ausgeführt, und al
 Wenn die Funktion beendet wurde, wird der Bereich der Funktion zerstört und der ursprüngliche Speicherbereich wird wiederhergestellt.
 Ein Beispiel und eine Erklärung sind in @sec-appendix-scope zu finden.
 
-### Returning
+<!-- ### Returning -->
+### Rückgaben
 
 <!--
 All functions in Rym must be defined with a return type.
@@ -433,7 +436,7 @@ This allows for more concise and readable code, as the return statement is often
 In diesem Fall wird der Wert des Ausdrucks x * y als Ergebnis der Funktion zurückgegeben, ohne dass eine separate Return-Anweisung erforderlich ist.
 Dies ermöglicht einen kürzeren und besser lesbaren Code, da die Return-Anweisung oft überflüssig ist, wenn der Funktions-körper nur einen einzigen Ausdruck enthält.
 
-Weitere Eigenschaften von Funktionen in Rym sind in @sec-appendix-functions beschrieben.
+Weitere Eigenschaften der Funktionen aus Rym sind in @sec-appendix-functions beschrieben.
 
 ### Closures, Anonyme Funktionen
 
@@ -503,7 +506,8 @@ This very typical syntactic sugar is also supported:
 In Rym gibt es zwei Kategorien von binären Operatoren.
 Diejenigen der ersten Kategorie erzeugen einen neuen Wert ^[Addition: "+" Subtraktion: "-" Multiplikation: "\*" Division: "/" Rest: "%" Und: "&" Oder: "|"] ^[Gleich: "==" Kleiner: "<" Kleiner gleich "<=" Größer ">" Größer gleich ">="] und die anderen ändern eine bestehende Variable^[Zuweisungen: "=" "+=" "-=" "*=" "/=" "%=" "&=" "|="].
 Die Zuweisungsoperatoren können nur mit Variablen verwendet werden, die als veränderbar gekennzeichnet sind.
-Die folgende sehr typische Syntax -- welche als Alternative für "++" und "--" dient -- wird ebenfalls unterstützt:
+
+Die folgende sehr typische Syntax, eine Alternative zu "++" und "--" wird ebenfalls unterstützt:
 
 ```rym
 mut counter = 0

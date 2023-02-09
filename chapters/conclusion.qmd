@@ -9,9 +9,9 @@ Immutable data structures, sound type systems and especially functional programm
 Ultimately, the future of programming languages will be shaped by the current technologies we use to help us work.
 As we move forward, it will be interesting to see what new innovations and advancements emerge in this field.
 -->
-Zusammenfassend lässt sich sagen, dass eine Programmiersprache der nächsten Generation wahrscheinlich so konzipiert sein wird, dass sie den sich ändernden Bedürfnissen von Entwicklern und der wachsenden Komplexität moderner Softwaresysteme gerecht wird.
-Mit Fortschritten in Bereichen wie künstlicher Intelligenz, Cloud Computing und Data Science werden sie wahrscheinlich einen starken Fokus darauf haben, in diesen Bereichen effizienter zu sein.
-Rym und ähnliche moderne Programmiersprachen erreichen dies durch eine intuitivere und aussagekräftigere Syntax, erhöhte Sicherheit und bessere Unterstützung für Parallelisierung.
+Zusammenfassend lässt sich sagen, dass eine Programmiersprache der nächsten Generation wahrscheinlich so konzipiert wird, dass sie den sich ändernden Bedürfnissen von Entwicklern und der wachsenden Komplexität moderner Softwaresysteme gerecht werden kann.
+Mit Fortschritten in Bereichen wie künstlicher Intelligenz, Cloud Computing und Data Science werden sie einen starken Fokus darauf haben, in diesen Bereichen effizienter zu sein.
+Rym und ähnliche moderne Programmiersprachen erreichen dies durch eine intuitive und aussagekräftige Syntax, erhöhte Sicherheit und bessere Unterstützung für Parallelisierung.
 Unveränderliche Datenstrukturen, solide Typ-Systeme und vor allem funktionale Programmierung scheinen gute Werkzeuge zu sein, um diese Ziele zu erreichen.
 Letztendlich wird die Zukunft der Programmiersprachen von den aktuellen Technologien geprägt sein, die wir und andere zur Unterstützung unserer Arbeit verwenden.
 Es wird interessant sein, zu sehen, welche neuen Innovationen und Fortschritte in diesem Bereich entstehen werden.

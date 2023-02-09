@@ -114,26 +114,14 @@ use Result.Ok
 use Result.Err
 ```
 
+{{< pagebreak >}}
+
 ## Expressions {#sec-appendix-expressions}
 
 ### Block
 
-<!-- Block expression evaluate to the value of their last statement: -->
-Blockausdrücke geben den Wert ihrer letzten Anweisung zurück:
-
-```rym
-const outer_index = 0
-
-// gibt "One" zurück
-{
-  const array = ["One", "Two", "Three"]
-  array[outer_index]
-}
-```
-<!-- // evaluates to "One" -->
-
-<!-- They, like any other expression, can be used as an initializer for a variable: -->
-Sie können, wie jeder andere Ausdruck, als Initialisierer für eine Variable verwendet werden:
+<!-- Block expression evaluate to the value of their last statement and, like any other expression, they can be used as an initializer for a variable: -->
+Blockausdrücke geben den Wert ihrer letzten Anweisung zurück und können, wie jeder andere Ausdruck, als Initialisierer für eine Variable verwendet werden:
 
 ```rym
 const outer_index = 0
@@ -165,14 +153,23 @@ if expression {
 const maybe_value = Some(2)
 if const Some(value) = maybe_value {
   print(value)
-}
-
-if const Some(value) = maybe_value {
-  print(value)
 } else {
   print("None")
 }
 ```
+
+### "?" Operator {#sec-qestion-mark-op}
+
+```rym
+func read_to_string(path: string) -> Result<string, IoError> {
+  mut file = File.open(path)?
+  mut data = ""
+  file.read_to_string(mut data)?
+  Ok(data)
+}
+```
+
+{{< pagebreak >}}
 
 ### Match
 
@@ -238,17 +235,6 @@ const plus_three_twice = twice(i -> i + 3)
 print(f"{plus_three_twice(10)}") // 16
 ```
 
-### "?" Operator {#sec-qestion-mark-op}
-
-```rym
-func read_to_string(path: string) -> Result<string, IoError> {
-  mut file = File.open(path)?
-  mut data = ""
-  file.read_to_string(mut data)?
-  Ok(data)
-}
-```
-
 ## Statements
 
 ### Variables {#sec-appendix-variables}
@@ -277,7 +263,7 @@ print(name)
 ```
 <!-- // allowed because name always has a value -->
 
-### Imports / Use
+### Use
 
 ```rym
 use std.fs.{self, File}
@@ -331,7 +317,8 @@ func changeX(x: i32) -> i32 {
 const result = changeX(3) // result = 13
 ```
 
-#### Parameter Default Values
+<!-- #### Parameter Default Values -->
+#### Standardwerte für Parameter
 
 ```rym
 func increment(num: i32, by = 1) -> i32 {
@@ -343,7 +330,8 @@ const plus_50 = increment(100, 50)     // 150
 const plus_50 = increment(100, by: 50) // 150
 ```
 
-#### Force Named Arguments
+<!-- #### Force Named Arguments -->
+#### Erzwingen von benannten Argumenten
 
 ```rym
 func testing(pos_or_named: i32, .., named: string) { }
@@ -354,7 +342,8 @@ testing(pos_or_named: 2, named: "Hello World!")
 testing(named: "Hello World!", pos_or_named: 2)
 ```
 
-#### Variable Arguments
+<!-- #### Variable Arguments -->
+#### Variable Argumente
 
 ```rym
 func concat(..strings: [string], sep = "") -> string {
@@ -445,7 +434,7 @@ trait Iterator {
 ```
 
 <!-- These iterators can be used to implement a simple counter like the following or to go over all items of an array one by one. -->
-Diese Iteratoren können verwendet werden, um einen einfachen Zähler wie den folgenden zu implementieren oder um beispielsweise alle Elemente eines Arrays einzeln zu durchlaufen.
+Diese Iteratoren können verwendet werden, um einen einfachen Zähler wie den folgenden umzusetzen oder um beispielsweise alle Elemente eines Arrays einzeln zu durchlaufen.
 
 ```rym
 type Counter = { count: usize, max: usize }

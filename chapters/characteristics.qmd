@@ -273,7 +273,7 @@ They pose a significant challenge to users of the language, as they cannot be su
 For this reason, a language should have as few of them as possible.
 -->
 Verhaltensweisen, die in der Spezifikation nicht erwähnt werden, nennt man _unspezifiziertes Verhalten_.
-_Undefiniertes Verhalten_ nennt man die Verhaltensweisen die zwar erwähnt werden, jedoch in ihrem Verhalten nicht definiert werden.
+_Undefiniertes Verhalten_ nennt man die Verhaltensweisen die zwar erwähnt werden, jedoch in ihrem Verhalten nicht definiert sind.
 Sie stellen eine große Heraus-forderung für die Benutzer der Sprache dar, da sie nicht sicher sein können, wie und ob ihr Programm ausgeführt wird.
 Aus diesem Grund sollte eine Sprache so wenige von ihnen wie möglich haben.
 [@iso_24772_1_2019 S. 21]
@@ -336,9 +336,11 @@ Many languages add keywords to this list that may be used in the future to avoid
 Eine Programmiersprache kann zukunftssicher gemacht werden, indem sie mit Blick auf Skalierbarkeit und Wartungsfreundlichkeit entwickelt wird.
 Technische Schulden können unter Kontrolle gehalten werden, indem übermäßig komplexe Konstrukte vermieden werden,
 und das Feedback von Benutzern und Entwicklern berücksichtigt wird.
+
 Grundlegende Änderungen an einer Sprache können sinnvoll sein, um grundlegende Designprobleme zu beheben oder neue, bahnbrechende Technologien einzubinden.
 Solche Änderungen müssen jedoch sorgfältig durchgeführt werden, da sie zu Problemen mit der Rückwärts-kompatibilität führen können.
 Die Auswirkungen von Änderungen können abgeschwächt werden, indem man die langfristigen Auswirkungen von Entscheidungen im Sprachdesign berücksichtigt.
+
 Ein Beispiel hierfür sind reservierte Schlüsselwörter, die Programmierer nicht zur Namensgebung verwenden dürfen.
 Viele Sprachen fügen dieser Liste Schlüsselwörter hinzu, die in der Zukunft verwendet werden könnten, um spätere grundlegende Änderungen zu vermeiden.
 [@sebesta_2019 S. 344]
