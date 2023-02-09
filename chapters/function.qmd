@@ -42,7 +42,7 @@ For example, consider the following code:
 ```rym
 const x = 5
 
-func changeX(x: Int) -> Int {
+func changeX(x: i32) -> i32 {
   const y = 10
   return x + y
 }
@@ -59,7 +59,7 @@ In the Rym programming language, a function may be defined with a return type, w
 For example, consider the following function definition:
 
 ```rym
-func multiply(x: Int, y: Int) -> Int {
+func multiply(x: i32, y: i32) -> i32 {
   const result = x * y
   return result
 }
@@ -70,7 +70,7 @@ In this example, the function multiply takes two integer arguments, x and y, and
 However, it is not necessary to specify a return statement in every function. If the return type of the function is specified, the value of the final expression in the function body will be returned automatically. For example, the following function is equivalent to the one above:
 
 ```rym
-func multiply(x: Int, y: Int) -> Int {
+func multiply(x: i32, y: i32) -> i32 {
   x * y
 }
 ```

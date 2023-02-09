@@ -14,22 +14,15 @@ use bool.true
 use bool.false
 ```
 
-### Ganzzahlen
+### Integers
 
 ```rym
-type int
-type isize
-type uint
-type usize
-
 0 44 1834
 ```
 
-### Dezimalzahlen
+### Floats
 
 ```rym
-type float
-
 0.1 -1.4
 -444. // same as -444.0
 ```
@@ -46,7 +39,7 @@ type string
 "Hello World!\n" "testing"
 ```
 
-### Structures
+### Structures {#sec-appendix-structs}
 
 ```rym
 type Vec3 = {
@@ -58,7 +51,7 @@ type Vec3 = {
 const pos = Vec3 { x: 2.5, y: -1.2, z: 0.0, }
 ```
 
-### Enumerationen / Union Typen
+### Enumerationen / Vereinigungstypen {#sec-appendix-unions}
 
 ```rym
 type EnumName =
@@ -81,7 +74,7 @@ These values are automatically chosen if not defined and are usually represented
 -->
 Jede Variante kann mit einem bestimmten Wert verknüpft werden.
 Diese Werte werden automatisch ausgewählt, wenn sie nicht definiert sind,
-und werden normalerweise durch eine Integerzahl dargestellt:
+und werden normalerweise durch Integers dargestellt:
 
 ```rym
 type EnumName =
@@ -276,7 +269,9 @@ print(data) // "What should you do if you meet a giant?
             //  Use big words.\n"
 ```
 
-### Functions {#sec-appendix-functions}
+{{< pagebreak >}}
+
+### Funktionen {#sec-appendix-functions}
 
 ```rym
 func func_name(param_1: Type1, param_2: Type2) -> ReturnType {
@@ -286,10 +281,36 @@ func func_name(param_1: Type1, param_2: Type2) -> ReturnType {
 const of_return_type = func_name(of_type_1, of_type_2)
 ```
 
+### Scope {#sec-appendix-scope}
+
+<!--
+When the function "changeX(3)" is called, a new scope is created containing the parameter "x" initialised with the value "3".
+The outer variable "x" is not accessible inside the function scope and therefore does not affect the value of x.
+The variable "y" is also defined within this scope and initialised with the value 10.
+The body of the function is executed and the value of "x + y" (13) is returned.
+The function scope is then destroyed and the original scope is restored, resulting in the value "13" being assigned to the variable "result".
+-->
+Wenn die Funktion "changeX(3)" aufgerufen wird, wird ein neuer Bereich erstellt, der den Parameter "x" enthält, welcher mit dem Wert "3" initialisiert wird.
+Die äußere Variable "x" ist innerhalb des Bereichs der Funktion nicht zugänglich und hat daher keinen Einfluss.
+Die Variable "y" wird ebenfalls in diesem Bereich definiert und mit dem Wert 10 initialisiert.
+Der Hauptteil der Funktion wird ausgeführt und der Wert von "x + y" (13) zurückgegeben.
+Anschließend wird der Funktionsbereich zerstört und der ursprüngliche Bereich wiederher-gestellt, so dass der Wert "13" der Variablen "result" zugewiesen wird.
+
+```rym
+const x = 5
+
+func changeX(x: i32) -> i32 {
+  const y = 10
+  return x + y
+}
+
+const result = changeX(3) // result = 13
+```
+
 #### Parameter Default Values
 
 ```rym
-func increment(num: int, by = 1) -> int {
+func increment(num: i32, by = 1) -> i32 {
   num + by
 }
 
@@ -301,15 +322,13 @@ const plus_50 = increment(100, by: 50) // 150
 #### Force Named Arguments
 
 ```rym
-func testing(pos_or_named: int, .., named: string) { }
+func testing(pos_or_named: i32, .., named: string) { }
 
 testing(2, named: "Hello World!")
 testing(2, named: "Hello World!")
 testing(pos_or_named: 2, named: "Hello World!")
 testing(named: "Hello World!", pos_or_named: 2)
 ```
-
-{{< pagebreak >}}
 
 #### Variable Arguments
 
@@ -345,7 +364,7 @@ print(true, 2, "three")            // "true 2 three\n"
 print(true, 2, "three", sep: ", ") // "true, 2, three\n"
 ```
 
-### Implementations
+### Implementations {#sec-appendix-impl}
 
 <!-- Every type can have several "impl" blocks,
 that must be located in the same module as the type.
@@ -383,7 +402,7 @@ Sie werden für bestimmte Typen durch separate Implementierungen umgesetzt:
 ```rym
 impl Default for bool { func default() -> Self { false } }
 
-impl Default for int { func default() -> Self { 0 } }
+impl Default for i32 { func default() -> Self { 0 } }
 
 impl Default for string { func default() -> Self { "" } }
 

@@ -65,6 +65,15 @@ Pascal-Case vereinfacht die Unterscheidung von komplexen Datentypen und Werten.
 
 <!-- __TODO Explain difference between syntax and semantics__ -->
 
+<!-- ## Comments -->
+## Kommentare
+
+Die typischen Kommentare von Sprachen im C-Stil sind auch Teil von Rym.
+Um den Rest einer Zeile auszukommentieren wird "//" benutzt.
+Wenn er über mehrere Zeilen reichen soll sind "/\*" und "\*/" die Begrenzungen für den Kommentar.
+Außerdem kann die zweite Art in einnander verschachtelt werden,
+solange die Anzahl der öffnenden "/\*" den der schlie-ßenden "\*/" entspricht.
+
 <!-- ## Program Structure -->
 ## Programmstruktur
 
@@ -144,7 +153,7 @@ Der Unit-Typ hat seinen Ursprung in funktionalen Sprachen, ist aber dem void-Typ
 Er kann hat genau einen Wert und wird von Funktionen und Ausdrücken ohne Ergebnis zurückgeben.
 
 <!-- ### Boolean Type -->
-### Boolean
+### Booleans
 
 <!--
 Boolean types are some of the simplest of all types and have been included in most general-purpose programming languages designed since 1960.
@@ -186,6 +195,8 @@ werden sie oft in der kleinsten effizient adressierbaren Speicherzelle gespeiche
 Da dieses Detail unwichtig ist, spezifiziert Rym nicht, wie Boolesche Werte zu speichern sind.
 [@sebesta_2019 S. 404f]
 
+{{< pagebreak >}}
+
 <!-- ### Boolean Operations -->
 ### Benutzung von Booleans
 
@@ -206,9 +217,7 @@ if condition { /* do something once */ }
 while condition { /* do something forever */ }
 ```
 
-{{< pagebreak >}}
-
-### Integer
+### Integers
 
 <!--
 Another very common primitive numeric data type is the integer.
@@ -254,7 +263,7 @@ Der "cstdint"-Header, Go und Rust haben Namen für diese Typen, die eindeutig an
 Rym verwendet einfach die Version von Rust, da sie die kürzeste ist.
 Diese Namen ermöglichen es auch in der Zukunft, Integers beliebiger Größe hinzuzufügen.
 
-### Float
+### Floats
 
 <!--
 Most languages provide floating point data types that adhere to the _IEEE-754_ floating point arithmetic standard [@ieee754_2019] or its ISO adoption _ISO-60559_ [@iso60559_2020].
@@ -276,14 +285,30 @@ C und C++ sind mit einem Fragezeichen gekennzeichnet, da ihre Standards die Verw
 <!-- Rym -- again just like Rust -- provides the "f32" and "f64" types to allow for possible additions and changes in the future. -->
 Rym bietet -- wieder genau wie Rust -- die Typen "f32" und "f64", um Ergänzungen und Änderungen in der Zukunft zu ermöglichen.
 
-### String
+### Strings
 
+Für die Arbeit mit Text bietet Rym den eingebauten Typ "string".
+Dieser kann verwendet werden, um UTF-8 kodierten Text zu speichern.
+Ein neuer String beginnt und endet mit "\".
+Dazwischen können alle in UTF-8 speicherbaren Zeichen stehen.
+
+<!--
 - Rym:
   - characters array: [char]
   - dynamic characters vector: String
 
 ```rym
 const const_string: [char; 12] = "Hello World!"
+
+impl<const T: usize> Index for [char; T] {
+  const func get<const I: usize>(self, index: I) -> char {
+    if I > T {
+      @diagnostic(.Error, "Out of bounds access")
+    }
+
+    self[I]
+  }
+}
 
 impl Add for [char] {
   func add(move self, move rhs: Self) -> Self {
@@ -295,76 +320,85 @@ impl Add for [char] {
   }
 }
 ```
+ -->
 
-## Functions
+### Komplexe Datentypen
 
-In Rym it is be possible to define a function by using the _func_ keyword followed by a name for the function,
-a comma separated list of parameters and their respective types as well as the return type of the function.
-This means that a function with multiple parameters will generally look like this:
+Rym erlaubt neben den bereits erwähnten primitiven Datentypen auch die Verwendung komplexer Typen.
+Zu diesen Typen gehören Arrays, die eine Liste von Elementen desselben Typs darstellen.
+Vereinigungsarten oder auch Aufzählungen werden verwendet, um darzustellen, dass ein Wert verschiedene Typen haben kann.
+Strukturen können schließlich verwendet werden, um verschiedene Datentypen in einen neuen Typ zu kombinieren.
+Beispiele für die Erstellung und Verwendung verschiedener komplexer Datentypen finden sich in @sec-appendix-structs, @sec-appendix-unions und @sec-appendix-impl.
+
+<!-- ## Functions -->
+## Funktionen
+
+<!--
+Functions in Rym are declared by the _func_ keyword followed by a name for the function,
+a comma-separated list of parameters and their respective types, and the function's return type.
+This means that a function with multiple parameters will generally look like this
+-->
+Funktionen in Rym werden mit dem Schlüsselwort _func_ deklariert, gefolgt von einem Namen für die Funktion,
+einer durch Kommata getrennten Liste von Parametern und ihren jeweiligen Typen sowie dem Rückgabetyp der Funktion.
+Eine Funktion mit mehreren Parametern sieht demnach folgendermaßen aus:
 
 ```rym
-func name(parameter0: Type0, parameter1: Type1) -> ReturnType {
+func name(param_0: Type0, param_1: Type1) -> ReturnType {
   // ..
 }
 ```
 
-Just like in any _C-style_ language this function may be called by specifying the name of the function followed by a list of arguments within parentheses separated by commas.
+<!--
+Just like in any _C-style_ language, this function can be called by specifying the name of the function, followed by a list of arguments in parentheses separated by commas.
 The arguments must match the types of the parameters defined in the function definition.
-The previous example function would be called like this:
+The previous example function would be called as follows:
+-->
+Wie in jeder Sprache im _C-Stil_ kann diese Funktion aufgerufen werden, indem man den Namen der Funktion angibt, gefolgt von einer Liste an Argumenten in Klammern, getrennt durch Kommata.
+Die Argumente müssen mit den Typen der in der Funktionsdeklaration definierten Parameter übereinstimmen.
+Die vorherige Beispielfunktion würde wie folgt aufgerufen werden:
 
 ```rym
-const result = name(argument0, argument1)
+name(argument0, argument1)
 ```
-
-This would assign the return value to the variable result.
 
 ### Scope
-
+<!--
 When a function is called, the variables and values in the current scope are temporarily suspended and a new scope is created for the function.
-This new scope contains the parameters of the function as variables, initialized with the values of the arguments passed to the function.
-The function body is then executed within this new scope, and any variables or values defined within the function are only accessible within this scope.
-When the function execution is complete, the function scope is destroyed and the original scope is restored.
-
-For example, consider the following code:
-
-```rym
-const x = 5
-
-func changeX(x: Int) -> Int {
-  const y = 10
-  return x + y
-}
-
-const result = changeX(3) // result = 13
-```
-
-When the function "changeX(3)" is called, a new scope is created containing the parameter "x" initialised with the value "3".
-The outer variable "x" is not accessible inside the function scope and therefore does not affect the value of x.
-The variable "y" is also defined within this scope and initialised with the value 10.
-The body of the function is executed and the value of "x + y" (13) is returned.
-The function scope is then destroyed and the original scope is restored, resulting in the value 13 being assigned to the variable result.
+This new scope contains the parameters of the function as variables, initialised with the values of the arguments passed to the function.
+The body of the function is then executed within this new scope, and any variables or values defined within the function are only accessible within this scope.
+When the function is complete, the function scope is destroyed and the original scope is restored.
+An example and explanation can be found in @sec-appendix-scope.
+-->
+Wenn eine Funktion aufgerufen wird, werden die Variablen und Werte im aktuellen Speicherbereich vorübergehend ausgesetzt, und es wird ein neuer Speicherbereich für die Funktion erstellt.
+Dieser neue Bereich enthält die Parameter der Funktion als Variablen, die mit den Werten der an die Funktion übergebenen Argumente initialisiert sind.
+Der Hauptteil der Funktion wird dann in diesem neuen Bereich ausgeführt, und alle in der Funktion definierten Variablen oder Werte sind außerhalb des Bereichs der Funktion nicht zugänglich.
+Wenn die Funktion beendet wurde, wird der Bereich der Funktion zerstört und der ursprüngliche Speicherbereich wird wiederhergestellt.
+Ein Beispiel und eine Erklärung sind in @sec-appendix-scope zu finden.
 
 ### Returning
 
-In the Rym programming language, a function must be defined with a return type, which specifies the type of value that will be returned by the function.
-The return type is specified after the arrow symbol "->"" in the function definition.
-The function body may contain any number of statements and expressions, and the value of the last statement in the function body will be returned as the result of the function.
+In the Rym programming language, a function must be defined with a return type, which specifies the type of value returned by the function.
+The return type is specified after the "->" arrow symbol in the function definition.
+If a return statement is encountered during execution, the value following the return statement is returned from the function call.
 
-For example, consider the following function definition:
+In the following example, the function _multiply_ takes two integer arguments, "x" and "y", and returns the result of their multiplication as an integer.
 
 ```rym
-func multiply(x: Int, y: Int) -> Int {
+func power(num: i32, pow: i32) -> i32 {
   const result = x * y
   return result
 }
 ```
 
-In this example, the function _multiply_ takes two integer arguments, x and y, and returns the result of their multiplication as an integer. The function body contains a single statement that defines a local variable result and initializes it with the value of x * y. The return statement then specifies that the value of result should be returned as the result of the function.
+The function body contains a single statement that defines a local variable result and initializes it with the value of "x * y".
+The return statement then specifies that the value of result should be returned as the result of the function.
 
-However, it is not necessary to specify a return statement in every function. If the return type of the function is specified, the value of the final expression in the function body will be returned automatically. For example, the following function is equivalent to the one above:
+However, it is not necessary to specify a return statement in every function.
+If the return type of the function is specified, the value of the last expression in the function body will be returned automatically.
+For example, the following function is equivalent to the one above.
 
 ```rym
-func multiply(x: Int, y: Int) -> Int {
+func multiply(x: i32, y: i32) -> i32 {
   x * y
 }
 ```
@@ -384,11 +418,11 @@ Their syntax is based on the function declarations of Rym and can be generalized
 To allow for easier declaration of functions inline
 
 ```rym
-func twice(f: func(int) -> int) -> func(int) -> int {
+func twice(f: func(i32) -> i32) -> func(i32) -> i32 {
   x -> f(f(x))
 }
 
-func plus_three(i: int) -> int {
+func plus_three(i: i32) -> i32 {
   i + 3
 }
 
@@ -398,7 +432,7 @@ print(f"{plus_three_twice(10)}") // 16
 
 <!--
 ```rym
-func twice(f: func(int) -> int) -> func(int) -> int {
+func twice(f: func(i32) -> i32) -> func(i32) -> i32 {
   x -> f(f(x))
 }
 

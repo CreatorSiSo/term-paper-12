@@ -42,7 +42,7 @@ func factorial(n: uint) -> uint {
 /// that add up to the given sum.
 ///
 /// numbers array must be sorted
-func summands(numbers: [int], sum: int) -> Option<[usize; 2]> {
+func summands(numbers: [i32], sum: i32) -> Option<[usize; 2]> {
   mut low = 0
   mut high = numbers.len() - 1
 
