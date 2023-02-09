@@ -94,13 +94,13 @@ where all statements are executed immediately without the need to define an entr
 Rym achieves this by simply wrapping the contents of the script in a main function.
 -->
 Quelldateien, die ein Top-Level-Modul darstellen, verwenden die Erweiterung .rym.
-Rym erlaubt auch die Ausführung von ".rys"-Skriptdateien, um schnelle Tests zu ermöglichen und Personen, die die Sprache lernen, den Einstieg zu erleichtern.
+Rym erlaubt auch die Ausführung von ".rys" Skriptdateien, um schnelle Tests zu ermöglichen und Personen, die die Sprache lernen, den Einstieg zu erleichtern.
 Diese Skripte funktionieren ähnlich wie eine JavaScript- oder Python-Datei,
 wo alle Anweisungen sofort ausgeführt werden, ohne dass eine Eingangsfunktion definiert werden muss.
 Rym erreicht dies, indem es den Inhalt des Skripts einfach in eine Hauptfunktion einbettet.
 
 <!-- A look at the typical "Hello World!" script shows what this transformation looks like in practice _(main.rys)_ : -->
-Ein Blick auf das typische "Hello World!"-Skript zeigt, wie diese Umwandlung in der Praxis aussieht _(main.rys)_ :
+Ein Blick auf das typische "Hello World!" Skript zeigt, wie diese Umwandlung in der Praxis aussieht _(main.rys)_ :
 
 ```rym
 print("Hello World!")
@@ -229,7 +229,7 @@ Unsigned types are often used for binary data. 8 bit large unsigned integers can
 Ein weiterer sehr verbreiteter Datentyp ist der Integer, welcher nur in manchen Sprachen existiert.
 Wie in @tbl-int-formats zu sehen, wird die Definition einer bestimmten Größe für Integers von noch weniger Programmiersprachen unterstützt.
 Einige Sprachen unterstützen vorzeichenlose Integer-Typen.
-Diese Typen können werden zur Speicherung von natür-lichen Zahlen und häufig für binäre Daten verwendet.
+Diese Typen werden zur Speicherung von natürlichen Zahlen und häufig auch von binären Daten verwendet.
 Acht Bit große vorzeichenlose Integers können zum Beispiel genau einen Byte darstellen.
 
 <!--
@@ -237,7 +237,7 @@ The types for C and C++ that are represented in @tbl-int-formats are using the "
 as the language standards do not specify the sizes for default integer types and leave them up to the implementation.
 Types from this standard header file are however required to that exact size.
 -->
-Die Typen für C und C++, welche in @tbl-int-formats dargestellt werden, verwenden den "cstdint"-Header,
+Die Typen für C und C++, welche in @tbl-int-formats dargestellt werden, verwenden den "cstdint" Header,
 da ihre Standards die Größen für Integers nicht vorgeben und sie der Implementierung überlassen.
 Die Typen aus der Header-Datei müssen jedoch genau diese Größe haben.
 [@cstdint_header]
@@ -259,7 +259,7 @@ The "cstdint" header, Go and Rust have names for these types that clearly indica
 Rym just uses Rust's version as it is the shortest one.
 They also allow for the future possiblity to add integers of arbitrary size.
 -->
-Der "cstdint"-Header, Go und Rust haben Namen für diese Typen, die eindeutig angeben, wie groß ein Wert ist.
+Der "cstdint" Header, Go und Rust haben Namen für diese Typen, die eindeutig angeben, wie groß ein Wert ist.
 Rym verwendet einfach die Version von Rust, da sie die kürzeste ist.
 Diese Namen ermöglichen es auch in der Zukunft, Integers beliebiger Größe hinzuzufügen.
 
@@ -296,7 +296,7 @@ Dazwischen können alle in UTF-8 speicherbaren Zeichen stehen.
 "Hello World\n"
 ```
 
-Für spezielle unsichtbare Zeichen, wie Zeileinumbrüche oder Tabs gibt es spezialle Sequenzen, die mit "\\" beginnen.
+Für spezielle unsichtbare Zeichen, wie Zeilenumbrüche oder Tabs gibt es spezialle Sequenzen, die mit "\\" beginnen.
 Sie verbessern die Lesbarkeit dieser Zeichen.
 Beispiels-weise steht "\\n" im oben zu sehenden Code für einen Zeilenumbruch^["\\n" stellt nur für Unix-Systeme einen vollen Zeilenumbruch dar, unter Windows muss "\\r\\n" benutzt werden.].
 
@@ -504,7 +504,8 @@ The assignment operators can only be used with variables that are marked as muta
 This very typical syntactic sugar is also supported:
 -->
 In Rym gibt es zwei Kategorien von binären Operatoren.
-Diejenigen der ersten Kategorie erzeugen einen neuen Wert ^[Addition: "+" Subtraktion: "-" Multiplikation: "\*" Division: "/" Rest: "%" Und: "&" Oder: "|"] ^[Gleich: "==" Kleiner: "<" Kleiner gleich "<=" Größer ">" Größer gleich ">="] und die anderen ändern eine bestehende Variable^[Zuweisungen: "=" "+=" "-=" "*=" "/=" "%=" "&=" "|="].
+Diejenigen der ersten Kategorie erzeugen einen neuen Wert ^[Addition: "+" Subtraktion: "-" Multiplikation: "\*" Division: "/" Rest: "%" Und: "&" Oder: "|"]
+,__TODO__^[Gleich: "==" Kleiner: "<" Kleiner gleich "<=" Größer ">" Größer gleich ">="] und die anderen ändern eine bestehende Variable^[Zuweisungen: "=" "+=" "-=" "*=" "/=" "%=" "&=" "|="].
 Die Zuweisungsoperatoren können nur mit Variablen verwendet werden, die als veränderbar gekennzeichnet sind.
 
 Die folgende sehr typische Syntax, eine Alternative zu "++" und "--" wird ebenfalls unterstützt:

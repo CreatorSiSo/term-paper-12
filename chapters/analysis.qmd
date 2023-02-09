@@ -64,7 +64,7 @@ Alle neueren Programmiersprachen, die in der Statistik aufgeführt sind, wurden 
 Eine dieser Sprachen ist TypeScript, eine statisch typisierte Sprache,
 die JavaScript um optionale Typ-Annotationen und andere Funktionen erweitert.
 Sie wird von Microsoft entwickelt und hat in den letzten Jahren vor allem bei großen Webentwicklungsprojekten stark an Popularität gewonnen.
-Da es sich nur um ein Super-Set von JavaScript handelt, können Entwickler TypeScript schrittweise in bestehende JavaScript-Projekte integrieren.
+Da es sich nur um ein Erweiterung von JavaScript handelt, können Entwickler TypeScript schrittweise in bestehende JavaScript Projekte integrieren.
 [@ts_web]
 
 <!--
@@ -95,7 +95,7 @@ One of the biggest factors in its success has been Google's official support for
 Kotlin von JetBrains^[JetBrains ist ein Unternehmen, das integrierte Entwicklungsumgebungen entwickelt]
 kann als Nachfolger von Java angesehen werden, der übersichtlicher, klarer und sicherer ist.
 Die Interoperabilität mit Java ist durch die Verwendung der Java Virtual Machine (JVM) weiterhin gewährleistet.
-Groovy von Apache^[Die Apache Software Foundation ist eine gemeinnützige Organisation, die Open-Source-Softwareprojekte unterstützt. @apache], Closure und Scala sind weitere Sprachen, die auf der JVM basieren,
+Groovy von Apache^[Die Apache Software Foundation ist eine gemeinnützige Organisation, die Open-Source Softwareprojekte unterstützt. @apache], Closure und Scala sind weitere Sprachen, die auf der JVM basieren,
 aber nicht so populär geworden sind wie Kotlin.
 Einer der größten Faktoren für den Erfolg war die offizielle Unterstützung von Google für Android-Entwicklung mit Kotlin.
 [@groovy_web; @groovy_docs; @closure_web; @closure_ref; @scala_web; @scala_origins; @scala_spec; @scott_2016 S.867f; @jetbrains_web; @kotlin_web; @kotlin_ref; @android_kotlin]
@@ -218,7 +218,7 @@ darunter Swift, wo sie als "protocols" bekannt sind,
 C++, wo sie "concepts" heißen
 und Rust, wo sie "traits" genannt werden.
 Java, C# und viele andere Sprachen haben ähnliche, wenn auch weniger leistungsfähige Konstrukte
-und heißens oft "interfaces".
+und heißen oft "interfaces".
 [@haskell_spec S. 44f; @swift_book_protocols; @iso_14882_2020 S. 526; @rust_ref_traits; @java_spec_interfaces; @csharp_spec_interfaces]
 
 <!-- ### Null Safety -->

@@ -5,6 +5,7 @@ project:
 
 book:
   # title: "Facharbeit"
+  # Merkmale und Konzepte einer Programmiersprache der nächsten Generation
   # author: "Simon Sommer"
   # date: "02/10/2023"
   date-format: DD.MM.YYYY

@@ -16,7 +16,7 @@ In spite of these differences, most would probably agree that the following crit
 Eine Liste dieser Art ist umstritten,
 da es unterschiedliche Meinungen über den Wert jeder bestimmten Spracheigenschaft im Vergleich zu anderen gibt.
 Obwohl es auch aufgrund der Unterschiedlichen Anwendungsbereiche einer Programmiersprache keine allgemeingültigen Vorteile gibt,
-werden die folgende Kriterien häufig genannt.
+werden die folgenden Kriterien häufig genannt.
 [@stansifer_1995 S. 60; @sebesta_2019 S. 41]
 
 <!-- ## Readability -->
@@ -37,8 +37,8 @@ readability of a programming language.
 Ein wichtiges Kriterium für die Beurteilung einer Programmiersprache ist die Leichtigkeit, mit der Programme gelesen und verstanden werden können.
 Der in unserer neuen Sprache geschriebene Quellcode wird öfter gelesen als geschrieben und Wartungen,
 bei welchen viel gelesen wird, sind ein wichtiger Teil des Entwicklungsprozesses.
-Da die Wartungs-freundlichkeit zu einem großen Teil durch die Lesbarkeit von Programmen bestimmt wird,
-ist sie eine wichtige Maßnahme zur Verbesserung der Qualität von Programmen und Programmiersprachen.
+Da die Wartungsfreund-lichkeit zu einem großen Teil durch die Lesbarkeit von Programmen bestimmt wird,
+ist sie eine wichtige Maßnahme zur Verbesserung der Qualität von Programmen und Programmier-sprachen.
 In den folgenden Unterabschnitten werden Merkmale beschrieben, die zur Lesbarkeit einer Programmiersprache beitragen.
 [@sebesta_2019 S. 42f]
 
@@ -79,8 +79,8 @@ In diesem Fall vereinfachen Überladungen die Sprache, da sie die Anzahl der ver
 A third complicating characteristic of a programming language is, having more than one way to accomplish the same operation.
 -->
 <!-- TODO write more? -->
-Eine dritte Charakteristik, welche die Einfachheit einer Programmiersprache negativ beeinträchtigt,
-ist das Vorhandensein zu vieler Möglichkeiten, dieselbe Operation auszu-führen.
+Eine dritte Charakteristik, welche die Einfachheit einer Programmiersprache negativ beein-trächtigt,
+ist das Vorhandensein zu vieler Möglichkeiten, dieselbe Operation auszuführen.
 [@sebesta_2019 S. 43]
 
 <!--
@@ -262,8 +262,7 @@ versions, or levels of optimisation.
 -->
 In einigen Fällen kann das Verhalten bestimmter Merkmale unzureichend definiert sein.
 Dies kann zu verschiedenen Implementierungen führen, die unterschiedliche Ergebnisse liefern.
-Einige der möglichen Ergebnisse können schädlich sein, und die Implementierungen müssen nicht über alle Ausführungen hinweg konsistent bleiben,
-Versionen oder Optimier-ungsstufen konsistent bleiben.
+Einige der Ergebnisse können schädlich sein, da die Implementierungen nicht unbedingt über alle Ausführungen, Versionen oder Optimierungsstufen konsistent bleiben.
 [@iso_24772_1_2019 S. 21; @michell_2009 S. 190]
 
 <!--
@@ -273,9 +272,9 @@ They pose a significant challenge to users of the language, as they cannot be su
 For this reason, a language should have as few of them as possible.
 -->
 Verhaltensweisen, die in der Spezifikation nicht erwähnt werden, nennt man _unspezifiziertes Verhalten_.
-_Undefiniertes Verhalten_ nennt man die Verhaltensweisen die zwar erwähnt werden, jedoch in ihrem Verhalten nicht definiert sind.
-Sie stellen eine große Heraus-forderung für die Benutzer der Sprache dar, da sie nicht sicher sein können, wie und ob ihr Programm ausgeführt wird.
-Aus diesem Grund sollte eine Sprache so wenige von ihnen wie möglich haben.
+_Undefiniertes Verhalten_ sind Verhaltensweisen, die zwar erwähnt werden, deren Verhalten aber nicht festgelegt ist.
+Beide stellen eine große Herausforderung für die Benutzer der Sprache dar, da sie nicht sicher sein können, wie und ob ihr Programm ausgeführt wird.
+Aus diesem Grund sollte eine Sprache möglichst wenige solcher Verhal-tensweisen aufzeigen.
 [@iso_24772_1_2019 S. 21]
 
 <!-- ### Open Source -->
@@ -315,7 +314,7 @@ Eines dieser Probleme ist das Aliasing,
 welches auftritt, wenn mehrere Variablen auf dieselbe Speicherstelle verweisen.
 Dies kann zu unerwarteten Änderungen an den Daten führen und Fehler verursachen, die nur schwer zu erkennen sind.
 Um diese Risiken zu mindern, kann die Programmiersprache mit robusten statischen Analysemechanismen entworfen werden,
-wie z.B. Daten-/Kontrollflussanalyse, Bounds-Checking und Type Checking.
+wie z.B. Daten-/Kontrollflussanalyse, Bounds- und Typ-Checking.
 Dadurch wird sichergestellt, dass die Annahmen des Benutzers über die zu verarbeitenden Daten korrekt sind,
 was zur Vermeidung von Fehlern beiträgt und die Zuverlässigkeit von Programmen verbessert.
 [@sebesta_2019 S. 51ff; @iso_24772_1_2019 S. 81f; @iso_24772_1_2019 S. 37f; @iso_24772_1_2019 S. 16]
@@ -338,7 +337,7 @@ Technische Schulden können unter Kontrolle gehalten werden, indem übermäßig 
 und das Feedback von Benutzern und Entwicklern berücksichtigt wird.
 
 Grundlegende Änderungen an einer Sprache können sinnvoll sein, um grundlegende Designprobleme zu beheben oder neue, bahnbrechende Technologien einzubinden.
-Solche Änderungen müssen jedoch sorgfältig durchgeführt werden, da sie zu Problemen mit der Rückwärts-kompatibilität führen können.
+Solche Änderungen müssen jedoch sorgfältig durchgeführt werden, da sie zu Problemen mit der Rückwärtskompatibilität führen können.
 Die Auswirkungen von Änderungen können abgeschwächt werden, indem man die langfristigen Auswirkungen von Entscheidungen im Sprachdesign berücksichtigt.
 
 Ein Beispiel hierfür sind reservierte Schlüsselwörter, die Programmierer nicht zur Namensgebung verwenden dürfen.

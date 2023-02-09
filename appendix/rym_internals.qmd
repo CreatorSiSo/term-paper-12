@@ -130,7 +130,7 @@ const str = {
   const array = ["One", "Two", "Three"]
   array[outer_index]
 }
-print(str) // "One\n"
+print(str)  // "One\n"
 ```
 
 ### If..Else
@@ -207,9 +207,47 @@ match pos {
 }
 ```
 
-<!-- ### TODO: Loop
-### TODO: While
-### TODO: For -->
+### Loop
+
+```rym
+mut counter = 0
+
+const result = loop {
+  counter += 1
+
+  if counter == 10 {
+    break counter * 2
+  }
+}
+
+print(f"The result is {result}")  // "20\n"
+```
+
+### While
+
+```rym
+mut number = 3
+
+while number > 0 {
+  print("{number}!")  // "3\n" "2\n" "1\n"
+  number -= 1
+}
+
+print("LIFTOFF!!!")
+```
+
+### For
+
+```rym
+const numbers = [10, 20, 30, 40, 50]
+
+for number in numbers {
+  print(f"number: {number}")  // "the value is: 10\n"
+}                             // "the value is: 20\n"
+                              // "the value is: 30\n"
+                              // "the value is: 40\n"
+                              // "the value is: 50\n"
+```
 
 ### Closures {#sec-appendix-closures}
 
@@ -223,7 +261,7 @@ func plus_three(i: i32) -> i32 {
 }
 
 const plus_three_twice = twice(plus_three)
-print(f"{plus_three_twice(10)}") // 16
+print(f"{plus_three_twice(10)}")  // 16
 ```
 
 ```rym
@@ -232,7 +270,7 @@ func twice(f: func(i32) -> i32) -> func(i32) -> i32 {
 }
 
 const plus_three_twice = twice(i -> i + 3)
-print(f"{plus_three_twice(10)}") // 16
+print(f"{plus_three_twice(10)}")  // 16
 ```
 
 ## Statements
@@ -247,7 +285,7 @@ const const_name = "Hello World!"
 mut mut_name = "Hello "
 mut_name += "Universe!"
 
-print(const_name, mut_name) // "Hello World! Hello Universe!/n"
+print(const_name, mut_name)  // "Hello World! Hello Universe!/n"
 ```
 
 <!-- Uninitialized variables must have a value assigned to them before they can be used. -->
@@ -275,8 +313,8 @@ const create_result = File.create(path)
 const write_result = fs.write(path, joke)
 const data = fs.read_to_string(path).unwrap()
 
-print(data) // "What should you do if you meet a giant?
-            //  Use big words.\n"
+print(data)  // "What should you do if you meet a giant?
+             //  Use big words.\n"
 ```
 
 {{< pagebreak >}}
@@ -314,7 +352,7 @@ func changeX(x: i32) -> i32 {
   return x + y
 }
 
-const result = changeX(3) // result = 13
+const result = changeX(3)  // result = 13
 ```
 
 <!-- #### Parameter Default Values -->
@@ -325,9 +363,9 @@ func increment(num: i32, by = 1) -> i32 {
   num + by
 }
 
-const plus_one = increment(100)        // 101
-const plus_50 = increment(100, 50)     // 150
-const plus_50 = increment(100, by: 50) // 150
+const plus_one = increment(100)         // 101
+const plus_50 = increment(100, 50)      // 150
+const plus_50 = increment(100, by: 50)  // 150
 ```
 
 <!-- #### Force Named Arguments -->
@@ -352,10 +390,10 @@ func concat(..strings: [string], sep = "") -> string {
 
 const name = "Mr. Walker"
 
-concat("Hello ", name, "!") // "Hello Mr. Walker!"
+concat("Hello ", name, "!")  // "Hello Mr. Walker!"
 
-concat(2.to_string(), true.to_string(), name, sep: ", ") // "2, true, Mr. Walker"
-concat(sep: ", ", 2.to_string(), true.to_string(), name) // "2, true, Mr. Walker"
+concat(2.to_string(), true.to_string(), name, sep: ", ")  // "2, true, Mr. Walker"
+concat(sep: ", ", 2.to_string(), true.to_string(), name)  // "2, true, Mr. Walker"
 ```
 
 <!-- #### Builtin Print Function -->
@@ -370,11 +408,11 @@ func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
   /* .. */
 }
 
-print("Hello World")               // "Hello World\n"
-print("Hello World", end: "")      // "Hello World"
+print("Hello World")                // "Hello World\n"
+print("Hello World", end: "")       // "Hello World"
 
-print(true, 2, "three")            // "true 2 three\n"
-print(true, 2, "three", sep: ", ") // "true, 2, three\n"
+print(true, 2, "three")             // "true 2 three\n"
+print(true, 2, "three", sep: ", ")  // "true, 2, three\n"
 ```
 
 ### Implementationen {#sec-appendix-impl}
@@ -383,7 +421,7 @@ print(true, 2, "three", sep: ", ") // "true, 2, three\n"
 that must be located in the same module as the type.
 They hold static/non-static methods and internal types.
 These methods are private by default and can be made public with the "pub" keyword. -->
-Jeder Typ kann mehrere "impl"-Blöcke haben,
+Jeder Typ kann mehrere "impl" Blöcke haben,
 welche sich im selben Modul wie der Typ befinden müssen.
 Sie enthalten statische/nicht-statische Methoden und interne Typen.
 Standardmäßig sind Methoden privat und können mit dem Schlüsselwort "pub" öffentlich gemacht werden:
@@ -451,8 +489,8 @@ impl Iterator for Counter {
 
 mut counter = Counter { count: 0, max: 3 }
 
-print(counter.next()) // Some(1)
-print(counter.next()) // Some(2)
-print(counter.next()) // Some(3)
-print(counter.next()) // None
+print(counter.next())  // Some(1)
+print(counter.next())  // Some(2)
+print(counter.next())  // Some(3)
+print(counter.next())  // None
 ```
