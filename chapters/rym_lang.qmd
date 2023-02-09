@@ -292,6 +292,14 @@ Dieser kann verwendet werden, um UTF-8 kodierten Text zu speichern.
 Ein neuer String beginnt und endet mit "\".
 Dazwischen können alle in UTF-8 speicherbaren Zeichen stehen.
 
+```rym
+"Hello World\n"
+```
+
+Für spezielle unsichtbare Zeichen, wie Zeileinumbrüche oder Tabs gibt es spezialle Sequenzen, die mit "\\" beginnen.
+Sie verbessern die Lesbarkeit dieser Zeichen.
+z.B. steht "\\n" im oben zu sehenden Code für einen Zeilenumbruch^["\\n" stellt nur für Unix-Systeme einen vollen Zeilenumbruch dar, unter Windows muss "\\r\\n" benutzt werden.].
+
 <!--
 - Rym:
   - characters array: [char]
@@ -377,25 +385,40 @@ Ein Beispiel und eine Erklärung sind in @sec-appendix-scope zu finden.
 
 ### Returning
 
-In the Rym programming language, a function must be defined with a return type, which specifies the type of value returned by the function.
+<!--
+All functions in Rym must be defined with a return type.
+This allows tools to analyse a function without having to look at its body.
 The return type is specified after the "->" arrow symbol in the function definition.
-If a return statement is encountered during execution, the value following the return statement is returned from the function call.
+If a return statement is encountered during execution, the value following the return statement is returned to the function callee.
+-->
+Alle Funktionen in Rym müssen mit einem Rückgabetyp definiert werden.
+Dies ermöglicht es Tools, eine Funktion zu analysieren, ohne sich ihren Körper ansehen zu müssen.
+Der Rückgabetyp wird nach dem Pfeilsymbol "->" in der Funktionsdefinition angegeben.
+Wenn während der Ausführung eine Return-Anweisung auftritt, wird der Wert, der auf die Anweisung folgt, an den Funktionsaufrufenden zurückgegeben.
 
-In the following example, the function _multiply_ takes two integer arguments, "x" and "y", and returns the result of their multiplication as an integer.
+<!-- In the following example, the function _multiply_ takes two integer arguments, "x" and "y", and returns the result of their multiplication as an integer. -->
+Im folgenden Beispiel nimmt die Funktion _multiply_ zwei Integer-Argumente, "x" und "y", und gibt das Ergebnis ihrer Multiplikation als Integer zurück.
+
+{{< pagebreak >}}
 
 ```rym
-func power(num: i32, pow: i32) -> i32 {
+func multiply(x: i32, y: i32) -> i32 {
   const result = x * y
-  return result
+  return x * y
 }
 ```
 
-The function body contains a single statement that defines a local variable result and initializes it with the value of "x * y".
-The return statement then specifies that the value of result should be returned as the result of the function.
-
+<!--
+The function body contains a single statement that defines a local variable "result" and initialises it with the value of "x * y".
+The return statement then specifies that the value of "result" should be returned as the result of the function.
 However, it is not necessary to specify a return statement in every function.
-If the return type of the function is specified, the value of the last expression in the function body will be returned automatically.
-For example, the following function is equivalent to the one above.
+The value of the last expression in the function body will be returned automatically.
+-->
+Der Funktionskörper enthält eine einzige Anweisung.
+Die lokale Variable "result" wird definiert und mit dem Wert von "x * y" initialisiert.
+Die Return-Anweisung gibt dann an, dass der Wert von "result" als Ergebnis der Funktion zurückgegeben werden soll.
+Es ist jedoch nicht notwendig, in jeder Funktion eine Return-Anweisung anzugeben.
+Der Wert des letzten Ausdrucks im Funktionskörper wird automatisch zurückgegeben.
 
 ```rym
 func multiply(x: i32, y: i32) -> i32 {
@@ -403,61 +426,84 @@ func multiply(x: i32, y: i32) -> i32 {
 }
 ```
 
-In this case, the value of the expression x * y is returned as the result of the function, without the need for a separate return statement. This allows for more concise and readable code, as the return statement is often unnecessary when the function body contains only a single expression.
+<!--
+In this case, the value of the expression x * y is returned as the result of the function, without the need for a separate return statement.
+This allows for more concise and readable code, as the return statement is often unnecessary when the function body contains only a single expression.
+-->
+In diesem Fall wird der Wert des Ausdrucks x * y als Ergebnis der Funktion zurückgegeben, ohne dass eine separate Return-Anweisung erforderlich ist.
+Dies ermöglicht einen kürzeren und besser lesbaren Code, da die Return-Anweisung oft überflüssig ist, wenn der Funktions-körper nur einen einzigen Ausdruck enthält.
 
-### Closures
+Weitere Eigenschaften von Funktionen in Rym sind in @sec-appendix-functions beschrieben.
 
-Rym is trying to combine imperative and declarative approaches of programming and already allows functions to used like data.
-But function declarartions are statements and cannot be used as expressions.
-This can become very cumbersome if functions should be passed into a function call as they first have to be defined and then referenced via their name.
-Closure solve this problem, as they are expressions and allow functions to be created inline.
-Their syntax is based on the function declarations of Rym and can be generalized like this:
-
-- closures: [@sebesta_2019 S. 665]
-
-To allow for easier declaration of functions inline
-
-```rym
-func twice(f: func(i32) -> i32) -> func(i32) -> i32 {
-  x -> f(f(x))
-}
-
-func plus_three(i: i32) -> i32 {
-  i + 3
-}
-
-const plus_three_twice = twice(plus_three)
-print(f"{plus_three_twice(10)}") // 16
-```
+### Closures, Anonyme Funktionen
 
 <!--
-```rym
-func twice(f: func(i32) -> i32) -> func(i32) -> i32 {
-  x -> f(f(x))
-}
-
-const plus_three_twice = twice(i -> i + 3)
-print(f"{plus_three_twice(10)}") // 16
-```
+Rym tries to combine imperative and declarative approaches to programming and allows functions to be used like data.
+However, function declarations are statements and cannot be used as expressions.
+This can be very cumbersome when passing functions into a function call, as they must first be defined and then referenced by name.
+Closures solve this problem because they are an expression and allow functions to be created inline.
 -->
+Rym versucht, imperative und deklarative Ansätze in der Programmierung zu kombinieren.
+Deshalb ist es möglich Funktionen wie Daten zu behandeln.
+Funktionsdeklarationen sind jedoch Anweisungen und können nicht als Ausdrücke verwendet werden.
+Dies macht die Übergabe von Funktionen in einem Funktionsaufruf umständlich.
+Closures lösen dieses Problem, da sie ein Ausdruck sind und die Erstellung von Funktionen direkt Vorort ermöglichen.
+[@sebesta_2019 S. 665ff]
+
+<!--
+The exact types for parameters and the return value are inferred from the context.
+However, if necessary, they can be written down in the same way as function declarations.
+Their syntax is based on the function declarations of Rym, and can be written in the following way:
+-->
+Die genauen Typen der Parameter und des Rückgabewerts werden aus dem Kontext abgeleitet.
+Falls erforderlich, können sie jedoch in der gleichen Weise wie bei Funktionsdeklarationen notiert werden.
+Ihre Syntax lehnt sich an die Funktionsdeklarationen von Rym an und kann wie folgt geschrieben werden:
+
+```rym
+(param_0, param_1) -> { /* .. */ }
+(param_0, param_1) -> { /* .. */ }
+(param) -> { /* .. */ }
+(param) -> /* .. */
+() -> /* .. */
+```
+
+<!-- See @sec-appendix-closures and @sec-appendix-fac-decl for examples of how closures are used in Rym. -->
+Siehe @sec-appendix-closures und @sec-appendix-fac-decl für Beispiele, wie Closures in Rym verwendet werden.
 
 <!-- ## Operators -->
 ## Operatoren
 
-Rym provides a set of unary and binary operators.
-The unary operators include the "!" operator used to invert the value of a boolean,
-the "-" operator used to negate numbers
+<!--
+Rym provides a number of unary and binary operators.
+The unary operators include the "!" operator, which is used to invert the value of a boolean,
+the "-" operator, which is used to negate numbers
 and the "?" operator.
-This operator unwraps types like _Option_ or _Result_
-and returns the value out of the current function if an unsuccessfull variant (_None_, _Err_) is met.^[Beispiel siehe @sec-qestion-mark-op]
+This operator unpacks types such as _Option_ or _Result_
+and returns the value from the current function if an unsuccessful variant (_None_, _Err_) is met. _(See @sec-qestion-mark-op)_
 Rym does not support the "++" and "-\-" operators,
-which are often used increment or decrement an integer,
-as it is often unclear what these operators exactly do.
+which are often used to increment or decrement an integer.
+They can often be used as a prefix or postfix, making it unclear what exactly these operators do.
+-->
+Rym bietet eine Reihe von unären und binären Operatoren.
+Zu den unären Operatoren gehören der "!" Operator, mit dem der Wert eines booleschen Wertes umgekehrt werden kann,
+der "-" Operator, der zum Negieren von Zahlen verwendet wird
+und der "?" Operator.
+Dieser Operator entpackt Typen wie _Option_ oder _Result_
+und gibt bei einer erfolglosen Variante -- _None_ oder _Err_ -- den Wert der aktuellen Funktion zurück. _(Siehe @sec-qestion-mark-op)_
+Rym unterstützt die Operatoren "++" und "-\-" nicht,
+mit denen häufig ein Integer inkrementiert oder dekrementiert wird.
+Sie können als Präfix oder Postfix verwendet werden, wodurch es unklar ist, wie genau diese Operatoren funktionieren.
 
+<!--
 There are two categories of binary operators in Rym.
 Those in the first category produce a new value (Addition: "+" Subtraktion: "-" Multiplikation: "\*" Division: "/" Rest: "%" Und: "&" Oder: "|"), (Gleich: "==" Kleiner: "<" Kleiner gleich "<=" Größer ">" Größer gleich ">=") and the others change an existing variable ("=" "+=" "-=" "*=" "/=" "%=" "&=" "|=").
 The assignment operators can only be used with variables that are marked as mutable.
-This very typical syntacic sugar is also supported:
+This very typical syntactic sugar is also supported:
+-->
+In Rym gibt es zwei Kategorien von binären Operatoren.
+Diejenigen der ersten Kategorie erzeugen einen neuen Wert ^[Addition: "+" Subtraktion: "-" Multiplikation: "\*" Division: "/" Rest: "%" Und: "&" Oder: "|"] ^[Gleich: "==" Kleiner: "<" Kleiner gleich "<=" Größer ">" Größer gleich ">="] und die anderen ändern eine bestehende Variable^[Zuweisungen: "=" "+=" "-=" "*=" "/=" "%=" "&=" "|="].
+Die Zuweisungsoperatoren können nur mit Variablen verwendet werden, die als veränderbar gekennzeichnet sind.
+Die folgende sehr typische Syntax -- welche als Alternative für "++" und "--" dient -- wird ebenfalls unterstützt:
 
 ```rym
 mut counter = 0
@@ -487,10 +533,10 @@ Außerdem bietet Rym einen Mechanismus zum vorzeitigen Verlassen von Schleifen d
 Die continue-Anweisung beendet die aktuelle Iteration einer Schleife und springt in die nächste.
 Return-Anweisungen werden für das vorzeitige Verlassen von Funktionen verwendet. -->
 
-## Tooling and Ecosystem
+<!-- ## Tooling and Ecosystem
 
 Rym has a growing ecosystem of tools and libraries that make it easier to develop, test, and deploy applications.
 These tools include IDEs, text editors with Rym plugins, build tools, package managers, and libraries for various domains.
-Rym's tooling and ecosystem are designed to be flexible and allow for easy integration with other systems and technologies.
+Rym's tooling and ecosystem are designed to be flexible and allow for easy integration with other systems and technologies. -->
 
 {{< pagebreak >}}

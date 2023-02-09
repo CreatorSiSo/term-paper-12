@@ -210,9 +210,33 @@ match pos {
 }
 ```
 
-### TODO: Loop
+<!-- ### TODO: Loop
 ### TODO: While
-### TODO: For
+### TODO: For -->
+
+### Closures {#sec-appendix-closures}
+
+```rym
+func twice(f: func(i32) -> i32) -> func(i32) -> i32 {
+  x -> f(f(x))
+}
+
+func plus_three(i: i32) -> i32 {
+  i + 3
+}
+
+const plus_three_twice = twice(plus_three)
+print(f"{plus_three_twice(10)}") // 16
+```
+
+```rym
+func twice(f: func(i32) -> i32) -> func(i32) -> i32 {
+  x -> f(f(x))
+}
+
+const plus_three_twice = twice(i -> i + 3)
+print(f"{plus_three_twice(10)}") // 16
+```
 
 ### "?" Operator {#sec-qestion-mark-op}
 
@@ -364,7 +388,7 @@ print(true, 2, "three")            // "true 2 three\n"
 print(true, 2, "three", sep: ", ") // "true, 2, three\n"
 ```
 
-### Implementations {#sec-appendix-impl}
+### Implementationen {#sec-appendix-impl}
 
 <!-- Every type can have several "impl" blocks,
 that must be located in the same module as the type.
@@ -385,7 +409,7 @@ impl bool {
 
 {{< pagebreak >}}
 
-### Traits / Type Classes
+### Traits / Typ-Klassen
 
 <!-- Traits are used to define common functionality between types: -->
 Traits werden verwendet, um gemeinsame Funktionen zwischen Typen zu definieren:

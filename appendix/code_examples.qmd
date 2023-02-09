@@ -25,7 +25,7 @@ func factorial(n: uint) -> uint {
 }
 ```
 
-### Declarative approach
+### Declarative approach {#sec-appendix-fac-decl}
 
 ```rym
 func factorial(n: uint) -> uint {
@@ -35,7 +35,7 @@ func factorial(n: uint) -> uint {
 
 {{< pagebreak >}}
 
-## Find Summands
+## Find Summands {#sec-appendix-find-summands}
 
 ```rym
 /// Function for finding two items in a list,
