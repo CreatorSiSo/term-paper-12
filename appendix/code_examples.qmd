@@ -18,7 +18,8 @@ define factorial(n):
   return f
 ```
 
-### Imperative approach
+<!-- ### Imperative approach -->
+### Imperativer Ansatz
 
 ```rym
 func factorial(n: uint) -> uint {
@@ -30,12 +31,65 @@ func factorial(n: uint) -> uint {
 }
 ```
 
-### Declarative approach {#sec-appendix-fac-decl}
+<!-- ### Declarative approach {#sec-appendix-fac-decl} -->
+### Deklarativer Ansatz {#sec-appendix-fac-decl}
 
 ```rym
 func factorial(n: uint) -> uint {
 	(1..=n).fold(1, (accum, i) -> accum * i)
 }
+```
+
+### Nutzung
+
+```rym
+factorial(1)  // 1
+factorial(2)  // 2
+factorial(3)  // 6
+factorial(4)  // 24
+factorial(5)  // 120
+```
+
+{{< pagebreak >}}
+
+<!-- #### Builtin Print Function -->
+## Eingebaute Print Function
+
+### Imperativer Ansatz
+
+```rym
+func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
+  mut output = ""
+  mut first_item = true
+
+  for arg in args {
+    if first_item { first_item = false } else { output.push(sep) }
+    output.push(arg.fmt())
+  }
+  output.push(end)
+  /* .. */
+}
+```
+
+<!-- ### Declarative approach -->
+### Deklarativer Ansatz
+
+```rym
+func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
+  const output = args.iter().map(item -> item.fmt()).join(sep)
+  const output = output + end
+  /* .. */
+}
+```
+
+### Nutzung
+
+```rym
+print("Hello World")                // "Hello World\n"
+print("Hello World", end: "")       // "Hello World"
+
+print(true, 2, "three")             // "true 2 three\n"
+print(true, 2, "three", sep: ", ")  // "true, 2, three\n"
 ```
 
 {{< pagebreak >}}

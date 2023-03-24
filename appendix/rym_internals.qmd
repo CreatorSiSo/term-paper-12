@@ -51,6 +51,8 @@ type Vec3 = {
 const pos = Vec3 { x: 2.5, y: -1.2, z: 0.0, }
 ```
 
+{{< pagebreak >}}
+
 ### Enumerationen / Vereinigungstypen {#sec-appendix-unions}
 
 ```rym
@@ -114,7 +116,7 @@ use Result.Ok
 use Result.Err
 ```
 
-{{< pagebreak >}}
+<!-- {{< pagebreak >}} -->
 
 ## Expressions {#sec-appendix-expressions}
 
@@ -214,14 +216,13 @@ mut counter = 0
 
 const result = loop {
   counter += 1
-
-  if counter == 10 {
-    break counter * 2
-  }
+  if counter == 10 { break counter * 2 }
 }
 
 print(f"The result is {result}")  // "20\n"
 ```
+
+<!-- {{< pagebreak >}} -->
 
 ### While
 
@@ -251,6 +252,7 @@ for number in numbers {
 
 ### Closures {#sec-appendix-closures}
 
+<!--
 ```rym
 func twice(f: func(i32) -> i32) -> func(i32) -> i32 {
   x -> f(f(x))
@@ -263,6 +265,7 @@ func plus_three(i: i32) -> i32 {
 const plus_three_twice = twice(plus_three)
 print(f"{plus_three_twice(10)}")  // 16
 ```
+-->
 
 ```rym
 func twice(f: func(i32) -> i32) -> func(i32) -> i32 {
@@ -275,7 +278,7 @@ print(f"{plus_three_twice(10)}")  // 16
 
 ## Statements
 
-### Variables {#sec-appendix-variables}
+### Variablen {#sec-appendix-variables}
 
 ```rym
 // unveränderliche variable
@@ -301,6 +304,8 @@ print(name)
 ```
 <!-- // allowed because name always has a value -->
 
+{{< pagebreak >}}
+
 ### Use
 
 ```rym
@@ -317,19 +322,18 @@ print(data)  // "What should you do if you meet a giant?
              //  Use big words.\n"
 ```
 
-{{< pagebreak >}}
-
 ### Funktionen {#sec-appendix-functions}
 
-```rym
+<!-- ```rym
 func func_name(param_1: Type1, param_2: Type2) -> ReturnType {
   ReturnType
 }
 
 const of_return_type = func_name(of_type_1, of_type_2)
 ```
+ -->
 
-### Scope {#sec-appendix-scope}
+#### Scope {#sec-appendix-scope}
 
 <!--
 When the function "changeX(3)" is called, a new scope is created containing the parameter "x" initialised with the value "3".
@@ -396,25 +400,6 @@ concat(2.to_string(), true.to_string(), name, sep: ", ")  // "2, true, Mr. Walke
 concat(sep: ", ", 2.to_string(), true.to_string(), name)  // "2, true, Mr. Walker"
 ```
 
-<!-- #### Builtin Print Function -->
-#### Eingebaute Print Function
-
-```rym
-func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
-  mut output = ""
-  for arg in args {
-    output.push(arg.fmt())
-  }
-  /* .. */
-}
-
-print("Hello World")                // "Hello World\n"
-print("Hello World", end: "")       // "Hello World"
-
-print(true, 2, "three")             // "true 2 three\n"
-print(true, 2, "three", sep: ", ")  // "true, 2, three\n"
-```
-
 ### Implementationen {#sec-appendix-impl}
 
 <!-- Every type can have several "impl" blocks,
@@ -427,14 +412,18 @@ Sie enthalten statische/nicht-statische Methoden und interne Typen.
 Standardmäßig sind Methoden privat und können mit dem Schlüsselwort "pub" öffentlich gemacht werden:
 
 ```rym
+type bool = true | false
+
 impl bool {
+  pub func then<T>(self, fn: func() -> T) -> Option<T> {
+    if self { Some(fn()) } else { None }
+  }
+
   pub func then_some<T>(self, value: T) -> Option<T> {
     if self { Some(value) } else { None }
   }
 }
 ```
-
-{{< pagebreak >}}
 
 ### Traits / Typ-Klassen
 
