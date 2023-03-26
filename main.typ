@@ -13,7 +13,7 @@
   class: "FOS21B",
   mentor: "Herr Rottmann",
   place: "Dresden",
-  date: "24.03.2023",
+  date: "26.03.2023",
   body
 )
 
@@ -26,8 +26,7 @@
 #bibliography("cite/general.bib")
 #pagebreak()
 
-#hide[test]
-
+// Set heading style for appendix
 #set heading(numbering: (..args) => {
 	let nums = args.pos()
 	if nums.len() == 1 {
@@ -35,8 +34,10 @@
 	}
 	numbering("A.1", ..nums)
 })
-
 // Reset heading counter
 #counter(heading).update(())
 
 #include "appendix/rym_overview.typ"
+#pagebreak()
+
+#include "appendix/code_examples.typ"

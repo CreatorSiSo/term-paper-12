@@ -167,7 +167,7 @@ if let Some(value) = maybe_value {
 }
 ```
 
-=== "?" Operator <sec-qestion-mark-op>
+=== `?` Operator <sec-qestion-mark-op>
 
 ```rym
 func read_to_string(path: string) -> Result<string, IoError> {
@@ -305,7 +305,7 @@ Nicht initialisierte Variablen müssen mit einem Wert versehen werden, bevor sie
 ```rym
 let name
 if condition { name = "Simon" } else { name = "Robert" }
-print(name) // erlaubt, da "name" immer einen Wert hat
+print(name) // erlaubt, da `name` immer einen Wert hat
 ```
 
 === Use
@@ -332,26 +332,26 @@ What should you do if you meet a giant? Use big words.
 
 ==== Scope <sec-appendix-scope>
 
-// TODO: changeX is a misleading function name
+// TODO: changeBy is a misleading function name
 
-// When the function "changeX(3)" is called, a new scope is created containing the parameter "x" initialised with the value "3".
+// When the function "changeBy(3)" is called, a new scope is created containing the parameter "x" initialised with the value "3".
 // The outer variable "x" is not accessible inside the function scope and therefore does not affect the value of x.
 // The variable "y" is also defined within this scope and initialised with the value 10.
 // The body of the function is executed and the value of "x + y" (13) is returned.
 // The function scope is then destroyed and the original scope is restored, resulting in the value "13" being assigned to the variable "result".
-Wenn die Funktion "changeX(3)" aufgerufen wird, wird ein neuer Bereich erstellt, der den Parameter "x" enthält, welcher mit dem Wert "3" initialisiert wird.
-Die äußere Variable "x" ist innerhalb des Bereichs der Funktion nicht zugänglich und hat daher keinen Einfluss.
-Die Variable "y" wird ebenfalls in diesem Bereich definiert und mit dem Wert 10 initialisiert.
-Der Hauptteil der Funktion wird ausgeführt und der Wert von "x + y" (13) zurückgegeben.
-Anschließend wird der Funktionsbereich zerstört und der ursprüngliche Bereich wiederher-gestellt, so dass der Wert "13" der Variablen "result" zugewiesen wird.
+Wenn die Funktion `changeBy(3)` aufgerufen wird, wird ein neuer Bereich erstellt, der den Parameter `x` enthält, welcher mit dem Wert `3` initialisiert wird.
+Die äußere Variable `x` ist innerhalb des Bereichs der Funktion nicht zugänglich und hat daher keinen Einfluss.
+Die Variable `y` wird ebenfalls in diesem Bereich definiert und mit dem Wert `10` initialisiert.
+Der Hauptteil der Funktion wird ausgeführt und der Wert von `x + y`, also `13` zurückgegeben.
+Anschließend wird der Funktionsbereich zerstört und der ursprüngliche Bereich wiederher-gestellt, so dass der Wert `13` der Variablen `result` zugewiesen wird.
 
 ```rym
 let x = 5
-func changeX(x: i32) -> i32 {
+func changeBy(x: i32) -> i32 {
   let y = 10
   return x + y
 }
-let result = changeX(3)  // result = 13
+let result = changeBy(3)  // result = 13
 ```
 
 #pagebreak()

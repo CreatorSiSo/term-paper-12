@@ -1,14 +1,12 @@
-<!-- # Rym Source Code Examples -->
-# Rym Quellcode Beispiele
+// = Rym Source Code Examples
+= Rym Quellcode Beispiele
 
-## Factorial
+== Factorial
 
-<!--
-Two possible implementations for calculating factorials.
-Pseudo code from Wikipedia:
--->
-Zwei mögliche Implementierungen für die Berechnung von Fakultäten.
-Pseudocode von Wikipedia [@wikipedia_factorial]:
+// Two possible implementations for calculating factorials.
+// Pseudo code from Wikipedia:
+Zwei mögliche Implementierungen für die Berechnung von Fakultäten. \
+Pseudocode von Wikipedia @wikipedia_factorial:
 
 ```
 define factorial(n):
@@ -18,8 +16,8 @@ define factorial(n):
   return f
 ```
 
-<!-- ### Imperative approach -->
-### Imperativer Ansatz
+// === Imperative approach
+=== Imperativer Ansatz
 
 ```rym
 func factorial(n: uint) -> uint {
@@ -31,16 +29,16 @@ func factorial(n: uint) -> uint {
 }
 ```
 
-<!-- ### Declarative approach {#sec-appendix-fac-decl} -->
-### Deklarativer Ansatz {#sec-appendix-fac-decl}
+// === Declarative approach <sec-appendix-fac-decl>
+=== Deklarativer Ansatz <sec-appendix-fac-decl>
 
 ```rym
 func factorial(n: uint) -> uint {
-	(1..=n).fold(1, (accum, i) -> accum * i)
+  (1..=n).fold(1, (accum, i) -> accum * i)
 }
 ```
 
-### Nutzung
+=== Nutzung
 
 ```rym
 factorial(1)  // 1
@@ -50,12 +48,12 @@ factorial(4)  // 24
 factorial(5)  // 120
 ```
 
-{{< pagebreak >}}
+#pagebreak()
 
-<!-- #### Builtin Print Function -->
-## Eingebaute Print Function
+// == Builtin Print Function
+== Eingebaute Print Function
 
-### Imperativer Ansatz
+// === Imperativer Ansatz
 
 ```rym
 func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
@@ -71,8 +69,8 @@ func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
 }
 ```
 
-<!-- ### Declarative approach -->
-### Deklarativer Ansatz
+// === Declarative approach
+=== Deklarativer Ansatz
 
 ```rym
 func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
@@ -82,7 +80,7 @@ func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
 }
 ```
 
-### Nutzung
+=== Nutzung
 
 ```rym
 print("Hello World")                // "Hello World\n"
@@ -92,11 +90,11 @@ print(true, 2, "three")             // "true 2 three\n"
 print(true, 2, "three", sep: ", ")  // "true, 2, three\n"
 ```
 
-{{< pagebreak >}}
+#pagebreak()
 
-## Find Summands {#sec-appendix-find-summands}
+== Find Summands <sec-appendix-find-summands>
 
-<!-- Function for finding two items in a sorted list, that add up to the given sum. -->
+// Function for finding two items in a sorted list, that add up to the given sum.
 Funktion zum Finden von zwei Elementen in einer sortierten Liste, die die angegebene Summe ergeben.
 
 ```rym
@@ -128,5 +126,3 @@ if const Some([left, right]) = summands(numbers, sum) {
   print("Pointers have crossed, no sum found")
 }
 ```
-
-{{< pagebreak >}}
