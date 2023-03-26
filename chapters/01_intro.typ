@@ -1,8 +1,11 @@
+#import "../template.typ": TODO
+
 = Einleitung <sec-intro>
 
 Jedes Jahr werden zahlreiche neue Programmiersprachen veröffentlicht.
 Viele von ihnen starten als Teil einer wissenschaftlichen Arbeit, und sowohl Privatpersonen als auch Studierende arbeiten in ihrer Freizeit häufig an eigenen Sprachen, um verschiedene Aspekte der Umsetzung kennenzulernen.
 In manchen Fällen möchten Unternehmen oder Organisationen ein bestimmtes Problem angehen, aber ihnen fehlt die richtige Technologie.
+#TODO[Mention Typst as a successor to Latex]
 Auch wenn die meisten von ihnen vom durchschnittlichen Entwickler nie benutzt werden,
 können Sie durch das Realisieren neuer Ideen alle Programmiersprachen voranbringen.
 

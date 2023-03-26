@@ -19,7 +19,7 @@
       bottom: 2cm,
     )
   )
-  set text(font: "Merriweather", lang: "de", region: "DE")
+  set text(font: "Merriweather", size: 10.2pt, lang: "de", region: "DE")
 
   // Set paragraph spacing
   show par: set block(above: 1.6em, below: 1.6em)
@@ -112,3 +112,6 @@
 
   body
 }
+
+#let TODO(body) = underline(text(fill: red)[TODO: #body.])
+#let jb = linebreak(justify: true)

@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "./template.typ": *
 #import "./graphs.typ": column_graph
 
 #show: body => project(
@@ -17,13 +17,17 @@
   body
 )
 
-#include "intro.typ"
+#include "chapters/01_intro.typ"
 #pagebreak()
 
-#include "charactaristics.typ"
+#include "chapters/02_charactaristics.typ"
 #pagebreak()
 
-#bibliography("cite/general.bib")
+#bibliography((
+	"cite/general.bib",
+	"cite/standards.bib",
+	"cite/books.bib"
+))
 #pagebreak()
 
 // Set heading style for appendix
