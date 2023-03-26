@@ -23,6 +23,9 @@
 #include "chapters/02_charactaristics.typ"
 #pagebreak()
 
+#include "chapters/03_analysis.typ"
+#pagebreak()
+
 #bibliography((
 	"cite/general.bib",
 	"cite/standards.bib",

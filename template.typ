@@ -26,31 +26,29 @@
   // Set space between lines
   set par(leading: 1.2em)
 
-  let stroke = (
-    top: luma(250) + 1pt,
-    x: luma(235) + 1pt,
-    bottom: luma(220) + 1pt,
-  )
-
   // Set style for raw blocks:
   // ```lang
   // content...
   // ```
   show raw: r => {
     set text(font: "Fira Code", size: 9pt)
-    set text(font: "Fira Code", ligatures: false, size: 9pt)
-    set par(leading: 1.1em)
+    set par(leading: 1em)
     r
   }
+	let stroke = (
+    top: luma(240) + 1pt,
+    x: luma(240) + 1pt,
+    bottom: luma(225) + 1pt,
+  )
   show raw.where(block: true): block.with(
     width: 100%,
-    fill: luma(240),
+    fill: luma(245),
     inset: (x: 10pt, y: 9pt),
     stroke: stroke,
     radius: 3pt,
   )
   show raw.where(block: false): box.with(
-    fill: luma(240),
+    fill: luma(245),
     stroke: stroke,
     inset: (x: 3.5pt),
     outset: (y: 3.5pt),
