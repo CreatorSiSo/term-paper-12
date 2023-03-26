@@ -336,7 +336,7 @@ Rym erlaubt neben den bereits erwähnten primitiven Datentypen auch die Verwendu
 Zu diesen Typen gehören Arrays, die eine Liste von Elementen desselben Typs darstellen.
 Vereinigungstypen oder auch Enumerationen werden verwendet, um darzustellen, dass ein Wert verschiedene Typen haben kann.
 Strukturen können schließlich verwendet werden, um verschiedene Datentypen in einem Typ zu kombinieren.
-Beispiele für die Erstellung und Verwendung verschiedener komplexer Datentypen finden sich in @sec-appendix-structs, @sec-appendix-unions und @sec-appendix-impl.
+Beispiele für die Erstellung und Verwendung verschiedener komplexer Datentypen finden sich in @sec-appendix-records, @sec-appendix-unions und @sec-appendix-impl.
 
 <!-- ## Functions -->
 ## Funktionen
