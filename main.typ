@@ -1,4 +1,5 @@
 #import "template.typ": *
+#import "./graphs.typ": column_graph
 
 #show: body => project(
   institution_hierarchy: (
