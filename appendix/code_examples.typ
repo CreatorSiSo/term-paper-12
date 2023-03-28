@@ -20,9 +20,9 @@ define factorial(n):
 === Imperativer Ansatz
 
 ```rym
-func factorial(n: uint) -> uint {
-  mut result = 1
-  for const i in 1..=n {
+func factorial(n: Uint) -> Uint {
+  let mut result = 1
+  for let i in 1..=n {
     result *= i
   }
   result
@@ -33,7 +33,7 @@ func factorial(n: uint) -> uint {
 === Deklarativer Ansatz <sec-appendix-fac-decl>
 
 ```rym
-func factorial(n: uint) -> uint {
+func factorial(n: Uint) -> Uint {
   (1..=n).fold(1, (accum, i) -> accum * i)
 }
 ```
@@ -98,9 +98,9 @@ print(true, 2, "three", sep: ", ")  // "true, 2, three\n"
 Funktion zum Finden von zwei Elementen in einer sortierten Liste, die die angegebene Summe ergeben.
 
 ```rym
-func summands(numbers: [i32], sum: i32) -> Option<[usize; 2]> {
-  mut low = 0
-  mut high = numbers.len() - 1
+func summands(numbers: [I32], sum: I32) -> Option<[Usize; 2]> {
+  let mut low = 0
+  let mut high = numbers.len() - 1
 
   while low < high {
     const current_sum = numbers[low] + numbers[high]
@@ -117,10 +117,10 @@ func summands(numbers: [i32], sum: i32) -> Option<[usize; 2]> {
   None
 }
 
-const numbers = [-14, 1, 3, 6, 7, 7, 12]
-const sum = -13
+let numbers = [-14, 1, 3, 6, 7, 7, 12]
+let sum = -13
 
-if const Some([left, right]) = summands(numbers, sum) {
+if let Some([left, right]) = summands(numbers, sum) {
   print(f"Sum of {left} and {right} = {sum}")
 } else {
   print("Pointers have crossed, no sum found")

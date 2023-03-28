@@ -26,6 +26,9 @@
 #include "chapters/03_analysis.typ"
 #pagebreak()
 
+#include "chapters/04_concept.typ"
+#pagebreak()
+
 #bibliography((
 	"cite/general.bib",
 	"cite/standards.bib",

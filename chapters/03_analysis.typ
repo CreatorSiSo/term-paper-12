@@ -19,7 +19,7 @@ Die Hauptquelle für diese Daten ist der _StackOverflow Developer Survey 2022_, 
 Unterhalb dieses Absatzes kann man eine Statistik aus der Umfrage sehen, in der die Programmiersprachen nach ihrer Beliebtheit geordnet sind.
 Die Teilnehmer wurden gebeten, für alle Sprachen zu stimmen, die sie im letzten Jahr verwendet haben und wieder verwenden würden.
 Die Höhe eines Balkens entspricht der Anzahl der Stimmen, die diese Sprache erhalten hat.
-@so_surveys @so_survey_2022 @so_survey_2022_data
+#cite("so_surveys", "so_survey_2022", "so_survey_2022_data")
 
 // TODO: Color should show the prog lang age
 #figure(
