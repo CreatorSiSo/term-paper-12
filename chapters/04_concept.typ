@@ -199,7 +199,7 @@ while condition { /* do something forever */ }
 // As seen in /* @tbl-int-formats */ defining a specific size for integers, is only supported by some programming languages.
 // Some languages, for example C, C++ and C\# include unsigned integer types, which are types for integer values without signs.
 // Unsigned types are often used for binary data. 8 bit large unsigned integers can for example represent exactly one byte.
-// [@sebesta_2019 S. 400]
+// @sebesta_2019[S. 400]
 Ein weiterer sehr verbreiteter Datentyp ist der Integer, welcher nur in manchen Sprachen existiert.
 Wie in /* @tbl-int-formats */ zu sehen, wird die Definition einer bestimmten Größe für Integers von noch weniger Programmiersprachen unterstützt.
 Einige Sprachen unterstützen vorzeichenlose Integer-Typen.
@@ -388,7 +388,7 @@ Deshalb ist es möglich Funktionen wie Daten zu behandeln.
 Funktionsdeklarationen sind jedoch Anweisungen und können nicht als Ausdrücke verwendet werden.
 Dies macht die Übergabe von Funktionen in einem Funktionsaufruf umständlich.
 Closures lösen dieses Problem, da sie ein Ausdruck sind und die Erstellung von Funktionen direkt Vorort ermöglichen.
-[@sebesta_2019 S. 665ff]
+@sebesta_2019[S. 665ff]
 
 // TODO Where does the name closure come from?
 

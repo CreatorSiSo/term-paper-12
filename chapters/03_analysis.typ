@@ -40,7 +40,7 @@ Diese werden hier nicht berücksichtigt, da sie hochspezialisiert und teilweise 
 // TODO: Reword once age is visible in diagram
 // According to the StackOverflow Developer Survey 2022, JavaScript (1995), Python (1991), Typescript (2012), Java (1995), C\# (2000), C++ (1985), PHP (1995), C (1978), Go (2009) and Rust (2010) are the ten most widely used programming languages.
 // On average, these languages are therefore 25 years old.
-// [@age_prog_langs]
+// @age_prog_langs
 
 == Neuere Programmiersprachen
 

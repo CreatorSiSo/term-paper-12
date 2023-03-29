@@ -33,7 +33,6 @@
 	appendix: [
 		#include "appendix/rym_overview.typ"
 		#pagebreak()
-
 		#include "appendix/code_examples.typ"
 	]
 )

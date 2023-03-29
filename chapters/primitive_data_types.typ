@@ -4,7 +4,7 @@ Data types that are not defined in terms of other types are called primitive dat
 Nearly all programming languages provide a set of primitive data types.
 Some of the primitive types are merely reflections of the hardware for example, most integer types and others require only a little nonhardware support for their implementation.
 More complex types can be created by combining primitive types as we will see in /* @sec-algebraic-data-types */.
-[@sebesta_2019 S. 400]
+@sebesta_2019[S. 400]
 
 
 == Boolean <sec-bool>
@@ -16,7 +16,7 @@ Although other types, such as integers, can be used for these purposes,
 the use of boolean types is more readable.
 C and C++ still allow numeric expressions to be used as if they were boolean.
 This is not the case in the subsequent languages, Java and C\# which is why Rym will disallow this as well.
-[@java_spec_types; @csharp_spec_types]
+#cite("java_spec_types", "csharp_spec_types")
 // TODO: C, C++ citetation for numerics usable as booleans
 
 
@@ -24,11 +24,11 @@ A boolean value could be represented by a single bit,
 but because a single bit of memory cannot be accessed efficiently on many machines,
 they are often stored in the smallest efficiently addressable cell of memory, typically a byte.
 As this detail is trivial Rym does not specify how to store boolean values.
-[@sebesta_2019 S. 404f]
+@sebesta_2019[S. 404f]
 
 The boolean type in Rym is called "bool" like in Python, PHP, C\#, Go, Rust, Swift and many others.
 It is named after _George Boole_ who pioneered the field of mathematical logic.
-[@php_ref_types; @csharp_spec_types; @go_spec; @rust_ref_types; @swift_docs]
+#cite("php_ref_types", "csharp_spec_types", "go_spec", "rust_ref_types", "swift_docs")
 
 // TODO Should bool be a union type of true and false?
 // ```rym
@@ -69,12 +69,13 @@ These sizes of integers, and often a few others, are supported by some programmi
 As seen in /* @tbl-int-formats */, Java includes four signed integer sizes: byte, short, int, and long.
 Some languages, for example C, C++ and C\# include unsigned integer types, which are types for integer values without signs.
 Unsigned types are often used for binary data. 8 bit large unsigned integers can for example represent exactly one byte.
-[@sebesta_2019 S. 400]
+@sebesta_2019[S. 400]
 
 The types for C and C++ that are represented in /* @tbl-int-formats */ are using the "cstdint" header
 as the language standards do not specify the sizes for default integer types and leave them up to the implementation.
 Types from this standard header file are however required to that exact size.
-[@iso_9899_2018 S. 0; @iso_14882_2020 S. 0] <!-- TODO citation pages -->
+@iso_9899_2018[S. 0] @iso_14882_2020[S. 0]
+// TODO citation pages
 
 - Python ^[https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex]
   - size as large as needed
@@ -109,11 +110,11 @@ Types from this standard header file are however required to that exact size.
 
 <!-- TODO Should I call this "Floating Point Numbers" insted? -->
 
-Generally languages provide floating point data types that adhere to the "IEEE 754 - Floating-Point" arithmetic standard [@ieee754_2019] or its ISO adoption "ISO/IEC 60559" [@iso60559_2020]. How wide that support is can be seen in /* @tbl-float-formats */.
+Generally languages provide floating point data types that adhere to the "IEEE 754 - Floating-Point" arithmetic standard @ieee754_2019 or its ISO adoption "ISO/IEC 60559" @iso60559_2020. How wide that support is can be seen in /* @tbl-float-formats */.
 
 - IEEE 754
   - https://en.wikipedia.org/wiki/IEEE_754
-  - active version is from 2019 [@ieee754_2019]
+  - active version is from 2019 @ieee754_2019
   - https://ieeexplore.ieee.org/document/8766229
   - same as ISO/IEC 60559
 - Accessed: 02.01.2023
