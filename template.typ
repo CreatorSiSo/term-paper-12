@@ -7,9 +7,12 @@
   mentor: "Betreuer",
   place: "Ort",
   date: "Datum",
-  body
+	bibliographies: (),
+  body: [],
+	appendix: []
 ) = {
-  set document(author: author, title: title)
+	// --- General Styles ---
+
   set page(
     paper: "a4",
     margin: (
@@ -25,6 +28,12 @@
   show par: set block(above: 1.6em, below: 1.6em)
   // Set space between lines
   set par(leading: 1.2em)
+
+	// Set heading styles
+	show heading.where(level: 1): h => {
+		set block(below: 1.8em)
+		h
+	}
 
   // Set style for raw blocks:
   // ```lang
@@ -55,6 +64,18 @@
     radius: 3pt,
   )
 
+	// Set table styles
+	set figure(gap: 1.4em)
+	show figure: f => {
+		set block(above: 2em, below: 2em)
+		f
+	}
+	set table(rows: 2.2em, align: horizon, stroke: luma(100))
+
+	// --- Content ---
+
+  set document(author: author, title: title)
+
   // Hierarchy of institutions
   for institution in institution_hierarchy {
     institution + "\n"
@@ -83,6 +104,7 @@
 
   pagebreak()
 
+	// Outline styles
 	{
 		// Use consistent indent for items with depth 2
 		show hide: _ => h(1em)
@@ -103,12 +125,37 @@
 	// Start with page number 1 on first content page
   counter(page).update(1)
 
-  // Set heading numbering style
+  // Main body styles
   set heading(numbering: "1.1")
-
   set par(justify: true)
 
   body
+
+	pagebreak()
+
+	// Bibliography styles
+	{
+		set par(justify: false)
+		bibliography(
+			title: "Quellenverzeichnis",
+			bibliographies
+		)
+	}
+
+	pagebreak()
+
+	// Appendix heading style
+	set heading(numbering: (..args) => {
+		let nums = args.pos()
+		if nums.len() == 1 {
+			return [Anhang #numbering("A", ..nums) ---]
+		}
+		numbering("A.1", ..nums)
+	})
+	// Reset heading counter
+	counter(heading).update(())
+
+	appendix
 }
 
 #let TODO(body) = underline(text(fill: red)[TODO: #body.])

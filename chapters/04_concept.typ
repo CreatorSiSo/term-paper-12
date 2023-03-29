@@ -1,6 +1,3 @@
-#set figure(gap: 1.2em)
-#set table(rows: 2.4em, align: horizon)
-
 // = Concept of a modern programming language
 = Konzept einer Programmiersprache der nächsten Generation
 

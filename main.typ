@@ -1,7 +1,7 @@
 #import "./template.typ": *
 #import "./graphs.typ": column_graph
 
-#show: body => project(
+#project(
   institution_hierarchy: (
     "Berufliches Schulzentrum für Bau und Technik Dresden",
     "Fachoberschule",
@@ -14,43 +14,26 @@
   mentor: "Herr Rottmann",
   place: "Dresden",
   date: "26.03.2023",
-  body
+	bibliographies: (
+		"cite/general.bib",
+		"cite/standards.bib",
+		"cite/books.bib"
+	),
+  body: [
+		#include "chapters/01_intro.typ"
+		#pagebreak()
+		#include "chapters/02_charactaristics.typ"
+		#pagebreak()
+		#include "chapters/03_analysis.typ"
+		#pagebreak()
+		#include "chapters/04_concept.typ"
+		#pagebreak()
+		#include "chapters/05_conclusion.typ"
+	],
+	appendix: [
+		#include "appendix/rym_overview.typ"
+		#pagebreak()
+
+		#include "appendix/code_examples.typ"
+	]
 )
-
-#include "chapters/01_intro.typ"
-#pagebreak()
-
-#include "chapters/02_charactaristics.typ"
-#pagebreak()
-
-#include "chapters/03_analysis.typ"
-#pagebreak()
-
-#include "chapters/04_concept.typ"
-#pagebreak()
-
-#include "chapters/05_conclusion.typ"
-#pagebreak()
-
-#bibliography((
-	"cite/general.bib",
-	"cite/standards.bib",
-	"cite/books.bib"
-))
-#pagebreak()
-
-// Set heading style for appendix
-#set heading(numbering: (..args) => {
-	let nums = args.pos()
-	if nums.len() == 1 {
-		return [Anhang #numbering("A", ..nums) ---]
-	}
-	numbering("A.1", ..nums)
-})
-// Reset heading counter
-#counter(heading).update(())
-
-#include "appendix/rym_overview.typ"
-#pagebreak()
-
-#include "appendix/code_examples.typ"
