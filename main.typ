@@ -29,6 +29,9 @@
 #include "chapters/04_concept.typ"
 #pagebreak()
 
+#include "chapters/05_conclusion.typ"
+#pagebreak()
+
 #bibliography((
 	"cite/general.bib",
 	"cite/standards.bib",
