@@ -47,7 +47,7 @@ Im Gegensatz dazu werden Anweisungen meist dazu verwendet, eine spezifische Reih
 // Pascal case distinguishes types from values.
 Rym hat auch strikte Regeln für die Namensgebung.
 Namen dürfen nur mit den ASCII-Zeichen `a-z`, `A-Z` oder `_` beginnen. Anschließend sind auch die Zahlen `0-9` erlaubt.
-Dies erleichtert den Benutzern die Zusammenarbeit, da die Sprache sie veranlasst, ähn-lichen Code zu schreiben.
+Dies erleichtert den Benutzern die Zusammenarbeit, da die Sprache sie veranlasst, ähnlichen Code zu schreiben.
 Variablen-, Funktions- und Modulnamen werden in _snake\_case_ geschrieben und die Namen von komplexen Typen müssen in _PascalCase_ geschrieben werden.
 Snake-Case wird verwendet, da der Unterstrich die Lesbarkeit verbessert.
 Pascal-Case vereinfacht die Unterscheidung von komplexen Datentypen und Werten.

@@ -22,7 +22,7 @@
       bottom: 2cm,
     )
   )
-  set text(font: "Merriweather", size: 10.2pt, lang: "de", region: "DE")
+  set text(font: "Merriweather", size: 10.2pt, lang: "de", region: "DE", hyphenate: false)
 
   // Set paragraph spacing
   show par: set block(above: 1.6em, below: 1.6em)
@@ -30,10 +30,10 @@
   set par(leading: 1.2em)
 
 	// Set heading styles
-	show heading.where(level: 1): h => {
-		set block(below: 1.8em)
-		h
-	}
+	show heading.where(level: 1): set block(above: 1.8em, below: 1.6em)
+	show heading.where(level: 2): set block(above: 1.8em, below: 1.4em)
+	show heading.where(level: 3): set block(above: 1.8em, below: 1.4em)
+	show heading.where(level: 4): set block(above: 1.8em, below: 1.4em)
 
   // Set style for raw blocks:
   // ```lang
@@ -72,6 +72,47 @@
 	}
 	set table(rows: 2.2em, align: horizon, stroke: luma(100))
 
+	// Outline redefinition for bold level 1 items
+	let outline(title: "Contents", depth: none, indent: false) = {
+		heading(title, numbering: none)
+		locate(it => {
+			let elements = query(heading, after: it)
+
+			for el in elements {
+				if depth != none and el.level > depth { continue }
+
+				let maybe_number = if el.numbering != none {
+					numbering(el.numbering, ..counter(heading).at(el.location()))
+					" "
+				}
+				let line = {
+					if indent {
+						h(1em * (el.level - 1 ))
+					}
+
+					if el.level == 1 {
+						v(weak: true, 0.5em)
+						set text(weight: "bold")
+						maybe_number
+						el.body
+					} else {
+						maybe_number
+						el.body
+					}
+
+					// Filler dots
+					box(width: 1fr, h(3pt) + box(width: 1fr, repeat[.]) + h(3pt))
+					// Page number
+					str(counter(page).at(el.location()).first())
+
+					linebreak()
+				}
+
+				link(el.location(), line)
+			}
+		})
+	}
+
 	// --- Content ---
 
   set document(author: author, title: title)
@@ -92,7 +133,7 @@
 
   {
     set align(bottom)
-    set terms(tight: false, spacing: 1em)
+    set terms(tight: false, spacing: 1em, separator: ": ")
 
     [
       / Verfasser: #author\
@@ -104,16 +145,11 @@
 
   pagebreak()
 
-	// Outline styles
-	{
-		// Use consistent indent for items with depth 2
-		show hide: _ => h(1em)
-
-		outline(
-			depth: 2,
-			indent: true,
-		)
-	}
+	outline(
+		title: "Inhaltsverzeichnis",
+		depth: 2,
+		indent: true,
+	)
 
   pagebreak()
 
@@ -136,6 +172,7 @@
 	// Bibliography styles
 	{
 		set par(justify: false)
+		set block(above: 1.6em, below: 1.6em)
 		bibliography(
 			title: "Quellenverzeichnis",
 			bibliographies

@@ -28,12 +28,11 @@ Die Höhe eines Balkens entspricht der Anzahl der Stimmen, die diese Sprache erh
 	caption: [Die beliebtesten Programmiersprachen im Jahr 2022],
 ) <fig-so-survey>
 
-The original data also mentions HTML, CSS, SQL, Bash/Shell, and PowerShell.
-These are not considered here because they are highly specialised and in part not Turing-complete. // [^tc-note]
-
+// The original data also mentions HTML, CSS, SQL, Bash/Shell, and PowerShell.
+// These are not considered here because they are highly specialised and in part not Turing-complete. // [^tc-note]
 // [^tc-note]: A Turing-complete language can be used to implement any algorithm. @scott_2009, @scott_2016
 In den ursprünglichen Daten werden auch HTML, CSS, SQL, Bash/Shell und PowerShell erwähnt.
-Diese werden hier nicht berücksichtigt, da sie hochspezialisiert und teilweise nicht Turing-vollständig /* [^tc-note] _(engl. Turing-complete)_ */ sind.
+Diese werden hier nicht berücksichtigt, da sie hochspezialisiert und teilweise nicht Turing-vollständig /* [^tc-note] */ _(engl. Turing-complete)_ sind.
 
 // [^tc-note]: Eine Turing-vollständige Sprache kann zur Umsetzung jedes beliebigen Algorithmus benutzt werden. @scott_2009, @scott_2016
 
@@ -70,7 +69,7 @@ Die Sprache ist für die Systemprogrammierung gedacht und kombiniert Sicherheit 
 Der Schwerpunkt liegt auf Typsicherheit, Speichersicherheit (ohne automatische Garbage Collection) und Parallelität.
 Rust verbietet sowohl Null- als auch Dangling-Pointer.
 Diese sind bekannt dafür, schwer zu behebende Fehler zu verursachen, die laut Google, für über 50% aller Bugs in Android verantwortlich sind.
-@infoq_rust_interview @scott_2016[S.867f] @rust_web @google_rust
+#cite("infoq_rust_interview", "rust_web", "google_rust") @scott_2016[S.867f]
 
 
 // Kotlin from JetBrains^[JetBrains is a company that develops integrated development environments] can be seen as the successor to Java.
@@ -82,7 +81,7 @@ Kotlin von JetBrains /* TODO ^[JetBrains ist ein Unternehmen, das integrierte En
 Die Interoperabilität mit Java ist durch die Verwendung der Java Virtual Machine (JVM) weiterhin gewährleistet.
 Groovy von Apache /* TODO^[Die Apache Software Foundation ist eine gemeinnützige Organisation, die Open-Source Softwareprojekte unterstützt. @apache] */, Closure und Scala sind weitere Sprachen, die auf der JVM basieren, aber nicht so populär geworden sind wie Kotlin.
 Einer der größten Faktoren für den Erfolg war die offizielle Unterstützung von Google für Android-Entwicklung mit Kotlin.
-@groovy_web @groovy_docs @closure_web @closure_ref @scala_web @scala_origins @scala_spec @scott_2016[S.867f] @jetbrains_web @kotlin_web @kotlin_ref @android_kotlin
+#cite("groovy_web", "groovy_docs", "closure_web", "closure_ref", "scala_web", "scala_origins", "scala_spec", "jetbrains_web", "kotlin_web", "kotlin_ref", "android_kotlin") @scott_2016[S.867f]
 
 
 // Google has also created some programming languages of their own, including Go, Dart and Carbon.
@@ -99,7 +98,7 @@ Dart wurde entwickelt, um eine schnelle Entwicklung von Benutzeroberflächen fü
 Mit dem Flutter-Framework lassen sich plattform-übergreifende Anwendungen für Android, IOS, Web, Windows, macOS und Linux erstellen.
 Das jüngste Projekt ist Carbon, ein experimenteller Nachfolger für C++.
 Es wurde erst Ende 2022 veröffentlicht und ist noch lange nicht ausgereift.
-@go_web @go_spec @flutter_multi @carbon
+#cite("go_web", "go_spec", "flutter_multi", "carbon")
 
 // Swift, on the other hand, was introduced by Apple in 2014 as a replacement for Objective-C.
 // It was designed to be more readable, safer and faster than Objective-C and has quickly gained popularity in the iOS and macOS development community.
@@ -111,7 +110,7 @@ Swift soll lesbarer, sicherer und schneller als Objective-C sein
 und hat bei iOS- und macOS-Entwicklern schnell an Popularität gewonnen.
 Swift bietet moderne Features wie funktionale Programmierung, Generics und Typinferenz, die das Schreiben komplexer Softwaresysteme erleichtern.
 Swift hat mit der Einführung von Swift on the Server, einem Projekt, das die Verwendung von Swift für Backend-Systeme ermöglicht, auch in der serverseitigen Entwicklung an Popularität gewonnen.
-@swift_docs @swift_org
+#cite("swift_docs", "swift_org")
 
 //  TODO mention that most languages are open source
 // Swift is also open-source, meaning that developers from all around the world can contribute to its development and evolution. -->
@@ -137,19 +136,18 @@ Neue Funktionen, die zur Verbesserung der Sicherheit und der Benutzerfreundlichk
 // TypeScript is a very good example of this, as it adds an entire type system on top of JavaScript, which can prevent about 15% of often occuring bugs.
 // @to_type_or_not_to_type[S. 7]
 // There is even a proposal to add type annotations to JavaScript, so that tools like TypeScript can skip large parts of the compilation step.
-// @stateofjs_missing @tc39_type_annotations
+// #cite("stateofjs_missing", "tc39_type_annotations")
 // Other dynamically typed languages, like Python and PHP already support type hints and Lua has tools that are similar to TypeScript.
 // All the other languages just mentioned (Rust, Kotlin, Go, Dart, Swift) require static types.
-// @python_docs_typings @python_pep_484 @php_ref_type_declarations @go_spec @rust_ref_types @swift_docs
 Eine gängige Änderung ist die Einführung der statischen Typisierung oder zumindest der Typ-Hinweise _(engl. type annotations)_.
 Diese Funktion ermöglicht es dem Compiler oder Tools von Drittanbietern, während der Kompilierung auf Typfehler zu prüfen, Dadurch wird es einfacher, Fehler zu einem frühen Zeitpunkt im Entwicklungsprozess zu erkennen.
 TypeScript ist ein sehr gutes Beispiel dafür, da es ein komplettes Typisierungssystem für JavaScript bereitstellt, welches etwa 15% der häufig auftretenden Fehler verhindern kann.
 @to_type_or_not_to_type[S. 7]
 Es gibt sogar einen Entwurf, JavaScript mit Typ-Hinweisen zu versehen, so dass Werkzeuge wie TypeScript große Teile des Kompilierungsschrittes überspringen können.
-@stateofjs_missing @tc39_type_annotations
+#cite("stateofjs_missing", "tc39_type_annotations")
 Andere dynamisch typisierte Sprachen wie Python und PHP unterstützen bereits Typ-Hinweise, und Lua verfügt über Werkzeuge, die TypeScript sehr ähnlich sind.
 Alle anderen gerade genannten Sprachen (Rust, Kotlin, Go, Dart, Swift) erfordern statische Typen.
-@python_docs_typings @python_pep_484 @php_ref_type_declarations @go_spec @rust_ref_types @swift_docs
+#cite("python_docs_typings", "python_pep_484", "php_ref_type_declarations", "go_spec", "rust_ref_types", "swift_docs")
 
 // The problem is that their syntax can get very verbose, which is why many type systems allow for type inference.
 // It allows the language to automatically determine the type of a value or expression based on its usage, without the user to explicitly declare it.
@@ -159,7 +157,7 @@ Das Problem ist, dass ihre Syntax sehr umfangreich werden kann, weshalb viele Ty
 Dadurch kann die Sprache automatisch den Typ eines Wertes oder Ausdrucks auf der Grundlage seiner Verwendung bestimmen, ohne dass der Benutzer ihn explizit angeben muss.
 Ursprünglich kommt dieses System von funktionellen Sprachen wie Haskell, F\# und OCaml und hat seinen Weg zu TypeScript, Go, Rust, Kotlin, Dart, Swift und vielen anderen gefunden.
 Selbst C++, Java und C\# haben an einigen Stellen entsprechende Funktionen hinzugefügt.
-@ts_handbook_type_inference @go_spec @rust_ref_let_stmt @rust_ref_influences @kotlin_ref[S. 236] @dart_spec[S. 12] @swift_docs @cpp_ref_auto @java_spec_type_inference @fsharp_spec[S. 13]
+#cite("ts_handbook_type_inference", "go_spec", "rust_ref_let_stmt", "rust_ref_influences", "swift_docs", "cpp_ref_auto", "java_spec_type_inference") @kotlin_ref[S. 236] @dart_spec[S. 12] @fsharp_spec[S. 13]
 
 // Type classes are another concept from functional languages, particularly Haskell.
 // They are used for validating connections between user-defined or external data structures, and for extending their functionality.
@@ -172,7 +170,7 @@ Typ-Klassen wurden in verschiedene Programmiersprachen übernommen, darunter Swi
 und Rust, wo sie "traits" genannt werden.
 Java, C\# und viele andere Sprachen haben ähnliche, wenn auch weniger leistungsfähige Konstrukte
 und heißen oft "interfaces".
-@haskell_spec[S. 44f] @swift_book_protocols @iso_14882_2020[S. 526] @rust_ref_traits @java_spec_interfaces @csharp_spec_interfaces
+#cite("swift_book_protocols", "rust_ref_traits", "java_spec_interfaces", "csharp_spec_interfaces") @haskell_spec[S. 44f] @iso_14882_2020[S. 526]
 
 // === Null Safety
 === Null Sicherheit
@@ -240,10 +238,10 @@ C++ hat zum Beispiel Funktionen zur Unterstützung der funktionalen Programmieru
 Dies geschah durch die Hinzufügung des `functional` Moduls und die Implementierung von Algorithmen zur Arbeit mit Iteratoren.
 @iso_14882_2020[S. 622-684]
 TypeScript, Rust, Go, Dart, Kotlin und Swift unterstützen alle Merkmale der funktionalen Programmierung wie z.B.
-Funktionen höherer Ordnung^[Funktionen höherer Ordnung sind Funktionen, welche andere Funktionen als Parameter verwenden oder eine Funktion zurüchgeben.]
+Funktionen höherer Ordnung/* ^[Funktionen höherer Ordnung sind Funktionen, welche andere Funktionen als Parameter verwenden oder eine Funktion zurüchgeben.] */
 und unveränderliche Daten-strukturen.
 Obwohl sie es einfacher machen, zu sehen, wo Seiteneffekte auftreten können, könnte die Unterstützung für deren Kontrolle verbessert werden.
-@rust_ref_influences @blog_logrocket_functional_go @dart_spec[S. 126fff] @kotlin_ref[S. 331f] @swift_book_closures
+#cite("rust_ref_influences", "blog_logrocket_functional_go", "swift_book_closures") @dart_spec[S. 126fff] @kotlin_ref[S. 331f]
 
 
 // The integration of these paradigms into general purpose programming languages has allowed developers to take advantage of the strengths of both imperative and declarative programming styles, resulting in a more flexible and expressive programming experience.
@@ -266,5 +264,5 @@ Die Systeme zur Modularisierung von Projekten und zum Importieren eines Elements
 In älteren Sprachen geschah dies traditionell durch einfaches Einfügen des Inhalts einer anderen Datei.
 Heute sind eingebaute Paketsysteme der De-facto-Standard.
 C++20 bietet Unterstützung für Module, die auf diese Weise funktionieren, und JavaScript hat 2015 ein ähnliches System eingeführt.
-Rust, Go, Dart, Kotlin und Swift unterstützen diese Funktionalität seit ihrer Entwicklung.
-@iso_14882_2020[S. 232-242] @ecmascript_spec[S. 390-425] @rust_ref_modules @go_spec @kotlin_ref[S. 295f] @swift_book_access_control
+Rust, Go, Dart, Kotlin und Swift haben diese Funktionalität von Anfang an unterstützt.
+#cite("rust_ref_modules", "go_spec", "swift_book_access_control") @iso_14882_2020[S. 232-242] @ecmascript_spec[S. 390-425] @kotlin_ref[S. 295f]
