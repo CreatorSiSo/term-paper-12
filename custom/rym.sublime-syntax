@@ -3,12 +3,13 @@
 # http://www.sublimetext.com/docs/syntax.html
 name: Rym
 scope: source.rym
+file_extensions: [rym, rys]
 contexts:
   main:
     - include: block-comments
     - include: comments
-    - include: keywords
     - include: punctuation
+    - include: keywords
     - include: strings
     - include: chars
     - include: constants
@@ -81,9 +82,9 @@ contexts:
         1: entity.name.function.rym
         2: keyword.operator.assignment.rym
   ident:
-    - match: '([A-Z]|_+[A-Z])[_a-zA-Z0-9]*'
+    - match: "([A-Z]|_+[A-Z])[_a-zA-Z0-9]*"
       scope: entity.name.rym
-    - match: '[_a-z][_a-zA-Z0-9]*'
+    - match: "[_a-z][_a-zA-Z0-9]*"
       scope: variable.name
   keywords:
     - match: \b(func|proc|use|mod|pub|self|Self|as|move)\b
@@ -99,7 +100,7 @@ contexts:
     - match: (\||\|\||&|&&|<<|>>|!)(?!=)
       comment: logical operators
       scope: keyword.operator.logical.rym
-    - match: '(?<![<>])=(?!=|>)'
+    - match: "(?<![<>])=(?!=|>)"
       comment: single equal
       scope: keyword.operator.assignment.equal.rym
     - match: (=(=)?(?!>)|!=|<=|(?<!=)>=)
@@ -122,37 +123,37 @@ contexts:
     - match: \.
       comment: dot
       scope: punctuation.dot.rym
-    - match: ','
+    - match: ","
       comment: comma
       scope: punctuation.comma.rym
-    - match: ':'
+    - match: ":"
       comment: colon
       scope: punctuation.colon.rym
     - match: ;
       comment: semicolon
       scope: punctuation.semi.rym
-    - match: '@'
+    - match: "@"
       comment: at
       scope: punctuation.at.rym
-    - match: \?
+    - match: "\\?"
       comment: question mark
       scope: punctuation.question.rym
-    - match: '->'
+    - match: "->"
       comment: thin arrow
       scope: punctuation.rym
-    - match: '=>'
+    - match: "=>"
       comment: fat arrow
       scope: punctuation.rym
-    - match: '[{}]'
+    - match: "[{}]"
       comment: curly braces
       scope: punctuation.brackets.curly.rym
-    - match: '[()]'
+    - match: "[()]"
       comment: parentheses, round brackets
       scope: punctuation.brackets.round.rym
     - match: '[\[\]]'
       comment: square brackets
       scope: punctuation.brackets.square.rym
-    - match: '(?<!=)[<>]'
+    - match: "(?<!=)[<>]"
       comment: angle brackets
       scope: punctuation.brackets.angle.rym
   strings:

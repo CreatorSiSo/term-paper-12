@@ -57,8 +57,8 @@ factorial(5)  // 120
 
 ```rym
 func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
-  mut output = ""
-  mut first_item = true
+  let mut output = ""
+  let mut first_item = True
 
   for arg in args {
     if first_item { first_item = false } else { output.push(sep) }
@@ -74,8 +74,8 @@ func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
 
 ```rym
 func print(..args: [impl Display], sep = " ", end = "\n") -> @Io {
-  const output = args.iter().map(item -> item.fmt()).join(sep)
-  const output = output + end
+  let output = args.iter().map(item -> item.fmt()).join(sep)
+  let output = output + end
   /* .. */
 }
 ```
@@ -103,7 +103,7 @@ func summands(numbers: [I32], sum: I32) -> Option<[Usize; 2]> {
   let mut high = numbers.len() - 1
 
   while low < high {
-    const current_sum = numbers[low] + numbers[high]
+    let current_sum = numbers[low] + numbers[high]
 
     if current_sum == sum {
       return Some([numbers[low], numbers[high]])

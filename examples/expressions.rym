@@ -8,35 +8,35 @@ const nums = [9, 1, 8, 4, 4, 0, 0, 1, -5, -16, 355]
 // [8, 4, 4, 0, 0, -16]
 const even_nums =
 	nums.iter()
-			.filter(num -> (num % 2) == 0)
+			.filter(num => (num % 2) == 0)
 			.collect()
 
 // [9, 1, 1, -5, 355]
 const odd_nums =
 	nums.iter()
-			.filter(num -> (num % 2) == 1)
+			.filter(num => (num % 2) == 1)
 			.collect()
 
 // [[9, 1]]
 const sum_is_10 =
 	nums.windows(2)
-			.filter([l, r] -> (l + r) == 10)
+			.filter([l, r] => (l + r) == 10)
 			.collect()
 
 enum DivideError {
 	DivideByZero
 }
 
-func checked_div(l: int, r: int) -> Result<int, DivideError> {
+func checked_div(l: Int, r: Int) -> Result<Int, DivideError> {
 	if r == 0 { Err(.DivideByZero) } else { Ok(l / r) }
 }
 
-func checked_div(l: int, r: int) -> Result<int, DivideError> {
+func checked_div(l: Int, r: Int) -> Result<Int, DivideError> {
 	if r == 0 { Err(.DivideByZero) }
 	else { Ok(l / r) }
 }
 
-func checked_div(l: int, r: int) -> Result<int, DivideError> {
+func checked_div(l: Int, r: Int) -> Result<Int, DivideError> {
 	if r == 0 then {
 		return Err(.DivideByZero)
 	} else {
@@ -44,11 +44,11 @@ func checked_div(l: int, r: int) -> Result<int, DivideError> {
 	}
 }
 
-func checked_div(l: int, r: int) -> Result<int, DivideError> {
+func checked_div(l: Int, r: Int) -> Result<Int, DivideError> {
 	if r == 0 then Err(.DivideByZero)
 	else Ok(l / r)
 }
 
-func checked_div(l: int, r: int) -> Result<int, DivideError> {
+func checked_div(l: Int, r: Int) -> Result<Int, DivideError> {
 	if r == 0 then Err(.DivideByZero)	else Ok(l / r)
 }

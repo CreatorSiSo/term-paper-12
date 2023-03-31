@@ -16,10 +16,8 @@ Völlig neue Ideen können so viel einfacher und schneller ausprobiert werden.
 Bei einer Sprache, die von Tausenden von Menschen benutzt wird und möglichst stabil bleiben soll,
 gestaltet sich dieser Prozess schwieriger.
 
-Ein weiterer Vorteil kleiner neuer Projekte ist, dass es weniger Bürokratie und Koordination gibt,
-was es ermöglicht, viele Konzepte schnell und iterativ auszuprobieren.
-Die Koordination ist bei größeren Projekten essentiell,
-da viele Leute gleichzeitig an ihnen arbeiten und es sonst kaum Fortschritte geben würde.
+Ein weiterer Vorteil kleiner neuer Projekte ist, dass es weniger Bürokratie und Koordination gibt, wodurch es möglich ist, viele Konzepte schnell und iterativ auszuprobieren.
+Diese Koordination ist jedoch bei größeren Projekten essentiell, da viele Leute gleichzeitig an ihnen arbeiten und es sonst kaum Fortschritte geben würde.
 
 Wenn die daraus resultierenden Ansätze der "Neulinge" sinnvoll erscheinen und an anderen Stellen übernommen werden,
 führt dies oft zu einer Integration in etabliertere Sprachen.

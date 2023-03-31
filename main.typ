@@ -1,5 +1,4 @@
 #import "./template.typ": *
-#import "./graphs.typ": column_graph
 
 #project(
   institution_hierarchy: (
@@ -13,7 +12,7 @@
   class: "FOS21B",
   mentor: "Herr Rottmann",
   place: "Dresden",
-  date: "26.03.2023",
+  date: "31.03.2023",
 	bibliographies: (
 		"cite/general.bib",
 		"cite/standards.bib",

@@ -189,8 +189,6 @@ Dadurch verringert sich auch die Fehleranfälligkeit.
 In anderen Worten: Eine Sprache sollte die Anzahl der Dinge minimieren, über die der Nutzer gleichzeitig nachdenken muss.
 @sebesta_2019[S. 49ff]
 
-#pagebreak()
-
 // == Reliability
 == Verlässlichkeit
 
@@ -256,8 +254,6 @@ Dies kann zu unerwarteten Änderungen an den Daten führen und Fehler verursache
 Um diese Risiken zu mindern, kann die Programmiersprache mit robusten statischen Analysemechanismen entworfen werden, wie z.B. Daten-/Kontrollflussanalyse, Bounds- und Typ-Checking.
 Dadurch wird sichergestellt, dass die Annahmen des Benutzers über die zu verarbeitenden Daten korrekt sind, was zur Vermeidung von Fehlern beiträgt und die Zuverlässigkeit von Programmen verbessert.
 @sebesta_2019[S. 51ff] @iso_24772_1_2019[S. 81f] @iso_24772_1_2019[S. 37f] @iso_24772_1_2019[S. 16]
-
-#pagebreak()
 
 // === Future Proof
 === Zukunftssicherheit

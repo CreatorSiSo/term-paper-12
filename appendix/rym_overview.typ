@@ -170,7 +170,7 @@ if let Some(value) = maybe_value {
 === `?` Operator <sec-qestion-mark-op>
 
 ```rym
-func read_to_string(path: string) -> Result<string, IoError> {
+func read_to_string(path: String) -> Result<String, IoError> {
   let mut file = File.open(path)?
   let mut data = ""
   file.read_to_string(mut data)?
@@ -226,7 +226,6 @@ while number > 0 {
 }
 print("LIFTOFF!!!")
 ```
-
 ```
 3
 2
@@ -246,7 +245,6 @@ let result = loop {
 }
 print(f"The result is {result}")
 ```
-
 ```
 The result is 20
 ```
@@ -259,7 +257,6 @@ for number in numbers {
   print(f"the value is: {number}")
 }
 ```
-
 ```
 the value is: 10
 the value is: 20
@@ -270,15 +267,16 @@ the value is: 50
 
 === Closures <sec-appendix-closures>
 
+// TODO pipes? x => x |> f |> f
+// TODO chains? x => x.f().f()
 ```rym
-func twice(f: func(i32) -> i32) -> func(i32) -> i32 {
-  x -> f(f(x))
+func twice(f: func(I32) -> I32) -> func(I32) -> I32 {
+  x => f(f(x))
 }
 
-let plus_three_twice = twice(i -> i + 3)
+let plus_three_twice = twice(i => i + 3)
 print(f"{plus_three_twice(10)}")
 ```
-
 ```
 16
 ```
@@ -294,7 +292,6 @@ let mut mut_name = "Hello " // änderbare variable
 mut_name += "Universe!"
 print(name, mut_name)
 ```
-
 ```
 Hello World! Hello Universe!
 ```
@@ -323,7 +320,6 @@ let data = fs.read_to_string(path).unwrap()
 
 print(data)
 ```
-
 ```
 What should you do if you meet a giant? Use big words.
 ```
@@ -347,7 +343,7 @@ Anschließend wird der Funktionsbereich zerstört und der ursprüngliche Bereich
 
 ```rym
 let x = 5
-func changeBy(x: i32) -> i32 {
+func changeBy(x: I32) -> I32 {
   let y = 10
   return x + y
 }
@@ -360,7 +356,7 @@ let result = changeBy(3)  // result = 13
 ==== Standardwerte für Parameter
 
 ```rym
-func increment(num: i32, by = 1) -> i32 {
+func increment(num: I32, by = 1) -> I32 {
   num + by
 }
 
@@ -372,7 +368,7 @@ let plus_50 = increment(100, by: 50)  // 150
 ==== Erzwingen von benannten Argumenten
 
 ```rym
-func testing(pos_or_named: i32, .., named: string) { }
+func testing(pos_or_named: I32, .., named: String) { }
 
 testing(2, named: "Hello World!")
 testing(2, named: "Hello World!")
@@ -384,7 +380,7 @@ testing(named: "Hello World!", pos_or_named: 2)
 ==== Variable Argumente
 
 ```rym
-func concat(..strings: [string], sep = "") -> string {
+func concat(..strings: [String], sep = "") -> String {
   strings.join(sep)
 }
 let name = "Mr. Walker"
@@ -395,7 +391,6 @@ print(
   sep: "\n"
 )
 ```
-
 ```
 Hello Mr. Walker!
 2, True, Mr. Walker
@@ -482,7 +477,6 @@ print(counter.next())
 print(counter.next())
 print(counter.next())
 ```
-
 ```
 Some(1)
 Some(2)

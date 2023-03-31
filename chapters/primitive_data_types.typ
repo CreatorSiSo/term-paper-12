@@ -40,8 +40,8 @@ It is named after _George Boole_ who pioneered the field of mathematical logic.
 
 A Boolean value may be created using the _true_ or _false_ literals
 ```rym
-const var_1 = true
-const var_2 = false
+let var_1 = true
+let var_2 = false
 ```
 and is always the result for the comparison binary operators ==, <, <=, >= and >.
 The comparision operations actually use the literals in their implementation as well,
@@ -54,7 +54,7 @@ as the ! can be used as a unary postfix operator to unwrap a value and __TODO: I
 
 In Rym the control-flow expressions _if_ and _while_ use booleans to decide whether some code should be executed or not. How they work and why their syntax tooks like this will be covered in __TODO: INSERT CHAPTER REF__.
 ```rym
-const condition = true
+let condition = true
 if condition { /* do something once */ }
 while condition { /* do something forever */ }
 ```
@@ -187,7 +187,7 @@ impl Add for [char] {
   fn add(move self, move rhs: Self) -> Self {
     [..self, ..rhs]
     // or
-    mut new_array = ['\0'; self.length + rhs.length]
+    let mut new_array = ['\0'; self.length + rhs.length]
     new_array[0..self.length] = self
     new_array[self.length..] = rhs
   }

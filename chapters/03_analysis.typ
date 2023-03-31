@@ -23,7 +23,7 @@ Die Höhe eines Balkens entspricht der Anzahl der Stimmen, die diese Sprache erh
 
 // TODO: Color should show the prog lang age
 #figure(
-	image(height: 285pt, "../data/stackoverflow-survey-2022.png"),
+	image(height: 262pt, "../data/stackoverflow-survey-2022.png"),
 	// Popularity of programming languages in 2022
 	caption: [Die beliebtesten Programmiersprachen im Jahr 2022],
 ) <fig-so-survey>
@@ -40,6 +40,8 @@ Diese werden hier nicht berücksichtigt, da sie hochspezialisiert und teilweise 
 // According to the StackOverflow Developer Survey 2022, JavaScript (1995), Python (1991), Typescript (2012), Java (1995), C\# (2000), C++ (1985), PHP (1995), C (1978), Go (2009) and Rust (2010) are the ten most widely used programming languages.
 // On average, these languages are therefore 25 years old.
 // @age_prog_langs
+
+#pagebreak()
 
 == Neuere Programmiersprachen
 

@@ -24,10 +24,10 @@ Später kann der Benutzer durch kleine Änderungen mehr Kontrolle erlangen.
 
 // Rym can be considered part of the C-style languages, as it combines syntax from C, Go, Rust, F\# and others.
 // The typical braces -- `{` and `}` -- are used for structure types and to enclose blocks of statements.
-// Function definitions begin with "func", just as they do in Go or Swift, and the type declarations are very similar to those in F\#.
+// Function definitions begin with `func`, just as they do in Go or Swift, and the type declarations are very similar to those in F\#.
 Rym kann als Teil der C-ähnlichen Sprachen betrachtet werden, da die Syntax ähnlich der von C, Go, Rust, TypeScript, F\# ist.
 Die typischen geschweiften Klammern -- `{` und `}` -- werden für Struktur-Typen und zum Umschließen von Anweisungsblöcken verwendet.
-Funktionsdefinitionen beginnen mit "func", genau wie in Go oder Swift und die Typ-Deklarationen sind denen in TypeScript sowie F\# sehr ähnlich.
+Funktionsdefinitionen beginnen mit `func`, genau wie in Go oder Swift und die Typ-Deklarationen sind denen in TypeScript sowie F\# sehr ähnlich.
 #cite("go_spec", "swift_book_functions") @fsharp_spec[S. 39f]
 
 // However, it differs from typical C-style syntax in one major way: It is primarily expression-based, like Rust and F\#.
@@ -260,7 +260,7 @@ C und C++ sind mit einem Fragezeichen gekennzeichnet, da ihre Standards die Verw
 ) <tbl-float-formats>
 
 // Rym -- again just like Rust -- provides the `F32` and `F64` types to allow for possible additions and changes in the future.
-Rym bietet -- wieder genau wie Rust -- die Typen `F32` und `F64"` um Ergänzungen und Änderungen in der Zukunft zu ermöglichen.
+Rym bietet -- wieder genau wie Rust -- die Typen `F32` und `F64` um Ergänzungen und Änderungen in der Zukunft zu ermöglichen.
 
 === Strings
 
@@ -336,11 +336,11 @@ Ein Beispiel und eine Erklärung sind in @sec-appendix-scope zu finden.
 
 // All functions in Rym must be defined with a return type.
 // This allows tools to analyse a function without having to look at its body.
-// The return type is specified after the `->` arrow symbol in the function definition.
+// The return type is specified after the `->` (`-` + `>`) arrow symbol in the function definition.
 // If a return statement is encountered during execution, the value following the return statement is returned to the function callee.
 Alle Funktionen in Rym müssen mit einem Rückgabetyp definiert werden.
 Dies ermöglicht es Tools, eine Funktion zu analysieren, ohne sich ihren Körper ansehen zu müssen.
-Der Rückgabetyp wird nach dem Pfeilsymbol `->` in der Funktionsdefinition angegeben.
+Der Rückgabetyp wird nach dem Pfeilsymbol `->` (`-` + `>`) in der Funktionsdefinition angegeben.
 Wenn während der Ausführung eine Return-Anweisung auftritt, wird der Wert, der auf die Anweisung folgt, an den Funktionsaufrufenden zurückgegeben.
 
 // In the following example, the function `multiply` takes two integer arguments, `x` and `y`, and returns the result of their multiplication as an integer.
@@ -400,11 +400,10 @@ Falls erforderlich, können sie jedoch in der gleichen Weise wie bei Funktionsde
 Ihre Syntax lehnt sich an die Funktionsdeklarationen von Rym an und kann wie folgt geschrieben werden:
 
 ```rym
-(param_0, param_1) -> { /* .. */ }
-(param_0, param_1) -> { /* .. */ }
-(param) -> { /* .. */ }
-(param) -> /* .. */
-() -> /* .. */
+(param_0, param_1) => { /* .. */ }
+(param) => { /* .. */ }
+(param) => /* .. */
+() => /* .. */
 ```
 
 // See @sec-appendix-closures and @sec-appendix-fac-decl for examples of how closures are used in Rym.
@@ -441,15 +440,17 @@ Diejenigen der ersten Kategorie erzeugen einen neuen Wert /* ^[Addition: `+` Sub
 ,/* __TODO__^[Gleich: `==` Kleiner: `<` Kleiner gleich `<=` Größer `>` Größer gleich `>=`] */ und die anderen ändern eine bestehende Variable/* ^[Zuweisungen: `=` `+=` `-=` `*=` `/=` `%=` `&=` `|=`] */.
 Die Zuweisungsoperatoren können nur mit Variablen verwendet werden, die als veränderbar gekennzeichnet sind.
 
+// TODO its not really an alternative, most langs have both
 Die folgende sehr typische Syntax, eine Alternative zu `++` und `--` wird ebenfalls unterstützt:
 
 ```rym
 let mut counter = 0
-
 counter = counter + 1
 counter += 1
-
-print(counter) // "2\n"
+print(counter)
+```
+```
+2
 ```
 
 == Control Flow

@@ -20,9 +20,15 @@
       right: 2cm,
       top: 2cm,
       bottom: 2cm,
-    )
+    ),
   )
-  set text(font: "Merriweather", size: 10.2pt, lang: "de", region: "DE", hyphenate: false)
+  set text(
+		font: "Merriweather",
+		size: 10pt,
+		lang: "de",
+		region: "DE",
+		hyphenate: true,
+	)
 
   // Set paragraph spacing
   show par: set block(above: 1.6em, below: 1.6em)
@@ -65,9 +71,9 @@
   )
 
 	// Set table styles
-	set figure(gap: 1.4em)
+	set figure(gap: 1.2em)
 	show figure: f => {
-		set block(above: 2em, below: 2em)
+		set block(above: 1.8em, below: 1.8em)
 		f
 	}
 	set table(rows: 2.2em, align: horizon, stroke: luma(100))
@@ -79,6 +85,7 @@
 			let elements = query(heading, after: it)
 
 			for el in elements {
+				if el.outlined == false { continue }
 				if depth != none and el.level > depth { continue }
 
 				let maybe_number = if el.numbering != none {
@@ -181,18 +188,51 @@
 
 	pagebreak()
 
-	// Appendix heading style
-	set heading(numbering: (..args) => {
-		let nums = args.pos()
-		if nums.len() == 1 {
-			return [Anhang #numbering("A", ..nums) ---]
-		}
-		numbering("A.1", ..nums)
-	})
-	// Reset heading counter
-	counter(heading).update(())
+	{
+		// Appendix heading style
+		set heading(numbering: (..args) => {
+			let nums = args.pos()
+			if nums.len() == 1 {
+				return [Anhang #numbering("A", ..nums) ---]
+			}
+			numbering("A.1", ..nums)
+		})
+		// Reset heading counter
+		counter(heading).update(())
 
-	appendix
+		appendix
+	}
+
+	pagebreak()
+
+	[
+		#heading(outlined: false, numbering: none)[Selbstständigkeitserklärung]
+
+		Ich erkläre, dass ich die vorliegende Arbeit selbständig und ohne fremde Mittel verfasst und keine anderen Hilfsmittel als die angegebenen verwendet habe.
+		Insbesondere versichere ich, dass ich alle wörtlichen und sinngemäßen Übernahmen aus anderen Werken als solche kenntlich gemacht habe.
+
+		#v(2em)
+
+		// #align(
+		// 	center,
+
+		// 	box(width: auto, stroke: red)[
+		// 	]
+		// )
+
+		#show table: it => align(center, box(width: 95%, it))
+
+		#table(
+			stroke: none,
+			columns: (auto, 1fr, auto, 1fr),
+			column-gutter: (3pt, 1em, 3pt),
+			inset: 0pt,
+			[Ort/Datum:],
+			repeat("."),
+			[Unterschrift:],
+			repeat(".")
+		)
+	]
 }
 
 #let TODO(body) = underline(text(fill: red)[TODO: #body.])

@@ -1,32 +1,32 @@
 mod Operators {
 	trait Add {
-		fn add(self, rhs: Self) -> Self
+		func add(self, rhs: Self) -> Self
 	}
 
 	trait Sub {
-		fn sub(self, rhs: Self) -> Self
+		func sub(self, rhs: Self) -> Self
 	}
 
 	trait Mul {
-		fn mul(self, rhs: Self) -> Self
+		func mul(self, rhs: Self) -> Self
 	}
 
 	trait Div {
-		fn div(self, rhs: Self) -> Self
+		func div(self, rhs: Self) -> Self
 	}
 
 	trait Rem {
 		type Rhs
-		fn rem(self, rhs: Rhs) -> Self
+		func rem(self, rhs: Rhs) -> Self
 	}
 
 	trait Neg {
-		fn neg(self) -> Self
+		func neg(self) -> Self
 	}
 
 	trait Eq {
-		fn eq(self, rhs: Self) -> bool
-		fn not_eq(self, rhs: Self) -> bool
+		func eq(self, rhs: Self) -> bool
+		func not_eq(self, rhs: Self) -> bool
 	}
 }
 

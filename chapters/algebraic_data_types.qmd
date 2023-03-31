@@ -52,11 +52,11 @@ enum Foo {
 test "enum match" {
   const foo = Foo.Number
   const what_is_it = match foo {
-    Foo.String => "this is a string",
-    Foo.Number => "this is a number",
-    Foo.None => "this is a none",
+    Foo.String => "this is a String",
+    Foo.Number => "this is a Number",
+    Foo.None => "this is a None",
   }
-  assert_eq(what_is_it, "this is a number")
+  assert_eq(what_is_it, "this is a Number")
 }
 ```
 
